@@ -1,0 +1,202 @@
+:root {
+  --ghost-white: #f2f5ff;
+  --electric-lavender: #dcb8ff;
+  --lover-blue: #7de2f5;
+  --neon-aqua: #71fcca;
+  --soft-glow: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  background-image: url(images/truck.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: var(--ghost-white);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 20px;
+  text-shadow: 0 0 10px var(--soft-glow);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.home-header {
+  color: var(--ghost-white);
+  font-weight: 700;
+  text-shadow: 0 0 20px var(--electric-lavender);
+}
+
+.home-quote {
+  color: var(--electric-lavender);
+  text-shadow: 0 0 10px var(--hazy-indigo);
+}
+
+.home-btn {
+  color: var(--lover-blue);
+  text-decoration: none;
+  text-shadow: 0 0 10px var(--neon-aqua);
+}
+
+.home-btn:hover {
+  color: var(--neon-aqua);
+  text-shadow: 0 0 15px var(--lover-blue);
+}
+
+.floating-ghost {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: auto;
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+body.journals {
+  background-image: url(images/tvs.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  color: var(--ghost-white);
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  min-height: 200vh;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide scrollbar across browsers */
+body.journals::-webkit-scrollbar {
+  display: none;
+}
+
+body.journals {
+  -ms-overflow-style: none;  /* Edge & IE */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+.now-playing {
+  font-size: 0.7rem;
+  color: var(--electric-lavender);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.play {
+  background-image: var(--ghost-white);
+  width: 20px;
+  height: 15px;
+}
+
+.journals-header {
+  color: var(--ghost-white);
+  font-weight: 700;
+  text-shadow: 0 0 20px var(--electric-lavender);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 0 100px;
+  font-size: 0.9rem;
+}
+
+.journals-main {
+  height: 175vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  align-items: center;
+  margin-top: 15%;
+}
+
+
+.article-one {
+  margin: 150px 50px 200px 20px;
+  max-width: 60%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.article-two {
+  margin: 100px 100px 0px 40px;
+  max-width: 60%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.article-three {
+  margin: 185px 120px 50px 0px;
+  font-size: 0.9rem;
+  max-width: 60%;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.journals-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  font-size: 0.45rem;
+}
+
+@media only screen and (min-width: 700px) {
+  body.journals {
+    background-image: url(images/tvs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
+    color: var(--ghost-white);
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    min-height: 200vh;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-one {
+    margin: 0px 80px 100px 0px;
+    max-width: 30%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  .article-two {
+    margin: 100px 100px 0px 40px;
+    max-width: 60%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  
+
+
+  .article-three {
+    visibility: hidden;
+  }
+
+}
