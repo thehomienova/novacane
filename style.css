@@ -132,15 +132,15 @@ body.journals {
 
 .article-one {
   margin: 150px 50px 200px 20px;
-  max-width: 60%;
+  max-width: 50%;
   font-size: 0.7rem;
   font-weight: 700;
   opacity: 0.7;
 }
 
 .article-two {
-  margin: 100px 100px 0px 40px;
-  max-width: 60%;
+  margin: 0px 100px 0px 40px;
+  max-width: 50%;
   font-size: 0.8rem;
   font-weight: 700;
   opacity: 0.7;
@@ -149,7 +149,7 @@ body.journals {
 .article-three {
   margin: 185px 120px 50px 0px;
   font-size: 0.9rem;
-  max-width: 60%;
+  max-width: 55%;
   font-weight: 700;
   opacity: 0.7;
 }
