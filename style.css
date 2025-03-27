@@ -12,6 +12,7 @@
   box-sizing: border-box;
 }
 
+/* home page  */
 .home {
   background-image: url(images/truck.jpg);
   background-size: cover;
@@ -69,7 +70,7 @@
   pointer-events: none;
 }
 
-
+/* journals page */
 
 body.journals {
   background-image: url(images/tvs.jpg);
@@ -79,11 +80,13 @@ body.journals {
   background-color: #000;
   color: var(--ghost-white);
   font-family: 'Inter', sans-serif;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
   min-height: 200vh;
   overflow-y: scroll;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body.journals::-webkit-scrollbar {
@@ -103,31 +106,34 @@ body.journals {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin: 40px 0 0 150px;
+  margin: 40px 0 0 85px;
 }
 
 
 .now-playing {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--electric-lavender);
   font-style: italic;
   opacity: 0.8;
 }
 
 .journals-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .journals-main {
   min-height: 180vh;
+  width: 100%;
+  max-width: 100%;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  font-family: 'Inter', sans-serif;
   align-items: center;
+  font-family: 'Inter', sans-serif;
   margin-top: 15%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .article-header {
@@ -210,10 +216,10 @@ body.journals {
 
 .journals-lego {
   position: absolute;
-  top: 61.5rem;
+  top: 66rem;
   left: 14rem;
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
@@ -221,10 +227,10 @@ body.journals {
 
 .journals-butterfly {
   position: absolute;
-  top: 45rem;
+  top: 46rem;
   left: 17rem;
-  width: 9rem;
-  height: 9rem;      
+  width: 7rem;
+  height: 7rem;      
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
