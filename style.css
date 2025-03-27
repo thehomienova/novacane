@@ -94,20 +94,6 @@ body.journals {
   scrollbar-width: none;     /* Firefox */
 }
 
-
-.now-playing {
-  font-size: 0.8rem;
-  color: var(--electric-lavender);
-  font-style: italic;
-  opacity: 0.8;
-}
-
-.play {
-  background-image: var(--ghost-white);
-  width: 20px;
-  height: 15px;
-}
-
 .journals-header {
   color: var(--ghost-white);
   font-weight: 700;
@@ -118,6 +104,18 @@ body.journals {
   gap: 10px;
   margin: 40px 0 0 100px;
   font-size: 1.7rem;
+}
+
+
+.now-playing {
+  font-size: 1rem;
+  color: var(--electric-lavender);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.journals-title {
+  font-size: 4rem;
 }
 
 .journals-main {
@@ -137,7 +135,7 @@ body.journals {
 }
 
 .article-one {
-  margin: 20rem 5rem 0 0;
+  margin: 19rem 5rem 0 0;
   max-width: 70%;
   width: 100%;
   font-size: 1.4rem;
@@ -146,7 +144,7 @@ body.journals {
 }
 
 .article-two {
-  margin: 14rem 4rem 0 0;
+  margin: 17rem 4rem 0 0;
   max-width: 70%;
   font-size: 1.4rem;
   font-weight: 700;
@@ -157,7 +155,7 @@ body.journals {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
   font-family: 'Syne', sans-serif;
   color: var(--electric-lavender);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
@@ -182,11 +180,66 @@ body.journals {
   transition: all 0.3s ease;
 }
 
+.journals-ghost {
+  position: absolute;
+  top: 24rem;
+  left: 1rem;
+  width: 4rem;
+  height: 4rem;      
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.journals-cd {
+  position: absolute;
+  top: 8.5rem;
+  left: 18rem;
+  width: 9rem;
+  height: 9rem;      
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.journals-lego {
+  position: absolute;
+  top: 75rem;
+  left: 13rem;
+  width: 15rem;
+  height: 15rem;
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.journals-butterfly {
+  position: absolute;
+  top: 47.7rem;
+  left: 18rem;
+  width: 9rem;
+  height: 9rem;      
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+.journals-hand {
+  position: absolute;
+  top: 102rem;
+  width: 19rem;
+  height: 17rem;      
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+}
+
 .journals-footer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-left: 10px;
-  font-size: 0.4rem;
+  font-size: 0.45rem;
   opacity: 0.7;
 }
 
