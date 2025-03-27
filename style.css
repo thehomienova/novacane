@@ -196,9 +196,9 @@ body.journals {
 
 /*laptops*/
 @media (min-width: 1280px) {
-
   .journals-header {
     margin: unset;
+    margin-left: 1.7rem ;
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 25rem;
@@ -211,7 +211,7 @@ body.journals {
     font-style: italic;
     opacity: 0.6;
     width: 8rem;
-    margin: 5rem 0 0 1rem;
+    margin: 2rem 0 0 1rem;
   }
 
   .journals-title {
@@ -357,8 +357,184 @@ body.journals {
     z-index: 10;
     pointer-events: none;
   }
+}
 
+@media (min-width: 1440px) {
+  .journals-header {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 25rem;
+    margin-bottom: 20rem;
+  }
+
+  .now-playing {
+    font-size: 1.2rem;
+    color: var(--electric-lavender);
+    font-style: italic;
+    opacity: 0.6;
+    width: 8rem;
+    margin: 5rem 0 0rem 1rem;
+  }
+
+  .journals-title {
+    font-size: 5rem;
+    margin-left: 4rem;
+  }
+  
+  .journals-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-left: 24rem;
+  }
+
+  .article-one, .article-two, 
+  .article-three, .article-four {
+    margin: unset;
+    color: var(--ghost-white);
+    opacity: 0.7;
+    text-shadow: 0 0 10px black;
+  }
+
+  .article-one:hover, .article-two:hover,
+.article-three:hover, .article-four:hover {
+  color: var(--electric-lavender);
+  text-shadow: 0 0 12px var(--electric-lavender);
+}
   
 
- 
+  .article-one {
+    width: 30rem;
+    padding-bottom: 20rem;
+    font-size: 1.8rem;
+  }
+
+  .article-two {
+    width: 15rem;
+    padding-bottom: 23rem;
+    font-size: 1.7rem;
+  }
+
+  .article-three,
+  .article-four {
+    visibility: visible;
+  }
+
+  
+  .article-three {
+    width: 20rem;
+    font-size: 1.9rem;
+    padding-bottom: 22rem;
+
+  }
+
+  .article-four {
+    width: 14rem;
+    font-size: 1.6rem;
+    padding-bottom: 25rem;
+  }
+
+  .journals-nav {
+    padding: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-family: 'Syne', sans-serif;
+    color: var(--electric-lavender);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  .journals-nav label {
+    font-size: 1.5rem;
+    margin: unset;
+    letter-spacing: 1px;
+  }
+
+  #journal-select {
+    background-color: black;
+    color: var(--ghost-white);
+    border: 1px solid var(--electric-lavender);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--electric-lavender);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+  }
+
+  #journal-select:hover,
+  #journal-select:focus {
+    background-color: var(--electric-lavender);
+    color: black;
+    outline: none;
+  }
+
+  .journals-lego {
+    position: absolute;
+    top: 120rem;
+    left: 78rem;
+    width: 15rem;
+    height: 15rem;
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-butterfly {
+    position: absolute;
+    bottom: 17rem;
+    left: 0.2rem;
+    width: 9rem;
+    height: 9rem;      
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-cd {
+    position: absolute;
+    top: 9rem ;
+    left: 2rem;
+    width: 7rem;
+    height: 7rem;      
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-hand {
+    position: absolute;
+    top: 115rem;
+    left: 3rem;
+    width: 23rem;
+    height: 23rem;      
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-ghost {
+    position: absolute;
+    top: 2rem;
+    right: 0.1rem;
+    width: 4rem;
+    height: 4rem;      
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 10px;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  
 }
