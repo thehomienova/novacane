@@ -10,7 +10,7 @@
 
 <body class="journals">
   <header class="journals-header">
-    <h1>novacane</h1>
+    <h1 class="journals-title">novacane</h1>
     <p class="now-playing">now playing: <em>Seigfried – Frank Ocean</em></p>
   </header>
 
@@ -20,27 +20,53 @@
   </audio>
 
   <main class="journals-main">
+  
     <article class="article-one">
-      <h2 class="article-header">i coded this instead of texting back</h2>
+      <a href="journals/journal1.html" class="article-header">i coded this instead of texting back</a>
       <p class="article-meta">march 24, 2025 · #code · #feelings</p>
       <p>sometimes typing hurts less than talking.</p>
     </article>
 
     <article class="article-two">
-      <h2 class="article-header">frank ocean is a data type</h2>
+      <a href="journals/journal2.html" class="article-header">frank ocean is a data type</a>
       <p class="article-meta">march 20, 2025 · #music · #life</p>
       <p>typeof heartbreak === "channel orange"</p>
     </article>
 
     <article class="article-three">
-      <h2 class="article-header">404: closure not found</h2>
+      <a href="journals/journal3.html" class="article-header">404: closure not found</a>
       <p class="article-meta">march 18, 2025 · #love · #journal</p>
       <p>you ever refresh your own memory just to feel something?</p>
     </article>
+
+    <article class="article-four">
+      <a href="journals/journal3.html" class="article-header">404: closure not found</a>
+      <p class="article-meta">march 18, 2025 · #love · #journal</p>
+      <p>you ever refresh your own memory just to feel something?</p>
+    </article>
+
+    <nav class="journals-nav">
+      <label for="journal-select">tune in to another memory</label>
+      <select id="journal-select" onchange="location = this.value;">
+        <option value="">pick a frequency</option>
+        <option value="journals/journal1.html">Journal 1 – March 24, 2025</option>
+        <option value="journals/journal2.html">Journal 2 – March 20, 2025</option>
+        <option value="journals/journal3.html">Journal 3 – March 18, 2025</option>
+        <!-- Add more entries here as you grow -->
+      </select>
+    </nav>
   </main>
+
+  <img src="images/ghost.png" alt="Ghost Logo" class="journals-ghost">
+  <img src="images/butterfly.png" alt="Butterlfy" class="journals-butterfly">
+  <img src="images/cd.png" alt="CD" class="journals-cd">
+  <img src="images/hand.png" alt="Hand" class="journals-hand">
+  <img src="images/lego.png" alt="Lego" class="journals-lego">
 
   <footer class="journals-footer">
     built in the dark by nova © 2025
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
