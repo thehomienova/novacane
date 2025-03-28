@@ -603,10 +603,11 @@ body.journals {
 /* big laptops */
 @media (min-width: 1440px) {
   .journals-header {
+    margin-bottom: unset;
+
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 25rem;
-    margin-top: 5rem;
   }
 
   .now-playing {
@@ -615,25 +616,27 @@ body.journals {
     font-style: italic;
     opacity: 0.6;
     width: 8rem;
-    margin: 7rem 0 0 1rem;
+    margin: 17rem 0 0 1rem;
   }
 
   .journals-title {
     font-size: 6rem;
-    margin: 0 0rem 5rem 2rem;
+    margin: 5rem 0rem 1rem 2rem;
   }
   
   .journals-main {
+    gap: unset;
+    margin: unset;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 5rem;
-    margin-left: 24rem;
+    padding: 10rem 0rem 0rem 23rem;
   }
 
   .article-one, .article-two, 
   .article-three, .article-four {
     margin: unset;
+    padding: unset;
     color: var(--ghost-white);
     opacity: 0.7;
     text-shadow: 0 0 10px black;
@@ -647,15 +650,21 @@ body.journals {
   
   .article-one {
     width: 30rem;
-    padding-bottom: 28rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 1.8rem;
   }
 
   .article-three {
     width: 30rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 1.9rem;
-    padding-bottom: 18rem;
-
   }
 
   .article-three,
@@ -665,21 +674,29 @@ body.journals {
 
   .article-two {
     width: 18rem;
+    height: 40rem;
     font-size: 1.9rem;
-    padding-bottom: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .article-four {
-    width: 14rem;
+    width: 18rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 1.6rem;
-    padding-bottom: 15rem;
   }
 
   .journals-nav {
-    padding: 13rem 0 0 0;
+    padding: 3rem 0 0 0;
+    height: 30rem;
+    width: 32rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-end;
     gap: 5px;
     font-family: 'Syne', sans-serif;
     color: var(--electric-lavender);
@@ -715,10 +732,10 @@ body.journals {
 
   .journals-lego {
     position: absolute;
-    top: 102rem;
-    left: 54rem;
-    width: 15rem;
-    height: 15rem;
+    top: 95rem;
+    left: 46rem;
+    width: 25rem;
+    height: 25rem;
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
@@ -726,10 +743,10 @@ body.journals {
 
   .journals-butterfly {
     position: absolute;
-    top: 38rem;
-    left: 0.2rem;
-    width: 9rem;
-    height: 9rem;      
+    top: 70rem;
+    left: 49rem;
+    width: 18rem;
+    height: 18rem;      
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
@@ -737,7 +754,7 @@ body.journals {
 
   .journals-cd {
     position: absolute;
-    top: 17rem ;
+    top: 10rem ;
     left: 2rem;
     width: 7rem;
     height: 7rem;      
@@ -748,7 +765,7 @@ body.journals {
 
   .journals-hand {
     position: absolute;
-    top: 115rem;
+    top: 135rem;
     left: 3rem;
     width: 23rem;
     height: 23rem;      
@@ -776,6 +793,41 @@ body.journals {
     font-size: 1rem;
     opacity: 0.7;
   }
+
+  .journals-planet {
+    position: absolute;
+    top: 3.5rem;
+    left: 37rem;
+    width: 10rem;
+    height: 10rem;      
+    opacity: 0.5;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-atom {
+    position: absolute;
+    top: 40rem;
+    left: 1rem;
+    width: 8rem;
+    height: 8rem;      
+    opacity: 0.7;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .journals-wire {
+    position: absolute;
+    top: 98.5rem;
+    width: 8rem;
+    height: 8rem;      
+    opacity: 0.5;
+    z-index: 10;
+    pointer-events: none;
+    transform: scaleX(-1);
+  }
+
+  
 
   
 }
