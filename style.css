@@ -247,6 +247,10 @@ body.journals {
   pointer-events: none;
 }
 
+.journals-planet, .journals-atom, .journals-wire {
+  visibility: hidden;
+}
+
 .journals-footer {
   display: flex;
   justify-content: center;
