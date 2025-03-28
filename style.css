@@ -194,8 +194,8 @@ body.journals {
 
 .journals-ghost {
   position: absolute;
-  top: 20rem;
-  left: 1rem;
+  top: 21rem;
+  left: 20rem;
   width: 4rem;
   height: 4rem;      
   opacity: 0.8;
@@ -247,8 +247,16 @@ body.journals {
   pointer-events: none;
 }
 
-.journals-planet, .journals-atom, .journals-wire {
-  visibility: hidden;
+
+.journals-planet {
+  position: absolute;
+  top: 0.1rem;
+  left: 6rem;
+  width: 5rem;
+  height: 5rem;      
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .journals-footer {

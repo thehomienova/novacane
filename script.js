@@ -1,11 +1,4 @@
-function playMusic () {
-  gameMusic.volume = 0.5;
-  gameMusic.play();
+if (window.innerWidth < 1440) {
+  const elements = document.querySelectorAll('.laptop-only');
+  elements.forEach(el => el.remove());
 }
-
-document.addEventListener("load", () => {
-  if (gameMusic.paused) {
-      playMusic();
-  }
-})
-
