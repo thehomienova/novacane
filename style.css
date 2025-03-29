@@ -21,7 +21,7 @@
   background-color: #000;
   color: var(--ghost-white);
   font-family: 'Inter', sans-serif;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -61,14 +61,60 @@
 
 .home-ghost {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
-  width: 50px;
-  height: auto;
+  width: 60px;
+  height: 60px;
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
 }
+
+.home-links {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  position: fixed;
+  top:1rem;
+  opacity: 0.7;
+}
+
+.home-instagram {
+  display: inline-block;
+  width: 53px;
+  height: 53px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px; /* hides any accidental text */
+  overflow: hidden;
+  background-image: url('images/instagram.png'); /* change to your image path */
+}
+
+.home-linkedin {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px; /* hides any accidental text */
+  overflow: hidden;
+  background-image: url('images/linkedin.png'); /* change to your image path */
+}
+
+.home-spotify {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px; /* hides any accidental text */
+  overflow: hidden;
+  background-image: url('images/spotify.png'); /* change to your image path */
+}
+
 
 /* journals page */
 
@@ -139,7 +185,6 @@ body.journals {
 .article-header {
   color: #dcb8ff;
   text-decoration: underline;
-  text-decoration-style:wavy ;
 }
 
 .article-one {
@@ -249,7 +294,6 @@ body.journals {
   pointer-events: none;
 }
 
-
 .journals-planet {
   position: absolute;
   top: 0.1rem;
@@ -267,6 +311,10 @@ body.journals {
   font-size: 0.5rem;
   opacity: 0.7;
 }
+
+/* journal entry */
+
+
 
 /* big iphones  */
 @media (min-width: 430px) {
@@ -838,6 +886,59 @@ body.journals {
     margin-right: 10px;
     font-size: 1rem;
     opacity: 0.7;
+  }
+
+  .home-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    position: fixed;
+    top: 41rem;
+    left: 43rem;
+  }
+  
+  .home-instagram {
+    display: inline-block;
+    width: 5.7rem;
+    height: 5.7rem;
+    margin-top: -3px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px; /* hides any accidental text */
+    overflow: hidden;
+    background-image: url('images/instagram.png'); /* change to your image path */
+  }
+  
+  .home-linkedin {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px; /* hides any accidental text */
+    overflow: hidden;
+    background-image: url('images/linkedin.png'); /* change to your image path */
+  }
+  
+  .home-spotify {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px; /* hides any accidental text */
+    overflow: hidden;
+    background-image: url('images/spotify.png'); /* change to your image path */
+  }
+
+  .home-instagram:hover, .home-linkedin:hover, .home-spotify:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.4) saturate(1.2);
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   }
 }
 
