@@ -4,6 +4,7 @@
   --lover-blue: #7de2f5;
   --neon-aqua: #71fcca;
   --soft-glow: rgba(255, 255, 255, 0.15);
+  --flipphone-heart: #ff5c8a;
 }
 
 * {
@@ -314,6 +315,41 @@ body.journals {
 
 /* journal entry */
 
+.entry {
+  background-image: url(images/phone.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: var(--ghost-white);
+  font-family: 'Inter', sans-serif;
+  min-height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-shadow: 0 0 10px var(--soft-glow);
+}
+
+.entry-links {
+  color: var(--ghost-white);
+  text-decoration: underline;
+  position: relative;
+  bottom: 13.8rem;
+  left: 3.3rem;
+  font-size: 0.7rem;
+}
+
+.entry-main {
+  position: relative;
+  bottom: 13rem;
+  left: 3.5rem;
+  width: 70%;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 5px 5px;
+  font-size: 0.9rem;
+}
 
 
 /* big iphones  */
