@@ -183,11 +183,6 @@ body.journals {
   overflow-x: hidden;
 }
 
-.article-header {
-  color: #dcb8ff;
-  text-decoration: underline;
-}
-
 .article-one {
   margin: 9rem 5rem 0 0;
   max-width: 70%;
@@ -199,6 +194,8 @@ body.journals {
   padding: 10px;
   border: 1px solid white;
   border-radius: 10px;
+  color: #dcb8ff;
+  text-decoration: none;
 }
 
 .article-two {
@@ -211,6 +208,8 @@ body.journals {
   padding: 10px;
   border: 1px solid white;
   border-radius: 10px;
+  color: #dcb8ff;
+  text-decoration: none;
 }
 
 .article-three, .article-four {
