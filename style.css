@@ -241,14 +241,17 @@ body.journals {
 }
 
 .journals-ghost {
-  position: absolute;
-  top: 21rem;
+  display: inline-block;
+  width: 40px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px; 
+  background-image: url('images/ghost.png');
+  position: relative;
+  top: 12rem;
   left: 20rem;
-  width: 4rem;
-  height: 4rem;      
-  opacity: 0.8;
-  z-index: 10;
-  pointer-events: none;
 }
 
 .journals-cd {
@@ -283,7 +286,6 @@ body.journals {
   z-index: 10;
   pointer-events: none;
 }
-
 
 .journals-hand {
   position: absolute;
@@ -331,25 +333,50 @@ body.journals {
   text-shadow: 0 0 10px var(--soft-glow);
 }
 
-.entry-links {
-  color: var(--ghost-white);
-  text-decoration: underline;
+.entry-header {
   position: relative;
   bottom: 13.8rem;
   left: 3.3rem;
   font-size: 0.7rem;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .entry-main {
   position: relative;
-  bottom: 13rem;
+  bottom: 10rem;
   left: 3.5rem;
   width: 70%;
-  max-height: 220px;
+  max-height: 225px;
   overflow-y: auto;
   padding: 5px 5px;
   font-size: 0.9rem;
 }
+
+.entry-back-btn {
+  position: absolute; 
+  top: 345px; 
+  left: 255px;
+  width: 60px;
+  height: 40px;
+}
+.entry-home-btn {
+  position: relative;
+  bottom: 65px;
+  left: 65px;
+  width: 60px;
+  height: 40px;
+}
+
+.entry-call-btn {
+  position: relative;
+  bottom: 50px;
+  left: 65px;
+  width: 60px;
+  height: 40px;
+}
+
 
 
 /* big iphones  */

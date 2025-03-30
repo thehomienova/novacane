@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>journal – novacane</title>
-  <link rel="stylesheet" href="style.css?v=74">
+  <link rel="stylesheet" href="style.css?v=76">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap" rel="stylesheet">
 </head>
 
@@ -18,18 +18,19 @@
     Your browser does not support the audio element.
   </audio>
 
-  <main class="journals-main">
-  
-    <article class="article-one">
-      <a href="journals/journal1.html" class="article-header">i coded this instead of texting back</a>
-      <p class="article-meta">march 24, 2025 · #code · #feelings</p>
-      <p>sometimes typing hurts less than talking.</p>
-    </article>
+  <a href="index.html" class="journals-ghost"></a>
 
-    <article class="article-two">
+  <main class="journals-main">
+    <article class="article-one">
       <a href="journals/journal2.html" class="article-header">frank ocean is a data type</a>
-      <p class="article-meta">march 20, 2025 · #music · #life</p>
+      <p class="article-meta">march 20, 2025 <br>#music · #life</p>
       <p>typeof heartbreak === "channel orange"</p>
+    </article>
+  
+    <article class="article-two">
+      <a href="journals/journal1.html" class="article-header">genesis</a>
+      <p class="article-meta">march 29, 2025 <br>#first · #code</p>
+      <p></p>
     </article>
 
     <article class="article-three">
@@ -48,15 +49,14 @@
       <label for="journal-select">tune in to another memory</label>
       <select id="journal-select" onchange="location = this.value;">
         <option value="">pick a frequency</option>
-        <option value="journals/journal1.html">Journal 1 – March 24, 2025</option>
-        <option value="journals/journal2.html">Journal 2 – March 20, 2025</option>
-        <option value="journals/journal3.html">Journal 3 – March 18, 2025</option>
-        <!-- Add more entries here as you grow -->
+        <option value="journals/journal1.html">Journal 1 - March 24, 2025</option>
+        <option value="journals/journal2.html">Journal 2 - March 20, 2025</option>
+        <option value="journals/journal3.html">Journal 3 - March 18, 2025</option>
+        <option value="journals/journal4.html">Journal 4 - March 18, 2025</option>
       </select>
     </nav>
   </main>
 
-  <img src="images/ghost.png" alt="Ghost Logo" class="journals-ghost">
   <img src="images/butterfly.png" alt="Butterlfy" class="journals-butterfly">
   <img src="images/cd.png" alt="CD" class="journals-cd">
   <img src="images/hand.png" alt="Hand" class="journals-hand">
