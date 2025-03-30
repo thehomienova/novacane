@@ -189,12 +189,16 @@ body.journals {
 }
 
 .article-one {
-  margin: 13rem 5rem 0 0;
+  margin: 9rem 5rem 0 0;
   max-width: 70%;
   width: 100%;
   font-size: 1.3rem;
   font-weight: 700;
   opacity: 0.7;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .article-two {
@@ -203,6 +207,10 @@ body.journals {
   font-size: 1.3rem;
   font-weight: 700;
   opacity: 0.7;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .article-three, .article-four {
@@ -267,7 +275,7 @@ body.journals {
 
 .journals-lego {
   position: absolute;
-  top: 66rem;
+  top: 69.5rem;
   left: 14rem;
   width: 10rem;
   height: 10rem;
@@ -278,7 +286,7 @@ body.journals {
 
 .journals-butterfly {
   position: absolute;
-  top: 46rem;
+  top: 49rem;
   left: 17rem;
   width: 7rem;
   height: 7rem;      
@@ -289,7 +297,7 @@ body.journals {
 
 .journals-hand {
   position: absolute;
-  top: 84rem;
+  top: 88rem;
   width: 19rem;
   height: 17rem;      
   opacity: 0.8;
