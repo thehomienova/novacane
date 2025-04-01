@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closed Journal</title>
+    <link rel="stylesheet" href="../style.css?v=78" />
+</head>
+<body class="closed-journal">
+
+    <img src="/images/blond.jpg" alt="Blond" class="blond">
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const from = params.get("from");
+      
+        // Store where they came from
+        if (from) {
+          localStorage.setItem("cameFromJournal", from);
+        }
+      </script>
+
+<button onclick="reopenJournal()" class="reopen-btn"></button>
+
+<script>
+  function reopenJournal() {
+    const prev = localStorage.getItem("cameFromJournal");
+    if (prev) {
+      window.location.href = `${prev}.html`;
+    } else {
+      // fallback if somehow no data
+      window.location.href = "journals.html";
+    }
+  }
+</script>
+</body>
+</html>
