@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Journal 1 – Nova</title>
-  <link rel="stylesheet" href="../style.css?v=78" />
+  <link rel="stylesheet" href="../style.css?v=79" />
 </head>
 <body class="entry">
 
@@ -12,8 +12,6 @@
     <h2 class="entry-title">genesis</h2>
     <p class="now-playing"><em>now playing - nikes by frank ocean</em></p>
     <br>
-
-    <p class="entry-date">march 29, 2025</p>
     <article class="entry-body">
       <p>welcome to my first blog. i have been working on it for the past week. i think im finally satisfied with the home page, the journals page,
         and the journal entries themselves. its mostly just structure and styles, no interactability yet. im still learning so things might break, new featurs will be added. this is fun. 
@@ -22,17 +20,23 @@
         odin project (web dev curriculum) outside of my degree. ai might be taking our jobs but im excited nonetheless.
         </p>
     </article>
+
+    <audio id="entry-music" loop>
+      <source src="../audio/nikes.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </main>
 
   <a href="../journals.html" class="entry-back-btn"></a>
   <a href="../index.html" class="entry-home-btn"></a>
   <a href="tel:+1248-434-5508" class="entry-call-btn"></a>
-  <a href="closedJournal.html" class="entry-closed-btn"></a>
+  <a href="closedJournal.html?from=journal1" class="entry-closed-btn"></a>
 
   <button class="scrollDown"></button>
   <button class="scrollUp"></button>
   <a href="journal2.html" class="next-entry"></a>
   <a href="" class="previous-entry"></a>
+  <button class="playpause" type="button"></button>
 
   <script src="../script.js"></script>
 </body>

@@ -28,3 +28,29 @@ scrollUpBtn.addEventListener('mouseleave', stopScroll);
 scrollUpBtn.addEventListener('touchstart', () => startScroll(-1));
 scrollUpBtn.addEventListener('touchend', stopScroll);
 
+let music = document.querySelector("#entry-music");
+let playpause = document.querySelector(".playpause");
+
+function playMusic () {
+  music.muted = true;     
+  music.play().then(() => {
+      music.muted = false;  
+      music.volume = 0.5;
+  }).catch(err => {
+      console.error("Playback failed:", err);
+  });
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    playMusic();
+  } else {
+    music.pause();
+  }
+}
+
+playpause.addEventListener("click", toggleMusic);
+playpause.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  toggleMusic()
+});
