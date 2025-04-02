@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap');
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -47,12 +49,14 @@
 .home-quote {
   color: var(--electric-lavender);
   text-shadow: 0 0 10px var(--hazy-indigo);
+  font-family: 'Inter';
 }
 
 .home-btn {
   color: var(--lover-blue);
   text-decoration: none;
   text-shadow: 0 0 10px var(--neon-aqua);
+  font-family: 'Inter';
 }
 
 .home-btn:hover {
@@ -71,6 +75,12 @@
   pointer-events: none;
 }
 
+.home-ghost:mouseover {
+  opacity: 1;
+  width: 70px;
+  height: 70px;
+}
+
 .home-links {
   display: flex;
   justify-content: flex-start;
@@ -87,9 +97,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-indent: -9999px; /* hides any accidental text */
+  text-indent: -9999px;
   overflow: hidden;
-  background-image: url('images/instagram.png'); /* change to your image path */
+  background-image: url('images/instagram.png');
 }
 
 .home-linkedin {
@@ -99,9 +109,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-indent: -9999px; /* hides any accidental text */
+  text-indent: -9999px;
   overflow: hidden;
-  background-image: url('images/linkedin.png'); /* change to your image path */
+  background-image: url('images/linkedin.png');
 }
 
 .home-spotify {
@@ -158,6 +168,7 @@ body.journals {
 
 .journals-title {
   font-size: 3.5rem;
+  font-family: 'Playfair Display';
 }
 
 .journals-main {
@@ -173,12 +184,12 @@ body.journals {
   margin-top: 15%;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: 'Inter';
 }
 
 .article-one {
   margin: 8rem 5rem 0 0;
   max-width: 70%;
-  width: 100%;
   font-size: 1.3rem;
   font-weight: 700;
   opacity: 0.7;
@@ -336,6 +347,14 @@ body.journals {
   font-size: 0.9rem;
   color: var(--ghost-white);
   
+}
+
+.entry-title {
+  font-family: 'Playfair Display';
+}
+
+.entry-body {
+  font-family: 'Inter';
 }
 
 .now-playing {
@@ -810,41 +829,106 @@ body.journals {
 
 /* big laptops */
 @media (min-width: 1440px) {
-  .journals-header {
-    margin-bottom: unset;
 
-    flex-direction: row-reverse;
+  /* home page */
+
+  .home-links {
+    display: flex;
     justify-content: flex-end;
-    gap: 25rem;
-  }w
+    width: 50%;
+    position: fixed;
+    top: 41rem;
+    left: 43rem;
+  }
+  
+  .home-instagram {
+    display: inline-block;
+    width: 5.7rem;
+    height: 5.7rem;
+    margin-top: -3px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url('images/instagram.png');
+  }
+  
+  .home-linkedin {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url('images/linkedin.png');
+  }
+  
+  .home-spotify {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url('images/spotify.png');
+  }
 
-  .now-playing {
-    font-size: 1.2rem;
-    color: var(--electric-lavender);
-    font-style: italic;
-    opacity: 0.6;
-    width: 8rem;
-    margin: 17rem 0 0 1rem;
+  .home-instagram:hover, .home-linkedin:hover, .home-spotify:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.4) saturate(1.2);
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+s
+  /* journals page */
+  
+  .journals-header {
+    margin: 0rem 0 0 5rem;
+    height: 18rem;
   }
 
   .journals-title {
     font-size: 6rem;
-    margin: 5rem 0rem 1rem 2rem;
+    margin: 3rem 0 0 36rem;
   }
-  
+
+  .journals-planet {
+    width: 140px;
+    height: 140px;
+    opacity: 0.8;
+    position: absolute;
+    top: -10px;
+    left: 37.5rem;
+  }
+
+  .journals-ghost {
+    position: absolute;
+    top: 8rem;
+    left: 18rem;
+    width: 7rem;
+    height: 10rem;
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+  }
+
   .journals-main {
     gap: unset;
     margin: unset;
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10rem 0rem 0rem 23rem;
+    height: 104rem;
   }
 
   .article-one, .article-two, 
   .article-three, .article-four {
-    margin: unset;
-    padding: unset;
     color: var(--ghost-white);
     opacity: 0.7;
     text-shadow: 0 0 10px black;
@@ -854,53 +938,69 @@ body.journals {
   .article-three:hover, .article-four:hover {
     color: var(--electric-lavender);
     text-shadow: 0 0 12px var(--electric-lavender);
-    cursor: pointer;
+    cursor: pointer; 
+    transition: all 0.3s ease;
   }
   
   .article-one {
-    width: 30rem;
+    width: 25rem;
     height: 15rem;
+    padding: 1px;
+    margin: -6rem 0 0rem 25rem;
+    font-size: 2.5rem;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
   }
 
   .article-three {
-    width: 30rem;
+    width: 22rem;
     height: 15rem;
+    padding: 10px;
+    margin: 22rem 0 0rem 25rem;
+    font-size: 2.5rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    font-size: 1.9rem;
+    align-items: center;
   }
 
   .article-three,
   .article-four {
     visibility: visible;
+    opacity: 0.7;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: #dcb8ff;
+    text-decoration: none;
   }
 
   .article-two {
     width: 18rem;
-    height: 40rem;
-    font-size: 1.9rem;
+    height: 19rem;
+    padding: 50px;
+    margin: -5rem 0 0rem 0;
+    font-size: 2.5rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
   }
 
   .article-four {
-    width: 18rem;
-    height: 40rem;
+    width: 17rem;
+    height: 15rem;
+    margin: 18rem 0 0rem 0;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
 
   .journals-nav {
-    padding: 3rem 0 0 0;
+    margin: 0rem 0 0 24rem;
     height: 30rem;
     width: 32rem;
     display: flex;
@@ -939,7 +1039,7 @@ body.journals {
 
   .journals-lego {
     position: absolute;
-    top: 95rem;
+    top: 86rem;
     left: 46rem;
     width: 25rem;
     height: 25rem;
@@ -950,7 +1050,7 @@ body.journals {
 
   .journals-butterfly {
     position: absolute;
-    top: 70rem;
+    top: 60rem;
     left: 49rem;
     width: 18rem;
     height: 18rem;      
@@ -959,21 +1059,10 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-cd {
-    position: absolute;
-    top: 10rem ;
-    left: 2rem;
-    width: 7rem;
-    height: 7rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
   .journals-hand {
     position: absolute;
-    top: 135rem;
-    left: 3rem;
+    top: 115rem;
+    left: 3.5rem;
     width: 23rem;
     height: 23rem;      
     opacity: 0.8;
@@ -981,45 +1070,23 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-ghost {
-    position: absolute;
-    top: 13rem;
-    left: 18rem;
-    width: 6rem;
-    height: 6rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .journals-planet {
-    position: absolute;
-    top: 3.5rem;
-    left: 37rem;
-    width: 10rem;
-    height: 10rem;      
-    opacity: 0.5;
-    z-index: 10;
-    pointer-events: none;
-  }
-
   .journals-atom {
     position: absolute;
-    top: 40rem;
+    top: 30rem;
     left: 1rem;
     width: 8rem;
     height: 8rem;      
-    opacity: 0.5;
+    opacity: 0;
     z-index: 10;
     pointer-events: none;
   }
 
   .journals-wire {
     position: absolute;
-    top: 98.5rem;
+    top: 91rem;
     width: 8rem;
     height: 8rem;      
-    opacity: 0.3;
+    opacity: 0;
     z-index: 10;
     pointer-events: none;
     transform: scaleX(-1);
@@ -1029,64 +1096,11 @@ body.journals {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-right: 10px;
+    margin-left: 60.5rem;
     font-size: 1rem;
     opacity: 0.7;
+    width: 11rem;
   }
-
-  .home-links {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    position: fixed;
-    top: 41rem;
-    left: 43rem;
-  }
-  
-  .home-instagram {
-    display: inline-block;
-    width: 5.7rem;
-    height: 5.7rem;
-    margin-top: -3px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px; /* hides any accidental text */
-    overflow: hidden;
-    background-image: url('images/instagram.png'); /* change to your image path */
-  }
-  
-  .home-linkedin {
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px; /* hides any accidental text */
-    overflow: hidden;
-    background-image: url('images/linkedin.png'); /* change to your image path */
-  }
-  
-  .home-spotify {
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px; /* hides any accidental text */
-    overflow: hidden;
-    background-image: url('images/spotify.png'); /* change to your image path */
-  }
-
-  .home-instagram:hover, .home-linkedin:hover, .home-spotify:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    filter: brightness(1.4) saturate(1.2);
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  }
-
 
 .entry {
   background-image: url(images/computer.jpg);
