@@ -127,9 +127,9 @@
 }
 
 
-/* journals page */
+/* tapes page */
 
-body.journals {
+body.tapes {
   background-image: url(images/tvs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -146,16 +146,16 @@ body.journals {
   overflow-x: hidden;
 }
 
-body.journals::-webkit-scrollbar {
+body.tapes::-webkit-scrollbar {
   display: none;
 }
 
-body.journals {
+body.tapes {
   -ms-overflow-style: none; 
   scrollbar-width: none;    
 }
 
-.journals-header {
+.tapes-header {
   color: var(--ghost-white);
   font-weight: 700;
   text-shadow: 0 0 20px var(--electric-lavender);
@@ -166,12 +166,12 @@ body.journals {
   margin: 100px 0 0 85px;
 }
 
-.journals-title {
+.tapes-title {
   font-size: 3.5rem;
   font-family: 'Playfair Display';
 }
 
-.journals-main {
+.tapes-main {
   min-height: 180vh;
   width: 100%;
   max-width: 100%;
@@ -188,7 +188,7 @@ body.journals {
 }
 
 .article-one {
-  margin: 8rem 5rem 0 0;
+  margin: 7rem 5rem 0 0;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
@@ -219,18 +219,18 @@ body.journals {
   visibility: hidden;
 }
 
-.journals-nav {
+.tapes-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 12rem;
+  margin-bottom: 13rem;
   margin-right: 2rem;
   font-family: 'Syne', sans-serif;
   color: var(--electric-lavender);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-.journals-nav label {
+.tapes-nav label {
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
   padding-right: 3rem;
@@ -250,7 +250,7 @@ body.journals {
   transition: all 0.3s ease;
 }
 
-.journals-ghost {
+.tapes-ghost {
   display: inline-block;
   width: 40px;
   height: 70px;
@@ -264,9 +264,9 @@ body.journals {
   left: 20rem;
 }
 
-.journals-lego {
+.tapes-lego {
   position: absolute;
-  top: 70.8rem;
+  top: 71.5rem;
   left: 14rem;
   width: 10rem;
   height: 10rem;
@@ -275,9 +275,9 @@ body.journals {
   pointer-events: none;
 }
 
-.journals-butterfly {
+.tapes-butterfly {
   position: absolute;
-  top: 48.5rem;
+  top: 49rem;
   left: 17rem;
   width: 7rem;
   height: 7rem;      
@@ -286,7 +286,7 @@ body.journals {
   pointer-events: none;
 }
 
-.journals-hand {
+.tapes-hand {
   position: absolute;
   top: 91rem;
   width: 19rem;
@@ -296,7 +296,7 @@ body.journals {
   pointer-events: none;
 }
 
-.journals-planet {
+.tapes-planet {
   position: absolute;
   top: 3.7rem;
   left: 6rem;
@@ -307,7 +307,7 @@ body.journals {
   pointer-events: none;
 }
 
-.journals-footer {
+.tapes-footer {
   font-size: 0.5rem;
   display: flex;
   justify-content: center;
@@ -316,10 +316,6 @@ body.journals {
   position: relative;
   bottom: 1rem;
   left: 17.5rem;
-}
-
-.journals-wire, .journals-atom {
-  display: hidden;
 }
 
 /* journal entry */
@@ -487,7 +483,7 @@ body.journals {
 
 /* big iphones  */
 @media (min-width: 430px) {
-  body.journals {
+  body.tapes {
     background-image: url(images/tvs.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -503,16 +499,16 @@ body.journals {
   }
 
   /* Hide scrollbar across browsers */
-  body.journals::-webkit-scrollbar {
+  body.tapes::-webkit-scrollbar {
     display: none;
   }
 
-  body.journals {
+  body.tapes {
     -ms-overflow-style: none;  /* Edge & IE */
     scrollbar-width: none;     /* Firefox */
   }
 
-  .journals-header {
+  .tapes-header {
     color: var(--ghost-white);
     font-weight: 700;
     text-shadow: 0 0 20px var(--electric-lavender);
@@ -532,11 +528,11 @@ body.journals {
     opacity: 0.8;
   }
 
-  .journals-title {
+  .tapes-title {
     font-size: 4rem;
   }
 
-  .journals-main {
+  .tapes-main {
     min-height: 180vh;
     padding: 2rem 1rem;
     display: flex;
@@ -569,7 +565,7 @@ body.journals {
     opacity: 0.7;
   }
 
-  .journals-nav {
+  .tapes-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -579,7 +575,7 @@ body.journals {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   }
 
-  .journals-nav label {
+  .tapes-nav label {
     font-size: 1.7rem;
     margin-bottom: 0.6rem;
     letter-spacing: 1px;
@@ -598,7 +594,7 @@ body.journals {
     transition: all 0.3s ease;
   }
 
-  .journals-ghost {
+  .tapes-ghost {
     position: absolute;
     top: 24rem;
     left: 1rem;
@@ -609,7 +605,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-cd {
+  .tapes-cd {
     position: absolute;
     top: 8.5rem;
     left: 18rem;
@@ -620,7 +616,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-lego {
+  .tapes-lego {
     position: absolute;
     top: 75rem;
     left: 13rem;
@@ -631,7 +627,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-butterfly {
+  .tapes-butterfly {
     position: absolute;
     top: 47.7rem;
     left: 18rem;
@@ -643,7 +639,7 @@ body.journals {
   }
 
 
-  .journals-hand {
+  .tapes-hand {
     position: absolute;
     top: 102rem;
     width: 19rem;
@@ -653,7 +649,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-footer {
+  .tapes-footer {
     display: flex;
     justify-content: flex-end;
     margin-left: 10px;
@@ -668,7 +664,7 @@ body.journals {
 
 /* small laptops*/
 @media (min-width: 1280px) {
-  .journals-header {
+  .tapes-header {
     margin: unset;
     margin-left: 1.7rem ;
     flex-direction: row-reverse;
@@ -686,11 +682,11 @@ body.journals {
     margin: 2rem 0 0 1rem;
   }
 
-  .journals-title {
+  .tapes-title {
     font-size: 5rem;
   }
   
-  .journals-main {
+  .tapes-main {
     margin: unset;
     display: flex;
     flex-direction: row;
@@ -738,7 +734,7 @@ body.journals {
     padding-bottom: 23rem;
   }
 
-  .journals-nav {
+  .tapes-nav {
     padding: 1rem 0 0 0;
     display: flex;
     flex-direction: column;
@@ -749,7 +745,7 @@ body.journals {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   }
 
-  .journals-nav label {
+  .tapes-nav label {
     font-size: 1.5rem;
     margin: unset;
     letter-spacing: 1px;
@@ -775,7 +771,7 @@ body.journals {
     outline: none;
   }
 
-  .journals-lego {
+  .tapes-lego {
     position: absolute;
     top: 108rem;
     left: 67rem;
@@ -786,7 +782,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-butterfly {
+  .tapes-butterfly {
     position: absolute;
     bottom: 10rem;
     left: 0.2rem;
@@ -797,7 +793,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-cd {
+  .tapes-cd {
     position: absolute;
     top: 9rem;
     left: 0.2rem;
@@ -808,7 +804,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-hand {
+  .tapes-hand {
     position: absolute;
     top: 108rem;
     left: 3rem;
@@ -819,7 +815,7 @@ body.journals {
     pointer-events: none;
   }
 
-  .journals-ghost {
+  .tapes-ghost {
     position: absolute;
     top: 2rem;
     right: 0.1rem;
@@ -888,19 +884,19 @@ body.journals {
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   }
 s
-  /* journals page */
+  /* tapes page */
   
-  .journals-header {
+  .tapes-header {
     margin: 0rem 0 0 5rem;
     height: 18rem;
   }
 
-  .journals-title {
+  .tapes-title {
     font-size: 6rem;
     margin: 3rem 0 0 36rem;
   }
 
-  .journals-planet {
+  .tapes-planet {
     width: 140px;
     height: 140px;
     opacity: 0.8;
@@ -909,7 +905,7 @@ s
     left: 37.5rem;
   }
 
-  .journals-ghost {
+  .tapes-ghost {
     position: absolute;
     top: 8rem;
     left: 18rem;
@@ -920,7 +916,7 @@ s
     pointer-events: none;
   }
 
-  .journals-main {
+  .tapes-main {
     gap: unset;
     margin: unset;
     margin-top: 0;
@@ -1003,7 +999,7 @@ s
     font-size: 2.5rem;
   }
 
-  .journals-nav {
+  .tapes-nav {
     margin: 0rem 0 0 24rem;
     height: 30rem;
     width: 32rem;
@@ -1016,7 +1012,7 @@ s
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   }
 
-  .journals-nav label {
+  .tapes-nav label {
     font-size: 1.8rem;
     margin: unset;
     letter-spacing: 1px;
@@ -1041,7 +1037,7 @@ s
     outline: none;
   }
 
-  .journals-lego {
+  .tapes-lego {
     position: absolute;
     top: 86rem;
     left: 46rem;
@@ -1052,7 +1048,7 @@ s
     pointer-events: none;
   }
 
-  .journals-butterfly {
+  .tapes-butterfly {
     position: absolute;
     top: 60rem;
     left: 49rem;
@@ -1063,7 +1059,7 @@ s
     pointer-events: none;
   }
 
-  .journals-hand {
+  .tapes-hand {
     position: absolute;
     top: 115rem;
     left: 3.5rem;
@@ -1074,7 +1070,7 @@ s
     pointer-events: none;
   }
 
-  .journals-atom {
+  .tapes-atom {
     position: absolute;
     top: 30rem;
     left: 1rem;
@@ -1085,7 +1081,7 @@ s
     pointer-events: none;
   }
 
-  .journals-wire {
+  .tapes-wire {
     position: absolute;
     top: 91rem;
     width: 8rem;
@@ -1096,7 +1092,7 @@ s
     transform: scaleX(-1);
   }
 
-  .journals-footer {
+  .tapes-footer {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
