@@ -17,16 +17,16 @@
       
         // Store where they came from
         if (from) {
-          localStorage.setItem("cameFromJournal", from);
+          localStorage.setItem("cameFromTape", from);
         }
 
         function reopenJournal() {
-          const prev = localStorage.getItem("cameFromJournal");
+          const prev = localStorage.getItem("cameFromTape");
             if (prev) {
               window.location.href = `${prev}.html`;
             } else {
             // fallback if somehow no data
-            window.location.href = "journals.html";
+            window.location.href = "tapes.html";
             }
         }
     </script>
