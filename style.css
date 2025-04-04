@@ -444,7 +444,7 @@ body.tapes {
 
 /* closed journal  */
 
-.closed-journal {
+.closed-tape {
   background-image: url(images/closed.png);
   background-size: cover;
   background-position: center;
