@@ -318,6 +318,10 @@ body.journals {
   left: 17.5rem;
 }
 
+.journals-wire, .journals-atom {
+  display: hidden;
+}
+
 /* journal entry */
 
 .entry {
