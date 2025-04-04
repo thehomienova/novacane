@@ -481,8 +481,11 @@ body.tapes {
 }
 
 
-/* big iphones  */
-@media (min-width: 430px) {
+
+
+/* tiny-ass screens */
+@media (max-width: 375px) {
+
   body.tapes {
     background-image: url(images/tvs.jpg);
     background-size: cover;
@@ -491,23 +494,24 @@ body.tapes {
     background-color: #000;
     color: var(--ghost-white);
     font-family: 'Inter', sans-serif;
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     min-height: 200vh;
     overflow-y: scroll;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
-
-  /* Hide scrollbar across browsers */
+  
   body.tapes::-webkit-scrollbar {
     display: none;
   }
-
+  
   body.tapes {
-    -ms-overflow-style: none;  /* Edge & IE */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;    
   }
-
+  
   .tapes-header {
     color: var(--ghost-white);
     font-weight: 700;
@@ -516,314 +520,414 @@ body.tapes {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin: 40px 0 0 100px;
-    font-size: 1.7rem;
+    margin: 100px 0 0 85px;
   }
-
-
-  .now-playing {
-    font-size: 1rem;
-    color: var(--electric-lavender);
-    font-style: italic;
-    opacity: 0.8;
-  }
-
+  
   .tapes-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display';
   }
-
+  
   .tapes-main {
     min-height: 180vh;
+    width: 100%;
+    max-width: 100%;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-    font-family: 'Inter', sans-serif;
     align-items: center;
+    font-family: 'Inter', sans-serif;
     margin-top: 15%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Inter';
   }
-
-  .article-header {
+  
+  .article-one {
+    margin: 7rem 5rem 0 0;
+    max-width: 70%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.7;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
     color: #dcb8ff;
+    text-decoration: none;
   }
-
-  .article-one {
-    margin: 19rem 5rem 0 0;
-    max-width: 70%;
-    width: 100%;
-    font-size: 1.4rem;
-    font-weight: 700;
-    opacity: 0.7;
-  }
-
+  
   .article-two {
-    margin: 17rem 4rem 0 0;
+    margin: 16rem 4rem 0 0;
     max-width: 70%;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     opacity: 0.7;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: #dcb8ff;
+    text-decoration: none;
   }
-
+  
+  .article-three, .article-four {
+    visibility: hidden;
+  }
+  
   .tapes-nav {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 12rem;
+    margin-bottom: 10.5rem;
+    margin-right: 6rem;
     font-family: 'Syne', sans-serif;
     color: var(--electric-lavender);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    width: 85%;
   }
-
+  
   .tapes-nav label {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin-bottom: 0.6rem;
+    padding-left: 15px;
     letter-spacing: 1px;
   }
-
-  #journal-select {
+  
+  #tape-select {
     background-color: black;
     color: var(--ghost-white);
     border: 1px solid var(--electric-lavender);
-    padding: 0.6rem 1rem;
-    margin-right: 7.5rem;
+    padding: 0.6rem 0.1rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.7rem;
     border-radius: 4px;
     box-shadow: 0 0 10px var(--electric-lavender);
     transition: all 0.3s ease;
+    width: 85%;
   }
-
+  
   .tapes-ghost {
-    position: absolute;
-    top: 24rem;
-    left: 1rem;
-    width: 4rem;
-    height: 4rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px; 
+    background-image: url('images/ghost.png');
+    position: relative;
+    top: 8rem;
+    left: 20rem;
   }
-
-  .tapes-cd {
-    position: absolute;
-    top: 8.5rem;
-    left: 18rem;
-    width: 9rem;
-    height: 9rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
+  
   .tapes-lego {
     position: absolute;
-    top: 75rem;
+    top: 62.5rem;
     left: 13rem;
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
-  }
-
-  .tapes-butterfly {
-    position: absolute;
-    top: 47.7rem;
-    left: 18rem;
-    width: 9rem;
-    height: 9rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-
-  .tapes-hand {
-    position: absolute;
-    top: 102rem;
-    width: 19rem;
-    height: 17rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .tapes-footer {
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 10px;
-    font-size: 0.45rem;
-    opacity: 0.7;
-  }
-
-  .article-three, .article-four {
-  visibility: hidden;
-  }
-}
-
-/* small laptops*/
-@media (min-width: 1280px) {
-  .tapes-header {
-    margin: unset;
-    margin-left: 1.7rem ;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 25rem;
-    margin-bottom: 20rem;
-  }
-
-  .now-playing {
-    font-size: 1.2rem;
-    color: var(--electric-lavender);
-    font-style: italic;
-    opacity: 0.6;
-    width: 8rem;
-    margin: 2rem 0 0 1rem;
-  }
-
-  .tapes-title {
-    font-size: 5rem;
   }
   
-  .tapes-main {
-    margin: unset;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5rem;
-    margin-left: 22rem;
-  }
-
-  .article-one, .article-two, 
-  .article-three, .article-four {
-    margin: unset;
-    color: var(--ghost-white);
-    opacity: 0.7;
-    text-shadow: 0 0 10px black;
-  }
-
-  .article-one {
-    width: 20rem;
-    padding-bottom: 16rem;
-    font-size: 1.7rem;
-  }
-
-  .article-two {
-    width: 15rem;
-    padding-bottom: 20rem;
-    font-size: 1.7rem;
-  }
-
-  .article-three,
-  .article-four {
-    visibility: visible;
-  }
-
-  
-  .article-three {
-    width: 20rem;
-    font-size: 1.9rem;
-    padding-bottom: 18rem;
-
-  }
-
-  .article-four {
-    width: 14rem;
-    font-size: 1.6rem;
-    padding-bottom: 23rem;
-  }
-
-  .tapes-nav {
-    padding: 1rem 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    font-family: 'Syne', sans-serif;
-    color: var(--electric-lavender);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-  }
-
-  .tapes-nav label {
-    font-size: 1.5rem;
-    margin: unset;
-    letter-spacing: 1px;
-  }
-
-  #journal-select {
-    background-color: black;
-    color: var(--ghost-white);
-    border: 1px solid var(--electric-lavender);
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    border-radius: 4px;
-    box-shadow: 0 0 10px var(--electric-lavender);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-  }
-
-  #journal-select:hover,
-  #journal-select:focus {
-    background-color: var(--electric-lavender);
-    color: black;
-    outline: none;
-  }
-
-  .tapes-lego {
-    position: absolute;
-    top: 108rem;
-    left: 67rem;
-    width: 15rem;
-    height: 15rem;
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
   .tapes-butterfly {
     position: absolute;
-    bottom: 10rem;
-    left: 0.2rem;
-    width: 9rem;
-    height: 9rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .tapes-cd {
-    position: absolute;
-    top: 9rem;
-    left: 0.2rem;
+    top: 44rem;
+    left: 16rem;
     width: 7rem;
     height: 7rem;      
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
   }
-
+  
   .tapes-hand {
     position: absolute;
-    top: 108rem;
-    left: 3rem;
-    width: 20rem;
-    height: 19rem;      
+    top: 80rem;
+    width: 18rem;
+    height: 15rem;      
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
   }
-
-  .tapes-ghost {
+  
+  .tapes-planet {
     position: absolute;
-    top: 2rem;
-    right: 0.1rem;
-    width: 4rem;
-    height: 4rem;      
+    top: 4rem;
+    left: 6.5rem;
+    width: 5rem;
+    height: 5rem;      
     opacity: 0.8;
     z-index: 10;
     pointer-events: none;
+  }
+  
+  .tapes-footer {
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0.7;
+    width: 6rem;
+    position: relative;
+    bottom: 1rem;
+    left: 17rem;
+  }
+
+  .entry {
+    background-image: url(images/phone.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: var(--ghost-white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-shadow: 0 0 10px var(--soft-glow);
+  }
+
+  .entry-main {
+    position: relative;
+    bottom: 12.3rem;
+    left: 3rem;
+    width: 75%;
+    height: 220px;
+    overflow-y: auto;
+    padding: 5px 5px;
+    font-size: 0.9rem;
+    color: var(--ghost-white);
+  }
+
+  .entry-title {
+    font-family: 'Playfair Display';
+  }
+
+  .entry-body {
+    font-family: 'Inter';
+  }
+
+  .now-playing {
+    opacity: 0.85;
+  }
+
+  .entry-back-btn {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    top: 345px; 
+    left: 250px;
+  }
+
+  .entry-home-btn {
+    width: 55px;
+    height: 40px;
+    position: absolute;
+    top: 345px;
+    left: 70px;
+  }
+
+  .entry-call-btn {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 400px;
+    left: 65px;
+  }
+
+  .entry-closed-btn {
+    width: 55px;
+    height: 40px;
+    position: absolute;
+    top: 400px;
+    left: 250px;
+  }
+
+  .scrollUp {
+    width: 40px;
+    height: 30px;
+    opacity: 0;
+    position: absolute;
+    top: 340px;
+    left: 167px;
+    border-radius: 50px;
+  }
+
+  .scrollDown {
+    width: 40px;
+    height: 30px;
+    opacity: 0;
+    position: absolute;
+    top: 420px;
+    left: 167px;
+    border-radius: 50px;
+  }
+
+  .next-entry {
+    width: 32px;
+    height: 37px;
+    position: absolute;
+    top: 370px;
+    left: 210px;
+    border-radius: 50px;
+  }
+
+  .previous-entry {
+    width: 32px;
+    height: 37px;
+    position: absolute;
+    top: 370px;
+    left: 130px;
+    border-radius: 50px;
+  }
+
+  .playpause {
+    width: 36px;
+    height: 33px;
+    position: absolute;
+    top: 375px;
+    left: 167px;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+  }
+
+  /* closed phone  */
+
+  .closed-tape {
+    background-image: url(images/closed.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: var(--ghost-white);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    width: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 0 0 10px var(--soft-glow);
+  }
+
+  .blond {
+    width: 194px;
+    height: 141px;
+    position: relative;
+    bottom: 90px;
+    left: 84px;
+    border-radius: 8px;
+    opacity: 0.7;
+  }
+
+  .reopen-btn {
+    opacity: 0;
+    position: relative;
+    left: 85px;
+    bottom: 15px;
+    width: 70px;
+    height: 60px;
+  }
+
+}
+
+
+
+
+
+/* === TABLET (768px to 1024px) === */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tapes-header {
+    width: 80%;
+    margin-left: 9rem;
+  }
+
+  .tapes-title {
+    font-size: 6rem;
+  }
+
+  .tapes-ghost {
+    width: 3rem;
+    height: 5rem;
+    position: absolute;
+    top: 15rem;
+    left: 3rem;
+  }
+
+  .tapes-main {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .article-one,
+  .article-two {
+    width: 80%;
+    font-size: 1.4rem;
+  }
+
+  .tapes-nav label {
+    font-size: 1.4rem;
+  }
+
+  #journal-select {
+    font-size: 1rem;
+  }
+
+}
+
+
+
+
+
+/* === DESKTOP (1025px and up) === */
+@media (min-width: 1025px) {
+  .tapes-header {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 25rem;
+    margin: 0 1.7rem 20rem;
+  }
+
+  .tapes-title {
+    font-size: 5rem;
+  }
+
+  .tapes-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 22rem;
+    gap: 5rem;
+  }
+
+  .article-one, .article-two, .article-three, .article-four {
+    width: 20rem;
+    font-size: 1.7rem;
+    padding-bottom: 15rem;
+    visibility: visible;
+    color: var(--ghost-white);
+    opacity: 0.7;
+    text-shadow: 0 0 10px black;
+  }
+
+  .tapes-nav {
+    padding: 1rem 0;
+    align-items: flex-start;
+  }
+
+  .tapes-nav label {
+    font-size: 1.5rem;
+  }
+
+  #journal-select {
+    font-size: 1.5rem;
   }
 }
 
