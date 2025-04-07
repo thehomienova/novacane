@@ -544,10 +544,10 @@ body.who {
   min-height: 100vh;
   -webkit-mask-image: 
   linear-gradient(to top, black 95%, transparent 97%) 
-  linear-gradient(to bottom, black 50%, transparent 90%);
+  linear-gradient(to bottom, black 70%, transparent 90%);
   mask-image: 
   linear-gradient(to top, black 95%, transparent 97%)
-  linear-gradient(to bottom, black 50%, transparent 90%);
+  linear-gradient(to bottom, black 70%, transparent 90%);
 }
 
 .who-quote-two {
@@ -638,8 +638,28 @@ body.who {
   width: 10rem;
   height: 10rem;
   opacity: 0.7;
-  
+  margin-left: 15%;
 }
+
+.who-tap-hint {
+  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--electric-lavender);
+  text-align: center;
+  margin-top: 0.5rem;
+  animation: pulse 1.5s infinite;
+  position: relative;
+  top: 4%;
+  right: 25%;
+
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+
 
 
 /* tiny medium phones */
@@ -1461,7 +1481,7 @@ body.who {
 
   .entry-main {
     position: relative;
-    top: 2.7rem;
+    top: -2rem;
     left: 0rem;
     width: 40%;
     height: 28rem;
@@ -1484,8 +1504,8 @@ body.who {
 
   .entry-back-btn {
     position: absolute; 
-    top: 41.125rem; 
-    left: 64.1875rem;
+    top: 36.7rem; 
+    left: 64.1rem;
     width: 2.375rem;
     height: 1.5625rem;
     background-image: url(images/shooting-star.png);
@@ -1515,7 +1535,7 @@ body.who {
 
   .entry-home-btn {
     position: relative;
-    top: 4.2rem;
+    top: -0.2rem;
     left: 260px;
     width: 48px;
     height: 23px;
@@ -1552,7 +1572,7 @@ body.who {
     width: 5.75rem;
     height: 6.4375rem;
     position: absolute;
-    top: 22.8rem;
+    top: 18.5rem;
     left: 59.875rem;
     cursor: pointer;
     z-index: 999;
@@ -1575,7 +1595,7 @@ body.who {
     height: 1rem;
     position: absolute;
     border-radius: 0;
-    top: 32.55rem;
+    top: 28.2rem;
     left: 60.8125rem;
     display: flex;
     align-items: center;
@@ -1615,7 +1635,7 @@ body.who {
     width: 1.5rem;
     height: 0.9375rem;
     border-radius: 0;
-    top: 32.55rem;
+    top: 28.2rem;
     left: 58.9375rem;
     display: flex;
     align-items: center;
@@ -1646,5 +1666,101 @@ body.who {
   .previous-entry:hover::after {
     border: 2px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 0 10px var(--electric-lavender);
+  }
+  
+  #who-start-btn {
+    width: 20rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+  
+  #who-start-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .who-tap-hint {
+    font-size: 1rem;
+    top: 7%;
+    right: 12%;
+  }
+  
+  .who-intro {
+    min-height: 120vh;
+  }
+  
+  .who-nova {
+    font-size: 3rem;
+    padding: 16rem 0 0 7rem;
+  }
+  
+  .who-jason {
+    font-size: 3rem;
+    padding: 0 0 0 3rem;
+  }
+  
+  .who-quote-one {
+    min-height: 100vh;
+    font-size: 3rem;
+    width: 100%;
+  }
+  
+  .who-quote-one p {
+    margin: 9rem 0 0 15rem;
+  }
+  
+  .who-falling {
+    background-image: url(images/falling.png);
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    min-height: 150vh;
+  }
+  
+  .who-quote-two {
+    min-height: 80vh;
+    font-size: 3rem;
+  }
+  
+  .who-quote-two p {
+    margin: 10rem 0 0 15rem;
+  }
+  
+  .who-girl {
+    background-size: 100% 90%;
+    min-height: 150vh;
+  }
+  
+  .who-quote-three {
+    min-height: 80vh;
+    font-size: 6rem;
+    width: 100%;
+  }
+  
+  .who-quote-three p {
+    margin: 4rem 0 0 3.5rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .who-city {
+    background-image: url(images/city2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 120vh;
+  }
+  
+  .who-follow {
+    color: var(--ghost-white);
+    font-size: 1.5rem;
+    width: 13rem;
+    left: 39rem;
+    top: 49rem;
+    opacity: 0.6;
+   
+  }
+
+  .who-follow:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
   }
 }
