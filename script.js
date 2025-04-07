@@ -70,6 +70,7 @@ function playSong () {
   console.log("🔘 Button clicked");
   if (whoSong.paused) {
     whoSong.currentTime = 8;
+    whoSong.volume = 0.5;
     whoSong.play().then(() => {
       console.log("🎶 who.mp3 playing");
     }).catch(err => {
