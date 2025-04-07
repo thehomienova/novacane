@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>journal – novacane</title>
-  <link rel="stylesheet" href="style.css?v=81">
+  <link rel="stylesheet" href="style.css?v=83">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap" rel="stylesheet">
 </head>
 
@@ -53,6 +53,24 @@
     built in the dark <br> by thehomienova
   </footer>
 
+  <script>
+    document.body.setAttribute('data-width', window.innerHeight);
+  </script>
+  
+  <style>
+    body::after {
+      content: attr(data-width) 'px';
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      background: black;
+      color: lime;
+      padding: 4px 8px;
+      font-family: monospace;
+      font-size: 1rem;
+      z-index: 9999;
+    }
+  </style>
   <script src="script.js"></script>
 </body>
 </html>
