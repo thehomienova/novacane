@@ -191,7 +191,7 @@ body.tapes {
 }
 
 .article-one {
-  margin: 15% 30% 0 0;
+  margin: 25% 30% 0 0;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
@@ -205,7 +205,7 @@ body.tapes {
 }
 
  .article-two {
-  margin: 60% 25% 0 0;
+  margin: 85% 25% 0 0;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
@@ -621,6 +621,7 @@ body.who {
   height: 100%;
   background: black;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', sans-serif;
@@ -635,23 +636,23 @@ body.who {
   border: none;
   background-color: black;
   background-repeat: no-repeat;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 13rem;
   opacity: 0.7;
-  margin-left: 15%;
+  margin-left: 5%;
+
 }
 
 .who-tap-hint {
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   color: var(--electric-lavender);
   text-align: center;
   margin-top: 0.5rem;
   animation: pulse 1.5s infinite;
-  position: relative;
-  top: 4%;
-  right: 25%;
-
+  width: 35rem;
+  margin-top: -3%;
+  margin-left: 5%;
 }
 
 @keyframes pulse {
@@ -662,7 +663,7 @@ body.who {
 
 
 
-/* tiny medium phones */
+/* iphone 13 */
 @media (min-width: 376px) and (max-width: 399px) {
   
   .home-ghost {
@@ -717,93 +718,77 @@ body.who {
   }
 
   .entry {
-    min-height: 85vh;
+    min-height: 68vh;
     background-color: #1a1033;
   }
 
   .entry-main {
-    bottom: 52%;
-    left: 11%;
-    width: 75%;
-    height: 14.8rem;
+    bottom: 55%;
+    left: 13%;
+    width: 72%;
+    height: 13.3rem;
   }
 
   .entry-back-btn {
     width: 3.5rem;
     height: 2.5rem;
-    top: 56%; 
-    left: 67%;
+    top: 51.5%; 
+    left: 65%;
   }
 
   .entry-home-btn {
     width: 3.4375rem;
     height: 2.5rem;
-    top: 56%;
-    left: 16%;
+    top: 51.5%;
+    left: 18%;
   }
   
   .entry-call-btn {
-    top: 65%;
-    left: 16%;
+    top: 60%;
+    left: 18%;
   }
 
   .entry-closed-btn {
-    left: 68%;
-    top: 65%;
+    left: 66%;
+    top: 59.5%;
   }
 
   .scrollUp {
-    top: 55%;   
-    left: 45%;
+    top: 50%;   
+    left: 44%;
   }
 
   .scrollDown {
-    top: 68%;   
+    top: 63%;   
     left: 43.5%;
   }
 
   .next-entry {
-    top: 61%;
+    top: 55.7%;
     left: 56%;
   }
 
   .previous-entry {
-    top: 61%;
+    top: 55.5%;
     left: 34%;
   }
 
   .playpause {
     width: 2.7rem;
     height: 2.8rem;
-    top: 60.5%;
+    top: 55.5%;
     left: 43.5%;
   }
 
   .closed-tape {
-    background-image: url(images/closed.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-    color: var(--ghost-white);
-    font-family: 'Inter', sans-serif;
-    height: 86vh;
-    width: 55vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-shadow: 0 0 10px var(--soft-glow);
+    height: 88vh;
   }
 
   .blond {
-    width: 80%;
-    height: 22%;
-    position: relative;
-    bottom: 13%;
+    width: 89%;
+    height: 21.5%;
+    bottom: 13.5%;
     left: 87px;
-    border-radius: 8px;
-    opacity: 0.7;
   }
 
   .reopen-btn {
@@ -814,21 +799,31 @@ body.who {
     width: 70px;
     height: 60px;
   }
+
+  .who-follow {
+    left: 5.7rem;
+    top: 28.2rem;
+  }
 }
 
-/* medium phones */
-@media (min-width: 400px) and (max-width: 429px) {
+/* iphone 12 mini */
+@media (max-width: 376px) and (min-height: 627px) {
   
+  .home-ghost {
+    top: 20%;
+    left: 19rem;
+    opacity: 0.6;
+  }
   .article-one {
-    margin: 10rem 5rem 0 0;
+    margin: 7rem 5rem 0 0;
     max-width: 70%;
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
   
   .article-two {
-    margin: 20rem 4rem 0 0;
+    margin: 18rem 4rem 0 0;
     max-width: 70%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .article-three, .article-four {
@@ -836,7 +831,126 @@ body.who {
   }
   
   .tapes-nav {
-    margin-bottom: 10.5rem;
+    margin-bottom: 13rem;
+    margin-right: 6rem;
+    width: 90%;
+  }
+  
+  #tape-select {
+    margin-left: 7.3rem;
+  }
+  
+  .tapes-lego {
+    top: 168%;
+  }
+  
+  .tapes-butterfly {
+    top: 115%;
+  }
+  
+  .tapes-hand {
+    top: 215%;     
+  }
+  
+  .tapes-planet {
+    left: 7rem;
+  }
+  
+  .tapes-footer {
+    left: 17rem;
+  }
+
+  .entry {
+    min-height: 67vh;
+    background-color: #1a1033;
+  }
+
+  .entry-main {
+    bottom: 56%;
+    left: 15%;
+    width: 70%;
+    height: 12.7rem;
+  }
+
+  .entry-back-btn {
+    width: 3.5rem;
+    height: 2.5rem;
+    top: 52%; 
+  }
+
+  .entry-home-btn {
+    width: 3.4375rem;
+    height: 2.5rem;
+    top: 52%;
+    left: 18%;
+  }
+  
+  .entry-call-btn {
+    top: 60%;
+    left: 18%;
+  }
+
+  .entry-closed-btn {
+    left: 66%;
+    top: 60%;
+  }
+
+  .scrollUp {
+    top: 50%;   
+    left: 44%;
+  }
+
+  .scrollDown {
+    top: 63%;   
+    left: 43.5%;
+  }
+
+  .next-entry {
+    top: 56%;
+    left: 56%;
+  }
+
+  .previous-entry {
+    top: 56%;
+    left: 34%;
+  }
+
+  .playpause {
+    width: 2.7rem;
+    height: 2.8rem;
+    top: 55.5%;
+    left: 43.3%;
+  }
+
+  .blond {
+    width: 100%;
+    height: 21.5%;
+    bottom: 13.5%;
+    left: 83px;
+  }
+}
+
+/* iphone 14 plus */
+@media (min-width: 400px) and (max-width: 429px) {
+  
+  .article-one {
+    margin: 10rem 5rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
+  }
+  
+  .article-two {
+    margin: 19rem 4rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
+  }
+  
+  .article-three, .article-four {
+    visibility: hidden;
+  }
+  
+  .tapes-nav {
+    margin-bottom: 12.5rem;
     margin-right: 6rem;
     width: 90%;
   }
@@ -860,13 +974,13 @@ body.who {
     height: 70px;
     position: relative;
     top: 11.5rem;
-    left: 20rem;
+    left: 22.5rem;
   }
   
   .tapes-lego {
     position: absolute;
-    top: 82rem;
-    left: 13rem;
+    top: 76rem;
+    left: 15rem;
     width: 10rem;
     height: 10rem;
   }
@@ -874,14 +988,14 @@ body.who {
   .tapes-butterfly {
     position: absolute;
     top: 52rem;
-    left: 16rem;
+    left: 19rem;
     width: 7rem;
     height: 7rem;      
   }
   
   .tapes-hand {
     position: absolute;
-    top: 107rem;
+    top: 97rem;
     width: 18rem;
     height: 15rem;      
   }
@@ -889,7 +1003,7 @@ body.who {
   .tapes-planet {
     position: absolute;
     top: 4rem;
-    left: 7rem;
+    left: 8rem;
     width: 5rem;
     height: 5rem;      
     opacity: 0.8;
@@ -905,267 +1019,286 @@ body.who {
     width: 6rem;
     position: relative;
     bottom: 1rem;
-    left: 17rem;
+    left: 19rem;
   }
 
   .entry {
-    background-image: url(images/phone.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-    color: var(--ghost-white);
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    text-shadow: 0 0 10px var(--soft-glow);
+    min-height: 71vh;
   }
 
   .entry-main {
-    position: relative;
-    bottom: 12.3rem;
-    left: 3rem;
-    width: 75%;
-    height: 220px;
-    overflow-y: auto;
-    padding: 5px 5px;
-    font-size: 0.9rem;
-    color: var(--ghost-white);
-  }
-
-  .entry-title {
-    font-family: 'Playfair Display';
-  }
-
-  .entry-body {
-    font-family: 'Inter';
-  }
-
-  .now-playing {
-    opacity: 0.85;
+    bottom: 18.7rem;
+    left: 3.3rem;
+    width: 72%;
+    height: 15rem;
   }
 
   .entry-back-btn {
-    width: 50px;
-    height: 40px;
-    position: absolute;
-    top: 345px; 
-    left: 250px;
+    width: 4rem;
+    height: 2.5rem;
+    top: 24rem; 
+    left: 17.7rem;
   }
 
   .entry-home-btn {
-    width: 55px;
-    height: 40px;
-    position: absolute;
-    top: 345px;
-    left: 70px;
+    width: 4rem;
+    height: 2.5rem;
+    top: 24rem;
+    left: 4.6rem;
   }
 
   .entry-call-btn {
-    width: 60px;
-    height: 40px;
-    position: absolute;
-    top: 400px;
-    left: 65px;
+    width: 4rem;
+    height: 2.9rem;
+    top: 27.6rem;
+    left: 4.6rem;
   }
 
   .entry-closed-btn {
-    width: 55px;
-    height: 40px;
-    position: absolute;
-    top: 400px;
-    left: 250px;
+    width: 4rem;
+    height: 3rem;
+    top: 27.5rem; 
+    left: 17.7rem;
   }
 
   .scrollUp {
-    width: 40px;
-    height: 30px;
-    opacity: 0;
-    position: absolute;
-    top: 340px;
-    left: 167px;
-    border-radius: 50px;
+    width: 3rem;
+    height: 2.5rem;
+    top: 23rem;
+    left: 11.7rem;
   }
 
   .scrollDown {
-    width: 40px;
-    height: 30px;
-    opacity: 0;
-    position: absolute;
-    top: 420px;
-    left: 167px;
-    border-radius: 50px;
+    width: 3rem;
+    height: 2.5rem;
+    top: 29rem;
+    left: 11.6rem;
   }
 
   .next-entry {
-    width: 32px;
-    height: 37px;
-    position: absolute;
-    top: 370px;
-    left: 210px;
-    border-radius: 50px;
+    width: 2rem;
+    height: 2.8rem;
+    top: 25.9rem;
+    left: 15rem;
   }
 
   .previous-entry {
-    width: 32px;
-    height: 37px;
-    position: absolute;
-    top: 370px;
-    left: 130px;
-    border-radius: 50px;
+    width: 2rem;
+    height: 2.8rem;
+    top: 25.9rem;
+    left: 9.3rem;
   }
 
   .playpause {
-    width: 36px;
-    height: 33px;
-    position: absolute;
-    top: 375px;
-    left: 167px;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    background-image: url(images/closed.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-    color: var(--ghost-white);
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    width: 55vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-shadow: 0 0 10px var(--soft-glow);
+    width: 2.8rem;
+    height: 2.rem;
+    top: 25.9rem;
+    left: 11.7rem;
   }
 
   .blond {
-    width: 194px;
-    height: 141px;
-    position: relative;
-    bottom: 90px;
-    left: 84px;
-    border-radius: 8px;
-    opacity: 0.7;
+    width: 15rem;
+    height: 11rem;
+    bottom: 6.8rem;
+    left: 6rem;
   }
 
   .reopen-btn {
-    opacity: 0;
-    position: relative;
-    left: 85px;
-    bottom: 15px;
-    width: 70px;
-    height: 60px;
+    left: 6rem;
+    bottom: 1rem;
+    width: 6rem;
+    height: 5rem;
   }
 }
 
-/* big phones */
-@media (min-width: 430px) and (max-width: 600px) {
-  .tapes-title {
-    font-size: 4.5rem;
-  }
-
+/* iphoen 16 pro max */
+@media (min-width: 430px) and (max-width: 599) {
+  
   .article-one {
-    font-size: 2.2rem;
-    margin-top: 12rem;
+    margin: 10rem 5rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
   }
-
+  
   .article-two {
-    font-size: 2rem;
-    margin-top: 20rem;
+    margin: 19rem 4rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
   }
-
+  
+  .article-three, .article-four {
+    visibility: hidden;
+  }
+  
   .tapes-nav {
-    margin-bottom: 15rem;
+    margin-bottom: 12.5rem;
+    margin-right: 6rem;
+    width: 90%;
   }
-
+  
+  .tapes-nav label {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    padding-left: 30px;
+    letter-spacing: 1px;
+  }
+  
+  #tape-select {
+    padding: 0.6rem 0.1rem;
+    margin-left: 7rem;
+    font-size: 0.7rem;
+    width: 70%;
+  }
+  
   .tapes-ghost {
     width: 40px;
     height: 70px;
-    position: relative;
-    top: 12rem;
-    left: 20rem;
+    top: 11.5rem;
+    left: 22.5rem;
   }
   
   .tapes-lego {
-    position: absolute;
-    top: 83rem;
-    left: 13.5rem;
-    width: 13rem;
-    height: 13rem;
+    top: 77.2rem;
+    left: 15rem;
+    width: 10rem;
+    height: 10rem;
   }
   
   .tapes-butterfly {
-    position: absolute;
-    top: 58rem;
-    left: 18.5rem;
-    width: 8rem;
-    height: 8rem;
+    top: 53rem;
+    left: 19rem;
+    width: 7rem;
+    height: 7rem;      
   }
   
   .tapes-hand {
-    position: absolute;
-    top: 108rem;
-    width: 19rem;
-    height: 15rem;
+    top: 99rem;
+    width: 18rem;
+    height: 15rem;      
   }
   
   .tapes-planet {
-    position: absolute;
-    top: 3.7rem;
-    left: 6.5rem;
-    width: 6rem;
-    height: 6rem;
+    top: 4rem;
+    left: 8rem;
+    width: 5rem;
+    height: 5rem;
   }
   
-}
-
-
-/* tablets  */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .tapes-header {
-    width: 80%;
-    margin-left: 9rem;
+  .tapes-footer {
+    bottom: 1rem;
+    left: 20rem;
   }
 
-  .tapes-title {
-    font-size: 6rem;
+  .entry {
+    min-height: 71vh;
   }
 
-  .tapes-ghost {
+  .entry-main {
+    bottom: 19rem;
+    left: 3.7rem;
+    width: 72%;
+    height: 15.5rem;
+  }
+
+  .entry-back-btn {
+    width: 4rem;
+    height: 2.8rem;
+    top: 24.3rem; 
+    left: 18rem;
+  }
+
+  .entry-home-btn {
+    width: 4.3rem;
+    height: 2.9rem;
+    top: 24.3rem;
+  }
+
+  .entry-call-btn {
+    width: 4rem;
+    height: 3.3rem;
+    top: 27.8rem;
+    left: 4.9rem;
+  }
+
+  .entry-closed-btn {
+    width: 4rem;
+    height: 3.3rem;
+    top: 27.8rem; 
+    left: 18rem;
+  }
+
+  .scrollUp {
     width: 3rem;
+    height: 2.4rem;
+    top: 23.2rem;
+    left: 12rem;
+  }
+
+  .scrollDown {
+    width: 3rem;
+    height: 2.4rem;
+    top: 29.5rem;
+    left: 12rem;
+  }
+
+  .next-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 26.2rem;
+    left: 15.3rem;
+  }
+
+  .previous-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 26.2rem;
+    left: 9.6rem;
+  }
+
+  .playpause {
+    width: 2.8rem;
+    height: 2.8rem;
+    top: 26.3rem;
+    left: 12.1rem;
+  }
+
+  .blond {
+    width: 15.2rem;
+    height: 11.2rem;
+    bottom: 7rem;
+    left: 6.1rem;
+  }
+
+  .reopen-btn {
+    left: 6.2rem;
+    bottom: 1rem;
+    width: 6rem;
     height: 5rem;
-    position: absolute;
-    top: 15rem;
-    left: 3rem;
   }
 
-  .tapes-main {
-    margin-top: 10%;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+  .who-nova {
+    padding-top: 17rem;
   }
 
-  .article-one,
-  .article-two {
-    width: 80%;
-    font-size: 1.4rem;
-  }
-
-  .tapes-nav label {
-    
+  .who-follow {
+    left: 6.2rem;
+    top: 33rem;
   }
 }
+
+
+
+
+/* small tablets  */
+@media (min-width: 600px) {
+ 
+}
+
+/* medium tablets  */
+@media (min-width: 768px) {
+ 
+}
+
 
 
 
