@@ -1289,13 +1289,266 @@ body.who {
 
 
 
-/* small tablets  */
-@media (min-width: 600px) {
+/* ipad mini */
+@media (min-width: 600px) and (max-width: 767px) {
+ 
+  .home {
+    min-height: 90vh;
+  }
+
+  .home-ghost {
+    width: 60px;
+    height: 90px;
+    bottom: 29rem;
+    left: 38rem;
+  }
+
+  .home-links {
+    top: 2rem;
+  }
+
+  /* tapes page */
+
+  .tapes-header {
+    margin: 100px 0 0 200px;
+  }
+
+  .tapes-title {
+    font-size: 6rem;
+  }
+
+  .tapes-main {
+    min-height: 150vh;
+  }
+
+  .article-one {
+    margin: 20% 30% 0 0;
+    max-width: 70%;
+    font-size: 2.3rem;
+    padding: 10px;
+  }
+
+  .article-two {
+    margin: 50% 25% 0 0;
+    max-width: 70%;
+    font-size: 2.4rem;
+  }
+
+  .tapes-nav {
+    margin-bottom: 8rem;
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  .tapes-nav label {
+    font-size: 2rem;
+  }
+
+  #tape-select {
+    margin-left: 6rem;
+    width: 78%;
+    font-size: 1.7rem;
+  }
+
+  .tapes-ghost {
+    width: 100px;
+    height: 140px;
+    top: 12rem;
+    left: 35rem;
+  }
+
+  .tapes-lego {
+    top: 141%;
+    left: 25rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-butterfly {
+    position: absolute;
+    top: 91%;
+    left: 58%;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-hand {
+    top: 183%;
+    width: 22rem;
+    height: 20rem;
+  }
+
+  .tapes-planet {
+    top: 2rem;
+    left: 16rem;
+    width: 8rem;
+    height: 9rem;
+  }
+
+  .tapes-footer {
+    font-size: 1rem;
+    width: 10rem;
+    bottom: -6.5rem;
+    left: 35rem;
+  }
+
+  /* entry */
+
+  .entry {
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .entry-main {
+    bottom: 26rem;
+    left: 8.4rem;
+    width: 65%;
+    height: 23rem;
+    font-size: 1.7rem;
+  }
+
+  .entry-back-btn {
+    width: 6rem;
+    height: 5rem;
+    top: 36.3rem;
+    left: 30rem;
+  }
+
+  .entry-home-btn {
+    width: 6rem;
+    height: 5rem;
+    top: 36.3rem;
+    left: 10rem;
+  }
+
+  .entry-call-btn {
+    width: 6rem;
+    height: 5rem;
+    top: 42rem;
+    left: 10rem;
+  }
+
+  .entry-closed-btn {
+    width: 6rem;
+    height: 5rem;
+    top: 42rem;
+    left: 30rem;
+  }
+
+  .scrollUp {
+    width: 4.8rem;
+    height: 3rem;
+    top: 35.7rem;
+    left: 20.6rem;
+  }
+
+  .scrollDown {
+    width: 4.8rem;
+    height: 3rem;
+    top: 44.5rem;
+    left: 20.6rem;
+  }
+
+  .next-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 39.4rem;
+    left: 26rem;
+  }
+
+  .previous-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 39.4rem;
+    left: 16.7rem;
+  }
+
+  .playpause {
+    width: 4.5rem;
+    height: 4.5rem;
+    top: 39.5rem;
+    left: 20.6rem;
+    border-radius: 50px;
+  }
+
+  /* closed phone  */
+
+  .blond {
+    width: 20.2rem;
+    height: 14.8rem;
+    bottom: 8.6rem;
+    left: 10.4rem;
+  }
+
+  .reopen-btn {
+    left: 10.5rem;
+    bottom: 15px;
+    width: 9rem;
+    height: 8rem;
+  }
+
+  /* who  */
+
+  .who-nova {
+    padding: 23rem 0 0 2.1rem;
+    font-size: 1.8rem;
+  }
+
+  .who-jason {
+    padding: 0 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .who-quote-one {
+    font-size: 2.5rem;
+  }
+
+  .who-quote-one p {
+    margin: 10rem 0 0 3rem;
+  }
+
+  .who-quote-two {
+    font-size: 2.5rem;
+  }
+
+  .who-quote-two p {
+    margin: 10rem 0 0 3rem;
+  }
+
+  .who-quote-three {
+    font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 67rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 6.6rem;
+    top: 51.5rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+}
+
+/* ipad air */
+@media (min-width: 768px) and (max-width: 1023) {
  
 }
 
-/* medium tablets  */
-@media (min-width: 768px) {
+/* ipad pro landscape */
+@media (min-width: 768px) and (max-width: 1279) {
  
 }
 
@@ -1303,9 +1556,8 @@ body.who {
 
 
 
-
-/* === DESKTOP (1025px and up) === */
-@media (min-width: 1025px) {
+/* small macs */
+@media (min-width: 1280px) and (max-width: 1439) {
   .tapes-header {
     flex-direction: row-reverse;
     justify-content: flex-end;
@@ -1348,8 +1600,8 @@ body.who {
   }
 }
 
-/* big laptops */
-@media (min-width: 1440px) {
+/* medium macs */
+@media (min-width: 1440px) and (max-width: 1679) {
   
   .home-links {
     display: flex;
@@ -1896,4 +2148,9 @@ body.who {
     transform: scale(1.1);
     opacity: 0.9;
   }
+}
+
+/* big monitors */
+@media (min-width: 1680px) {
+ 
 }
