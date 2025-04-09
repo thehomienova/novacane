@@ -1542,23 +1542,285 @@ body.who {
   }
 }
 
-/* ipad air */
-@media (min-width: 768px) and (max-width: 1023) {
+
+/* ipad 11in needs work */ 
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
  
-}
+  .home {
+    min-height: 90vh;
+  }
 
-/* ipad pro landscape */
-@media (min-width: 768px) and (max-width: 1279) {
- 
-}
+  .home-ghost {
+    width: 60px;
+    height: 90px;
+    bottom: 30rem;
+    left: 43rem;
+  }
+
+  .home-links {
+    top: 2.5rem;
+  }
+
+  .home-instagram {
+    width: 76px;
+    height: 76px;
+  }
+
+  .home-linkedin {
+    width: 73px;
+    height: 73px;
+  }
+
+  .home-spotify {
+    width: 75px;
+    height: 75px;
+  }
 
 
+  /* who  */
 
+  .who-nova {
+    padding: 24rem 0 0 2.1rem;
+    font-size: 2rem;
+  }
 
+  .who-jason {
+    font-size: 2rem;
+  }
 
-/* small macs */
-@media (min-width: 1280px) and (max-width: 1439) {
+  .who-quote-one {
+    font-size: 2.7rem;
+  }
+
+  .who-quote-one p {
+    margin: 14rem 0 0 3rem;
+  }
+
+  .who-falling {
+    width: 100%;
+  }
+
+  .who-quote-two {
+    font-size: 2.7rem;
+  }
+
+  .who-quote-two p {
+    margin: 35rem 0 0 3rem;
+  }
+
+  .who-quote-three {
+    font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 67rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 6.6rem;
+    top: 51.5rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+
+  /* tapes page */
+
   .tapes-header {
+    margin: 100px 0 0 200px;
+  } 
+
+  .tapes-title {
+    font-size: 6rem; 
+  }
+
+  .tapes-main {
+    min-height: 150vh;
+  }
+
+  .article-one {
+    margin: 15% 20% 0 0;
+    max-width: 70%;
+    font-size: 2.3rem;
+    padding: 10px;
+  }
+
+  .article-two {
+    margin: 45% 25% 0 0;
+    max-width: 70%;
+    font-size: 2.4rem;
+  }
+
+  .tapes-nav {
+    margin-bottom: 9.5rem;
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  .tapes-nav label {
+    font-size: 2rem;
+  }
+
+  #tape-select {
+    margin-left: 6rem;
+    width: 78%;
+    font-size: 1.7rem;
+  }
+
+  .tapes-ghost {
+    width: 100px;
+    height: 140px;
+    top: 12rem;
+    left: 37rem;
+  }
+
+  .tapes-lego {
+    top: 139.5%;
+    left: 30rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-butterfly {
+    top: 90%;
+    left: 58%;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-hand {
+    top: 183%;
+    width: 33rem;
+    height: 20rem;
+  }
+
+  .tapes-planet {
+    top: 2rem;
+    left: 18rem;
+    width: 8rem;
+    height: 9rem;
+  }
+
+  .tapes-footer {
+    font-size: 1.2rem;
+    width: 10rem;
+    bottom: -6.5rem;
+    left: 37rem;
+  }
+
+  /* entry */
+
+  .entry {
+    height: 90vh;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  .entry-main {
+    bottom: 25.5rem;
+    left: 9.5rem;
+    width: 60%;
+    height: 22.8rem;
+    font-size: 1.7rem;
+  }
+
+  .entry-back-btn {
+    width: 6.5rem;
+    height: 4.8rem;
+    top: 35.4rem;
+    left: 32.5rem;
+  }
+
+  .entry-home-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 35.5rem;
+    left: 11.5rem;
+  }
+
+  .entry-call-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 41rem;
+    left: 11.5rem;
+  }
+
+  .entry-closed-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 41rem;
+    left: 32.5rem;
+  }
+
+  .scrollUp {
+    width: 4.8rem;
+    height: 3rem;
+    top: 34.5rem;
+    left: 22.7rem;
+  }
+
+  .scrollDown {
+    width: 4.8rem;
+    height: 3rem;
+    top: 43.5rem;
+    left: 22.7rem;
+  }
+
+  .next-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 38.2rem;
+    left: 28.5rem;
+  }
+
+  .previous-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 38.2rem;
+    left: 18.7rem;
+  }
+
+  .playpause {
+    width: 4.9rem;
+    height: 4.7rem;
+    top: 38.3rem;
+    left: 22.7rem;
+    border-radius: 50px;
+  }
+
+  /* closed phone  */
+
+  .closed-tape {
+    overflow: hidden;
+  }
+  .blond {
+    width: 22.2rem;
+    height: 16.15rem;
+    bottom: 9.85rem;
+    left: 11.45rem;
+  }
+
+  .reopen-btn {
+    left: 11.5rem;
+    bottom: 15px;
+    width: 9rem;
+    height: 8rem;
+  }
+}
+
+/* ipad pro landscape  needs work*/
+@media (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+  tapes-header {
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 25rem;
@@ -1575,29 +1837,14 @@ body.who {
     margin-left: 22rem;
     gap: 5rem;
   }
+}
 
-  .article-one, .article-two, .article-three, .article-four {
-    width: 20rem;
-    font-size: 1.7rem;
-    padding-bottom: 15rem;
-    visibility: visible;
-    color: var(--ghost-white);
-    opacity: 0.7;
-    text-shadow: 0 0 10px black;
-  }
 
-  .tapes-nav {
-    padding: 1rem 0;
-    align-items: flex-start;
-  }
 
-  .tapes-nav label {
-    font-size: 1.5rem;
-  }
 
-  #journal-select {
-    font-size: 1.5rem;
-  }
+/* small macs needs work */
+@media (min-width: 1280px) and (max-width: 1439) {
+ 
 }
 
 /* medium macs */

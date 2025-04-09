@@ -54,7 +54,12 @@
   </footer>
 
   <script>
-    document.body.setAttribute('data-width', window.innerWidth);
+    function updateWidth() {
+      document.body.setAttribute('data-width', window.innerWidth);
+    }
+  
+    updateWidth(); // set it on load
+    window.addEventListener('resize', updateWidth); // update on resize/zoom
   </script>
   
   <style>
