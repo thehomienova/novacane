@@ -33,7 +33,7 @@
   text-shadow: 0 0 10px var(--soft-glow);
 }
 
-.container {
+.home-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
@@ -129,6 +129,180 @@
   background-image: url('images/spotify.png');
 }
 
+/* who  */
+
+body.who {
+  background-color: black; 
+  min-height: 300vh;
+}
+
+.who-intro {
+  background-image: url(images/tvfaces.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 105vh;
+  color: var(--electric-lavender);
+  font-family: 'Playfair Display', sans-serif;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
+}
+
+.who-nova {
+  padding: 15rem 0 0 2.1rem;
+  opacity: 0.7;text-shadow: 
+  0 0 5px var(--ghost-white), 
+  0 0 15px var(--electric-lavender);
+  font-family: 'Inter', sans-serif;
+}
+
+.who-jason {
+  padding: 0 0 0 1rem;
+  opacity: 0.7;text-shadow: 
+  0 0 5px var(--ghost-white), 
+  0 0 15px var(--electric-lavender);
+  font-family: 'Inter', sans-serif;
+}
+
+.who-quote-one {
+  min-height: 80vh;
+  color: var(--electric-lavender);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 1.3rem;
+  opacity: 0.7;
+  width: 85%;
+  text-shadow: 
+  0 0 5px var(--ghost-white), 
+  0 0 15px var(--electric-lavender);
+}
+
+.who-quote-one p {
+  margin: 9em 0 0 3rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.who-falling {
+  background-image: url(images/falling.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 100% 90%;
+  min-height: 100vh;
+  -webkit-mask-image: 
+  linear-gradient(to top, black 95%, transparent 97%) 
+  linear-gradient(to bottom, black 70%, transparent 90%);
+  mask-image: 
+  linear-gradient(to top, black 95%, transparent 97%)
+  linear-gradient(to bottom, black 70%, transparent 90%);
+}
+
+.who-quote-two {
+  min-height: 80vh;
+  color: var(--electric-lavender);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 1.3rem;
+  opacity: 0.7;
+  width: 85%;
+  text-shadow: 
+  0 0 5px var(--ghost-white), 
+  0 0 15px var(--electric-lavender);
+}
+
+.who-quote-two p {
+  margin: 10rem 0 0 2em;
+  font-family: 'Inter', sans-serif;
+}
+
+.who-girl {
+  background-image: url(images/tveyes.png);
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 100vh;
+}
+
+.who-quote-three {
+  min-height: 80vh;
+  color: var(--electric-lavender);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 2rem;
+  opacity: 0.7;
+  width: 85%;
+  text-shadow: 
+  0 0 5px var(--ghost-white), 
+  0 0 15px var(--electric-lavender);
+}
+
+.who-quote-three p {
+  margin: 4rem 0 0 3.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.who-city {
+  background-image: url(images/city.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 100vh;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 90%);
+  mask-image: linear-gradient(to top, black 80%, transparent 90%);
+}
+
+.who-follow {
+  color: var(--ghost-white);
+  font-size: 0.8rem;
+  width: 8rem;
+  text-decoration: none;
+  position: absolute;
+  left: 6rem;
+  top: 24rem;
+  text-shadow: 0 0 10px var(--electric-lavender);
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.who-start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#who-start-btn {
+  background-image: url(images/cd.png);
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  width: 16rem;
+  height: 13rem;
+  opacity: 0.7;
+  margin-left: 2%;
+}
+
+.who-tap-hint {
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--electric-lavender);
+  text-align: center;
+  margin-top: 0.5rem;
+  animation: pulse 1.5s infinite;
+  width: 35rem;
+  margin-top: -3%;
+  margin-left: 5%;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
 
 /* tapes page */
 
@@ -205,7 +379,7 @@ body.tapes {
 }
 
  .article-two {
-  margin: 85% 25% 0 0;
+  margin: 75% 25% 0 0;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
@@ -328,13 +502,14 @@ body.tapes {
 
 .entry {
   background-image: url(images/phone.png);
-  background-size: cover;
+  background-size: 100% 95%;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1a1033;
+  overflow: hidden;
   color: var(--ghost-white);
   font-family: 'Inter', sans-serif;
-  height: 60vh;
+  height: 68vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -348,7 +523,7 @@ body.tapes {
   bottom: 15.4rem;
   left: 4rem;
   width: 65%;
-  height: 11.5rem;
+  height: 11rem;
   overflow-y: auto;
   padding: 5px 5px;
   font-size: 0.9rem;
@@ -371,7 +546,7 @@ body.tapes {
   width: 3.4rem;
   height: 2.5rem;
   position: absolute;
-  top: 16.8rem; 
+  top: 18.5rem; 
   left: 14.8rem;
 }
 
@@ -379,7 +554,7 @@ body.tapes {
   width: 3.4375rem;
   height: 2.5rem;
   position: absolute;
-  top: 17rem;
+  top: 18.5rem;
   left: 5rem;
 }
 
@@ -387,7 +562,7 @@ body.tapes {
   width: 3.75rem;
   height: 2.5rem;
   position: absolute;
-  top: 19.8rem;
+  top: 21.3rem;
   left: 4.7rem;
 }
 
@@ -395,26 +570,26 @@ body.tapes {
   width: 3.4rem;
   height: 2.7rem;
   position: absolute;
-  top: 19.8rem;
+  top: 21.2rem;
   left: 14.8rem;
 }
 
 .scrollUp {
-  width: 2.5rem;
-  height: 2rem;
+  width: 2.7rem;
+  height: 1.7rem;
   opacity: 0;
   position: absolute;
-  top: 16.2rem;
-  left: 10.3rem;
+  top: 18.2rem;
+  left: 10.2rem;
   border-radius: 50px;
 }
 
 .scrollDown {
   width: 2.7rem;
-  height: 2rem;
+  height: 1.7rem;
   opacity: 0;
   position: absolute;
-  top: 21rem;
+  top: 22.6rem;
   left: 10.2rem;
   border-radius: 50px;
 }
@@ -423,8 +598,8 @@ body.tapes {
   width: 2.1875rem;
   height: 2.5rem;
   position: absolute;
-  top: 18.5rem;
-  left: 12.7rem;
+  top: 19.9rem;
+  left: 12.8rem;
   border-radius: 50px;
  }
 
@@ -432,16 +607,16 @@ body.tapes {
   width: 2.1875rem;
   height: 2.5rem;
   position: absolute;
-  top: 18.5rem;
+  top: 19.9rem;
   left: 8.2rem;
   border-radius: 50px;
  }
 
 .playpause {
-  width: 2.5rem;
-  height: 2.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
   position: absolute;
-  top: 18.3rem;
+  top: 20rem;
   left: 10.3rem;
   cursor: pointer;
   z-index: 999;
@@ -486,180 +661,6 @@ body.tapes {
   height: 60px;
 }
 
-/* who  */
-
-body.who {
-  background-color: black; 
-  min-height: 300vh;
-}
-
-.who-intro {
-  background-image: url(images/tvfaces.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 90%;
-  min-height: 105vh;
-  color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
-}
-
-.who-nova {
-  padding: 15rem 0 0 2.1rem;
-  opacity: 0.7;text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-  font-family: 'Inter', sans-serif;
-}
-
-.who-jason {
-  padding: 0 0 0 1rem;
-  opacity: 0.7;text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-  font-family: 'Inter', sans-serif;
-}
-
-.who-quote-one {
-  min-height: 80vh;
-  color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 1.3rem;
-  opacity: 0.7;
-  width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-}
-
-.who-quote-one p {
-  margin: 9em 0 0 3rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.who-falling {
-  background-image: url(images/falling.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 100vh;
-  -webkit-mask-image: 
-  linear-gradient(to top, black 95%, transparent 97%) 
-  linear-gradient(to bottom, black 70%, transparent 90%);
-  mask-image: 
-  linear-gradient(to top, black 95%, transparent 97%)
-  linear-gradient(to bottom, black 70%, transparent 90%);
-}
-
-.who-quote-two {
-  min-height: 80vh;
-  color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 1.3rem;
-  opacity: 0.7;
-  width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-}
-
-.who-quote-two p {
-  margin: 10rem 0 0 2em;
-  font-family: 'Inter', sans-serif;
-}
-
-.who-girl {
-  background-image: url(images/tveyes.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 100vh;
-}
-
-.who-quote-three {
-  min-height: 80vh;
-  color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 2rem;
-  opacity: 0.7;
-  width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-}
-
-.who-quote-three p {
-  margin: 4rem 0 0 3.5rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.who-city {
-  background-image: url(images/city.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
-  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 90%);
-  mask-image: linear-gradient(to top, black 80%, transparent 90%);
-}
-
-.who-follow {
-  color: var(--ghost-white);
-  font-size: 0.8rem;
-  width: 8rem;
-  text-decoration: none;
-  position: absolute;
-  left: 5.7rem;
-  top: 27.3rem;
-  text-shadow: 0 0 10px var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
-}
-
-.who-start {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Inter', sans-serif;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-#who-start-btn {
-  background-image: url(images/cd.png);
-  background-size: cover;
-  background-position: center;
-  border: none;
-  background-color: black;
-  background-repeat: no-repeat;
-  width: 15rem;
-  height: 13rem;
-  opacity: 0.7;
-  margin-left: 5%;
-
-}
-
-.who-tap-hint {
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  color: var(--electric-lavender);
-  text-align: center;
-  margin-top: 0.5rem;
-  animation: pulse 1.5s infinite;
-  width: 35rem;
-  margin-top: -3%;
-  margin-left: 5%;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
 
 
 
@@ -671,16 +672,17 @@ body.who {
     left: 19rem;
     opacity: 0.6;
   }
+
   .article-one {
     margin: 8rem 5rem 0 0;
     max-width: 70%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
   .article-two {
-    margin: 15rem 4rem 0 0;
+    margin: 19rem 4rem 0 0;
     max-width: 70%;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   
   .article-three, .article-four {
@@ -698,19 +700,23 @@ body.who {
   }
   
   .tapes-lego {
-    top: 148.5%;
+    top: 166.5%;
   }
   
   .tapes-butterfly {
-    top: 100%;
+    top: 112%;
   }
   
   .tapes-hand {
-    top: 190%;     
+    top: 210%;     
   }
   
   .tapes-planet {
     left: 7rem;
+  }
+
+  .tapes-ghost {
+    top: 10rem;
   }
   
   .tapes-footer {
@@ -718,14 +724,15 @@ body.who {
   }
 
   .entry {
-    min-height: 68vh;
+    min-height: 65vh;
+    background-size: 100% 100%;
     background-color: #1a1033;
   }
 
   .entry-main {
     bottom: 55%;
-    left: 13%;
-    width: 72%;
+    left: 18%;
+    width: 63%;
     height: 13.3rem;
   }
 
@@ -733,51 +740,56 @@ body.who {
     width: 3.5rem;
     height: 2.5rem;
     top: 51.5%; 
-    left: 65%;
+    left: 63%;
   }
 
   .entry-home-btn {
     width: 3.4375rem;
     height: 2.5rem;
     top: 51.5%;
-    left: 18%;
+    left: 21%;
   }
   
   .entry-call-btn {
     top: 60%;
-    left: 18%;
+    left: 21%;
+    width: 3.5rem;
   }
 
   .entry-closed-btn {
-    left: 66%;
+    left: 63%;
     top: 59.5%;
   }
 
   .scrollUp {
-    top: 50%;   
+    top: 50%;
     left: 44%;
+    height: 2rem;
   }
 
   .scrollDown {
-    top: 63%;   
+    top: 63%; 
+    height: 2rem;  
     left: 43.5%;
   }
 
   .next-entry {
     top: 55.7%;
-    left: 56%;
+    left: 55%;
+    width: 2rem;
   }
 
   .previous-entry {
     top: 55.5%;
-    left: 34%;
+    left: 35%;
+    width: 2rem;
   }
 
   .playpause {
     width: 2.7rem;
     height: 2.8rem;
-    top: 55.5%;
-    left: 43.5%;
+    top: 55.4%;
+    left: 43.6%;
   }
 
   .closed-tape {
@@ -806,9 +818,13 @@ body.who {
   }
 }
 
-/* iphone 12 mini */
+/* iphone 12 mini work */
 @media (max-width: 376px) and (min-height: 627px) {
   
+  .home-container {
+    font-size: 0.7rem;
+    margin-top: 3rem;
+  }
   .home-ghost {
     top: 20%;
     left: 19rem;
@@ -866,10 +882,10 @@ body.who {
   }
 
   .entry-main {
-    bottom: 56%;
+    bottom: 56.4%;
     left: 15%;
     width: 70%;
-    height: 12.7rem;
+    height: 13rem;
   }
 
   .entry-back-btn {
@@ -930,9 +946,14 @@ body.who {
   }
 }
 
-/* iphone 14 plus */
+/* iphone 14 plus work */
 @media (min-width: 400px) and (max-width: 429px) {
   
+  .home-container {
+    font-size: 0.7rem;
+    margin-top: 2rem;
+  }
+
   .article-one {
     margin: 10rem 5rem 0 0;
     max-width: 70%;
@@ -1096,6 +1117,10 @@ body.who {
     left: 11.7rem;
   }
 
+  .closed-tape {
+    overflow: hidden;
+  }
+
   .blond {
     width: 15rem;
     height: 11rem;
@@ -1111,8 +1136,13 @@ body.who {
   }
 }
 
-/* iphoen 16 pro max */
-@media (min-width: 430px) and (max-width: 599) {
+/* iphone 16 pro max work */
+@media (min-width: 430px) and (max-width: 599px) {
+
+  .home-container {
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
+  }
   
   .article-one {
     margin: 10rem 5rem 0 0;
@@ -1289,7 +1319,7 @@ body.who {
 
 
 
-/* ipad mini */
+/* ipad mini work */
 @media (min-width: 600px) and (max-width: 767px) {
  
   .home {
@@ -1542,12 +1572,15 @@ body.who {
   }
 }
 
-
-/* ipad 11in needs work */ 
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+/* ipad 11in work */ 
+@media (min-width: 768px) and (max-width: 1023px) {
  
   .home {
     min-height: 90vh;
+  }
+
+  .home-header {
+    font-size: rem;
   }
 
   .home-ghost {
@@ -1575,7 +1608,6 @@ body.who {
     width: 75px;
     height: 75px;
   }
-
 
   /* who  */
 
@@ -1808,6 +1840,7 @@ body.who {
     height: 16.15rem;
     bottom: 9.85rem;
     left: 11.45rem;
+    border-radius: 20px;
   }
 
   .reopen-btn {
@@ -1818,36 +1851,297 @@ body.who {
   }
 }
 
-/* ipad pro landscape  needs work*/
-@media (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
-  tapes-header {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 25rem;
-    margin: 0 1.7rem 20rem;
+/* ipad pro work */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  
+  .home {
+    min-height: 90vh;
   }
 
-  .tapes-title {
+  .home-container {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .home-ghost {
+    width: 90px;
+    height: 120px;
+    bottom: 37rem;
+    left: 55rem;
+  }
+
+  .home-links {
+    top: 2.5rem;
+  }
+
+  .home-instagram {
+    width: 84px;
+    height: 85px;
+  }
+
+  .home-linkedin {
+    width: 81px;
+    height: 81px;
+  }
+
+  .home-spotify {
+    width: 81px;
+    height: 81px;
+  }
+
+  /* who  */
+
+  .who-nova {
+    padding: 29rem 0 0 6rem;
+    font-size: 2rem;
+  }
+
+  .who-jason {
+    font-size: 2rem;
+    padding-left: 3.5rem;
+  }
+
+  .who-quote-one {
+    font-size: 3rem;
+  }
+
+  .who-quote-one p {
+    margin: 14rem 0 0 10rem;
+  }
+
+  .who-falling {
+    width: 100%;
+  }
+
+  .who-quote-two {
+    font-size: 3rem;
+  }
+
+  .who-quote-two p {
+    margin: 35rem 0 0 10rem;
+  }
+
+  .who-quote-three {
     font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 67rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 14rem;
+    top: 51.5rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+
+  /* tapes page */
+
+  .tapes-header {
+    margin: 100px 0 0 230px;
+  } 
+
+  .tapes-title {
+    font-size: 7rem; 
   }
 
   .tapes-main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 22rem;
-    gap: 5rem;
+    min-height: 150vh;
+  }
+
+  .article-one {
+    margin: 20% 20% 0 0;
+    max-width: 70%;
+    font-size: 2.7rem;
+    padding: 10px;
+  }
+
+  .article-two {
+    margin: 45% 25% 0 0;
+    max-width: 70%;
+    font-size: 2.8rem;
+  }
+
+  .tapes-nav {
+    margin-bottom: 11.5rem;
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  .tapes-nav label {
+    font-size: 2.9rem;
+  }
+
+  #tape-select {
+    margin-left: 6rem;
+    width: 78%;
+    font-size: 1.7rem;
+  }
+
+  .tapes-ghost {
+    width: 100px;
+    height: 150px;
+    top: 16.5rem;
+    left: 46rem;
+  }
+
+  .tapes-lego {
+    top: 140%;
+    left: 35rem;
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .tapes-butterfly {
+    top: 90%;
+    left: 58%;
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .tapes-hand {
+    top: 178%;
+    width: 40rem;
+    height: 24rem;
+  }
+
+  .tapes-planet {
+    top: 1.5rem;
+    left: 23rem;
+    width: 10rem;
+    height: 11rem;
+  }
+
+  .tapes-footer {
+    font-size: 1.2rem;
+    width: 10rem;
+    bottom: -6.5rem;
+    left: 45rem;
+  }
+
+  /* entry */
+
+  .entry {
+    height: 88vh;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  .entry-main {
+    bottom: 29.5rem;
+    left: 12rem;
+    width: 60%;
+    height: 27rem;
+    font-size: 1.7rem;
+  }
+
+  .entry-back-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 42.2rem;
+    left: 41rem;
+  }
+
+  .entry-home-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 42.2rem;
+    left: 14.5rem;
+  }
+
+  .entry-call-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 48.6rem;
+    left: 14.5rem;
+  }
+
+  .entry-closed-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 48.6rem;
+    left: 41rem;
+  }
+
+  .scrollUp {
+    width: 6rem;
+    height: 3.5rem;
+    top: 41.1rem;
+    left: 28.5rem;
+  }
+
+  .scrollDown {
+    width: 6rem;
+    height: 3.5rem;
+    top: 51.6rem;
+    left: 28.5rem;
+  }
+
+  .next-entry {
+    width: 4rem;
+    height: 5.5rem;
+    top: 45.8rem;
+    left: 36rem;
+  }
+
+  .previous-entry {
+    width: 4rem;
+    height: 5.5rem;
+    top: 45.8rem;
+    left: 23.2rem;
+  }
+
+  .playpause {
+    width: 6.5rem;
+    height: 5.5rem;
+    top: 45.6rem;
+    left: 28.2rem;
+    border-radius: 100px;
+  }
+
+  /* closed phone  */
+
+  .closed-tape {
+    overflow: hidden;
+  }
+  
+  .blond {
+    width: 28rem;
+    height: 20.2rem;
+    bottom: 12.3rem;
+    left: 14.2rem;
+    border-radius: 20px;
+  }
+
+  .reopen-btn {
+    left: 14.5rem;
+    bottom: 15px;
+    width: 11rem;
+    height: 10rem;
   }
 }
 
 
 
 
-/* small macs needs work */
+/* small macs work */
 @media (min-width: 1280px) and (max-width: 1439) {
  
 }
 
-/* medium macs */
+/* medium macs work */
 @media (min-width: 1440px) and (max-width: 1679) {
   
   .home-links {
@@ -2397,7 +2691,7 @@ body.who {
   }
 }
 
-/* big monitors */
+/* big monitors work*/
 @media (min-width: 1680px) {
  
 }
