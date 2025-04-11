@@ -664,7 +664,7 @@ body.tapes {
 
 
 
-/* iphone 13 */
+/* iphone 16 */
 @media (min-width: 376px) and (max-width: 399px) {
   
   .home-ghost {
@@ -818,7 +818,7 @@ body.tapes {
   }
 }
 
-/* iphone 12 mini work */
+/* iphone 12 mini */
 @media (max-width: 376px) and (min-height: 627px) {
   
   .home-container {
@@ -954,28 +954,217 @@ body.tapes {
   }
 }
 
-/* iphone 14 plus work */
-@media (min-width: 400px) and (max-width: 429px) {
+/* iphone 16 pro */
+@media (min-width: 400px) and (max-width: 414px) {
   
   .home-container {
     font-size: 0.7rem;
     margin-top: 2rem;
   }
 
+  .home-links {
+    margin-top: 7%;
+  }
+  
+  .home-ghost {
+    margin-left: 7%;
+  }
+
+  .who-nova {
+    padding-top: 18rem;
+  }
+
+  .who-follow {
+    margin-top: 6rem;
+  }
+
   .article-one {
     margin: 10rem 5rem 0 0;
     max-width: 70%;
-    font-size: 1.7rem;
+    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
   
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
-    font-size: 1.7rem;
+    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
   
-  .article-three, .article-four {
-    visibility: hidden;
+  .tapes-nav {
+    margin-bottom: 12.5rem;
+    margin-right: 6rem;
+    width: 90%;
+  }
+  
+  .tapes-nav label {
+    padding-left: 30px;
+  }
+  
+  #tape-select {
+    margin-left: 7rem;
+    width: 70%;
+  }
+  
+  .tapes-ghost {
+    top: 10.5rem;
+    left: 21.5rem;
+  }
+  
+  .tapes-lego {
+    top: 166%;
+    left: 15rem;
+  }
+  
+  .tapes-butterfly {
+    top: 48rem;
+    left: 18rem;
+  }
+  
+  .tapes-hand {
+    top: 210%;
+    width: 18rem;
+    height: 15rem;      
+  }
+  
+  .tapes-planet {
+    top: 4rem;
+    left: 7.3rem;
+  }
+  
+  .tapes-footer {
+    left: 74%;
+  }
+
+  .entry {
+    min-height: 75vh;
+    background-size: 100% 90%;
+  }
+
+  .entry-main {
+    bottom: 48%;
+    left: 4.4rem;
+    width: 63%;
+    height: 38%;
+  }
+
+  .entry-back-btn {
+    width: 3.5rem;
+    height: 3rem;
+    top: 23rem; 
+    left: 16.1rem;
+  }
+
+  .entry-home-btn {
+    width: 3.6rem;
+    height: 3rem;
+    top: 23.2rem;
+    left: 5.1rem;
+  }
+
+  .entry-call-btn {
+    width: 3.6rem;
+    height: 3rem;
+    top: 26.5rem;
+    left: 5.1rem;
+  }
+
+  .entry-closed-btn {
+    width: 3.5rem;
+    height: 3rem;
+    top: 26.5rem; 
+    left: 16.1rem;
+  }
+
+  .scrollUp {
+    width: 3rem;
+    height: 2.2rem;
+    top: 22.5rem;
+    left: 10.8rem;
+  }
+
+  .scrollDown {
+    width: 3rem;
+    height: 2.2rem;
+    top: 27.9rem;
+    left: 10.8rem;
+  }
+
+  .next-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 25rem;
+    left: 14rem;
+  }
+
+  .previous-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 25rem;
+    left: 8.8rem;
+  }
+
+  .playpause {
+    width: 2.8rem;
+    height: 3rem;
+    border-radius: 50px;
+    top: 58.5%;
+    left: 43.5%;
+  }
+
+  .closed-tape {
+    overflow: hidden;
+  }
+
+  .blond {
+    width: 13.8rem;
+    height: 10.1rem;
+    bottom: 6.1rem;
+    left: 5.6rem;
+  }
+
+  .reopen-btn {
+    left: 5.6rem;
+    bottom: 1rem;
+    width: 6rem;
+    height: 5rem;
+  }
+}
+
+/* iphone 14 plus */
+@media (min-width: 415px) and (max-width: 429px) {
+  
+  .home-container {
+    font-size: 0.7rem;
+    margin-top: 2rem;
+  }
+
+  .home-links {
+    margin-top: 7%;
+  }
+  
+  .home-ghost {
+    margin-left: 7%;
+  }
+
+  .who-nova {
+    padding-top: 18rem;
+  }
+
+  .who-follow {
+    margin-top: 8.3rem;
+    margin-left: 1rem;
+  }
+
+  .article-one {
+    margin: 10rem 5rem 0 0;
+    max-width: 70%;
+    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
+  }
+  
+  .article-two {
+    margin: 19rem 4rem 0 0;
+    max-width: 70%;
+    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
   
   .tapes-nav {
@@ -1007,37 +1196,31 @@ body.tapes {
   }
   
   .tapes-lego {
-    position: absolute;
-    top: 76rem;
+    top: 163%;
     left: 15rem;
     width: 10rem;
     height: 10rem;
   }
   
   .tapes-butterfly {
-    position: absolute;
     top: 52rem;
     left: 19rem;
     width: 7rem;
     height: 7rem;      
   }
   
+  
   .tapes-hand {
-    position: absolute;
-    top: 97rem;
+    top: 210%;
     width: 18rem;
     height: 15rem;      
   }
   
   .tapes-planet {
-    position: absolute;
     top: 4rem;
     left: 8rem;
     width: 5rem;
-    height: 5rem;      
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
+    height: 5rem;
   }
   
   .tapes-footer {
@@ -1053,76 +1236,78 @@ body.tapes {
 
   .entry {
     min-height: 71vh;
+    background-size: 100% 100%;
   }
 
   .entry-main {
-    bottom: 18.7rem;
-    left: 3.3rem;
-    width: 72%;
-    height: 15rem;
+    bottom: 51.3%;
+    left: 4.9rem;
+    width: 62%;
+    height: 42%;
   }
 
   .entry-back-btn {
-    width: 4rem;
-    height: 2.5rem;
-    top: 24rem; 
-    left: 17.7rem;
+    width: 3.5rem;
+    height: 3rem;
+    top: 23.9rem; 
+    left: 17.1rem;
   }
 
   .entry-home-btn {
-    width: 4rem;
-    height: 2.5rem;
-    top: 24rem;
-    left: 4.6rem;
+    width: 3.6rem;
+    height: 3rem;
+    top: 23.9rem;
+    left: 5.9rem;
   }
 
   .entry-call-btn {
-    width: 4rem;
-    height: 2.9rem;
-    top: 27.6rem;
-    left: 4.6rem;
+    width: 3.6rem;
+    height: 3rem;
+    top: 27.5rem;
+    left: 5.9rem;
   }
 
   .entry-closed-btn {
-    width: 4rem;
+    width: 3.5rem;
     height: 3rem;
     top: 27.5rem; 
-    left: 17.7rem;
+    left: 17.1rem;
   }
 
   .scrollUp {
     width: 3rem;
-    height: 2.5rem;
-    top: 23rem;
+    height: 2.2rem;
+    top: 23.3rem;
     left: 11.7rem;
   }
 
   .scrollDown {
     width: 3rem;
-    height: 2.5rem;
+    height: 2.2rem;
     top: 29rem;
-    left: 11.6rem;
+    left: 11.7rem;
   }
 
   .next-entry {
     width: 2rem;
     height: 2.8rem;
     top: 25.9rem;
-    left: 15rem;
+    left: 14.7rem;
   }
 
   .previous-entry {
     width: 2rem;
     height: 2.8rem;
     top: 25.9rem;
-    left: 9.3rem;
+    left: 9.5rem;
   }
 
   .playpause {
     width: 2.8rem;
-    height: 2.rem;
-    top: 25.9rem;
-    left: 11.7rem;
+    height: 3rem;
+    border-radius: 50px;
+    top: 55.2%;
+    left: 43.7%;
   }
 
   .closed-tape {
@@ -1144,8 +1329,193 @@ body.tapes {
   }
 }
 
-/* iphone 16 pro max work */
-@media (min-width: 430px) and (max-width: 599px) {
+/* iphone 16 plus needs work */
+@media (min-width: 430px) and (max-width: 439px) {
+
+  .home-container {
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
+  }
+
+  .home-ghost {
+    margin-left: 2rem;
+  }
+
+  .home-links {
+    margin-top: 1.5rem;
+  }
+
+  .who-nova {
+    padding-top: 17rem;
+  }
+
+  .who-follow {
+    left: 7rem;
+    top: 32rem;
+  }
+  
+  .article-one {
+    margin: 10rem 5rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
+  }
+  
+  .article-two {
+    margin: 19rem 4rem 0 0;
+    max-width: 70%;
+    font-size: 1.7rem;
+  }
+  
+  .tapes-nav {
+    margin-bottom: 12.5rem;
+    margin-right: 6rem;
+    width: 90%;
+  }
+  
+  .tapes-nav label {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    padding-left: 30px;
+    letter-spacing: 1px;
+  }
+  
+  #tape-select {
+    padding: 0.6rem 0.1rem;
+    margin-left: 7rem;
+    font-size: 0.7rem;
+    width: 70%;
+  }
+  
+  .tapes-ghost {
+    width: 40px;
+    height: 70px;
+    top: 11.5rem;
+    left: 22.5rem;
+  }
+  
+  .tapes-lego {
+    top: 77.2rem;
+    left: 15rem;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .tapes-butterfly {
+    top: 53rem;
+    left: 19rem;
+    width: 7rem;
+    height: 7rem;      
+  }
+  
+  .tapes-hand {
+    top: 99rem;
+    width: 18rem;
+    height: 15rem;      
+  }
+  
+  .tapes-planet {
+    top: 4rem;
+    left: 8rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .tapes-footer {
+    bottom: 1rem;
+    left: 20rem;
+  }
+
+  .entry {
+    min-height: 75vh;
+    background-size: 100% 100%;
+  }
+
+  .entry-main {
+    bottom: 19.4rem;
+    left: 4.9rem;
+    width: 60%;
+    height: 16.1rem;
+  }
+
+  .entry-back-btn {
+    width: 4rem;
+    height: 2.8rem;
+    top: 24.3rem; 
+    left: 18rem;
+  }
+
+  .entry-home-btn {
+    width: 4.3rem;
+    height: 2.9rem;
+    top: 24.3rem;
+  }
+
+  .entry-call-btn {
+    width: 4rem;
+    height: 3.3rem;
+    top: 27.8rem;
+    left: 4.9rem;
+  }
+
+  .entry-closed-btn {
+    width: 4rem;
+    height: 3.3rem;
+    top: 27.8rem; 
+    left: 18rem;
+  }
+
+  .scrollUp {
+    width: 3rem;
+    height: 2.4rem;
+    top: 23.2rem;
+    left: 12rem;
+  }
+
+  .scrollDown {
+    width: 3rem;
+    height: 2.4rem;
+    top: 29.5rem;
+    left: 12rem;
+  }
+
+  .next-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 26.2rem;
+    left: 15.3rem;
+  }
+
+  .previous-entry {
+    width: 2rem;
+    height: 2.8rem;
+    top: 26.2rem;
+    left: 9.6rem;
+  }
+
+  .playpause {
+    width: 2.8rem;
+    height: 2.8rem;
+    top: 26.3rem;
+    left: 12.1rem;
+  }
+
+  .blond {
+    width: 15.2rem;
+    height: 11.2rem;
+    bottom: 7rem;
+    left: 6.1rem;
+  }
+
+  .reopen-btn {
+    left: 6.2rem;
+    bottom: 1rem;
+    width: 6rem;
+    height: 5rem;
+  }
+}
+
+/* iphone 16 pro max needs work */
+@media (min-width: 440px) and (max-width: 599px) {
 
   .home-container {
     font-size: 0.8rem;
@@ -1326,8 +1696,7 @@ body.tapes {
 
 
 
-
-/* ipad mini work */
+/* ipad mini needs work */
 @media (min-width: 600px) and (max-width: 767px) {
  
   .home {
@@ -1580,7 +1949,7 @@ body.tapes {
   }
 }
 
-/* ipad 11in work */ 
+/* ipad 11in needs work */ 
 @media (min-width: 768px) and (max-width: 1023px) {
  
   .home {
@@ -1859,7 +2228,7 @@ body.tapes {
   }
 }
 
-/* ipad pro work */
+/* ipad pro needs work */
 @media (min-width: 1024px) and (max-width: 1279px) {
   
   .home {
@@ -2144,12 +2513,12 @@ body.tapes {
 
 
 
-/* small macs work */
+/* small macs needs work */
 @media (min-width: 1280px) and (max-width: 1439) {
  
 }
 
-/* medium macs work */
+/* medium macs needs work */
 @media (min-width: 1440px) and (max-width: 1679) {
   
   .home-links {
@@ -2699,7 +3068,7 @@ body.tapes {
   }
 }
 
-/* big monitors work*/
+/* big monitors needs work */
 @media (min-width: 1680px) {
  
 }
