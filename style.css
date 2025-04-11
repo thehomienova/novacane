@@ -1713,6 +1713,7 @@ body.tapes {
 
 
 
+
 /* ipad mini */
 @media (min-width: 600px) and (max-width: 767px) {
  
@@ -1970,8 +1971,8 @@ body.tapes {
   }
 }
 
-/* ipad 11in needs work */ 
-@media (min-width: 768px) and (max-width: 1023px) {
+/* ipad air 11 */ 
+@media (min-width: 768px) and (max-width: 833px) {
  
   .home {
     min-height: 90vh;
@@ -2087,13 +2088,13 @@ body.tapes {
   }
 
   .article-two {
-    margin: 45% 25% 0 0;
+    margin: 55% 25% 0 0;
     max-width: 70%;
     font-size: 2.4rem;
   }
 
   .tapes-nav {
-    margin-bottom: 9.5rem;
+    margin-bottom: 8.5rem;
     margin-right: 15rem;
     width: 60%;
   }
@@ -2111,20 +2112,20 @@ body.tapes {
   .tapes-ghost {
     width: 100px;
     height: 140px;
-    top: 12rem;
+    top: 14rem;
     left: 37rem;
   }
 
   .tapes-lego {
-    top: 139.5%;
+    top: 140.9%;
     left: 30rem;
     width: 15rem;
     height: 15rem;
   }
 
   .tapes-butterfly {
-    top: 90%;
-    left: 58%;
+    top: 92%;
+    left: 62%;
     width: 15rem;
     height: 15rem;
   }
@@ -2152,80 +2153,80 @@ body.tapes {
   /* entry */
 
   .entry {
-    height: 90vh;
+    height: 85vh;
     background-size: 100% 100%;
     overflow: hidden;
   }
 
   .entry-main {
-    bottom: 25.5rem;
+    bottom: 25.8rem;
     left: 9.5rem;
     width: 60%;
-    height: 22.8rem;
+    height: 23.2rem;
     font-size: 1.7rem;
   }
 
   .entry-back-btn {
     width: 6.5rem;
     height: 4.8rem;
-    top: 35.4rem;
-    left: 32.5rem;
+    top: 35.8rem;
+    left: 33rem;
   }
 
   .entry-home-btn {
     width: 6.5rem;
     height: 4.5rem;
-    top: 35.5rem;
+    top: 36rem;
     left: 11.5rem;
   }
 
   .entry-call-btn {
     width: 6.5rem;
     height: 4.5rem;
-    top: 41rem;
+    top: 41.7rem;
     left: 11.5rem;
   }
 
   .entry-closed-btn {
     width: 6.5rem;
     height: 4.5rem;
-    top: 41rem;
-    left: 32.5rem;
+    top: 41.7rem;
+    left: 33rem;
   }
 
   .scrollUp {
     width: 4.8rem;
     height: 3rem;
-    top: 34.5rem;
-    left: 22.7rem;
+    top: 35rem;
+    left: 23rem;
   }
 
   .scrollDown {
     width: 4.8rem;
     height: 3rem;
-    top: 43.5rem;
-    left: 22.7rem;
+    top: 44rem;
+    left: 23rem;
   }
 
   .next-entry {
     width: 3.3rem;
     height: 5rem;
-    top: 38.2rem;
-    left: 28.5rem;
+    top: 38.7rem;
+    left: 28.7rem;
   }
 
   .previous-entry {
     width: 3.3rem;
     height: 5rem;
-    top: 38.2rem;
-    left: 18.7rem;
+    top: 38.7rem;
+    left: 19rem;
   }
 
   .playpause {
     width: 4.9rem;
     height: 4.7rem;
-    top: 38.3rem;
-    left: 22.7rem;
+    top: 38.8rem;
+    left: 22.8rem;
     border-radius: 50px;
   }
 
@@ -2234,23 +2235,307 @@ body.tapes {
   .closed-tape {
     overflow: hidden;
   }
+
   .blond {
-    width: 22.2rem;
-    height: 16.15rem;
-    bottom: 9.85rem;
-    left: 11.45rem;
-    border-radius: 20px;
+    width: 22.3rem;
+    height: 16.5rem;
+    bottom: 10rem;
+    left: 11.5rem;
+    border-radius: 15px;
   }
 
   .reopen-btn {
-    left: 11.5rem;
-    bottom: 15px;
+    left: 11.8rem;
+    bottom: 20px;
     width: 9rem;
     height: 8rem;
   }
 }
 
-/* ipad pro needs work */
+/* ipad pro 11 */ 
+@media (min-width: 834px) and (max-width: 1023px) {
+ 
+  .home {
+    min-height: 90vh;
+  }
+
+  .home-header {
+    font-size: rem;
+  }
+
+  .home-ghost {
+    width: 60px;
+    height: 90px;
+    bottom: 30rem;
+    left: 45rem;
+  }
+
+  .home-links {
+    top: 2.5rem;
+  }
+
+  .home-instagram {
+    width: 76px;
+    height: 76px;
+  }
+
+  .home-linkedin {
+    width: 73px;
+    height: 73px;
+  }
+
+  .home-spotify {
+    width: 75px;
+    height: 75px;
+  }
+
+  /* who  */
+
+  .who-nova {
+    padding: 24rem 0 0 2.1rem;
+    font-size: 2rem;
+  }
+
+  .who-jason {
+    font-size: 2rem;
+  }
+
+  .who-quote-one {
+    font-size: 2.7rem;
+  }
+
+  .who-quote-one p {
+    margin: 14rem 0 0 3rem;
+  }
+
+  .who-falling {
+    width: 100%;
+  }
+
+  .who-quote-two {
+    font-size: 2.7rem;
+  }
+
+  .who-quote-two p {
+    margin: 35rem 0 0 3rem;
+  }
+
+  .who-quote-three {
+    font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 30rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+    background-size: 100% 100%;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 13rem;
+    top: 57rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+
+  /* tapes page */
+
+  .tapes-header {
+    margin: 100px 0 0 200px;
+  } 
+
+  .tapes-title {
+    font-size: 6rem; 
+  }
+
+  .tapes-main {
+    min-height: 150vh;
+  }
+
+  .article-one {
+    margin: 15% 20% 0 0;
+    max-width: 70%;
+    font-size: 2.3rem;
+    padding: 10px;
+  }
+
+  .article-two {
+    margin: 55% 25% 0 0;
+    max-width: 70%;
+    font-size: 2.4rem;
+  }
+
+  .tapes-nav {
+    margin-bottom: 8.5rem;
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  .tapes-nav label {
+    font-size: 2rem;
+  }
+
+  #tape-select {
+    margin-left: 6rem;
+    width: 78%;
+    font-size: 1.7rem;
+  }
+
+  .tapes-ghost {
+    width: 100px;
+    height: 140px;
+    top: 14rem;
+    left: 37rem;
+  }
+
+  .tapes-lego {
+    top: 140.9%;
+    left: 30rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-butterfly {
+    top: 92%;
+    left: 62%;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tapes-hand {
+    top: 183%;
+    width: 33rem;
+    height: 20rem;
+  }
+
+  .tapes-planet {
+    top: 2rem;
+    left: 18rem;
+    width: 8rem;
+    height: 9rem;
+  }
+
+  .tapes-footer {
+    font-size: 1.2rem;
+    width: 10rem;
+    bottom: -6.5rem;
+    left: 37rem;
+  }
+
+  /* entry */
+
+  .entry {
+    height: 85vh;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  .entry-main {
+    bottom: 26.3rem;
+    left: 9.5rem;
+    width: 60%;
+    height: 23.5rem;
+    font-size: 1.7rem;
+  }
+
+  .entry-back-btn {
+    width: 6.5rem;
+    height: 4.8rem;
+    top: 36.5rem;
+    left: 33rem;
+    border: 1px solid white;
+  }
+
+  .entry-home-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 37rem;
+    left: 11.5rem;
+    border: 1px solid white;
+  }
+
+  .entry-call-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 42.5rem;
+    left: 11.5rem;
+  }
+
+  .entry-closed-btn {
+    width: 6.5rem;
+    height: 4.5rem;
+    top: 42.5rem;
+    left: 33rem;
+  }
+
+  .scrollUp {
+    width: 4.8rem;
+    height: 3rem;
+    top: 36.2rem;
+    left: 23.3rem;
+  }
+
+  .scrollDown {
+    width: 4.8rem;
+    height: 3rem;
+    top: 45rem;
+    left: 23.3rem;
+  }
+
+  .next-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 39.5rem;
+    left: 28.7rem;
+  }
+
+  .previous-entry {
+    width: 3.3rem;
+    height: 5rem;
+    top: 39.5rem;
+    left: 19rem;
+  }
+
+  .playpause {
+    width: 4.9rem;
+    height: 4.7rem;
+    top: 39.7rem;
+    left: 23.2rem;
+    border-radius: 50px;
+  }
+
+  /* closed phone  */
+
+  .closed-tape {
+    overflow: hidden;
+  }
+
+  .blond {
+    width: 22.7rem;
+    height: 16.5rem;
+    bottom: 10.05rem;
+    left: 11.65rem;
+    border-radius: 15px;
+  }
+
+  .reopen-btn {
+    left: 11.8rem;
+    bottom: 20px;
+    width: 9rem;
+    height: 8rem;
+  }
+}
+
+/* ipad air 13in  */
 @media (min-width: 1024px) and (max-width: 1279px) {
   
   .home {
@@ -2393,7 +2678,7 @@ body.tapes {
   .tapes-ghost {
     width: 100px;
     height: 150px;
-    top: 16.5rem;
+    top: 18rem;
     left: 46rem;
   }
 
@@ -2418,8 +2703,8 @@ body.tapes {
   }
 
   .tapes-planet {
-    top: 1.5rem;
-    left: 23rem;
+    top: 0.7rem;
+    left: 24rem;
     width: 10rem;
     height: 11rem;
   }
@@ -2444,7 +2729,7 @@ body.tapes {
     left: 12rem;
     width: 60%;
     height: 27rem;
-    font-size: 1.7rem;
+    font-size: 2.1rem;
   }
 
   .entry-back-btn {
@@ -2478,7 +2763,7 @@ body.tapes {
   .scrollUp {
     width: 6rem;
     height: 3.5rem;
-    top: 41.1rem;
+    top: 41.4rem;
     left: 28.5rem;
   }
 
@@ -2493,14 +2778,14 @@ body.tapes {
     width: 4rem;
     height: 5.5rem;
     top: 45.8rem;
-    left: 36rem;
+    left: 35.5rem;
   }
 
   .previous-entry {
     width: 4rem;
     height: 5.5rem;
     top: 45.8rem;
-    left: 23.2rem;
+    left: 23.5rem;
   }
 
   .playpause {
@@ -2528,6 +2813,289 @@ body.tapes {
   .reopen-btn {
     left: 14.5rem;
     bottom: 15px;
+    width: 11rem;
+    height: 10rem;
+  }
+}
+
+/* ipad pro 13in  */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  
+  .home {
+    min-height: 90vh;
+  }
+
+  .home-container {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .home-ghost {
+    width: 90px;
+    height: 120px;
+    bottom: 37rem;
+    left: 55rem;
+  }
+
+  .home-links {
+    top: 2.5rem;
+  }
+
+  .home-instagram {
+    width: 84px;
+    height: 85px;
+  }
+
+  .home-linkedin {
+    width: 81px;
+    height: 81px;
+  }
+
+  .home-spotify {
+    width: 81px;
+    height: 81px;
+  }
+
+  /* who  */
+
+  .who-nova {
+    padding: 29rem 0 0 6rem;
+    font-size: 2rem;
+  }
+
+  .who-jason {
+    font-size: 2rem;
+    padding-left: 3.5rem;
+  }
+
+  .who-quote-one {
+    font-size: 3rem;
+    
+  }
+
+  .who-quote-one p {
+    margin: 14rem 0 0 10rem;
+  }
+
+  .who-falling {
+    width: 100%;
+  }
+
+  .who-quote-two {
+    font-size: 3rem;
+  }
+
+  .who-quote-two p {
+    margin: 35rem 0 0 10rem;
+  }
+
+  .who-quote-three {
+    font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 30rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 21rem;
+    top: 51.5rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
+  }
+
+  /* tapes page */
+
+  .tapes-header {
+    margin: 100px 0 0 230px;
+  } 
+
+  .tapes-title {
+    font-size: 7rem; 
+  }
+
+  .tapes-main {
+    min-height: 150vh;
+  }
+
+  .article-one {
+    margin: 20% 20% 0 0;
+    max-width: 70%;
+    font-size: 2.7rem;
+    padding: 10px;
+  }
+
+  .article-two {
+    margin: 45% 25% 0 0;
+    max-width: 70%;
+    font-size: 2.8rem;
+  }
+
+  .tapes-nav {
+    margin-bottom: 9.5rem;
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  .tapes-nav label {
+    font-size: 2.9rem;
+  }
+
+  #tape-select {
+    margin-left: 6rem;
+    width: 78%;
+    font-size: 1.7rem;
+  }
+
+  .tapes-ghost {
+    width: 100px;
+    height: 150px;
+    top: 18rem;
+    left: 46rem;
+  }
+
+  .tapes-lego {
+    top: 140%;
+    left: 35rem;
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .tapes-butterfly {
+    top: 90%;
+    left: 58%;
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .tapes-hand {
+    top: 178%;
+    width: 40rem;
+    height: 24rem;
+  }
+
+  .tapes-planet {
+    top: 0.7rem;
+    left: 24rem;
+    width: 10rem;
+    height: 11rem;
+  }
+
+  .tapes-footer {
+    font-size: 1.2rem;
+    width: 10rem;
+    bottom: -6.5rem;
+    left: 45rem;
+  }
+
+  /* entry */
+
+  .entry {
+    height: 88vh;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  .entry-main {
+    bottom: 29.5rem;
+    left: 12rem;
+    width: 60%;
+    height: 27rem;
+    font-size: 2.1rem;
+  }
+
+  .entry-back-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 42.2rem;
+    left: 41rem;
+  }
+
+  .entry-home-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 42.2rem;
+    left: 14.5rem;
+  }
+
+  .entry-call-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 48.9rem;
+    left: 14.5rem;
+  }
+
+  .entry-closed-btn {
+    width: 8rem;
+    height: 5.5rem;
+    top: 48.9rem;
+    left: 41rem;
+  }
+
+  .scrollUp {
+    width: 6rem;
+    height: 3.5rem;
+    top: 41.5rem;
+    left: 28.7rem;
+  }
+
+  .scrollDown {
+    width: 6rem;
+    height: 3.5rem;
+    top: 51.8rem;
+    left: 28.7rem;
+  }
+
+  .next-entry {
+    width: 4rem;
+    height: 5.5rem;
+    top: 45.8rem;
+    left: 35.5rem;
+  }
+
+  .previous-entry {
+    width: 4rem;
+    height: 5.5rem;
+    top: 45.8rem;
+    left: 23.65rem;
+  }
+
+  .playpause {
+    width: 6.5rem;
+    height: 5.5rem;
+    top: 45.6rem;
+    left: 28.2rem;
+    border-radius: 100px;
+  }
+
+  /* closed phone  */
+
+  .closed-tape {
+    overflow: hidden;
+  }
+  
+  .blond {
+    width: 28rem;
+    height: 20.4rem;
+    bottom: 12.4rem;
+    left: 14.4rem;
+    border-radius: 20px;
+  }
+
+  .reopen-btn {
+    left: 14.5rem;
+    bottom: 20px;
     width: 11rem;
     height: 10rem;
   }
