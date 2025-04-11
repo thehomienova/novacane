@@ -1329,7 +1329,7 @@ body.tapes {
   }
 }
 
-/* iphone 16 plus needs work */
+/* iphone 16 plus */
 @media (min-width: 430px) and (max-width: 439px) {
 
   .home-container {
@@ -1440,63 +1440,65 @@ body.tapes {
   .entry-back-btn {
     width: 4rem;
     height: 2.8rem;
-    top: 24.3rem; 
-    left: 18rem;
+    top: 24.8rem; 
+    left: 17rem;
   }
 
   .entry-home-btn {
-    width: 4.3rem;
+    width: 4rem;
     height: 2.9rem;
-    top: 24.3rem;
+    top: 24.8rem;
+    left: 5.7rem;
   }
 
   .entry-call-btn {
     width: 4rem;
     height: 3.3rem;
-    top: 27.8rem;
-    left: 4.9rem;
+    top: 28.5rem;
+    left: 5.5rem;
   }
 
   .entry-closed-btn {
     width: 4rem;
     height: 3.3rem;
-    top: 27.8rem; 
-    left: 18rem;
+    top: 28.5rem; 
+    left: 17rem;
   }
 
   .scrollUp {
     width: 3rem;
     height: 2.4rem;
-    top: 23.2rem;
-    left: 12rem;
+    top: 23.8rem;
+    left: 11.9rem;
   }
 
   .scrollDown {
     width: 3rem;
     height: 2.4rem;
-    top: 29.5rem;
-    left: 12rem;
+    top: 30.2rem;
+    left: 11.9rem;
   }
 
   .next-entry {
     width: 2rem;
     height: 2.8rem;
-    top: 26.2rem;
-    left: 15.3rem;
+    top: 26.9rem;
+    left: 14.9rem;
   }
 
   .previous-entry {
     width: 2rem;
     height: 2.8rem;
-    top: 26.2rem;
+    top: 26.9rem;
     left: 9.6rem;
   }
 
   .playpause {
-    width: 2.8rem;
-    height: 2.8rem;
-    top: 26.3rem;
-    left: 12.1rem;
+    width: 3rem;
+    height: 3rem;
+    top: 26.7rem;
+    left: 11.8rem;
+    border-radius: 100px;
   }
 
   .blond {
@@ -1514,12 +1516,24 @@ body.tapes {
   }
 }
 
-/* iphone 16 pro max needs work */
+/* iphone 16 pro max */
 @media (min-width: 440px) and (max-width: 599px) {
 
   .home-container {
     font-size: 0.8rem;
     margin-top: 2.5rem;
+  }
+
+  .home-links {
+    margin-top: 2rem;
+  }
+
+  .home-ghost {
+    margin-left: 3rem;
+  }
+
+  .who-follow {
+    margin-left: 2rem;
   }
   
   .article-one {
@@ -1599,12 +1613,13 @@ body.tapes {
 
   .entry {
     min-height: 71vh;
+    background-size: 100% 100%;
   }
 
   .entry-main {
     bottom: 19rem;
-    left: 3.7rem;
-    width: 72%;
+    left: 4.9rem;
+    width: 63%;
     height: 15.5rem;
   }
 
@@ -1612,33 +1627,34 @@ body.tapes {
     width: 4rem;
     height: 2.8rem;
     top: 24.3rem; 
-    left: 18rem;
+    left: 17.4rem;
   }
 
   .entry-home-btn {
     width: 4.3rem;
     height: 2.9rem;
     top: 24.3rem;
+    left: 5.4rem;
   }
 
   .entry-call-btn {
     width: 4rem;
     height: 3.3rem;
     top: 27.8rem;
-    left: 4.9rem;
+    left: 5.7rem;
   }
 
   .entry-closed-btn {
     width: 4rem;
     height: 3.3rem;
     top: 27.8rem; 
-    left: 18rem;
+    left: 17.5rem;
   }
 
   .scrollUp {
     width: 3rem;
     height: 2.4rem;
-    top: 23.2rem;
+    top: 23.4rem;
     left: 12rem;
   }
 
@@ -1653,21 +1669,22 @@ body.tapes {
     width: 2rem;
     height: 2.8rem;
     top: 26.2rem;
-    left: 15.3rem;
+    left: 15.1rem;
   }
 
   .previous-entry {
     width: 2rem;
     height: 2.8rem;
     top: 26.2rem;
-    left: 9.6rem;
+    left: 9.9rem;
   }
 
   .playpause {
-    width: 2.8rem;
-    height: 2.8rem;
-    top: 26.3rem;
-    left: 12.1rem;
+    width: 3rem;
+    height: 3rem;
+    top: 26.15rem;
+    left: 12rem;
+    border-radius: 100px;
   }
 
   .blond {
@@ -1696,7 +1713,7 @@ body.tapes {
 
 
 
-/* ipad mini needs work */
+/* ipad mini */
 @media (min-width: 600px) and (max-width: 767px) {
  
   .home {
@@ -1707,11 +1724,70 @@ body.tapes {
     width: 60px;
     height: 90px;
     bottom: 29rem;
-    left: 38rem;
+    left: 40rem;
   }
 
   .home-links {
-    top: 2rem;
+    top: 3rem;
+  }
+
+  .home-instagram, .home-linkedin, .home-spotify {
+    height: 3rem;
+    width: 4rem;
+  }
+
+  /* who  */
+
+  .who-nova {
+    padding: 23rem 0 0 2.1rem;
+    font-size: 1.8rem;
+  }
+
+  .who-jason {
+    padding: 0 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .who-quote-one {
+    font-size: 2.5rem;
+  }
+
+  .who-quote-one p {
+    margin: 10rem 0 0 3rem;
+  }
+
+  .who-quote-two {
+    font-size: 2.5rem;
+  }
+
+  .who-quote-two p {
+    margin: 10rem 0 0 3rem;
+  }
+
+  .who-quote-three {
+    font-size: 5rem;
+    width: 90%;
+  }
+
+  .who-quote-three p {
+    margin: 30rem 0 0 3.5rem;
+  }
+
+  .who-city {
+    min-height: 115vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: 18rem;
+    left: 11rem;
+    top: 47.5rem;
+  }
+
+  #who-start-btn {
+    width: 23rem;
+    height: 20rem;
+    margin-left: 5%;
   }
 
   /* tapes page */
@@ -1772,7 +1848,6 @@ body.tapes {
   }
 
   .tapes-butterfly {
-    position: absolute;
     top: 91%;
     left: 58%;
     width: 15rem;
@@ -1807,10 +1882,10 @@ body.tapes {
   }
 
   .entry-main {
-    bottom: 26rem;
+    bottom: 25rem;
     left: 8.4rem;
     width: 65%;
-    height: 23rem;
+    height: 22.5rem;
     font-size: 1.7rem;
   }
 
@@ -1893,60 +1968,6 @@ body.tapes {
     width: 9rem;
     height: 8rem;
   }
-
-  /* who  */
-
-  .who-nova {
-    padding: 23rem 0 0 2.1rem;
-    font-size: 1.8rem;
-  }
-
-  .who-jason {
-    padding: 0 0 0 1rem;
-    font-size: 1.8rem;
-  }
-
-  .who-quote-one {
-    font-size: 2.5rem;
-  }
-
-  .who-quote-one p {
-    margin: 10rem 0 0 3rem;
-  }
-
-  .who-quote-two {
-    font-size: 2.5rem;
-  }
-
-  .who-quote-two p {
-    margin: 10rem 0 0 3rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 67rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 6.6rem;
-    top: 51.5rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
 }
 
 /* ipad 11in needs work */ 
@@ -1964,7 +1985,7 @@ body.tapes {
     width: 60px;
     height: 90px;
     bottom: 30rem;
-    left: 43rem;
+    left: 45rem;
   }
 
   .home-links {
@@ -2023,18 +2044,19 @@ body.tapes {
   }
 
   .who-quote-three p {
-    margin: 67rem 0 0 3.5rem;
+    margin: 30rem 0 0 3.5rem;
   }
 
   .who-city {
     min-height: 115vh;
+    background-size: 100% 100%;
   }
 
   .who-follow {
     font-size: 2rem;
     width: 18rem;
-    left: 6.6rem;
-    top: 51.5rem;
+    left: 13rem;
+    top: 57rem;
   }
 
   #who-start-btn {
@@ -2280,6 +2302,7 @@ body.tapes {
 
   .who-quote-one {
     font-size: 3rem;
+    
   }
 
   .who-quote-one p {
@@ -2304,7 +2327,7 @@ body.tapes {
   }
 
   .who-quote-three p {
-    margin: 67rem 0 0 3.5rem;
+    margin: 30rem 0 0 3.5rem;
   }
 
   .who-city {
@@ -2314,7 +2337,7 @@ body.tapes {
   .who-follow {
     font-size: 2rem;
     width: 18rem;
-    left: 14rem;
+    left: 21rem;
     top: 51.5rem;
   }
 
