@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap");
 
 :root {
   --ghost-white: #f2f5ff;
@@ -23,8 +23,8 @@
   background-repeat: no-repeat;
   background-color: #000;
   color: var(--ghost-white);
-  font-family: 'Inter', sans-serif;
-  min-height: 85vh;
+  font-family: "Inter", sans-serif;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -49,14 +49,14 @@
 .home-quote {
   color: var(--electric-lavender);
   text-shadow: 0 0 10px var(--hazy-indigo);
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 .home-btn {
   color: var(--lover-blue);
   text-decoration: none;
   text-shadow: 0 0 10px var(--neon-aqua);
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 .home-btn:hover {
@@ -64,25 +64,19 @@
   text-shadow: 0 0 15px var(--lover-blue);
 }
 
-.home-ghost {
+.home-question {
   display: inline-block;
-  width: 40px;
-  height: 70px;
+  width: 60px;
+  height: 90px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-indent: -9999px; 
-  background-image: url('images/ghost.png');
+  text-indent: -9999px;
+  background-image: url("images/questionMark.png");
   position: relative;
-  bottom: 42vh;
-  left: 19rem;
+  top: 20vh;
+  left: 39vh;
   opacity: 0.7;
-}
-
-.home-ghost:mouseover {
-  opacity: 1;
-  width: 70px;
-  height: 70px;
 }
 
 .home-links {
@@ -90,7 +84,7 @@
   justify-content: flex-start;
   width: 90%;
   position: fixed;
-  top:1rem;
+  top: 1rem;
   opacity: 0.7;
 }
 
@@ -103,7 +97,7 @@
   background-position: center;
   text-indent: -9999px;
   overflow: hidden;
-  background-image: url('images/instagram.png');
+  background-image: url("images/instagram.png");
 }
 
 .home-linkedin {
@@ -115,7 +109,7 @@
   background-position: center;
   text-indent: -9999px;
   overflow: hidden;
-  background-image: url('images/linkedin.png');
+  background-image: url("images/linkedin.png");
 }
 
 .home-spotify {
@@ -126,13 +120,13 @@
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
-  background-image: url('images/spotify.png');
+  background-image: url("images/spotify.png");
 }
 
 /* who  */
 
 body.who {
-  background-color: black; 
+  background-color: black;
   min-height: 300vh;
 }
 
@@ -142,42 +136,38 @@ body.who {
   background-size: 100% 90%;
   min-height: 105vh;
   color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
 }
 
 .who-nova {
   padding: 15rem 0 0 2.1rem;
-  opacity: 0.7;text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-  font-family: 'Inter', sans-serif;
+  opacity: 0.7;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  font-family: "Inter", sans-serif;
 }
 
 .who-jason {
   padding: 0 0 0 1rem;
-  opacity: 0.7;text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
-  font-family: 'Inter', sans-serif;
+  opacity: 0.7;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  font-family: "Inter", sans-serif;
 }
 
 .who-quote-one {
   min-height: 80vh;
   color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   font-size: 1.3rem;
   opacity: 0.7;
   width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
 }
 
 .who-quote-one p {
   margin: 9em 0 0 3rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .who-falling {
@@ -186,29 +176,25 @@ body.who {
   background-size: contain;
   background-size: 100% 90%;
   min-height: 100vh;
-  -webkit-mask-image: 
-  linear-gradient(to top, black 95%, transparent 97%) 
-  linear-gradient(to bottom, black 70%, transparent 90%);
-  mask-image: 
-  linear-gradient(to top, black 95%, transparent 97%)
-  linear-gradient(to bottom, black 70%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to top, black 95%, transparent 97%)
+    linear-gradient(to bottom, black 70%, transparent 90%);
+  mask-image: linear-gradient(to top, black 95%, transparent 97%)
+    linear-gradient(to bottom, black 70%, transparent 90%);
 }
 
 .who-quote-two {
   min-height: 80vh;
   color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   font-size: 1.3rem;
   opacity: 0.7;
   width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
 }
 
 .who-quote-two p {
   margin: 10rem 0 0 2em;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .who-girl {
@@ -221,18 +207,16 @@ body.who {
 .who-quote-three {
   min-height: 80vh;
   color: var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   font-size: 2rem;
   opacity: 0.7;
   width: 85%;
-  text-shadow: 
-  0 0 5px var(--ghost-white), 
-  0 0 15px var(--electric-lavender);
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
 }
 
 .who-quote-three p {
   margin: 4rem 0 0 3.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .who-city {
@@ -254,7 +238,7 @@ body.who {
   left: 6rem;
   top: 24rem;
   text-shadow: 0 0 10px var(--electric-lavender);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
 }
 
 .who-start {
@@ -268,7 +252,7 @@ body.who {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   z-index: 9999;
   cursor: pointer;
 }
@@ -288,7 +272,7 @@ body.who {
 
 .who-tap-hint {
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--electric-lavender);
   text-align: center;
   margin-top: 0.5rem;
@@ -299,10 +283,16 @@ body.who {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
-
 
 /* tapes page */
 
@@ -313,7 +303,7 @@ body.tapes {
   background-position: center;
   background-color: #000;
   color: var(--ghost-white);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   width: 100vw;
   max-width: 100vw;
   min-height: 200vh;
@@ -328,8 +318,19 @@ body.tapes::-webkit-scrollbar {
 }
 
 body.tapes {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;    
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tapes-planet {
+  position: relative;
+  top: 8vh;
+  left: 6.5rem;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .tapes-header {
@@ -340,16 +341,43 @@ body.tapes {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin: 100px 0 0 85px;
+  margin: 10px 0 0 85px;
 }
 
 .tapes-title {
   font-size: 3.5rem;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
+}
+
+.tapes-card {
+  display: inline-block;
+  width: 75px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  background-image: url("images/card.jpg");
+  position: relative;
+  top: 27vh;
+  left: 38vh;
+  animation: cardPulse 5s infinite;
+}
+
+@keyframes cardPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .tapes-main {
-  min-height: 180vh;
+  min-height: 80vh;
   width: 100%;
   max-width: 100%;
   padding: 2rem 1rem;
@@ -357,42 +385,57 @@ body.tapes {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 15%;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 .article-one {
-  margin: 25% 30% 0 0;
+  position: relative;
+  top: 10vh;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
-  opacity: 0.7;
   background-color: rgb(0, 0, 0);
   padding: 10px;
   border: 1px solid white;
   border-radius: 10px;
   color: #dcb8ff;
   text-decoration: none;
+  animation: articlePulse 3s infinite;
 }
 
- .article-two {
-  margin: 75% 25% 0 0;
+.article-two {
+  position: relative;
+  top: 23vh;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
-  opacity: 0.7;
   background-color: rgb(0, 0, 0);
   padding: 10px;
   border: 1px solid white;
   border-radius: 10px;
   color: #dcb8ff;
   text-decoration: none;
+  animation: articlePulse 3s infinite;
 }
 
-.article-three, .article-four {
+@keyframes articlePulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.article-three,
+.article-four {
   visibility: hidden;
 }
 
@@ -400,10 +443,10 @@ body.tapes {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10.5rem;
-  margin-right: 6rem;
+  position: relative;
+  top: 22vh;
   width: 90%;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   color: var(--electric-lavender);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
@@ -423,31 +466,17 @@ body.tapes {
   margin-right: 7.5rem;
   margin-left: 7rem;
   width: 70%;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   border-radius: 4px;
   box-shadow: 0 0 10px var(--electric-lavender);
   transition: all 0.3s ease;
 }
 
-.tapes-ghost {
-  display: inline-block;
-  width: 40px;
-  height: 70px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px; 
-  background-image: url('images/ghost.png');
-  position: relative;
-  top: 8rem;
-  left: 20rem;
-}
-
 .tapes-lego {
-  position: absolute;
-  top: 172%;
-  left: 13rem;
+  position: relative;
+  bottom: -7.7vh;
+  left: 6rem;
   width: 10rem;
   height: 10rem;
   opacity: 0.8;
@@ -456,32 +485,21 @@ body.tapes {
 }
 
 .tapes-butterfly {
-  position: absolute;
-  top: 117%;
-  left: 65%;
+  position: relative;
+  bottom: 17vh;
+  left: 16vh;
   width: 7rem;
-  height: 7rem;      
+  height: 7rem;
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
 }
 
 .tapes-hand {
-  position: absolute;
-  top: 220%;
+  position: relative;
+  bottom: 12vh;
   width: 18rem;
-  height: 15rem;      
-  opacity: 0.8;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.tapes-planet {
-  position: absolute;
-  top: 4rem;
-  left: 6.5rem;
-  width: 5rem;
-  height: 5rem;      
+  height: 15rem;
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
@@ -508,7 +526,7 @@ body.tapes {
   background-color: #1a1033;
   overflow: hidden;
   color: var(--ghost-white);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   height: 68vh;
   display: flex;
   justify-content: center;
@@ -531,11 +549,11 @@ body.tapes {
 }
 
 .entry-title {
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
 }
 
 .entry-body {
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 .now-playing {
@@ -546,7 +564,7 @@ body.tapes {
   width: 3.4rem;
   height: 2.5rem;
   position: absolute;
-  top: 18.5rem; 
+  top: 18.5rem;
   left: 14.8rem;
 }
 
@@ -601,7 +619,7 @@ body.tapes {
   top: 19.9rem;
   left: 12.8rem;
   border-radius: 50px;
- }
+}
 
 .previous-entry {
   width: 2.1875rem;
@@ -610,7 +628,7 @@ body.tapes {
   top: 19.9rem;
   left: 8.2rem;
   border-radius: 50px;
- }
+}
 
 .playpause {
   width: 2.4rem;
@@ -632,7 +650,7 @@ body.tapes {
   background-repeat: no-repeat;
   background-color: #1a1033;
   color: var(--ghost-white);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   height: 100vh;
   width: 55vw;
   display: flex;
@@ -661,12 +679,36 @@ body.tapes {
   height: 60px;
 }
 
+.finance {
+  background-image: url(images/finance.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  background-color: #000;
+}
 
+.finance-intro {
+  position: relative;
+  top: 31.9vh;
+  left: 14.7vh;
+  max-width: 43%;
+  max-height: 16.1vh;
+  overflow-y: scroll;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.8;
+  padding: 5px;
+  border-radius: 20px;
+  color: #100c1a;
+}
 
+.finance-intro a {
+  color: rgb(209, 23, 209);
+}
 
 /* iphone 16 */
 @media (min-width: 376px) and (max-width: 399px) {
-  
   .home-ghost {
     top: 20%;
     left: 19rem;
@@ -678,39 +720,40 @@ body.tapes {
     max-width: 70%;
     font-size: 1.5rem;
   }
-  
+
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
     font-size: 1.5rem;
   }
-  
-  .article-three, .article-four {
+
+  .article-three,
+  .article-four {
     visibility: hidden;
   }
-  
+
   .tapes-nav {
     margin-bottom: 13rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   #tape-select {
     margin-left: 7.3rem;
   }
-  
+
   .tapes-lego {
     top: 173%;
   }
-  
+
   .tapes-butterfly {
     top: 112%;
   }
-  
+
   .tapes-hand {
-    top: 220%;     
+    top: 220%;
   }
-  
+
   .tapes-planet {
     left: 7rem;
   }
@@ -718,7 +761,7 @@ body.tapes {
   .tapes-ghost {
     top: 10rem;
   }
-  
+
   .tapes-footer {
     left: 18rem;
   }
@@ -739,7 +782,7 @@ body.tapes {
   .entry-back-btn {
     width: 3.5rem;
     height: 2.5rem;
-    top: 51.2%; 
+    top: 51.2%;
     left: 63%;
   }
 
@@ -749,7 +792,7 @@ body.tapes {
     top: 51.2%;
     left: 21.4%;
   }
-  
+
   .entry-call-btn {
     top: 59%;
     left: 21%;
@@ -768,8 +811,8 @@ body.tapes {
   }
 
   .scrollDown {
-    top: 62.5%; 
-    height: 2rem;  
+    top: 62.5%;
+    height: 2rem;
     left: 43.7%;
   }
 
@@ -819,7 +862,6 @@ body.tapes {
 
 /* iphone 12 mini */
 @media (max-width: 376px) and (min-height: 627px) {
-  
   .home-container {
     font-size: 0.7rem;
     margin-top: 3rem;
@@ -838,43 +880,44 @@ body.tapes {
     max-width: 70%;
     font-size: 1.3rem;
   }
-  
+
   .article-two {
     margin: 18rem 4rem 0 0;
     max-width: 70%;
     font-size: 1.6rem;
   }
-  
-  .article-three, .article-four {
+
+  .article-three,
+  .article-four {
     visibility: hidden;
   }
-  
+
   .tapes-nav {
     margin-bottom: 13rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   #tape-select {
     margin-left: 7.3rem;
   }
-  
+
   .tapes-lego {
     top: 168%;
   }
-  
+
   .tapes-butterfly {
     top: 115%;
   }
-  
+
   .tapes-hand {
-    top: 215%;     
+    top: 215%;
   }
-  
+
   .tapes-planet {
     left: 7rem;
   }
-  
+
   .tapes-footer {
     left: 17rem;
   }
@@ -903,7 +946,7 @@ body.tapes {
     top: 52%;
     left: 21%;
   }
-  
+
   .entry-call-btn {
     top: 60%;
     left: 21.5%;
@@ -917,12 +960,12 @@ body.tapes {
   }
 
   .scrollUp {
-    top: 51%;   
+    top: 51%;
     left: 43.5%;
   }
 
   .scrollDown {
-    top: 63.5%;   
+    top: 63.5%;
     left: 43.5%;
   }
 
@@ -955,7 +998,6 @@ body.tapes {
 
 /* iphone 16 pro */
 @media (min-width: 400px) and (max-width: 414px) {
-  
   .home-container {
     font-size: 0.7rem;
     margin-top: 2rem;
@@ -964,7 +1006,7 @@ body.tapes {
   .home-links {
     margin-top: 7%;
   }
-  
+
   .home-ghost {
     margin-left: 7%;
   }
@@ -982,54 +1024,54 @@ body.tapes {
     max-width: 70%;
     font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
-  
+
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
     font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
-  
+
   .tapes-nav {
     margin-bottom: 12.5rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   .tapes-nav label {
     padding-left: 30px;
   }
-  
+
   #tape-select {
     margin-left: 7rem;
     width: 70%;
   }
-  
+
   .tapes-ghost {
     top: 10.5rem;
     left: 21.5rem;
   }
-  
+
   .tapes-lego {
     top: 166%;
     left: 15rem;
   }
-  
+
   .tapes-butterfly {
     top: 48rem;
     left: 18rem;
   }
-  
+
   .tapes-hand {
     top: 210%;
     width: 18rem;
-    height: 15rem;      
+    height: 15rem;
   }
-  
+
   .tapes-planet {
     top: 4rem;
     left: 7.3rem;
   }
-  
+
   .tapes-footer {
     left: 74%;
   }
@@ -1049,7 +1091,7 @@ body.tapes {
   .entry-back-btn {
     width: 3.5rem;
     height: 3rem;
-    top: 23rem; 
+    top: 23rem;
     left: 16.1rem;
   }
 
@@ -1070,7 +1112,7 @@ body.tapes {
   .entry-closed-btn {
     width: 3.5rem;
     height: 3rem;
-    top: 26.5rem; 
+    top: 26.5rem;
     left: 16.1rem;
   }
 
@@ -1131,7 +1173,6 @@ body.tapes {
 
 /* iphone 14 plus */
 @media (min-width: 415px) and (max-width: 429px) {
-  
   .home-container {
     font-size: 0.7rem;
     margin-top: 2rem;
@@ -1140,7 +1181,7 @@ body.tapes {
   .home-links {
     margin-top: 7%;
   }
-  
+
   .home-ghost {
     margin-left: 7%;
   }
@@ -1159,33 +1200,33 @@ body.tapes {
     max-width: 70%;
     font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
-  
+
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
     font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
   }
-  
+
   .tapes-nav {
     margin-bottom: 12.5rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   .tapes-nav label {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
     padding-left: 30px;
     letter-spacing: 1px;
   }
-  
+
   #tape-select {
     padding: 0.6rem 0.1rem;
     margin-left: 7rem;
     font-size: 0.7rem;
     width: 70%;
   }
-  
+
   .tapes-ghost {
     width: 40px;
     height: 70px;
@@ -1193,35 +1234,34 @@ body.tapes {
     top: 11.5rem;
     left: 22.5rem;
   }
-  
+
   .tapes-lego {
     top: 163%;
     left: 15rem;
     width: 10rem;
     height: 10rem;
   }
-  
+
   .tapes-butterfly {
     top: 52rem;
     left: 19rem;
     width: 7rem;
-    height: 7rem;      
+    height: 7rem;
   }
-  
-  
+
   .tapes-hand {
     top: 210%;
     width: 18rem;
-    height: 15rem;      
+    height: 15rem;
   }
-  
+
   .tapes-planet {
     top: 4rem;
     left: 8rem;
     width: 5rem;
     height: 5rem;
   }
-  
+
   .tapes-footer {
     font-size: 0.5rem;
     display: flex;
@@ -1248,7 +1288,7 @@ body.tapes {
   .entry-back-btn {
     width: 3.5rem;
     height: 3rem;
-    top: 23.9rem; 
+    top: 23.9rem;
     left: 17.1rem;
   }
 
@@ -1269,7 +1309,7 @@ body.tapes {
   .entry-closed-btn {
     width: 3.5rem;
     height: 3rem;
-    top: 27.5rem; 
+    top: 27.5rem;
     left: 17.1rem;
   }
 
@@ -1330,7 +1370,6 @@ body.tapes {
 
 /* iphone 16 plus */
 @media (min-width: 430px) and (max-width: 439px) {
-
   .home-container {
     font-size: 0.8rem;
     margin-top: 2.5rem;
@@ -1352,73 +1391,73 @@ body.tapes {
     left: 7rem;
     top: 32rem;
   }
-  
+
   .article-one {
     margin: 10rem 5rem 0 0;
     max-width: 70%;
     font-size: 1.7rem;
   }
-  
+
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
     font-size: 1.7rem;
   }
-  
+
   .tapes-nav {
     margin-bottom: 12.5rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   .tapes-nav label {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
     padding-left: 30px;
     letter-spacing: 1px;
   }
-  
+
   #tape-select {
     padding: 0.6rem 0.1rem;
     margin-left: 7rem;
     font-size: 0.7rem;
     width: 70%;
   }
-  
+
   .tapes-ghost {
     width: 40px;
     height: 70px;
     top: 11.5rem;
     left: 22.5rem;
   }
-  
+
   .tapes-lego {
     top: 77.2rem;
     left: 15rem;
     width: 10rem;
     height: 10rem;
   }
-  
+
   .tapes-butterfly {
     top: 53rem;
     left: 19rem;
     width: 7rem;
-    height: 7rem;      
+    height: 7rem;
   }
-  
+
   .tapes-hand {
     top: 99rem;
     width: 18rem;
-    height: 15rem;      
+    height: 15rem;
   }
-  
+
   .tapes-planet {
     top: 4rem;
     left: 8rem;
     width: 5rem;
     height: 5rem;
   }
-  
+
   .tapes-footer {
     bottom: 1rem;
     left: 20rem;
@@ -1439,7 +1478,7 @@ body.tapes {
   .entry-back-btn {
     width: 4rem;
     height: 2.8rem;
-    top: 24.8rem; 
+    top: 24.8rem;
     left: 17rem;
   }
 
@@ -1460,7 +1499,7 @@ body.tapes {
   .entry-closed-btn {
     width: 4rem;
     height: 3.3rem;
-    top: 28.5rem; 
+    top: 28.5rem;
     left: 17rem;
   }
 
@@ -1517,7 +1556,6 @@ body.tapes {
 
 /* iphone 16 pro max */
 @media (min-width: 440px) and (max-width: 599px) {
-
   .home-container {
     font-size: 0.8rem;
     margin-top: 2.5rem;
@@ -1534,77 +1572,78 @@ body.tapes {
   .who-follow {
     margin-left: 2rem;
   }
-  
+
   .article-one {
     margin: 10rem 5rem 0 0;
     max-width: 70%;
     font-size: 1.7rem;
   }
-  
+
   .article-two {
     margin: 19rem 4rem 0 0;
     max-width: 70%;
     font-size: 1.7rem;
   }
-  
-  .article-three, .article-four {
+
+  .article-three,
+  .article-four {
     visibility: hidden;
   }
-  
+
   .tapes-nav {
     margin-bottom: 12.5rem;
     margin-right: 6rem;
     width: 90%;
   }
-  
+
   .tapes-nav label {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
     padding-left: 30px;
     letter-spacing: 1px;
   }
-  
+
   #tape-select {
     padding: 0.6rem 0.1rem;
     margin-left: 7rem;
     font-size: 0.7rem;
     width: 70%;
   }
-  
+
   .tapes-ghost {
     width: 40px;
     height: 70px;
     top: 11.5rem;
     left: 22.5rem;
   }
-  
+
   .tapes-lego {
     top: 77.2rem;
     left: 15rem;
     width: 10rem;
     height: 10rem;
   }
-  
+
   .tapes-butterfly {
     top: 53rem;
     left: 19rem;
     width: 7rem;
-    height: 7rem;      
+    height: 7rem;
   }
-  
+
   .tapes-hand {
     top: 99rem;
     width: 18rem;
-    height: 15rem;      
+    height: 15rem;
   }
-  
+
   .tapes-planet {
     top: 4rem;
     left: 8rem;
     width: 5rem;
     height: 5rem;
   }
-  
+
   .tapes-footer {
     bottom: 1rem;
     left: 20rem;
@@ -1625,7 +1664,7 @@ body.tapes {
   .entry-back-btn {
     width: 4rem;
     height: 2.8rem;
-    top: 24.3rem; 
+    top: 24.3rem;
     left: 17.4rem;
   }
 
@@ -1646,7 +1685,7 @@ body.tapes {
   .entry-closed-btn {
     width: 4rem;
     height: 3.3rem;
-    top: 27.8rem; 
+    top: 27.8rem;
     left: 17.5rem;
   }
 
@@ -1710,10 +1749,8 @@ body.tapes {
   }
 }
 
-
 /* ipad mini */
 @media (min-width: 600px) and (max-width: 767px) {
- 
   .home {
     min-height: 90vh;
   }
@@ -1729,7 +1766,9 @@ body.tapes {
     top: 3rem;
   }
 
-  .home-instagram, .home-linkedin, .home-spotify {
+  .home-instagram,
+  .home-linkedin,
+  .home-spotify {
     height: 3rem;
     width: 4rem;
   }
@@ -1968,9 +2007,8 @@ body.tapes {
   }
 }
 
-/* ipad air 11 */ 
+/* ipad air 11 */
 @media (min-width: 768px) and (max-width: 819px) {
- 
   .home {
     min-height: 90vh;
   }
@@ -2067,10 +2105,10 @@ body.tapes {
 
   .tapes-header {
     margin: 100px 0 0 200px;
-  } 
+  }
 
   .tapes-title {
-    font-size: 6rem; 
+    font-size: 6rem;
   }
 
   .tapes-main {
@@ -2248,9 +2286,8 @@ body.tapes {
     height: 8rem;
   }
 }
-/* ipad needs work*/ 
+/* ipad needs work*/
 @media (min-width: 820px) and (max-width: 833px) {
- 
   .home {
     min-height: 90vh;
   }
@@ -2347,10 +2384,10 @@ body.tapes {
 
   .tapes-header {
     margin: 100px 0 0 200px;
-  } 
+  }
 
   .tapes-title {
-    font-size: 6rem; 
+    font-size: 6rem;
   }
 
   .tapes-main {
@@ -2529,9 +2566,8 @@ body.tapes {
   }
 }
 
-/* ipad pro 11 */ 
+/* ipad pro 11 */
 @media (min-width: 834px) and (max-width: 1023px) {
- 
   .home {
     min-height: 90vh;
   }
@@ -2628,10 +2664,10 @@ body.tapes {
 
   .tapes-header {
     margin: 100px 0 0 200px;
-  } 
+  }
 
   .tapes-title {
-    font-size: 6rem; 
+    font-size: 6rem;
   }
 
   .tapes-main {
@@ -2814,7 +2850,6 @@ body.tapes {
 
 /* ipad air 13in  */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  
   .home {
     min-height: 90vh;
   }
@@ -2864,7 +2899,6 @@ body.tapes {
 
   .who-quote-one {
     font-size: 3rem;
-    
   }
 
   .who-quote-one p {
@@ -2913,10 +2947,10 @@ body.tapes {
 
   .tapes-header {
     margin: 100px 0 0 230px;
-  } 
+  }
 
   .tapes-title {
-    font-size: 7rem; 
+    font-size: 7rem;
   }
 
   .tapes-main {
@@ -3078,7 +3112,7 @@ body.tapes {
   .closed-tape {
     overflow: hidden;
   }
-  
+
   .blond {
     width: 28rem;
     height: 20.2rem;
@@ -3097,7 +3131,6 @@ body.tapes {
 
 /* ipad pro 13in  */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  
   .home {
     min-height: 90vh;
   }
@@ -3147,7 +3180,6 @@ body.tapes {
 
   .who-quote-one {
     font-size: 3rem;
-    
   }
 
   .who-quote-one p {
@@ -3196,10 +3228,10 @@ body.tapes {
 
   .tapes-header {
     margin: 100px 0 0 230px;
-  } 
+  }
 
   .tapes-title {
-    font-size: 7rem; 
+    font-size: 7rem;
   }
 
   .tapes-main {
@@ -3361,7 +3393,7 @@ body.tapes {
   .closed-tape {
     overflow: hidden;
   }
-  
+
   .blond {
     width: 28rem;
     height: 20.4rem;
@@ -3378,32 +3410,27 @@ body.tapes {
   }
 }
 
-
-
-
 /* small macs needs work */
 @media (min-width: 1280px) and (max-width: 1439) {
- 
 }
 
 /* medium macs needs work */
 @media (min-width: 1440px) and (max-width: 1679) {
-  
   .home-links {
     display: flex;
     justify-content: flex-end;
     width: 50%;
     position: fixed;
-    top:39rem;
+    top: 39rem;
     left: 43rem;
   }
-  
+
   .home-instagram {
     display: inline-block;
     width: 5.7rem;
     height: 5.7rem;
   }
-  
+
   .home-linkedin {
     display: inline-block;
     width: 5rem;
@@ -3413,9 +3440,9 @@ body.tapes {
     background-position: center;
     text-indent: -9999px;
     overflow: hidden;
-    background-image: url('images/linkedin.png');
+    background-image: url("images/linkedin.png");
   }
-  
+
   .home-spotify {
     display: inline-block;
     width: 5rem;
@@ -3425,14 +3452,17 @@ body.tapes {
     background-position: center;
     text-indent: -9999px;
     overflow: hidden;
-    background-image: url('images/spotify.png');
+    background-image: url("images/spotify.png");
   }
 
-  .home-instagram:hover, .home-linkedin:hover, .home-spotify:hover {
+  .home-instagram:hover,
+  .home-linkedin:hover,
+  .home-spotify:hover {
     cursor: pointer;
     transform: scale(1.1);
     filter: brightness(1.4) saturate(1.2);
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease,
+      filter 0.3s ease;
   }
 
   .home-ghost {
@@ -3447,7 +3477,8 @@ body.tapes {
     cursor: pointer;
     transform: scale(1.1);
     filter: brightness(1.4) saturate(1.2);
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease,
+      filter 0.3s ease;
     opacity: 0.8;
   }
 
@@ -3490,22 +3521,26 @@ body.tapes {
     overflow: scroll;
   }
 
-  .article-one, .article-two, 
-  .article-three, .article-four {
+  .article-one,
+  .article-two,
+  .article-three,
+  .article-four {
     color: var(--ghost-white);
     opacity: 0.7;
     text-shadow: 0 0 10px black;
   }
 
-  .article-one:hover, .article-two:hover,
-  .article-three:hover, .article-four:hover {
+  .article-one:hover,
+  .article-two:hover,
+  .article-three:hover,
+  .article-four:hover {
     color: var(--electric-lavender);
     text-shadow: 0 0 12px var(--electric-lavender);
     cursor: pointer;
     transition: all 0.3s ease;
     transform: scale(1.05);
   }
-  
+
   .article-one {
     width: 25rem;
     height: 15rem;
@@ -3549,7 +3584,6 @@ body.tapes {
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
 
   .article-four {
@@ -3582,7 +3616,7 @@ body.tapes {
     background-color: black;
     color: var(--ghost-white);
     border: 1px solid var(--electric-lavender);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.5rem;
     border-radius: 4px;
     box-shadow: 0 0 10px var(--electric-lavender);
@@ -3641,7 +3675,7 @@ body.tapes {
     background-repeat: no-repeat;
     background-color: #000;
     color: var(--ghost-white);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     max-height: 100vh;
     display: flex;
     justify-content: center;
@@ -3674,8 +3708,8 @@ body.tapes {
   }
 
   .entry-back-btn {
-    position: absolute; 
-    top: 36.7rem; 
+    position: absolute;
+    top: 36.7rem;
     left: 64.1rem;
     width: 2.375rem;
     height: 1.5625rem;
@@ -3688,7 +3722,7 @@ body.tapes {
   }
 
   .entry-back-btn::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -3713,9 +3747,9 @@ body.tapes {
   }
 
   .entry-home-btn::after {
-    content: 'home';
+    content: "home";
     font-size: 15px;
-    font-family: 'Playfair Display';
+    font-family: "Playfair Display";
     color: var(--lover-blue);
     padding: 2px 0 0 5px;
     opacity: 0.9;
@@ -3734,8 +3768,9 @@ body.tapes {
     box-shadow: 0 0 10px var(--electric-lavender);
   }
 
-  .entry-call-btn, .entry-closed-btn 
-  .scrollUp, .scrollDown {
+  .entry-call-btn,
+  .entry-closed-btn .scrollUp,
+  .scrollDown {
     display: none;
   }
 
@@ -3751,7 +3786,8 @@ body.tapes {
     border-radius: 50px;
     background-color: transparent;
     border: 2px solid transparent;
-    transition: border 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .playpause:hover {
@@ -3761,7 +3797,7 @@ body.tapes {
     opacity: 0.9;
   }
 
-.next-entry {
+  .next-entry {
     width: 1.75rem;
     height: 1rem;
     position: absolute;
@@ -3780,7 +3816,7 @@ body.tapes {
   }
 
   .next-entry::after {
-    content: '->';
+    content: "->";
     font-size: 0.95rem;
     color: #71fcca;
     display: flex;
@@ -3791,7 +3827,7 @@ body.tapes {
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: transparent;
     opacity: 0.7;
   }
@@ -3818,7 +3854,7 @@ body.tapes {
   }
 
   .previous-entry::after {
-    content: '<-';
+    content: "<-";
     font-size: 1rem;
     color: #ff8d8d;
     display: flex;
@@ -3830,7 +3866,7 @@ body.tapes {
     border: none;
     outline: none;
     line-height: 1;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: transparent;
   }
 
@@ -3838,13 +3874,13 @@ body.tapes {
     border: 2px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 0 10px var(--electric-lavender);
   }
-  
+
   #who-start-btn {
     width: 20rem;
     height: 20rem;
     margin-left: 5%;
   }
-  
+
   #who-start-btn:hover {
     opacity: 1;
     transform: scale(1.1);
@@ -3856,70 +3892,70 @@ body.tapes {
     top: 7%;
     right: 12%;
   }
-  
+
   .who-intro {
     min-height: 120vh;
   }
-  
+
   .who-nova {
     font-size: 3rem;
     padding: 16rem 0 0 7rem;
   }
-  
+
   .who-jason {
     font-size: 3rem;
     padding: 0 0 0 3rem;
   }
-  
+
   .who-quote-one {
     min-height: 100vh;
     font-size: 3rem;
     width: 100%;
   }
-  
+
   .who-quote-one p {
     margin: 9rem 0 0 15rem;
   }
-  
+
   .who-falling {
     background-image: url(images/falling.png);
     background-repeat: no-repeat;
     background-size: 100% 90%;
     min-height: 150vh;
   }
-  
+
   .who-quote-two {
     min-height: 80vh;
     font-size: 3rem;
   }
-  
+
   .who-quote-two p {
     margin: 10rem 0 0 15rem;
   }
-  
+
   .who-girl {
     background-size: 100% 90%;
     min-height: 150vh;
   }
-  
+
   .who-quote-three {
     min-height: 80vh;
     font-size: 6rem;
     width: 100%;
   }
-  
+
   .who-quote-three p {
     margin: 4rem 0 0 3.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
-  
+
   .who-city {
     background-image: url(images/city2.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 120vh;
   }
-  
+
   .who-follow {
     color: var(--ghost-white);
     font-size: 1.5rem;
@@ -3927,7 +3963,6 @@ body.tapes {
     left: 39rem;
     top: 49rem;
     opacity: 0.6;
-   
   }
 
   .who-follow:hover {
@@ -3938,5 +3973,4 @@ body.tapes {
 
 /* big monitors needs work */
 @media (min-width: 1680px) {
- 
 }
