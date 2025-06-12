@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>journal – novacane</title>
-  <link rel="stylesheet" href="style.css?v=87">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>journal – novacane</title>
+    <link rel="stylesheet" href="style.css?v=87" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="tapes">
-  <header class="tapes-header">
-    <h1 class="tapes-title">novacane</h1>
-  </header>
+  <body class="tapes">
+    <img src="images/planet.png" alt="Planet" class="tapes-planet" />
+    <header class="tapes-header">
+      <h1 class="tapes-title">novacane</h1>
+    </header>
 
-  <a href="index.html" class="tapes-ghost"></a>
+    <a href="finance.html" class="tapes-card"></a>
 
-  <main class="tapes-main">
+    <main class="tapes-main">
+      <a href="tapes/04-91percentHuman.html" class="article-one">
+        <p>
+          91% human <br />
+          june 10th, 2025 <br />#school · #human →
+        </p>
+      </a>
 
-    <a href="tapes/03-novacane.html" class="article-one">
-      <p>novacane.live <br> april 3, 2025 <br>#domain · #love→</p>
-    </a>
-  
-    <a href="tapes/02-spring-break.html" class="article-two">
-      <p>spring - break <br>april 1, 2025 <br>#dad · #life →</p>
-    </a>
+      <a href="tapes/02-spring-break.html" class="article-two">
+        <p>novacane.live<br />april 3, 2025 <br />#domain · #love→</p>
+      </a>
 
-    <a href="tapes/journal3.html" class="article-three">
-      <p>genesis <br>march 29, 2025 <br>#first · #code →</p>
-    </a>
+      <img src="images/butterfly.png" alt="Butterlfy" class="tapes-butterfly" />
 
-    <a href="tapes/journal4.html" class="article-four">
-      <p>genesis <br>march 29, 2025 <br>#first · #code →</p>
-    </a>
+      <a href="tapes/journal3.html" class="article-three">
+        <p>genesis <br />march 29, 2025 <br />#first · #code →</p>
+      </a>
 
-    <nav class="tapes-nav">
-      <label for="tape-select">insert a new tape</label>
-      <select id="tape-select" onchange="location = this.value;">
-        <option value="">pick ur track</option>
-        <option value="tapes/01-genesis.html">genesis - march 29, 2025</option>
-        <option value="tapes/02-spring-break.html">spring break - april 1, 2025</option>
-        <option value="tapes/03-novacane.html">novacane.live - april 3, 2025</option>
-      </select>
-    </nav>
-  </main>
+      <a href="tapes/journal4.html" class="article-four">
+        <p>genesis <br />march 29, 2025 <br />#first · #code →</p>
+      </a>
 
-  <img src="images/butterfly.png" alt="Butterlfy" class="tapes-butterfly">
-  <img src="images/hand.png" alt="Hand" class="tapes-hand">
-  <img src="images/lego.png" alt="Lego" class="tapes-lego">
-  <img src="images/planet.png" alt="Planet" class="tapes-planet"> 
- 
+      <img src="images/lego.png" alt="Lego" class="tapes-lego" />
 
-  <footer class="tapes-footer">
-    built in the dark <br> by thehomienova
-  </footer>
+      <nav class="tapes-nav">
+        <label for="tape-select">insert a new tape</label>
+        <select id="tape-select" onchange="location = this.value;">
+          <option value="">pick ur track</option>
+          <option value="tapes/01-genesis.html">
+            genesis - march 29, 2025
+          </option>
+          <option value="tapes/02-spring-break.html">
+            spring break - april 1, 2025
+          </option>
+          <option value="tapes/03-novacane.html">
+            novacane.live - april 3, 2025
+          </option>
+          <option value="tapes/04-91percentHuman">
+            91% human - june 9th, 2025
+          </option>
+          <option value="finance.html">finance</option>
+        </select>
+      </nav>
+    </main>
 
-  <script>
-    function updateWidth() {
-      document.body.setAttribute('data-width', window.innerWidth);
-    }
-  
-    updateWidth(); // set it on load
-    window.addEventListener('resize', updateWidth); // update on resize/zoom
-  </script>
-  
-  <style>
-    body::after {
-      content: attr(data-width) 'px';
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      background: black;
-      color: lime;
-      padding: 4px 8px;
-      font-family: monospace;
-      font-size: 1rem;
-      z-index: 9999;
-    }
-  </style>
-  <script src="script.js"></script>
-</body>
+    <img src="images/hand.png" alt="Hand" class="tapes-hand" />
+
+    <footer class="tapes-footer">
+      built in the dark <br />
+      by thehomienova
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
