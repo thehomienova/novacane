@@ -65,14 +65,16 @@ if (music && playpause) {
 }
 
 // who music
+const who = document.querySelector(".who-scroll");
+let scrollWho = 0;
+
 const startBtn = document.querySelector("#who-start-btn");
 const whoSong = document.querySelector("#who-song");
 const whoStart = document.querySelector(".who-start");
 
 function playSong() {
-  console.log("🔘 Button clicked");
   if (whoSong.paused) {
-    whoSong.currentTime = 8;
+    whoSong.currentTime = 0;
     whoSong.volume = 0.5;
     whoSong
       .play()
@@ -89,24 +91,127 @@ if (startBtn && whoSong) {
   whoStart.addEventListener("click", () => {
     playSong();
     whoStart.style.display = "none";
+    who.scrollTop = 0;
+    scrollWho = 0;
+    requestAnimationFrame(autoWhoScroll);
+    setTimeout(() => {
+      if (who.scrollTop < who.scrollHeight - who.clientHeight) {
+        autoWhoScroll();
+      }
+    }, 1000);
   });
 }
 
-// automatic finance intro scroll
-const finance = document.querySelector(".finance-intro");
-let scrollPos = 0;
+// automatic who scroll
+function autoWhoScroll() {
+  scrollWho += 1.2;
+  who.scrollTop = scrollWho;
+  console.log("Scrolling... ", scrollWho);
 
-function autoScroll() {
-  scrollPos += 0.3;
-  const rounded = Math.floor(scrollPos);
-
-  if (rounded > finance.scrollTop) {
-    finance.scrollTop = rounded;
-  }
-
-  if (finance.scrollTop < finance.scrollHeight - finance.clientHeight) {
-    requestAnimationFrame(autoScroll);
+  if (scrollWho < who.scrollHeight - who.clientHeight) {
+    requestAnimationFrame(autoWhoScroll);
   }
 }
 
-autoScroll();
+// finance music
+const finance = document.querySelector(".finance-intro");
+let scrollFinance = 0;
+
+const financeBtn = document.querySelector("#finance-start-btn");
+const financeSong = document.querySelector("#finance-song");
+const financeStart = document.querySelector(".finance-start");
+
+function playFinanceSong() {
+  if (financeSong.paused) {
+    financeSong.currentTime = 0;
+    financeSong.volume = 0.5;
+    financeSong
+      .play()
+      .then(() => {
+        console.log("🎶 who.mp3 playing");
+      })
+      .catch((err) => {
+        console.warn("🔇 playback blocked:", err);
+      });
+  }
+}
+
+if (financeBtn && financeSong) {
+  financeStart.addEventListener("click", () => {
+    playFinanceSong();
+    financeStart.style.display = "none";
+    finance.scrollTop = 0;
+    scrollFinance = 0;
+    requestAnimationFrame(autoFinanceScroll);
+    setTimeout(() => {
+      if (finance.scrollTop < finance.scrollHeight - finance.clientHeight) {
+        autoFinanceScroll();
+      }
+    }, 1000);
+  });
+}
+
+// automatic finance scroll
+function autoFinanceScroll() {
+  scrollFinance += 0.25;
+  finance.scrollTop = scrollFinance;
+  console.log("Scrolling... ", scrollFinance);
+
+  if (scrollFinance < finance.scrollHeight - finance.clientHeight) {
+    requestAnimationFrame(autoFinanceScroll);
+  }
+}
+
+// cards song
+const cardsSong = document.querySelector("#cardsSong");
+const cardsStart = document.querySelector(".cards-start");
+const cardsBtn = document.querySelector("#cards-start-btn");
+
+function playCardsSong() {
+  if (cardsSong.paused) {
+    cardsSong.currentTime = 5;
+    cardsSong.volume = 0.5;
+    cardsSong
+      .play()
+      .then(() => {
+        console.log("🎶 cardsSong.mp3 playing");
+      })
+      .catch((err) => {
+        console.warn("🔇 playback blocked:", err);
+      });
+  }
+}
+
+if (cardsBtn && cardsSong) {
+  cardsStart.addEventListener("click", () => {
+    playCardsSong();
+    cardsStart.style.display = "none";
+  });
+}
+
+// card song
+const cardSong = document.querySelector("#cardSong");
+const cardStart = document.querySelector(".card-start");
+const cardBtn = document.querySelector("#card-start-btn");
+
+function playCardSong() {
+  if (cardSong.paused) {
+    cardSong.currentTime = 0;
+    cardSong.volume = 0.5;
+    cardSong
+      .play()
+      .then(() => {
+        console.log("🎶 cardsSong.mp3 playing");
+      })
+      .catch((err) => {
+        console.warn("🔇 playback blocked:", err);
+      });
+  }
+}
+
+if (cardBtn && cardSong) {
+  cardStart.addEventListener("click", () => {
+    playCardSong();
+    cardStart.style.display = "none";
+  });
+}

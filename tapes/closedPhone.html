@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Closed Journal</title>
-    <link rel="stylesheet" href="../style.css?v=87" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap" rel="stylesheet">
-
-</head>
-<body class="closed-tape">
-
-    <img src="../images/blond.JPG" alt="Blond" class="blond">
+    <link rel="stylesheet" href="style.css?v=95" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="closed-tape">
+    <img src="../images/blond.JPG" alt="Blond" class="blond" />
     <button onclick="reopenJournal()" class="reopen-btn"></button>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const from = params.get("from");
-      
-        // Store where they came from
-        if (from) {
-          localStorage.setItem("cameFromTape", from);
-        }
+      const params = new URLSearchParams(window.location.search);
+      const from = params.get("from");
 
-        function reopenJournal() {
-          const prev = localStorage.getItem("cameFromTape");
-            if (prev) {
-              window.location.href = `${prev}.html`;
-            } else {
-            // fallback if somehow no data
-            window.location.href = "tapes.html";
-            }
+      // Store where they came from
+      if (from) {
+        localStorage.setItem("cameFromTape", from);
+      }
+
+      function reopenJournal() {
+        const prev = localStorage.getItem("cameFromTape");
+        if (prev) {
+          window.location.href = `${prev}.html`;
+        } else {
+          // fallback if somehow no data
+          window.location.href = "tapes.html";
         }
+      }
     </script>
-
-</body>
+  </body>
 </html>
