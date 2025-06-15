@@ -104,9 +104,8 @@ if (startBtn && whoSong) {
 
 // automatic who scroll
 function autoWhoScroll() {
-  scrollWho += 1.2;
+  scrollWho += 1;
   who.scrollTop = scrollWho;
-  console.log("Scrolling... ", scrollWho);
 
   if (scrollWho < who.scrollHeight - who.clientHeight) {
     requestAnimationFrame(autoWhoScroll);
