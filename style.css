@@ -807,7 +807,7 @@ body.tapes {
   flex-flow: row wrap;
 }
 
-.cards-amex {
+.card-icon {
   display: inline-block;
   width: 90px;
   height: 60px;
@@ -815,124 +815,50 @@ body.tapes {
   background-repeat: no-repeat;
   background-position: center;
   text-indent: -9999px;
+  opacity: 0.7;
+  animation: cardPulse 3s infinite;
+  border: 1px solid var(--electric-lavender);
+  border-radius: 5px;
+}
+
+.cards-amex.card-icon {
   background-image: url("images/amex.jpg");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
   margin-right: 8rem;
   margin-bottom: 3rem;
 }
 
-.cards-bilt {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-bilt.card-icon {
   background-image: url("images/bilt.png");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
 }
 
-.cards-rh {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-rh.card-icon {
   background-image: url("images/rh.jpg");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
   margin-right: 8rem;
   margin-bottom: 3rem;
 }
 
-.cards-prime {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-prime.card-icon {
   background-image: url("images/prime.png");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
 }
 
-.cards-hyatt {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-hyatt.card-icon {
   background-image: url("images/hyatt.png");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
   margin-right: 8rem;
   margin-bottom: 3rem;
 }
 
-.cards-apple {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-apple.card-icon {
   background-image: url("images/apple.jpg");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
 }
 
-.cards-discover {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-discover.card-icon {
   background-image: url("images/discover.jpg");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
   margin-right: 8rem;
   margin-bottom: 10rem;
 }
 
-.cards-autograph {
-  display: inline-block;
-  width: 90px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: -9999px;
+.cards-autograph.card-icon {
   background-image: url("images/autograph.png");
-  opacity: 0.7;
-  animation: cardPulse 3s infinite;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
 }
 
 .cards-links {
@@ -985,7 +911,10 @@ body.tapes {
 .bilt,
 .rh-card,
 .prime,
-.apple {
+.apple,
+.hyatt,
+.discover,
+.autograph {
   background-image: url(images/cardBackground.jpg);
   background-size: cover;
   background-position: center;
@@ -998,7 +927,10 @@ body.tapes {
 .bilt-body,
 .rh-card-body,
 .prime-body,
-.apple-body {
+.apple-body,
+.hyatt-body,
+.discover-body,
+.autograph-body {
   width: 100%;
   height: 70vh;
   display: flex;
@@ -1011,7 +943,10 @@ body.tapes {
 .bilt img,
 .rh-card img,
 .prime img,
-.apple img {
+.apple img,
+.hyatt img,
+.discover img,
+.autograph img {
   width: 50%;
   height: 30%;
   border: 1px solid var(--electric-lavender);
@@ -1022,7 +957,10 @@ body.tapes {
 .bilt h1,
 .rh-card h1,
 .prime h1,
-.apple h1 {
+.apple h1,
+.hyatt h1,
+.discover h1,
+.autograph h1 {
   margin-top: 3.9vh;
   padding: 5px;
   width: 55%;
@@ -1057,11 +995,40 @@ body.tapes {
   text-shadow: 0 0 5px rgba(63, 169, 245, 0.2);
 }
 
+.hyatt h1 {
+  background-color: #1f2c4d;
+  color: #cfd0d4;
+}
+
+.apple h1 {
+  color: #cfd0d4;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background-color: #0d0d0d;
+  border: 1px solid #cfd0d4;
+}
+
+.discover h1 {
+  color: #fefefe;
+  background-color: #342f4f;
+  border: 1px solid #b3a6ff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.autograph h1 {
+  color: #e9ecf8;
+  background-color: #2a1e42;
+  border: 1px solid #b889ff;
+  text-shadow: 0 0 12px rgba(233, 236, 248, 0.25);
+}
+
 .amex-description,
 .bilt-description,
 .rh-card-description,
 .prime-description,
-.apple-description {
+.apple-description,
+.hyatt-description,
+.discover-description,
+.autograph-description {
   margin: 1vh;
   padding: 20px;
   font-family: "Inter", sans-serif;
@@ -1081,8 +1048,17 @@ body.tapes {
   color: #aeb6c8;
 }
 
+.apple-description {
+  color: #e5e5e5;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
 .prime-description {
   color: #b8c6f8;
+}
+
+.discover-description {
+  color: var(--electric-lavender);
 }
 
 .amex-description ul {
@@ -1090,11 +1066,19 @@ body.tapes {
   padding-left: 25px;
 }
 
+.autograph-description {
+  color: #dbc5ff;
+  text-shadow: 0 0 8px rgba(169, 133, 255, 0.1);
+}
+
 .amex-outro,
 .bilt-outro,
 .rh-card-outro,
 .prime-outro,
-.apple-outro {
+.apple-outro,
+.hyatt-outro,
+.discover-outro,
+.autograph-outro {
   display: flex;
   justify-content: space-between;
 }
@@ -1102,15 +1086,40 @@ body.tapes {
 .amex-outro a,
 .bilt-outro a,
 .rh-card-outro a,
-.prime-outro a {
-  color: white;
+.prime-outro a,
+.hyatt-outro a,
+.apple-outro a,
+.discover-outro a,
+.autograph-outro a {
   text-decoration: none;
   animation: cardPulse 3s infinite;
 }
 
+.amex-outro a,
+.bilt-outro a,
+.rh-card-outro a,
+.prime-outro a {
+  color: var(--ghost-white);
+}
+
+.hyatt-outro a,
+.discover-outro a {
+  color: #3fa9f5;
+}
+
+.apple-outro a {
+  color: #bfbfbf;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.autograph-outro a {
+  color: #ffe4ef;
+  text-shadow: 0 0 6px rgba(255, 228, 239, 0.2);
+}
+
 #finance-disclaimer {
   margin-top: 1rem;
-  font-size: 50%;
+  font-size: 40%;
   width: 100%;
 }
 

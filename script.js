@@ -104,7 +104,7 @@ if (startBtn && whoSong) {
 
 // automatic who scroll
 function autoWhoScroll() {
-  scrollWho += 1;
+  scrollWho += 0.9;
   who.scrollTop = scrollWho;
 
   if (scrollWho < who.scrollHeight - who.clientHeight) {
