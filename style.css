@@ -1,5 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap");
 
+@font-face {
+  font-family: "Joystix Monospace";
+  src: url("fonts/joystixFonts/joystixmMonospace.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Speed Rusher";
+  src: url("fonts/speedRusherFonts/SpeedRusher.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Game Paused";
+  src: url("fonts/gamePausedFonts/Game\ Paused\ DEMO.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron Light";
+  src: url("fonts/orbitronLightFonts/Orbitron\ Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Unique";
+  src: url("fonts/unique/Unique.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shooting Star";
+  src: url("fonts/shooting-star-personal-use/Shooting\ Star.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MoonScape";
+  src: url("fonts/Moonscape\ Demo.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Glatic";
+  src: url("fonts/glatic.otf") format("opentype");
+  font-weight: 700;
+}
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -147,6 +202,7 @@ body.who {
   background-repeat: no-repeat;
   background-size: 100% 90%;
   min-height: 105vh;
+  max-width: 100vw;
   color: var(--electric-lavender);
   font-family: "Playfair Display", sans-serif;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
@@ -165,6 +221,20 @@ body.who {
   opacity: 0.7;
   text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
   font-family: "Inter", sans-serif;
+}
+
+.skip {
+  background-image: url(images/skip.png);
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 20px;
+  position: sticky;
+  z-index: 9999;
+  top: 1rem;
+  left: 0.2rem;
 }
 
 .who-quote-one {
@@ -337,6 +407,7 @@ body.tapes {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  position: relative;
 }
 
 body.tapes::-webkit-scrollbar {
@@ -367,7 +438,10 @@ body.tapes {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin: 10px 0 0 85px;
+  width: auto;
+  position: absolute;
+  left: 28%;
+  top: 7%;
 }
 
 .tapes-title {
@@ -385,9 +459,11 @@ body.tapes {
   text-indent: -9999px;
   background-image: url("images/card.jpg");
   position: relative;
-  top: 27vh;
-  left: 38vh;
-  animation: cardPulse 2s infinite;
+  animation: cardPulse 3s infinite;
+  position: absolute;
+  top: 18%;
+  right: 8%;
+  z-index: 9999;
 }
 
 @keyframes cardPulse {
@@ -403,10 +479,8 @@ body.tapes {
 }
 
 .tapes-main {
-  min-height: 80vh;
-  width: 100%;
-  max-width: 100%;
-  padding: 2rem 1rem;
+  height: 180vh;
+  width: 99%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -414,13 +488,12 @@ body.tapes {
   font-family: "Inter", sans-serif;
   margin-top: 15%;
   box-sizing: border-box;
-  overflow-x: hidden;
   font-family: "Inter";
+  position: relative;
+  overflow: clip;
 }
 
 .article-one {
-  position: relative;
-  top: 10vh;
   max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
@@ -430,13 +503,23 @@ body.tapes {
   border-radius: 10px;
   color: #dcb8ff;
   text-decoration: none;
-  animation: articlePulse 3s infinite;
+  animation: cardPulse 3s infinite;
+  margin-top: 35%;
+  position: absolute;
+  top: 12%;
+  left: 7%;
+}
+
+.tapes-butterfly {
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 34.5%;
+  left: 60%;
 }
 
 .article-two {
-  position: relative;
-  top: 23vh;
-  max-width: 70%;
   font-size: 1.3rem;
   font-weight: 700;
   background-color: rgb(0, 0, 0);
@@ -445,19 +528,20 @@ body.tapes {
   border-radius: 10px;
   color: #dcb8ff;
   text-decoration: none;
-  animation: articlePulse 3s infinite;
+  animation: cardPulse 3s infinite;
+  position: absolute;
+  top: 53%;
+  left: 10%;
 }
 
-@keyframes articlePulse {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+.tapes-lego {
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.8;
+  margin-top: 4rem;
+  position: absolute;
+  top: 58.5%;
+  right: 5%;
 }
 
 .article-three,
@@ -468,18 +552,18 @@ body.tapes {
 .tapes-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 22vh;
+  align-items: flex-start;
   width: 90%;
   font-family: "Syne", sans-serif;
   color: var(--electric-lavender);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 16.5%;
+  z-index: 9999;
 }
 
 .tapes-nav label {
   font-size: 1.2rem;
-  margin-bottom: 0.6rem;
   padding-right: 1.9rem;
   letter-spacing: 1px;
 }
@@ -489,8 +573,6 @@ body.tapes {
   color: var(--ghost-white);
   border: 1px solid var(--electric-lavender);
   padding: 0.6rem 0.1rem;
-  margin-right: 7.5rem;
-  margin-left: 7rem;
   width: 70%;
   font-family: "Inter", sans-serif;
   font-size: 0.7rem;
@@ -499,36 +581,13 @@ body.tapes {
   transition: all 0.3s ease;
 }
 
-.tapes-lego {
-  position: relative;
-  bottom: -7.7vh;
-  left: 6rem;
-  width: 10rem;
-  height: 10rem;
-  opacity: 0.8;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.tapes-butterfly {
-  position: relative;
-  bottom: 17vh;
-  left: 16vh;
-  width: 7rem;
-  height: 7rem;
-  opacity: 0.8;
-  z-index: 10;
-  pointer-events: none;
-}
-
 .tapes-hand {
-  position: relative;
-  bottom: 12vh;
   width: 18rem;
   height: 15rem;
   opacity: 0.8;
-  z-index: 10;
-  pointer-events: none;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
 }
 
 .tapes-footer {
@@ -544,30 +603,40 @@ body.tapes {
 
 /* entry */
 
+.tape {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1c0c3a;
+  overscroll-behavior: none;
+}
+
 .entry {
   background-image: url(images/phone.png);
-  background-size: 100% 95%;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1a1033;
   overflow: hidden;
   color: var(--ghost-white);
   font-family: "Inter", sans-serif;
-  height: 68vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   text-shadow: 0 0 10px var(--soft-glow);
-  margin-top: 10rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .entry-main {
-  position: relative;
-  bottom: 15.4rem;
-  left: 4rem;
-  width: 65%;
-  height: 11rem;
+  position: absolute;
+  top: 4%;
+  left: 18%;
+  width: 63%;
+  height: 32.9%;
   overflow-y: auto;
   padding: 5px 5px;
   font-size: 0.9rem;
@@ -575,134 +644,144 @@ body.tapes {
 }
 
 .entry-title {
-  font-family: "Playfair Display";
-}
-
-.entry-body {
-  font-family: "Inter";
+  font-family: "Game Paused", monospace;
+  font-size: 2rem;
+  color: var(--electric-lavender);
+  text-transform: lowercase;
+  text-shadow: 0 0 8px var(--ghost-white), 0 0 20px var(--electric-lavender);
+  letter-spacing: 1px;
 }
 
 .now-playing {
-  opacity: 0.85;
+  font-family: "Orbitron Light", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--neon-aqua);
+  letter-spacing: 1.2px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px rgba(113, 252, 202, 0.5);
+}
+
+.entry-body {
+  font-family: "Glatic", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--ghost-white);
 }
 
 .entry-back-btn {
-  width: 3.4rem;
-  height: 2.5rem;
   position: absolute;
-  top: 18.5rem;
-  left: 14.8rem;
+  top: 51%;
+  left: 63%;
+  width: 13%;
+  height: 6%;
 }
 
 .entry-home-btn {
-  width: 3.4375rem;
-  height: 2.5rem;
   position: absolute;
-  top: 18.5rem;
-  left: 5rem;
+  top: 51%;
+  left: 22%;
+  width: 13%;
+  height: 6%;
 }
 
 .entry-call-btn {
-  width: 3.75rem;
-  height: 2.5rem;
   position: absolute;
-  top: 21.3rem;
-  left: 4.7rem;
+  top: 59%;
+  left: 21%;
+  width: 14%;
+  height: 6%;
 }
 
 .entry-closed-btn {
-  width: 3.4rem;
-  height: 2.7rem;
   position: absolute;
-  top: 21.2rem;
-  left: 14.8rem;
+  top: 59%;
+  right: 23%;
+  width: 14%;
+  height: 6%;
 }
 
 .scrollUp {
-  width: 2.7rem;
-  height: 1.7rem;
   opacity: 0;
   position: absolute;
-  top: 18.2rem;
-  left: 10.2rem;
+  top: 50%;
+  left: 43%;
+  width: 12%;
+  height: 4%;
   border-radius: 50px;
 }
 
 .scrollDown {
-  width: 2.7rem;
-  height: 1.7rem;
   opacity: 0;
   position: absolute;
-  top: 22.6rem;
-  left: 10.2rem;
+  top: 63%;
+  left: 43%;
+  width: 12%;
+  height: 4%;
   border-radius: 50px;
 }
 
 .next-entry {
-  width: 2.1875rem;
-  height: 2.5rem;
   position: absolute;
-  top: 19.9rem;
-  left: 12.8rem;
+  top: 55.5%;
+  left: 54.5%;
   border-radius: 50px;
+  width: 7.5%;
+  height: 6%;
 }
 
 .previous-entry {
-  width: 2.1875rem;
-  height: 2.5rem;
   position: absolute;
-  top: 19.9rem;
-  left: 8.2rem;
+  top: 55.5%;
+  right: 56.5%;
   border-radius: 50px;
+  width: 7.5%;
+  height: 6%;
 }
 
 .playpause {
-  width: 2.4rem;
-  height: 2.4rem;
-  position: absolute;
-  top: 20rem;
-  left: 10.3rem;
-  cursor: pointer;
-  z-index: 999;
   opacity: 0;
+  position: absolute;
+  top: 55%;
+  left: 44%;
+  width: 10%;
+  height: 7%;
+  border-radius: 50px;
 }
 
 /* closed phone  */
 
 .closed-tape {
   background-image: url(images/closed.png);
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1a1033;
   color: var(--ghost-white);
-  font-family: "Inter", sans-serif;
   height: 100vh;
-  width: 55vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-shadow: 0 0 10px var(--soft-glow);
+  position: relative;
+  overflow: clip;
 }
 
 .blond {
-  width: 11.3rem;
-  height: 8.3rem;
-  position: relative;
-  bottom: 5.2rem;
-  left: 5.3rem;
+  position: absolute;
+  top: 21.5%;
+  left: 28.2%;
+  width: 43.4%;
+  height: 21.1%;
   border-radius: 8px;
   opacity: 0.7;
 }
 
 .reopen-btn {
   opacity: 0;
-  position: relative;
-  left: 85px;
-  bottom: 15px;
-  width: 70px;
-  height: 60px;
+  position: absolute;
+  width: 20%;
+  height: 13%;
+  top: 53%;
+  left: 40%;
 }
 
 /* finance */
@@ -714,12 +793,14 @@ body.tapes {
   background-repeat: no-repeat;
   min-height: 85vh;
   background-color: rgb(86, 14, 86);
+  overflow: hidden;
+  position: relative;
 }
 
 .finance-intro {
-  position: relative;
-  top: 31.9vh;
-  left: 14.7vh;
+  position: absolute;
+  top: 37.5%;
+  left: 29%;
   max-width: 43%;
   max-height: 16.1vh;
   overflow-y: scroll;
@@ -802,9 +883,21 @@ body.tapes {
 }
 
 .cards-body {
-  margin: 2rem 0 0 2rem;
+  margin: 1rem 0 0 2rem;
   display: flex;
   flex-flow: row wrap;
+}
+
+.cards-body p {
+  width: 82vw;
+  height: 3vh;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Joystix Monospace", monospace;
+  color: var(--electric-lavender);
+  text-shadow: 0 0 10px var(--ghost-white);
+  opacity: 0.8;
 }
 
 .card-icon {
@@ -854,7 +947,7 @@ body.tapes {
 .cards-discover.card-icon {
   background-image: url("images/discover.jpg");
   margin-right: 8rem;
-  margin-bottom: 10rem;
+  margin-bottom: 6.9rem;
 }
 
 .cards-autograph.card-icon {
@@ -862,9 +955,35 @@ body.tapes {
 }
 
 .cards-links {
-  color: white;
-  margin-right: 4.6rem;
-  animation: cardPulse 3s infinite;
+  font-family: "Joystix Monospace", monospace;
+  color: var(--ghost-white);
+  text-shadow: 0 0 10px var(--ghost-white);
+  font-size: 90%;
+  opacity: 0.8;
+  animation: flicker 2s infinite;
+  text-decoration: none;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px var(--electric-lavender),
+      0 0 11px var(--electric-lavender);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.cards-links.return {
+  margin-top: 1.8rem;
 }
 
 .card-start {
@@ -1119,3274 +1238,6 @@ body.tapes {
 
 #finance-disclaimer {
   margin-top: 1rem;
-  font-size: 40%;
+  font-size: 50%;
   width: 100%;
-}
-
-/* iphone 16 */
-@media (min-width: 376px) and (max-width: 399px) {
-  .home-ghost {
-    top: 20%;
-    left: 19rem;
-    opacity: 0.6;
-  }
-
-  .article-one {
-    margin: 8rem 5rem 0 0;
-    max-width: 70%;
-    font-size: 1.5rem;
-  }
-
-  .article-two {
-    margin: 19rem 4rem 0 0;
-    max-width: 70%;
-    font-size: 1.5rem;
-  }
-
-  .article-three,
-  .article-four {
-    visibility: hidden;
-  }
-
-  .tapes-nav {
-    margin-bottom: 13rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  #tape-select {
-    margin-left: 7.3rem;
-  }
-
-  .tapes-lego {
-    top: 173%;
-  }
-
-  .tapes-butterfly {
-    top: 112%;
-  }
-
-  .tapes-hand {
-    top: 220%;
-  }
-
-  .tapes-planet {
-    left: 7rem;
-  }
-
-  .tapes-ghost {
-    top: 10rem;
-  }
-
-  .tapes-footer {
-    left: 18rem;
-  }
-
-  .entry {
-    max-height: 64.5vh;
-    background-size: 100% 100%;
-    background-color: #1a1033;
-  }
-
-  .entry-main {
-    bottom: 55.2%;
-    left: 18%;
-    width: 63%;
-    height: 13.6rem;
-  }
-
-  .entry-back-btn {
-    width: 3.5rem;
-    height: 2.5rem;
-    top: 51.2%;
-    left: 63%;
-  }
-
-  .entry-home-btn {
-    width: 3.4375rem;
-    height: 2.5rem;
-    top: 51.2%;
-    left: 21.4%;
-  }
-
-  .entry-call-btn {
-    top: 59%;
-    left: 21%;
-    width: 3.5rem;
-  }
-
-  .entry-closed-btn {
-    left: 63%;
-    top: 59%;
-  }
-
-  .scrollUp {
-    top: 49%;
-    left: 43.7%;
-    height: 2rem;
-  }
-
-  .scrollDown {
-    top: 62.5%;
-    height: 2rem;
-    left: 43.7%;
-  }
-
-  .next-entry {
-    top: 55.4%;
-    left: 55%;
-    width: 2rem;
-  }
-
-  .previous-entry {
-    top: 55.4%;
-    left: 35%;
-    width: 2rem;
-  }
-
-  .playpause {
-    width: 2.7rem;
-    height: 2.8rem;
-    top: 55%;
-  }
-
-  .closed-tape {
-    height: 84vh;
-  }
-
-  .blond {
-    width: 89%;
-    height: 21.5%;
-    bottom: 13.5%;
-    left: 87px;
-  }
-
-  .reopen-btn {
-    opacity: 0;
-    position: relative;
-    left: 85px;
-    bottom: 15px;
-    width: 70px;
-    height: 60px;
-  }
-
-  .who-follow {
-    left: 5.7rem;
-    top: 28.2rem;
-  }
-}
-
-/* iphone 12 mini */
-@media (max-width: 376px) and (min-height: 627px) {
-  .home-container {
-    font-size: 0.7rem;
-    margin-top: 3rem;
-  }
-  .home-ghost {
-    top: 20%;
-    left: 19rem;
-    opacity: 0.6;
-  }
-
-  .home-links {
-    margin-top: 7%;
-  }
-  .article-one {
-    margin: 7rem 5rem 0 0;
-    max-width: 70%;
-    font-size: 1.3rem;
-  }
-
-  .article-two {
-    margin: 18rem 4rem 0 0;
-    max-width: 70%;
-    font-size: 1.6rem;
-  }
-
-  .article-three,
-  .article-four {
-    visibility: hidden;
-  }
-
-  .tapes-nav {
-    margin-bottom: 13rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  #tape-select {
-    margin-left: 7.3rem;
-  }
-
-  .tapes-lego {
-    top: 168%;
-  }
-
-  .tapes-butterfly {
-    top: 115%;
-  }
-
-  .tapes-hand {
-    top: 215%;
-  }
-
-  .tapes-planet {
-    left: 7rem;
-  }
-
-  .tapes-footer {
-    left: 17rem;
-  }
-
-  .entry {
-    min-height: 67vh;
-    background-color: #1a1033;
-  }
-
-  .entry-main {
-    bottom: 54%;
-    left: 18%;
-    width: 63%;
-    height: 12.3rem;
-  }
-
-  .entry-back-btn {
-    width: 3.3rem;
-    height: 2.5rem;
-    top: 52%;
-  }
-
-  .entry-home-btn {
-    width: 3.4rem;
-    height: 2.5rem;
-    top: 52%;
-    left: 21%;
-  }
-
-  .entry-call-btn {
-    top: 60%;
-    left: 21.5%;
-    width: 3.2rem;
-  }
-
-  .entry-closed-btn {
-    left: 63%;
-    top: 60%;
-    width: 3.2rem;
-  }
-
-  .scrollUp {
-    top: 51%;
-    left: 43.5%;
-  }
-
-  .scrollDown {
-    top: 63.5%;
-    left: 43.5%;
-  }
-
-  .next-entry {
-    top: 56%;
-    left: 55%;
-  }
-
-  .previous-entry {
-    top: 56%;
-    left: 34.5%;
-    width: 2rem;
-  }
-
-  .playpause {
-    width: 2.7rem;
-    height: 2.8rem;
-    top: 55.7%;
-    left: 43.3%;
-  }
-
-  .blond {
-    width: 100%;
-    height: 21.3%;
-    bottom: 13.7%;
-    left: 83.5px;
-    border-radius: 10px;
-  }
-}
-
-/* iphone 16 pro */
-@media (min-width: 400px) and (max-width: 414px) {
-  .home-container {
-    font-size: 0.7rem;
-    margin-top: 2rem;
-  }
-
-  .home-links {
-    margin-top: 7%;
-  }
-
-  .home-ghost {
-    margin-left: 7%;
-  }
-
-  .who-nova {
-    padding-top: 18rem;
-  }
-
-  .who-follow {
-    margin-top: 6rem;
-  }
-
-  .article-one {
-    margin: 10rem 5rem 0 0;
-    max-width: 70%;
-    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
-  }
-
-  .article-two {
-    margin: 19rem 4rem 0 0;
-    max-width: 70%;
-    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
-  }
-
-  .tapes-nav {
-    margin-bottom: 12.5rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  .tapes-nav label {
-    padding-left: 30px;
-  }
-
-  #tape-select {
-    margin-left: 7rem;
-    width: 70%;
-  }
-
-  .tapes-ghost {
-    top: 10.5rem;
-    left: 21.5rem;
-  }
-
-  .tapes-lego {
-    top: 166%;
-    left: 15rem;
-  }
-
-  .tapes-butterfly {
-    top: 48rem;
-    left: 18rem;
-  }
-
-  .tapes-hand {
-    top: 210%;
-    width: 18rem;
-    height: 15rem;
-  }
-
-  .tapes-planet {
-    top: 4rem;
-    left: 7.3rem;
-  }
-
-  .tapes-footer {
-    left: 74%;
-  }
-
-  .entry {
-    min-height: 75vh;
-    background-size: 100% 90%;
-  }
-
-  .entry-main {
-    bottom: 48%;
-    left: 4.4rem;
-    width: 63%;
-    height: 38%;
-  }
-
-  .entry-back-btn {
-    width: 3.5rem;
-    height: 3rem;
-    top: 23rem;
-    left: 16.1rem;
-  }
-
-  .entry-home-btn {
-    width: 3.6rem;
-    height: 3rem;
-    top: 23.2rem;
-    left: 5.1rem;
-  }
-
-  .entry-call-btn {
-    width: 3.6rem;
-    height: 3rem;
-    top: 26.5rem;
-    left: 5.1rem;
-  }
-
-  .entry-closed-btn {
-    width: 3.5rem;
-    height: 3rem;
-    top: 26.5rem;
-    left: 16.1rem;
-  }
-
-  .scrollUp {
-    width: 3rem;
-    height: 2.2rem;
-    top: 22.5rem;
-    left: 10.8rem;
-  }
-
-  .scrollDown {
-    width: 3rem;
-    height: 2.2rem;
-    top: 27.9rem;
-    left: 10.8rem;
-  }
-
-  .next-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 25rem;
-    left: 14rem;
-  }
-
-  .previous-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 25rem;
-    left: 8.8rem;
-  }
-
-  .playpause {
-    width: 2.8rem;
-    height: 3rem;
-    border-radius: 50px;
-    top: 58.5%;
-    left: 43.5%;
-  }
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 13.8rem;
-    height: 10.1rem;
-    bottom: 6.1rem;
-    left: 5.6rem;
-  }
-
-  .reopen-btn {
-    left: 5.6rem;
-    bottom: 1rem;
-    width: 6rem;
-    height: 5rem;
-  }
-}
-
-/* iphone 14 plus */
-@media (min-width: 415px) and (max-width: 429px) {
-  .home-container {
-    font-size: 0.7rem;
-    margin-top: 2rem;
-  }
-
-  .home-links {
-    margin-top: 7%;
-  }
-
-  .home-ghost {
-    margin-left: 7%;
-  }
-
-  .who-nova {
-    padding-top: 18rem;
-  }
-
-  .who-follow {
-    margin-top: 8.3rem;
-    margin-left: 1rem;
-  }
-
-  .article-one {
-    margin: 10rem 5rem 0 0;
-    max-width: 70%;
-    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
-  }
-
-  .article-two {
-    margin: 19rem 4rem 0 0;
-    max-width: 70%;
-    font-size: clamp(1.3rem, 1.5vw + 1rem, 1.7rem);
-  }
-
-  .tapes-nav {
-    margin-bottom: 12.5rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  .tapes-nav label {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-    padding-left: 30px;
-    letter-spacing: 1px;
-  }
-
-  #tape-select {
-    padding: 0.6rem 0.1rem;
-    margin-left: 7rem;
-    font-size: 0.7rem;
-    width: 70%;
-  }
-
-  .tapes-ghost {
-    width: 40px;
-    height: 70px;
-    position: relative;
-    top: 11.5rem;
-    left: 22.5rem;
-  }
-
-  .tapes-lego {
-    top: 163%;
-    left: 15rem;
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .tapes-butterfly {
-    top: 52rem;
-    left: 19rem;
-    width: 7rem;
-    height: 7rem;
-  }
-
-  .tapes-hand {
-    top: 210%;
-    width: 18rem;
-    height: 15rem;
-  }
-
-  .tapes-planet {
-    top: 4rem;
-    left: 8rem;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .tapes-footer {
-    font-size: 0.5rem;
-    display: flex;
-    justify-content: center;
-    opacity: 0.7;
-    width: 6rem;
-    position: relative;
-    bottom: 1rem;
-    left: 19rem;
-  }
-
-  .entry {
-    min-height: 71vh;
-    background-size: 100% 100%;
-  }
-
-  .entry-main {
-    bottom: 51.3%;
-    left: 4.9rem;
-    width: 62%;
-    height: 42%;
-  }
-
-  .entry-back-btn {
-    width: 3.5rem;
-    height: 3rem;
-    top: 23.9rem;
-    left: 17.1rem;
-  }
-
-  .entry-home-btn {
-    width: 3.6rem;
-    height: 3rem;
-    top: 23.9rem;
-    left: 5.9rem;
-  }
-
-  .entry-call-btn {
-    width: 3.6rem;
-    height: 3rem;
-    top: 27.5rem;
-    left: 5.9rem;
-  }
-
-  .entry-closed-btn {
-    width: 3.5rem;
-    height: 3rem;
-    top: 27.5rem;
-    left: 17.1rem;
-  }
-
-  .scrollUp {
-    width: 3rem;
-    height: 2.2rem;
-    top: 23.3rem;
-    left: 11.7rem;
-  }
-
-  .scrollDown {
-    width: 3rem;
-    height: 2.2rem;
-    top: 29rem;
-    left: 11.7rem;
-  }
-
-  .next-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 25.9rem;
-    left: 14.7rem;
-  }
-
-  .previous-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 25.9rem;
-    left: 9.5rem;
-  }
-
-  .playpause {
-    width: 2.8rem;
-    height: 3rem;
-    border-radius: 50px;
-    top: 55.2%;
-    left: 43.7%;
-  }
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 15rem;
-    height: 11rem;
-    bottom: 6.8rem;
-    left: 6rem;
-  }
-
-  .reopen-btn {
-    left: 6rem;
-    bottom: 1rem;
-    width: 6rem;
-    height: 5rem;
-  }
-}
-
-/* iphone 16 plus */
-@media (min-width: 430px) and (max-width: 439px) {
-  .home-container {
-    font-size: 0.8rem;
-    margin-top: 2.5rem;
-  }
-
-  .home-ghost {
-    margin-left: 2rem;
-  }
-
-  .home-links {
-    margin-top: 1.5rem;
-  }
-
-  .who-nova {
-    padding-top: 17rem;
-  }
-
-  .who-follow {
-    left: 7rem;
-    top: 32rem;
-  }
-
-  .article-one {
-    margin: 10rem 5rem 0 0;
-    max-width: 70%;
-    font-size: 1.7rem;
-  }
-
-  .article-two {
-    margin: 19rem 4rem 0 0;
-    max-width: 70%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 12.5rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  .tapes-nav label {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-    padding-left: 30px;
-    letter-spacing: 1px;
-  }
-
-  #tape-select {
-    padding: 0.6rem 0.1rem;
-    margin-left: 7rem;
-    font-size: 0.7rem;
-    width: 70%;
-  }
-
-  .tapes-ghost {
-    width: 40px;
-    height: 70px;
-    top: 11.5rem;
-    left: 22.5rem;
-  }
-
-  .tapes-lego {
-    top: 77.2rem;
-    left: 15rem;
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .tapes-butterfly {
-    top: 53rem;
-    left: 19rem;
-    width: 7rem;
-    height: 7rem;
-  }
-
-  .tapes-hand {
-    top: 99rem;
-    width: 18rem;
-    height: 15rem;
-  }
-
-  .tapes-planet {
-    top: 4rem;
-    left: 8rem;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .tapes-footer {
-    bottom: 1rem;
-    left: 20rem;
-  }
-
-  .entry {
-    min-height: 75vh;
-    background-size: 100% 100%;
-  }
-
-  .entry-main {
-    bottom: 19.4rem;
-    left: 4.9rem;
-    width: 60%;
-    height: 16.1rem;
-  }
-
-  .entry-back-btn {
-    width: 4rem;
-    height: 2.8rem;
-    top: 24.8rem;
-    left: 17rem;
-  }
-
-  .entry-home-btn {
-    width: 4rem;
-    height: 2.9rem;
-    top: 24.8rem;
-    left: 5.7rem;
-  }
-
-  .entry-call-btn {
-    width: 4rem;
-    height: 3.3rem;
-    top: 28.5rem;
-    left: 5.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 4rem;
-    height: 3.3rem;
-    top: 28.5rem;
-    left: 17rem;
-  }
-
-  .scrollUp {
-    width: 3rem;
-    height: 2.4rem;
-    top: 23.8rem;
-    left: 11.9rem;
-  }
-
-  .scrollDown {
-    width: 3rem;
-    height: 2.4rem;
-    top: 30.2rem;
-    left: 11.9rem;
-  }
-
-  .next-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 26.9rem;
-    left: 14.9rem;
-  }
-
-  .previous-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 26.9rem;
-    left: 9.6rem;
-  }
-
-  .playpause {
-    width: 3rem;
-    height: 3rem;
-    top: 26.7rem;
-    left: 11.8rem;
-    border-radius: 100px;
-  }
-
-  .blond {
-    width: 15.2rem;
-    height: 11.2rem;
-    bottom: 7rem;
-    left: 6.1rem;
-  }
-
-  .reopen-btn {
-    left: 6.2rem;
-    bottom: 1rem;
-    width: 6rem;
-    height: 5rem;
-  }
-}
-
-/* iphone 16 pro max */
-@media (min-width: 440px) and (max-width: 599px) {
-  .home-container {
-    font-size: 0.8rem;
-    margin-top: 2.5rem;
-  }
-
-  .home-links {
-    margin-top: 2rem;
-  }
-
-  .home-ghost {
-    margin-left: 3rem;
-  }
-
-  .who-follow {
-    margin-left: 2rem;
-  }
-
-  .article-one {
-    margin: 10rem 5rem 0 0;
-    max-width: 70%;
-    font-size: 1.7rem;
-  }
-
-  .article-two {
-    margin: 19rem 4rem 0 0;
-    max-width: 70%;
-    font-size: 1.7rem;
-  }
-
-  .article-three,
-  .article-four {
-    visibility: hidden;
-  }
-
-  .tapes-nav {
-    margin-bottom: 12.5rem;
-    margin-right: 6rem;
-    width: 90%;
-  }
-
-  .tapes-nav label {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-    padding-left: 30px;
-    letter-spacing: 1px;
-  }
-
-  #tape-select {
-    padding: 0.6rem 0.1rem;
-    margin-left: 7rem;
-    font-size: 0.7rem;
-    width: 70%;
-  }
-
-  .tapes-ghost {
-    width: 40px;
-    height: 70px;
-    top: 11.5rem;
-    left: 22.5rem;
-  }
-
-  .tapes-lego {
-    top: 77.2rem;
-    left: 15rem;
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .tapes-butterfly {
-    top: 53rem;
-    left: 19rem;
-    width: 7rem;
-    height: 7rem;
-  }
-
-  .tapes-hand {
-    top: 99rem;
-    width: 18rem;
-    height: 15rem;
-  }
-
-  .tapes-planet {
-    top: 4rem;
-    left: 8rem;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .tapes-footer {
-    bottom: 1rem;
-    left: 20rem;
-  }
-
-  .entry {
-    min-height: 71vh;
-    background-size: 100% 100%;
-  }
-
-  .entry-main {
-    bottom: 19rem;
-    left: 4.9rem;
-    width: 63%;
-    height: 15.5rem;
-  }
-
-  .entry-back-btn {
-    width: 4rem;
-    height: 2.8rem;
-    top: 24.3rem;
-    left: 17.4rem;
-  }
-
-  .entry-home-btn {
-    width: 4.3rem;
-    height: 2.9rem;
-    top: 24.3rem;
-    left: 5.4rem;
-  }
-
-  .entry-call-btn {
-    width: 4rem;
-    height: 3.3rem;
-    top: 27.8rem;
-    left: 5.7rem;
-  }
-
-  .entry-closed-btn {
-    width: 4rem;
-    height: 3.3rem;
-    top: 27.8rem;
-    left: 17.5rem;
-  }
-
-  .scrollUp {
-    width: 3rem;
-    height: 2.4rem;
-    top: 23.4rem;
-    left: 12rem;
-  }
-
-  .scrollDown {
-    width: 3rem;
-    height: 2.4rem;
-    top: 29.5rem;
-    left: 12rem;
-  }
-
-  .next-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 26.2rem;
-    left: 15.1rem;
-  }
-
-  .previous-entry {
-    width: 2rem;
-    height: 2.8rem;
-    top: 26.2rem;
-    left: 9.9rem;
-  }
-
-  .playpause {
-    width: 3rem;
-    height: 3rem;
-    top: 26.15rem;
-    left: 12rem;
-    border-radius: 100px;
-  }
-
-  .blond {
-    width: 15.2rem;
-    height: 11.2rem;
-    bottom: 7rem;
-    left: 6.1rem;
-  }
-
-  .reopen-btn {
-    left: 6.2rem;
-    bottom: 1rem;
-    width: 6rem;
-    height: 5rem;
-  }
-
-  .who-nova {
-    padding-top: 17rem;
-  }
-
-  .who-follow {
-    left: 6.2rem;
-    top: 33rem;
-  }
-}
-
-/* ipad mini */
-@media (min-width: 600px) and (max-width: 767px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-ghost {
-    width: 60px;
-    height: 90px;
-    bottom: 29rem;
-    left: 40rem;
-  }
-
-  .home-links {
-    top: 3rem;
-  }
-
-  .home-instagram,
-  .home-linkedin,
-  .home-spotify {
-    height: 3rem;
-    width: 4rem;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 23rem 0 0 2.1rem;
-    font-size: 1.8rem;
-  }
-
-  .who-jason {
-    padding: 0 0 0 1rem;
-    font-size: 1.8rem;
-  }
-
-  .who-quote-one {
-    font-size: 2.5rem;
-  }
-
-  .who-quote-one p {
-    margin: 10rem 0 0 3rem;
-  }
-
-  .who-quote-two {
-    font-size: 2.5rem;
-  }
-
-  .who-quote-two p {
-    margin: 10rem 0 0 3rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 11rem;
-    top: 47.5rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 200px;
-  }
-
-  .tapes-title {
-    font-size: 6rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 20% 30% 0 0;
-    max-width: 70%;
-    font-size: 2.3rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 50% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.4rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 8rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 140px;
-    top: 12rem;
-    left: 35rem;
-  }
-
-  .tapes-lego {
-    top: 141%;
-    left: 25rem;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-butterfly {
-    top: 91%;
-    left: 58%;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-hand {
-    top: 183%;
-    width: 22rem;
-    height: 20rem;
-  }
-
-  .tapes-planet {
-    top: 2rem;
-    left: 16rem;
-    width: 8rem;
-    height: 9rem;
-  }
-
-  .tapes-footer {
-    font-size: 1rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 35rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 90vh;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 25rem;
-    left: 8.4rem;
-    width: 65%;
-    height: 22.5rem;
-    font-size: 1.7rem;
-  }
-
-  .entry-back-btn {
-    width: 6rem;
-    height: 5rem;
-    top: 36.3rem;
-    left: 30rem;
-  }
-
-  .entry-home-btn {
-    width: 6rem;
-    height: 5rem;
-    top: 36.3rem;
-    left: 10rem;
-  }
-
-  .entry-call-btn {
-    width: 6rem;
-    height: 5rem;
-    top: 42rem;
-    left: 10rem;
-  }
-
-  .entry-closed-btn {
-    width: 6rem;
-    height: 5rem;
-    top: 42rem;
-    left: 30rem;
-  }
-
-  .scrollUp {
-    width: 4.8rem;
-    height: 3rem;
-    top: 35.7rem;
-    left: 20.6rem;
-  }
-
-  .scrollDown {
-    width: 4.8rem;
-    height: 3rem;
-    top: 44.5rem;
-    left: 20.6rem;
-  }
-
-  .next-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 39.4rem;
-    left: 26rem;
-  }
-
-  .previous-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 39.4rem;
-    left: 16.7rem;
-  }
-
-  .playpause {
-    width: 4.5rem;
-    height: 4.5rem;
-    top: 39.5rem;
-    left: 20.6rem;
-    border-radius: 50px;
-  }
-
-  /* closed phone  */
-
-  .blond {
-    width: 20.2rem;
-    height: 14.8rem;
-    bottom: 8.6rem;
-    left: 10.4rem;
-  }
-
-  .reopen-btn {
-    left: 10.5rem;
-    bottom: 15px;
-    width: 9rem;
-    height: 8rem;
-  }
-}
-
-/* ipad air 11 */
-@media (min-width: 768px) and (max-width: 819px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-header {
-    font-size: rem;
-  }
-
-  .home-ghost {
-    width: 60px;
-    height: 90px;
-    bottom: 30rem;
-    left: 45rem;
-  }
-
-  .home-links {
-    top: 2.5rem;
-  }
-
-  .home-instagram {
-    width: 76px;
-    height: 76px;
-  }
-
-  .home-linkedin {
-    width: 73px;
-    height: 73px;
-  }
-
-  .home-spotify {
-    width: 75px;
-    height: 75px;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 24rem 0 0 2.1rem;
-    font-size: 2rem;
-  }
-
-  .who-jason {
-    font-size: 2rem;
-  }
-
-  .who-quote-one {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-one p {
-    margin: 14rem 0 0 3rem;
-  }
-
-  .who-falling {
-    width: 100%;
-  }
-
-  .who-quote-two {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-two p {
-    margin: 35rem 0 0 3rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-    background-size: 100% 100%;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 13rem;
-    top: 57rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 200px;
-  }
-
-  .tapes-title {
-    font-size: 6rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 15% 20% 0 0;
-    max-width: 70%;
-    font-size: 2.3rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 55% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.4rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 8.5rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 140px;
-    top: 14rem;
-    left: 37rem;
-  }
-
-  .tapes-lego {
-    top: 140.9%;
-    left: 30rem;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-butterfly {
-    top: 92%;
-    left: 62%;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-hand {
-    top: 183%;
-    width: 33rem;
-    height: 20rem;
-  }
-
-  .tapes-planet {
-    top: 2rem;
-    left: 18rem;
-    width: 8rem;
-    height: 9rem;
-  }
-
-  .tapes-footer {
-    font-size: 1.2rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 37rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 85vh;
-    background-size: 100% 100%;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 25.8rem;
-    left: 9.5rem;
-    width: 60%;
-    height: 23.2rem;
-    font-size: 1.7rem;
-  }
-
-  .entry-back-btn {
-    width: 6.5rem;
-    height: 4.8rem;
-    top: 35.8rem;
-    left: 33rem;
-  }
-
-  .entry-home-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 36rem;
-    left: 11.5rem;
-  }
-
-  .entry-call-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 41.7rem;
-    left: 11.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 41.7rem;
-    left: 33rem;
-  }
-
-  .scrollUp {
-    width: 4.8rem;
-    height: 3rem;
-    top: 35rem;
-    left: 23rem;
-  }
-
-  .scrollDown {
-    width: 4.8rem;
-    height: 3rem;
-    top: 44rem;
-    left: 23rem;
-  }
-
-  .next-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 38.7rem;
-    left: 28.7rem;
-  }
-
-  .previous-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 38.7rem;
-    left: 19rem;
-  }
-
-  .playpause {
-    width: 4.9rem;
-    height: 4.7rem;
-    top: 38.8rem;
-    left: 22.8rem;
-    border-radius: 50px;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 22.3rem;
-    height: 16.5rem;
-    bottom: 10rem;
-    left: 11.5rem;
-    border-radius: 15px;
-  }
-
-  .reopen-btn {
-    left: 11.8rem;
-    bottom: 20px;
-    width: 9rem;
-    height: 8rem;
-  }
-}
-/* ipad needs work*/
-@media (min-width: 820px) and (max-width: 833px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-header {
-    font-size: rem;
-  }
-
-  .home-ghost {
-    width: 60px;
-    height: 90px;
-    bottom: 30rem;
-    left: 45rem;
-  }
-
-  .home-links {
-    top: 2.5rem;
-  }
-
-  .home-instagram {
-    width: 76px;
-    height: 76px;
-  }
-
-  .home-linkedin {
-    width: 73px;
-    height: 73px;
-  }
-
-  .home-spotify {
-    width: 75px;
-    height: 75px;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 24rem 0 0 2.1rem;
-    font-size: 2rem;
-  }
-
-  .who-jason {
-    font-size: 2rem;
-  }
-
-  .who-quote-one {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-one p {
-    margin: 14rem 0 0 3rem;
-  }
-
-  .who-falling {
-    width: 100%;
-  }
-
-  .who-quote-two {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-two p {
-    margin: 35rem 0 0 3rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-    background-size: 100% 100%;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 13rem;
-    top: 57rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 200px;
-  }
-
-  .tapes-title {
-    font-size: 6rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 15% 20% 0 0;
-    max-width: 70%;
-    font-size: 2.3rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 55% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.4rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 8.5rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 140px;
-    top: 14rem;
-    left: 37rem;
-  }
-
-  .tapes-lego {
-    top: 140.9%;
-    left: 30rem;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-butterfly {
-    top: 92%;
-    left: 62%;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-hand {
-    top: 183%;
-    width: 33rem;
-    height: 20rem;
-  }
-
-  .tapes-planet {
-    top: 2rem;
-    left: 18rem;
-    width: 8rem;
-    height: 9rem;
-  }
-
-  .tapes-footer {
-    font-size: 1.2rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 37rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 85vh;
-    background-size: 100% 100%;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 25.8rem;
-    left: 9.5rem;
-    width: 60%;
-    height: 23.2rem;
-    font-size: 1.7rem;
-  }
-
-  .entry-back-btn {
-    width: 6.5rem;
-    height: 4.8rem;
-    top: 35.8rem;
-    left: 33rem;
-  }
-
-  .entry-home-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 36rem;
-    left: 11.5rem;
-  }
-
-  .entry-call-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 41.7rem;
-    left: 11.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 41.7rem;
-    left: 33rem;
-  }
-
-  .scrollUp {
-    width: 4.8rem;
-    height: 3rem;
-    top: 35rem;
-    left: 23rem;
-  }
-
-  .scrollDown {
-    width: 4.8rem;
-    height: 3rem;
-    top: 44rem;
-    left: 23rem;
-  }
-
-  .next-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 38.7rem;
-    left: 28.7rem;
-  }
-
-  .previous-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 38.7rem;
-    left: 19rem;
-  }
-
-  .playpause {
-    width: 4.9rem;
-    height: 4.7rem;
-    top: 38.8rem;
-    left: 22.8rem;
-    border-radius: 50px;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 22.3rem;
-    height: 16.5rem;
-    bottom: 10rem;
-    left: 11.5rem;
-    border-radius: 15px;
-  }
-
-  .reopen-btn {
-    left: 11.8rem;
-    bottom: 20px;
-    width: 9rem;
-    height: 8rem;
-  }
-}
-
-/* ipad pro 11 */
-@media (min-width: 834px) and (max-width: 1023px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-header {
-    font-size: rem;
-  }
-
-  .home-ghost {
-    width: 60px;
-    height: 90px;
-    bottom: 30rem;
-    left: 45rem;
-  }
-
-  .home-links {
-    top: 2.5rem;
-  }
-
-  .home-instagram {
-    width: 76px;
-    height: 76px;
-  }
-
-  .home-linkedin {
-    width: 73px;
-    height: 73px;
-  }
-
-  .home-spotify {
-    width: 75px;
-    height: 75px;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 24rem 0 0 2.1rem;
-    font-size: 2rem;
-  }
-
-  .who-jason {
-    font-size: 2rem;
-  }
-
-  .who-quote-one {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-one p {
-    margin: 14rem 0 0 3rem;
-  }
-
-  .who-falling {
-    width: 100%;
-  }
-
-  .who-quote-two {
-    font-size: 2.7rem;
-  }
-
-  .who-quote-two p {
-    margin: 35rem 0 0 3rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-    background-size: 100% 100%;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 13rem;
-    top: 57rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 200px;
-  }
-
-  .tapes-title {
-    font-size: 6rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 15% 20% 0 0;
-    max-width: 70%;
-    font-size: 2.3rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 55% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.4rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 8.5rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 140px;
-    top: 14rem;
-    left: 37rem;
-  }
-
-  .tapes-lego {
-    top: 140.9%;
-    left: 30rem;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-butterfly {
-    top: 92%;
-    left: 62%;
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .tapes-hand {
-    top: 183%;
-    width: 33rem;
-    height: 20rem;
-  }
-
-  .tapes-planet {
-    top: 2rem;
-    left: 18rem;
-    width: 8rem;
-    height: 9rem;
-  }
-
-  .tapes-footer {
-    font-size: 1.2rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 37rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 85vh;
-    background-size: 100% 100%;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 26.3rem;
-    left: 9.5rem;
-    width: 60%;
-    height: 23.5rem;
-    font-size: 1.7rem;
-  }
-
-  .entry-back-btn {
-    width: 6.5rem;
-    height: 4.8rem;
-    top: 36.5rem;
-    left: 33rem;
-    border: 1px solid white;
-  }
-
-  .entry-home-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 37rem;
-    left: 11.5rem;
-    border: 1px solid white;
-  }
-
-  .entry-call-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 42.5rem;
-    left: 11.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 6.5rem;
-    height: 4.5rem;
-    top: 42.5rem;
-    left: 33rem;
-  }
-
-  .scrollUp {
-    width: 4.8rem;
-    height: 3rem;
-    top: 36.2rem;
-    left: 23.3rem;
-  }
-
-  .scrollDown {
-    width: 4.8rem;
-    height: 3rem;
-    top: 45rem;
-    left: 23.3rem;
-  }
-
-  .next-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 39.5rem;
-    left: 28.7rem;
-  }
-
-  .previous-entry {
-    width: 3.3rem;
-    height: 5rem;
-    top: 39.5rem;
-    left: 19rem;
-  }
-
-  .playpause {
-    width: 4.9rem;
-    height: 4.7rem;
-    top: 39.7rem;
-    left: 23.2rem;
-    border-radius: 50px;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 22.7rem;
-    height: 16.5rem;
-    bottom: 10.05rem;
-    left: 11.65rem;
-    border-radius: 15px;
-  }
-
-  .reopen-btn {
-    left: 11.8rem;
-    bottom: 20px;
-    width: 9rem;
-    height: 8rem;
-  }
-}
-
-/* ipad air 13in  */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-container {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .home-ghost {
-    width: 90px;
-    height: 120px;
-    bottom: 37rem;
-    left: 55rem;
-  }
-
-  .home-links {
-    top: 2.5rem;
-  }
-
-  .home-instagram {
-    width: 84px;
-    height: 85px;
-  }
-
-  .home-linkedin {
-    width: 81px;
-    height: 81px;
-  }
-
-  .home-spotify {
-    width: 81px;
-    height: 81px;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 29rem 0 0 6rem;
-    font-size: 2rem;
-  }
-
-  .who-jason {
-    font-size: 2rem;
-    padding-left: 3.5rem;
-  }
-
-  .who-quote-one {
-    font-size: 3rem;
-  }
-
-  .who-quote-one p {
-    margin: 14rem 0 0 10rem;
-  }
-
-  .who-falling {
-    width: 100%;
-  }
-
-  .who-quote-two {
-    font-size: 3rem;
-  }
-
-  .who-quote-two p {
-    margin: 35rem 0 0 10rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 21rem;
-    top: 51.5rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 230px;
-  }
-
-  .tapes-title {
-    font-size: 7rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 20% 20% 0 0;
-    max-width: 70%;
-    font-size: 2.7rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 45% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.8rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 11.5rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2.9rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 150px;
-    top: 18rem;
-    left: 46rem;
-  }
-
-  .tapes-lego {
-    top: 140%;
-    left: 35rem;
-    width: 17rem;
-    height: 17rem;
-  }
-
-  .tapes-butterfly {
-    top: 90%;
-    left: 58%;
-    width: 17rem;
-    height: 17rem;
-  }
-
-  .tapes-hand {
-    top: 178%;
-    width: 40rem;
-    height: 24rem;
-  }
-
-  .tapes-planet {
-    top: 0.7rem;
-    left: 24rem;
-    width: 10rem;
-    height: 11rem;
-  }
-
-  .tapes-footer {
-    font-size: 1.2rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 45rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 88vh;
-    background-size: 100% 100%;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 29.5rem;
-    left: 12rem;
-    width: 60%;
-    height: 27rem;
-    font-size: 2.1rem;
-  }
-
-  .entry-back-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 42.2rem;
-    left: 41rem;
-  }
-
-  .entry-home-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 42.2rem;
-    left: 14.5rem;
-  }
-
-  .entry-call-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 48.6rem;
-    left: 14.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 48.6rem;
-    left: 41rem;
-  }
-
-  .scrollUp {
-    width: 6rem;
-    height: 3.5rem;
-    top: 41.4rem;
-    left: 28.5rem;
-  }
-
-  .scrollDown {
-    width: 6rem;
-    height: 3.5rem;
-    top: 51.6rem;
-    left: 28.5rem;
-  }
-
-  .next-entry {
-    width: 4rem;
-    height: 5.5rem;
-    top: 45.8rem;
-    left: 35.5rem;
-  }
-
-  .previous-entry {
-    width: 4rem;
-    height: 5.5rem;
-    top: 45.8rem;
-    left: 23.5rem;
-  }
-
-  .playpause {
-    width: 6.5rem;
-    height: 5.5rem;
-    top: 45.6rem;
-    left: 28.2rem;
-    border-radius: 100px;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 28rem;
-    height: 20.2rem;
-    bottom: 12.3rem;
-    left: 14.2rem;
-    border-radius: 20px;
-  }
-
-  .reopen-btn {
-    left: 14.5rem;
-    bottom: 15px;
-    width: 11rem;
-    height: 10rem;
-  }
-}
-
-/* ipad pro 13in  */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .home {
-    min-height: 90vh;
-  }
-
-  .home-container {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .home-ghost {
-    width: 90px;
-    height: 120px;
-    bottom: 37rem;
-    left: 55rem;
-  }
-
-  .home-links {
-    top: 2.5rem;
-  }
-
-  .home-instagram {
-    width: 84px;
-    height: 85px;
-  }
-
-  .home-linkedin {
-    width: 81px;
-    height: 81px;
-  }
-
-  .home-spotify {
-    width: 81px;
-    height: 81px;
-  }
-
-  /* who  */
-
-  .who-nova {
-    padding: 29rem 0 0 6rem;
-    font-size: 2rem;
-  }
-
-  .who-jason {
-    font-size: 2rem;
-    padding-left: 3.5rem;
-  }
-
-  .who-quote-one {
-    font-size: 3rem;
-  }
-
-  .who-quote-one p {
-    margin: 14rem 0 0 10rem;
-  }
-
-  .who-falling {
-    width: 100%;
-  }
-
-  .who-quote-two {
-    font-size: 3rem;
-  }
-
-  .who-quote-two p {
-    margin: 35rem 0 0 10rem;
-  }
-
-  .who-quote-three {
-    font-size: 5rem;
-    width: 90%;
-  }
-
-  .who-quote-three p {
-    margin: 30rem 0 0 3.5rem;
-  }
-
-  .who-city {
-    min-height: 115vh;
-  }
-
-  .who-follow {
-    font-size: 2rem;
-    width: 18rem;
-    left: 21rem;
-    top: 51.5rem;
-  }
-
-  #who-start-btn {
-    width: 23rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  /* tapes page */
-
-  .tapes-header {
-    margin: 100px 0 0 230px;
-  }
-
-  .tapes-title {
-    font-size: 7rem;
-  }
-
-  .tapes-main {
-    min-height: 150vh;
-  }
-
-  .article-one {
-    margin: 20% 20% 0 0;
-    max-width: 70%;
-    font-size: 2.7rem;
-    padding: 10px;
-  }
-
-  .article-two {
-    margin: 45% 25% 0 0;
-    max-width: 70%;
-    font-size: 2.8rem;
-  }
-
-  .tapes-nav {
-    margin-bottom: 9.5rem;
-    margin-right: 15rem;
-    width: 60%;
-  }
-
-  .tapes-nav label {
-    font-size: 2.9rem;
-  }
-
-  #tape-select {
-    margin-left: 6rem;
-    width: 78%;
-    font-size: 1.7rem;
-  }
-
-  .tapes-ghost {
-    width: 100px;
-    height: 150px;
-    top: 18rem;
-    left: 46rem;
-  }
-
-  .tapes-lego {
-    top: 140%;
-    left: 35rem;
-    width: 17rem;
-    height: 17rem;
-  }
-
-  .tapes-butterfly {
-    top: 90%;
-    left: 58%;
-    width: 17rem;
-    height: 17rem;
-  }
-
-  .tapes-hand {
-    top: 178%;
-    width: 40rem;
-    height: 24rem;
-  }
-
-  .tapes-planet {
-    top: 0.7rem;
-    left: 24rem;
-    width: 10rem;
-    height: 11rem;
-  }
-
-  .tapes-footer {
-    font-size: 1.2rem;
-    width: 10rem;
-    bottom: -6.5rem;
-    left: 45rem;
-  }
-
-  /* entry */
-
-  .entry {
-    height: 88vh;
-    background-size: 100% 100%;
-    overflow: hidden;
-  }
-
-  .entry-main {
-    bottom: 29.5rem;
-    left: 12rem;
-    width: 60%;
-    height: 27rem;
-    font-size: 2.1rem;
-  }
-
-  .entry-back-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 42.2rem;
-    left: 41rem;
-  }
-
-  .entry-home-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 42.2rem;
-    left: 14.5rem;
-  }
-
-  .entry-call-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 48.9rem;
-    left: 14.5rem;
-  }
-
-  .entry-closed-btn {
-    width: 8rem;
-    height: 5.5rem;
-    top: 48.9rem;
-    left: 41rem;
-  }
-
-  .scrollUp {
-    width: 6rem;
-    height: 3.5rem;
-    top: 41.5rem;
-    left: 28.7rem;
-  }
-
-  .scrollDown {
-    width: 6rem;
-    height: 3.5rem;
-    top: 51.8rem;
-    left: 28.7rem;
-  }
-
-  .next-entry {
-    width: 4rem;
-    height: 5.5rem;
-    top: 45.8rem;
-    left: 35.5rem;
-  }
-
-  .previous-entry {
-    width: 4rem;
-    height: 5.5rem;
-    top: 45.8rem;
-    left: 23.65rem;
-  }
-
-  .playpause {
-    width: 6.5rem;
-    height: 5.5rem;
-    top: 45.6rem;
-    left: 28.2rem;
-    border-radius: 100px;
-  }
-
-  /* closed phone  */
-
-  .closed-tape {
-    overflow: hidden;
-  }
-
-  .blond {
-    width: 28rem;
-    height: 20.4rem;
-    bottom: 12.4rem;
-    left: 14.4rem;
-    border-radius: 20px;
-  }
-
-  .reopen-btn {
-    left: 14.5rem;
-    bottom: 20px;
-    width: 11rem;
-    height: 10rem;
-  }
-}
-
-/* small macs needs work */
-@media (min-width: 1280px) and (max-width: 1439) {
-}
-
-/* medium macs needs work */
-@media (min-width: 1440px) and (max-width: 1679) {
-  .home-links {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    position: fixed;
-    top: 39rem;
-    left: 43rem;
-  }
-
-  .home-instagram {
-    display: inline-block;
-    width: 5.7rem;
-    height: 5.7rem;
-  }
-
-  .home-linkedin {
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px;
-    overflow: hidden;
-    background-image: url("images/linkedin.png");
-  }
-
-  .home-spotify {
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px;
-    overflow: hidden;
-    background-image: url("images/spotify.png");
-  }
-
-  .home-instagram:hover,
-  .home-linkedin:hover,
-  .home-spotify:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    filter: brightness(1.4) saturate(1.2);
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease,
-      filter 0.3s ease;
-  }
-
-  .home-ghost {
-    width: 50px;
-    height: 80px;
-    bottom: 19rem;
-    left: 83rem;
-    opacity: 0.6;
-  }
-
-  .home-ghost:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    filter: brightness(1.4) saturate(1.2);
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease,
-      filter 0.3s ease;
-    opacity: 0.8;
-  }
-
-  body.tapes {
-    height: 300vh;
-  }
-
-  .tapes-header {
-    margin: -3rem 0 0 5rem;
-    height: 18rem;
-  }
-
-  .tapes-title {
-    font-size: 6rem;
-    margin: 3rem 0 0 36rem;
-  }
-
-  .tapes-planet {
-    width: 8.75rem;
-    height: 8.75rem;
-    opacity: 0.8;
-    top: 0rem;
-    left: 40.5rem;
-  }
-
-  .tapes-ghost {
-    position: absolute;
-    top: 8rem;
-    left: 18rem;
-    width: 7rem;
-    height: 10rem;
-  }
-
-  .tapes-main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 104rem;
-    width: 75vw;
-    overflow: scroll;
-  }
-
-  .article-one,
-  .article-two,
-  .article-three,
-  .article-four {
-    color: var(--ghost-white);
-    opacity: 0.7;
-    text-shadow: 0 0 10px black;
-  }
-
-  .article-one:hover,
-  .article-two:hover,
-  .article-three:hover,
-  .article-four:hover {
-    color: var(--electric-lavender);
-    text-shadow: 0 0 12px var(--electric-lavender);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    transform: scale(1.05);
-  }
-
-  .article-one {
-    width: 25rem;
-    height: 15rem;
-    padding: 1px;
-    margin: 0rem 0 0rem 4rem;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .article-three {
-    width: 22rem;
-    height: 15rem;
-    padding: 0;
-    margin: 0rem 0 -47rem 7rem;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .article-three,
-  .article-four {
-    visibility: visible;
-    opacity: 0.7;
-    background-color: rgb(0, 0, 0);
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-    color: #dcb8ff;
-    text-decoration: none;
-  }
-
-  .article-two {
-    width: 17rem;
-    height: 22rem;
-    padding: 40px;
-    margin: -4rem 0rem 0rem 9rem;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .article-four {
-    width: 16rem;
-    height: 17rem;
-    margin: 0rem 0 -44rem 0rem;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 2.5rem;
-  }
-
-  .tapes-nav {
-    margin: 45rem 35rem 0rem 0rem;
-    height: 10rem;
-    width: 32rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .tapes-nav label {
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    margin-left: 9rem;
-  }
-
-  #tape-select {
-    background-color: black;
-    color: var(--ghost-white);
-    border: 1px solid var(--electric-lavender);
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    border-radius: 4px;
-    box-shadow: 0 0 10px var(--electric-lavender);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  #tape-select:hover,
-  #tape-select:focus {
-    background-color: var(--electric-lavender);
-    color: black;
-    outline: none;
-  }
-
-  .tapes-lego {
-    position: absolute;
-    top: 91rem;
-    left: 50rem;
-    width: 20rem;
-    height: 20rem;
-    opacity: 0.8;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .tapes-butterfly {
-    position: absolute;
-    top: 53rem;
-    left: 52rem;
-    width: 18rem;
-    height: 18rem;
-  }
-
-  .tapes-hand {
-    position: absolute;
-    top: 115rem;
-    left: 3.5rem;
-    width: 27rem;
-    height: 23rem;
-  }
-
-  .tapes-footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-left: 60.5rem;
-    font-size: 1rem;
-    opacity: 0.7;
-    width: 11rem;
-  }
-
-  .entry {
-    background-image: url(images/computer.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-    color: var(--ghost-white);
-    font-family: "Inter", sans-serif;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-shadow: 0 0 10px var(--soft-glow);
-  }
-
-  .entry-main {
-    position: relative;
-    top: -2rem;
-    left: 0rem;
-    width: 40%;
-    height: 28rem;
-    border-radius: 80px;
-    overflow-y: auto;
-    padding: 5px 30px;
-    margin-right: 20rem;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .now-playing {
-    opacity: 0.8;
-    width: 31rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .entry-back-btn {
-    position: absolute;
-    top: 36.7rem;
-    left: 64.1rem;
-    width: 2.375rem;
-    height: 1.5625rem;
-    background-image: url(images/shooting-star.png);
-    z-index: 10;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 130%;
-  }
-
-  .entry-back-btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .entry-back-btn:hover::after {
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 10px var(--electric-lavender);
-  }
-
-  .entry-home-btn {
-    position: relative;
-    top: -0.2rem;
-    left: 260px;
-    width: 48px;
-    height: 23px;
-  }
-
-  .entry-home-btn::after {
-    content: "home";
-    font-size: 15px;
-    font-family: "Playfair Display";
-    color: var(--lover-blue);
-    padding: 2px 0 0 5px;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .entry-home-btn:hover::after {
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 10px var(--electric-lavender);
-  }
-
-  .entry-call-btn,
-  .entry-closed-btn .scrollUp,
-  .scrollDown {
-    display: none;
-  }
-
-  .playpause {
-    width: 5.75rem;
-    height: 6.4375rem;
-    position: absolute;
-    top: 18.5rem;
-    left: 59.875rem;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0.7;
-    border-radius: 50px;
-    background-color: transparent;
-    border: 2px solid transparent;
-    transition: border 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
-  }
-
-  .playpause:hover {
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 10px var(--electric-lavender);
-    background-color: rgba(255, 255, 255, 0.05);
-    opacity: 0.9;
-  }
-
-  .next-entry {
-    width: 1.75rem;
-    height: 1rem;
-    position: absolute;
-    border-radius: 0;
-    top: 28.2rem;
-    left: 60.8125rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    outline: none;
-    background: transparent;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    transition: box-shadow 0.3s ease, border 0.3s ease;
-  }
-
-  .next-entry::after {
-    content: "->";
-    font-size: 0.95rem;
-    color: #71fcca;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: "Inter", sans-serif;
-    background: transparent;
-    opacity: 0.7;
-  }
-
-  .next-entry:hover::after {
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 10px var(--electric-lavender);
-  }
-
-  .previous-entry {
-    position: absolute;
-    width: 1.5rem;
-    height: 0.9375rem;
-    border-radius: 0;
-    top: 28.2rem;
-    left: 58.9375rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    border-color: #71fcca;
-  }
-
-  .previous-entry::after {
-    content: "<-";
-    font-size: 1rem;
-    color: #ff8d8d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    line-height: 1;
-    font-family: "Inter", sans-serif;
-    background: transparent;
-  }
-
-  .previous-entry:hover::after {
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 10px var(--electric-lavender);
-  }
-
-  #who-start-btn {
-    width: 20rem;
-    height: 20rem;
-    margin-left: 5%;
-  }
-
-  #who-start-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-
-  .who-tap-hint {
-    font-size: 1rem;
-    top: 7%;
-    right: 12%;
-  }
-
-  .who-intro {
-    min-height: 120vh;
-  }
-
-  .who-nova {
-    font-size: 3rem;
-    padding: 16rem 0 0 7rem;
-  }
-
-  .who-jason {
-    font-size: 3rem;
-    padding: 0 0 0 3rem;
-  }
-
-  .who-quote-one {
-    min-height: 100vh;
-    font-size: 3rem;
-    width: 100%;
-  }
-
-  .who-quote-one p {
-    margin: 9rem 0 0 15rem;
-  }
-
-  .who-falling {
-    background-image: url(images/falling.png);
-    background-repeat: no-repeat;
-    background-size: 100% 90%;
-    min-height: 150vh;
-  }
-
-  .who-quote-two {
-    min-height: 80vh;
-    font-size: 3rem;
-  }
-
-  .who-quote-two p {
-    margin: 10rem 0 0 15rem;
-  }
-
-  .who-girl {
-    background-size: 100% 90%;
-    min-height: 150vh;
-  }
-
-  .who-quote-three {
-    min-height: 80vh;
-    font-size: 6rem;
-    width: 100%;
-  }
-
-  .who-quote-three p {
-    margin: 4rem 0 0 3.5rem;
-    font-family: "Inter", sans-serif;
-  }
-
-  .who-city {
-    background-image: url(images/city2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    min-height: 120vh;
-  }
-
-  .who-follow {
-    color: var(--ghost-white);
-    font-size: 1.5rem;
-    width: 13rem;
-    left: 39rem;
-    top: 49rem;
-    opacity: 0.6;
-  }
-
-  .who-follow:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
-  }
-}
-
-/* big monitors needs work */
-@media (min-width: 1680px) {
 }

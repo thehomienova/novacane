@@ -6,72 +6,84 @@
     <title>04 - summer time by nova</title>
     <link rel="stylesheet" href="../style.css?v=97" />
   </head>
-  <body class="entry">
-    <main class="entry-main">
-      <h2 class="entry-title">91% human</h2>
-      <p class="now-playing">
-        <em>now playing - summertime in paris by jaden / willow </em>
-      </p>
-      <br />
-      <br />
-      <article class="entry-body">
-        <p>
-          i started summer break. <br />
-          bombed my trig final with a D+. <br />
-          turns out it was open notes and i didn't even know. smh. <br />
-          still finished the class with a 91%. straight As this semester which
-          means GPA is clean and my head is held high.
+  <body class="tape">
+    <div class="entry">
+      <main class="entry-main">
+        <h2 class="entry-title">91% human</h2>
+        <p class="now-playing">
+          now playing - summertime in paris by jaden / willow
         </p>
         <br />
-
-        <p>
-          i've been lazy since, not gonna lie. <br />
-          no studying. barely reading. <br />but i've been working doubles and
-          spending money like i got it lol.
-        </p>
         <br />
+        <article class="entry-body">
+          <p>
+            i started summer break. <br />
+            bombed my trig final with a D+. <br />
+            turns out it was open notes and i didn't even know. smh. <br />
+            still finished the class with a 91%. straight As this semester which
+            means GPA is clean and my head is held high.
+          </p>
+          <br />
 
-        <p>
-          i just started reading no longer human by osamu dazai. <br />the way
-          he talks about being a human, like it's some distant, fragile thing is
-          so relateable. i've had times where i feel like i can't relate to
-          these intellectual monkeys.
-        </p>
-        <br />
+          <p>
+            i've been lazy since, not gonna lie. <br />
+            no studying. barely reading. <br />but i've been working doubles and
+            spending money like i got it lol.
+          </p>
+          <br />
 
-        <p>
-          i start summer school on monday so ima have to lawck een.
-          <br />classes. the odin project. <br />headphones on, eyes on code,
-          nothing else. i still need to finish this site. but responsive design
-          hasn't come up yet in the curriculum, so maybe i wait. maybe i just
-          breathe.
-        </p>
-        <br />
+          <p>
+            i just started reading no longer human by osamu dazai. <br />the way
+            he talks about being a human, like it's some distant, fragile thing
+            is so relateable. i've had times where i feel like i can't relate to
+            these intellectual monkeys.
+          </p>
+          <br />
 
-        <p>
-          i want to keep blogging tho. <br />
-          i love screaming into the void with admiration towards life. this is
-          my way of leaving marks on a piece of work thats my own.
-        </p>
-      </article>
+          <p>
+            i start summer school on monday so ima have to lawck een.
+            <br />classes. the odin project. <br />headphones on, eyes on code,
+            nothing else. i still need to finish this site. but responsive
+            design hasn't come up yet in the curriculum, so maybe i wait. maybe
+            i just breathe.
+          </p>
+          <br />
 
-      <audio id="entry-music" loop>
-        <source src="../audio/summertime.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </main>
+          <p>
+            i want to keep blogging tho. <br />
+            i love screaming into the void with admiration towards life. this is
+            my way of leaving marks on a piece of work thats my own.
+          </p>
+        </article>
 
-    <a href="../tapes.html" class="entry-back-btn"></a>
-    <a href="../index.html" class="entry-home-btn"></a>
-    <a href="tel:+1248-434-5508" class="entry-call-btn"></a>
-    <a href="closedPhone.html?from=03-novacane" class="entry-closed-btn"></a>
+        <audio id="entry-music" loop>
+          <source src="../audio/summertime.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </main>
 
-    <button class="scrollDown"></button>
-    <button class="scrollUp"></button>
-    <a href="" class="next-entry"></a>
-    <a href="03-novacane.html" class="previous-entry"></a>
-    <button class="playpause" type="button"></button>
+      <a href="../tapes.html" class="entry-back-btn"></a>
+      <a href="../index.html" class="entry-home-btn"></a>
+      <a href="tel:+1248-434-5508" class="entry-call-btn"></a>
+      <a href="closedPhone.html?from=03-novacane" class="entry-closed-btn"></a>
 
+      <button class="scrollDown"></button>
+      <button class="scrollUp"></button>
+      <a href="" class="next-entry"></a>
+      <a href="03-novacane.html" class="previous-entry"></a>
+      <button class="playpause" type="button"></button>
+    </div>
+    <script>
+      const cameFrom = localStorage.getItem("cameFromTape");
+
+      if (cameFrom || window.location.pathname.includes("entry.html")) {
+        // Apply scroll lock no matter what
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.height = "100%";
+      }
+    </script>
     <script src="../script.js"></script>
   </body>
 </html>

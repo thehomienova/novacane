@@ -6,8 +6,8 @@
   <title>02 - spring break by nova</title>
   <link rel="stylesheet" href="../style.css?v=97" />
 </head>
-<body class="entry">
-
+<body class="tape">
+<div class="entry">
   <main class="entry-main">
     <h2 class="entry-title">spring break</h2>
     <p class="now-playing"><em>now playing - king of everything by dominic fike</em></p>
@@ -47,7 +47,18 @@
   <a href="03-novacane.html" class="next-entry"></a>
   <a href="01-genesis.html" class="previous-entry"></a>
   <button class="playpause" type="button"></button>
+</div>
+<script>
+  const cameFrom = localStorage.getItem("cameFromTape");
 
+  if (cameFrom || window.location.pathname.includes("entry.html")) {
+    // Apply scroll lock no matter what
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.height = "100%";
+  }
+</script>
   <script src="../script.js"></script>
 </body>
 </html>

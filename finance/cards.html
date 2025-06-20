@@ -15,6 +15,7 @@
     <audio src="../audio/spaceSong.mp3" id="cardsSong" preload="auto"></audio>
 
     <div class="cards-body">
+      <p>select a card to (L)earn</p>
       <a href="cards/amex.html" class="cards-amex card-icon"></a>
       <a href="cards/bilt.html" class="cards-bilt card-icon"></a>
       <a href="cards/rhcard.html" class="cards-rh card-icon"></a>
@@ -24,19 +25,20 @@
       <a href="cards/discover.html" class="cards-discover card-icon"></a>
       <a href="cards/autograph.html" class="cards-autograph card-icon"></a>
 
-      <a href="invest.html" class="cards-links">view investments?</a>
-      <a href="../tapes.html" class="cards-links">back to tapes?</a>
+      <a href="invest.html" class="cards-links invest">view investments?</a>
+      <a href="../tapes.html" class="cards-links return">back to tapes?</a>
     </div>
 
     <p
       class="financial-disclaimer"
       style="
         color: white;
-        font-size: 50%;
+        font-size: 70%;
         position: absolute;
         bottom: -30px;
         left: 10px;
-        width: 80%;
+        width: 90%;
+        opacity: 0.7;
       "
     >
       <i>
@@ -44,7 +46,17 @@
         is non-commercial, just for personal creative use.</i
       >
     </p>
+    <script>
+      const cameFrom = localStorage.getItem("cameFromTape");
 
+      if (cameFrom || window.location.pathname.includes("tapes.html")) {
+        // Apply scroll lock no matter what
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.height = "100%";
+      }
+    </script>
     <script src="../script.js"></script>
   </body>
 </html>
