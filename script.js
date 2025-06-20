@@ -104,12 +104,10 @@ if (startBtn && whoSong) {
 
 // automatic who scroll
 function autoWhoScroll() {
-  scrollWho += 0.9;
+  scrollWho += 0.7;
   who.scrollTop = scrollWho;
 
-  if (scrollWho < who.scrollHeight - who.clientHeight) {
-    requestAnimationFrame(autoWhoScroll);
-  }
+  requestAnimationFrame(autoWhoScroll);
 }
 
 // finance music
@@ -142,17 +140,12 @@ if (financeBtn && financeSong) {
     finance.scrollTop = 0;
     scrollFinance = 0;
     requestAnimationFrame(autoFinanceScroll);
-    setTimeout(() => {
-      if (finance.scrollTop < finance.scrollHeight - finance.clientHeight) {
-        autoFinanceScroll();
-      }
-    }, 1000);
   });
 }
 
 // automatic finance scroll
 function autoFinanceScroll() {
-  scrollFinance += 0.25;
+  scrollFinance += 0.3;
   finance.scrollTop = scrollFinance;
   console.log("Scrolling... ", scrollFinance);
 
@@ -168,7 +161,7 @@ const cardsBtn = document.querySelector("#cards-start-btn");
 
 function playCardsSong() {
   if (cardsSong.paused) {
-    cardsSong.currentTime = 5;
+    cardsSong.currentTime = 0;
     cardsSong.volume = 0.5;
     cardsSong
       .play()
@@ -195,7 +188,7 @@ const cardBtn = document.querySelector("#card-start-btn");
 
 function playCardSong() {
   if (cardSong.paused) {
-    cardSong.currentTime = 0;
+    cardSong.currentTime = 5;
     cardSong.volume = 0.5;
     cardSong
       .play()
