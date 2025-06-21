@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css?v=97" />
+    <link rel="stylesheet" href="../style.css?v=98" />
     <title>Cards</title>
   </head>
   <body class="cards">
@@ -46,17 +46,6 @@
         is non-commercial, just for personal creative use.</i
       >
     </p>
-    <script>
-      const cameFrom = localStorage.getItem("cameFromTape");
-
-      if (cameFrom || window.location.pathname.includes("tapes.html")) {
-        // Apply scroll lock no matter what
-        document.body.style.overflow = "hidden";
-        document.body.style.position = "fixed";
-        document.body.style.width = "100%";
-        document.body.style.height = "100%";
-      }
-    </script>
     <script src="../script.js"></script>
   </body>
 </html>

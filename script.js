@@ -104,7 +104,7 @@ if (startBtn && whoSong) {
 
 // automatic who scroll
 function autoWhoScroll() {
-  scrollWho += 0.7;
+  scrollWho += 0.6;
   who.scrollTop = scrollWho;
 
   requestAnimationFrame(autoWhoScroll);
@@ -145,7 +145,7 @@ if (financeBtn && financeSong) {
 
 // automatic finance scroll
 function autoFinanceScroll() {
-  scrollFinance += 0.3;
+  scrollFinance += 0.4;
   finance.scrollTop = scrollFinance;
   console.log("Scrolling... ", scrollFinance);
 
