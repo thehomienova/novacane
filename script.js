@@ -1,3 +1,37 @@
+// enter home
+
+const enterSound = document.querySelector(".enter-sound");
+const enterBtn = document.querySelector(".home-btn");
+const homeContainer = document.querySelector(".home-container");
+const homeLinks = document.querySelector(".home-links");
+
+if (enterSound && enterBtn) {
+  enterBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    enterSound
+      .play()
+      .then(() => {
+        enterSound.volume = 1;
+
+        setTimeout(() => {
+          window.location.href = enterBtn.getAttribute("href");
+        }, 2000);
+        console.log("✅ Timeout set");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Sound play failed:", err);
+        setTimeout(() => {
+          console.log(enterBtn.getAttribute("href"));
+          window.location.href = enterBtn.getAttribute("href");
+        }, 500);
+      });
+
+    homeContainer.style.display = "none";
+    homeLinks.style.display = "none";
+  });
+}
+
 // entry scroll
 const entryMain = document.querySelector(".entry-main");
 let scrollInterval;
@@ -74,7 +108,7 @@ const whoStart = document.querySelector(".who-start");
 
 function playSong() {
   if (whoSong.paused) {
-    whoSong.currentTime = 0;
+    whoSong.currentTime = 18;
     whoSong.volume = 0.5;
     whoSong
       .play()
@@ -112,7 +146,7 @@ const financeStart = document.querySelector(".finance-start");
 
 function playFinanceSong() {
   if (financeSong.paused) {
-    financeSong.currentTime = 0;
+    financeSong.currentTime = 25;
     financeSong.volume = 0.5;
     financeSong
       .play()
@@ -206,14 +240,13 @@ let container = document.querySelector(".chaos-img");
 const chaosBtn = document.querySelector("#chaos-start-btn");
 const chaosStart = document.querySelector(".chaos-start");
 const chaosEscape = document.querySelector("#chaos-escape");
-const chaosSong = document.querySelector("#chaosSong");
+const chaosSong = document.querySelector("#chaos-song");
 
 const arrayOfImages = [
   "images/chaos1.jpg",
-  "images/chaos2.jpg",
-  "images/chaos3.jpg",
-  "images/chaos4.jpg",
   "images/chaos5.jpg",
+  "images/chaos7.jpg",
+  "images/chaos4.jpg",
   "images/chaos6.jpg",
 ];
 
@@ -228,7 +261,7 @@ function playChaosSong() {
     chaosSong
       .play()
       .then(() => {
-        chaosSong.currentTime = 5;
+        chaosSong.currentTime = 26;
         console.log("🎶 chaosSong.mp3 playing");
       })
       .catch((err) => {
