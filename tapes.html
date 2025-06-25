@@ -11,66 +11,45 @@
     />
   </head>
 
-  <body class="tapes">
-    <img src="images/planet.png" alt="Planet" class="tapes-planet" />
-    <header class="tapes-header">
-      <h1 class="tapes-title">novacane</h1>
-    </header>
-
-    <a href="finance.html" class="tapes-card"></a>
-
-    <main class="tapes-main">
-      <a href="tapes/04-91percentHuman.html" class="article-one">
-        <p>
-          91% human <br />
-          june 10th, 2025 <br />#school · #human →
+  <body class="tapes-body">
+    <div class="tapes-container">
+      <img src="images/planet.png" alt="Planet" class="tapes-planet" />
+      <header class="tapes-header">
+        <h1 class="tapes-title">novacane</h1>
+        <p class="tapes-subtitle">
+          tapes, trials, and transactions from nova's world
         </p>
-      </a>
+      </header>
 
-      <img src="images/butterfly.png" alt="Butterlfy" class="tapes-butterfly" />
+      <main class="tapes-main">
+        <a href="tapes/04-91percentHuman.html" class="tapes-entry-one"
+          >91% human // 6.10.25 →</a
+        >
 
-      <a href="tapes/02-spring-break.html" class="article-two">
-        <p>novacane.live<br />april 3, 2025 <br />#domain · #love→</p>
-      </a>
+        <a href="finance.html" class="tapes-entry-two">learn finance →</a>
+        <a href="tapes/04-91percentHuman.html" class="tapes-entry-three"
+          >novacane.live // 6.10.25 →</a
+        >
+        <img src="images/lego.png" alt="lego man" class="tapes-lego" />
 
-      <img src="images/lego.png" alt="Lego" class="tapes-lego" />
+        <section class="tapes-archive">
+          <h2>archive</h2>
+          <div class="tapes-shelf">
+            <a href="tapes/04-91percentHuman.html" class="tapes-thumb"
+              >91% human</a
+            >
+            <a href="tapes/03-novacane.html" class="tapes-thumb">novacane</a>
+            <a href="tapes/02-spring-break.html" class="tapes-thumb"
+              >spring break</a
+            >
+            <a href="tapes/01-genesis.html" class="tapes-thumb">genesis</a>
+          </div>
+          <a href="tapes/allTapes.html" class="tapes-all">view all tapes -></a>
+        </section>
+      </main>
 
-      <a href="tapes/journal3.html" class="article-three">
-        <p>genesis <br />march 29, 2025 <br />#first · #code →</p>
-      </a>
-
-      <a href="tapes/journal4.html" class="article-four">
-        <p>genesis <br />march 29, 2025 <br />#first · #code →</p>
-      </a>
-
-      <nav class="tapes-nav">
-        <label for="tape-select">insert a new tape</label>
-        <select id="tape-select" onchange="location = this.value;">
-          <option value="">pick ur track</option>
-          <option value="tapes/01-genesis.html">
-            genesis - march 29, 2025
-          </option>
-          <option value="tapes/02-spring-break.html">
-            spring break - april 1, 2025
-          </option>
-          <option value="tapes/03-novacane.html">
-            novacane.live - april 3, 2025
-          </option>
-          <option value="tapes/04-91percentHuman.html">
-            91% human - june 9th, 2025
-          </option>
-          <option value="finance.html">finance</option>
-        </select>
-      </nav>
-
-      <img src="images/hand.png" alt="Hand" class="tapes-hand" />
-    </main>
-
-    <footer class="tapes-footer">
-      built in the dark <br />
-      by thehomienova
-    </footer>
-
+      <footer class="tapes-footer">built in the dark by nova</footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

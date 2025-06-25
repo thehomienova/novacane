@@ -102,14 +102,6 @@ if (startBtn && whoSong) {
   });
 }
 
-// automatic who scroll
-function autoWhoScroll() {
-  scrollWho += 0.6;
-  who.scrollTop = scrollWho;
-
-  requestAnimationFrame(autoWhoScroll);
-}
-
 // finance music
 const finance = document.querySelector(".finance-intro");
 let scrollFinance = 0;
@@ -145,7 +137,7 @@ if (financeBtn && financeSong) {
 
 // automatic finance scroll
 function autoFinanceScroll() {
-  scrollFinance += 0.4;
+  scrollFinance += 0.3;
   finance.scrollTop = scrollFinance;
   console.log("Scrolling... ", scrollFinance);
 
@@ -207,3 +199,74 @@ if (cardBtn && cardSong) {
     cardStart.style.display = "none";
   });
 }
+
+// chaos
+
+let container = document.querySelector(".chaos-img");
+const chaosBtn = document.querySelector("#chaos-start-btn");
+const chaosStart = document.querySelector(".chaos-start");
+const chaosEscape = document.querySelector("#chaos-escape");
+const chaosSong = document.querySelector("#chaosSong");
+
+const arrayOfImages = [
+  "images/chaos1.jpg",
+  "images/chaos2.jpg",
+  "images/chaos3.jpg",
+  "images/chaos4.jpg",
+  "images/chaos5.jpg",
+  "images/chaos6.jpg",
+];
+
+let counter = 0;
+let chaosInterval = null;
+let imagesShown = 0;
+let chaosEscapeShown = false;
+
+function playChaosSong() {
+  if (chaosSong.paused) {
+    chaosSong.volume = 0.5;
+    chaosSong
+      .play()
+      .then(() => {
+        chaosSong.currentTime = 5;
+        console.log("🎶 chaosSong.mp3 playing");
+      })
+      .catch((err) => {
+        console.warn("🔇 playback blocked:", err);
+      });
+  }
+}
+
+function imageRotation() {
+  container.classList.add("tv-off");
+
+  setTimeout(() => {
+    counter = (counter + 1) % arrayOfImages.length;
+    imagesShown++;
+
+    container.src = arrayOfImages[counter];
+
+    container.classList.remove("tv-off");
+    container.classList.add("tv-on");
+
+    container.addEventListener(
+      "animationend",
+      () => container.classList.remove("tv-on"),
+      { once: true }
+    );
+
+    // show escape after one full cycle, only once
+    if (imagesShown >= arrayOfImages.length && !chaosEscapeShown) {
+      chaosEscape.classList.add("show");
+      chaosEscapeShown = true;
+    }
+  }, 100);
+}
+
+chaosBtn.addEventListener("click", () => {
+  playChaosSong();
+  if (!chaosInterval) {
+    chaosInterval = setInterval(imageRotation, 1300);
+    chaosStart.style.display = "none";
+  }
+});
