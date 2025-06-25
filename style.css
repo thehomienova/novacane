@@ -67,6 +67,49 @@
   }
 }
 
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes tvOff {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: brightness(0);
+  }
+}
+
+@keyframes tvOn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+    filter: brightness(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -128,6 +171,8 @@
   color: var(--lover-blue);
   text-decoration: none;
   text-shadow: 0 0 10px var(--neon-aqua);
+  text-shadow: 0 0 10px #b74aff;
+  animation: flicker 2s infinite;
 }
 
 .home-links {
@@ -172,6 +217,99 @@
   background-position: center;
   overflow: hidden;
   background-image: url("images/spotify.png");
+}
+
+/* chaos */
+
+.chaos-start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#chaos-start-btn {
+  background-image: url(images/chaosController.jpg);
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 40%;
+  opacity: 0.7;
+}
+
+.chaos-tap-hint {
+  font-size: 1.2rem;
+  font-family: "Shooting Star", sans-serif;
+  color: var(--electric-lavender);
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+.chaos-img.tv-off {
+  animation: tvOff 0.3s forwards ease-in;
+}
+
+.chaos-img.tv-on {
+  animation: tvOn 0.4s forwards ease-out;
+}
+
+.chaos-body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.chaos-img {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+#chaos-escape {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-family: "Game Paused", monospace;
+  color: var(--lover-blue);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--electric-lavender);
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px var(--neon-aqua), 0 0 20px black;
+  z-index: 9999;
+  animation: flickerEscape 2.5s infinite;
+}
+
+#chaos-escape.show {
+  display: block;
+  opacity: 1;
+  z-index: 9999;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chaos-signal {
+  visibility: hidden;
 }
 
 /* who  */
@@ -393,123 +531,6 @@ body.who {
   color: var(--electric-lavender);
   text-align: center;
   animation: pulse 1.5s infinite;
-}
-
-/* chaos */
-
-.chaos-start {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-#chaos-start-btn {
-  background-image: url(images/chaosController.jpg);
-  background-size: cover;
-  background-position: center;
-  border: none;
-  background-color: black;
-  background-repeat: no-repeat;
-  width: 80%;
-  height: 40%;
-  opacity: 0.7;
-}
-
-.chaos-tap-hint {
-  font-size: 1.2rem;
-  font-family: "Shooting Star", sans-serif;
-  color: var(--electric-lavender);
-  text-align: center;
-  animation: pulse 1.5s infinite;
-}
-@keyframes tvOff {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.9);
-    filter: brightness(0);
-  }
-}
-
-@keyframes tvOn {
-  0% {
-    opacity: 0;
-    transform: scale(1.1);
-    filter: brightness(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
-}
-
-.chaos-img.tv-off {
-  animation: tvOff 0.3s forwards ease-in;
-}
-
-.chaos-img.tv-on {
-  animation: tvOn 0.4s forwards ease-out;
-}
-
-.chaos-body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-}
-
-.chaos-container {
-}
-
-.chaos-img {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
-
-#chaos-escape {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease;
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  font-size: clamp(1rem, 2.5vw, 2rem);
-  font-family: "Game Paused", monospace;
-  color: var(--lover-blue);
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid var(--electric-lavender);
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 0 10px var(--neon-aqua), 0 0 20px black;
-  z-index: 9999;
-  animation: flickerEscape 2.5s infinite;
-}
-
-#chaos-escape.show {
-  display: block;
-  opacity: 1;
-  z-index: 9999;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* tapes page */
