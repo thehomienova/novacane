@@ -110,6 +110,18 @@
   }
 }
 
+@keyframes glitchyArrow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 6px);
+  }
+}
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -126,20 +138,29 @@
 }
 
 /* home page  */
+
+.home-body {
+  padding: 0;
+  margin: 0;
+  background-image: url(images/borderBackground.jpg);
+  background-size: contain;
+  background-color: black;
+  height: 100%;
+  overflow: hidden;
+}
 .home {
   background-image: url(images/truck.jpg);
-  background-size: cover;
+  background-size: 250% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #0d0b0b;
+  height: 100vh;
+  width: 100vw;
   color: var(--ghost-white);
   font-family: "Inter", sans-serif;
-  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin-left: 20px;
   text-shadow: 0 0 10px var(--soft-glow);
   -webkit-mask-image: linear-gradient(to top, black 95%, transparent 97%)
     linear-gradient(to bottom, black 70%, transparent 90%);
@@ -147,11 +168,21 @@
     linear-gradient(to bottom, black 70%, transparent 90%);
 }
 
+.home.tv-off {
+  animation: tvOff 0.3s forwards ease-in;
+}
+
+.home.tv-on {
+  animation: tvOn 0.4s forwards ease-out;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Inter", sans-serif;
+  margin-left: 2%;
+  margin-bottom: 20%;
 }
 
 .home-header {
@@ -173,6 +204,11 @@
   text-shadow: 0 0 10px var(--neon-aqua);
   text-shadow: 0 0 10px #b74aff;
   animation: flicker 2s infinite;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .home-links {
@@ -219,66 +255,15 @@
   background-image: url("images/spotify.png");
 }
 
-/* chaos */
-
-.chaos-start {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  z-index: 9999;
+.home-instagram:hover,
+.home-spotify:hover,
+.home-linkedin:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
-#chaos-start-btn {
-  background-image: url(images/chaosController.jpg);
-  background-size: cover;
-  background-position: center;
-  border: none;
-  background-color: black;
-  background-repeat: no-repeat;
-  width: 80%;
-  height: 40%;
-  opacity: 0.7;
-}
-
-.chaos-tap-hint {
-  font-size: 1.2rem;
-  font-family: "Shooting Star", sans-serif;
-  color: var(--electric-lavender);
-  text-align: center;
-  animation: pulse 1.5s infinite;
-}
-
-.chaos-img.tv-off {
-  animation: tvOff 0.3s forwards ease-in;
-}
-
-.chaos-img.tv-on {
-  animation: tvOn 0.4s forwards ease-out;
-}
-
-.chaos-body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-}
-
-.chaos-img {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
-
-#chaos-escape {
-  display: none;
+#home-escape {
+  display: flex;
   opacity: 0;
   transition: opacity 1s ease;
   position: fixed;
@@ -297,7 +282,7 @@
   animation: flickerEscape 2.5s infinite;
 }
 
-#chaos-escape.show {
+#home-escape.show {
   display: block;
   opacity: 1;
   z-index: 9999;
@@ -308,8 +293,8 @@
   align-items: center;
 }
 
-.chaos-signal {
-  visibility: hidden;
+#home-escape.show:hover {
+  transform: scale(1.1);
 }
 
 /* who  */
@@ -365,23 +350,11 @@ body.who {
 .scroll-arrow {
   position: absolute;
   bottom: 10rem;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   font-size: 2rem;
   color: var(--electric-lavender);
   animation: glitchyArrow 1.5s infinite;
-}
-
-@keyframes glitchyArrow {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: translate(-50%, 0);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(-50%, 6px);
-  }
 }
 
 .who-quote-one {
@@ -459,7 +432,7 @@ body.who {
   min-height: 60vh;
   color: var(--electric-lavender);
   font-family: "Unique", sans-serif;
-  font-size: clamp(3.5rem, 15vw, 8rem);
+  font-size: clamp(3.5rem, 13vw, 8rem);
   opacity: 0.7;
   width: 100%;
   text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
@@ -488,11 +461,11 @@ body.who {
 .who-follow {
   color: var(--ghost-white);
   font-size: clamp(0.9rem, 3.5vw, 5rem);
-  width: 30%;
+  width: 40%;
   text-decoration: none;
   position: absolute;
-  top: 55%;
-  left: 23%;
+  top: 63%;
+  left: 28%;
   text-shadow: 0 0 10px var(--electric-lavender);
   font-family: "Unique", sans-serif;
 }
@@ -639,8 +612,8 @@ body.who {
   height: 10rem;
   opacity: 0.8;
   position: absolute;
-  top: 80%;
-  left: 65%;
+  top: 63%;
+  left: 55%;
 }
 
 .tapes-archive {
@@ -958,7 +931,7 @@ body.who {
   background-color: white;
   background-repeat: no-repeat;
   width: 80%;
-  height: 11vh;
+  height: 12vh;
   border-radius: 10px;
 }
 
