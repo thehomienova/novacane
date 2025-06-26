@@ -4,31 +4,63 @@ const enterSound = document.querySelector(".enter-sound");
 const enterBtn = document.querySelector(".home-btn");
 const homeContainer = document.querySelector(".home-container");
 const homeLinks = document.querySelector(".home-links");
+const home = document.querySelector(".home");
+const homeEscape = document.querySelector(".home-escape");
+
+const arrayOfImages = [
+  "images/chaos1.jpg",
+  "images/chaos5.jpg",
+  "images/chaos7.jpg",
+  "images/chaos4.jpg",
+  "images/chaos6.jpg",
+];
+
+let counter = 0;
+let homeInterval = null;
+let imagesShown = 0;
+let homeEscapeShown = false;
+
+function imageRotation() {
+  home.classList.add("tv-off");
+
+  setTimeout(() => {
+    counter = (counter + 1) % arrayOfImages.length;
+    imagesShown++;
+
+    home.style.backgroundImage = `url(${arrayOfImages[counter]})`;
+    home.classList.remove("tv-off");
+    home.classList.add("tv-on");
+    home.style.height = "100vh";
+    home.style.backgroundSize = "100% 100%";
+    home.style.backgroundColor = "black";
+
+    home.addEventListener(
+      "animationend",
+      () => home.classList.remove("tv-on"),
+      { once: true }
+    );
+
+    if (imagesShown >= 5 && !homeEscapeShown) {
+      homeEscape.classList.add("show");
+      homeEscapeShown = true;
+    }
+  }, 100);
+}
 
 if (enterSound && enterBtn) {
   enterBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    enterSound
-      .play()
-      .then(() => {
-        enterSound.volume = 1;
-
-        setTimeout(() => {
-          window.location.href = enterBtn.getAttribute("href");
-        }, 2000);
-        console.log("✅ Timeout set");
-      })
-      .catch((err) => {
-        console.warn("⚠️ Sound play failed:", err);
-        setTimeout(() => {
-          console.log(enterBtn.getAttribute("href"));
-          window.location.href = enterBtn.getAttribute("href");
-        }, 500);
-      });
-
     homeContainer.style.display = "none";
     homeLinks.style.display = "none";
+
+    if (!homeInterval) {
+      homeInterval = setInterval(imageRotation, 1300);
+      enterSound.play().then(() => {
+        enterSound.currentTime = 25;
+        enterSound.volume = 1;
+      });
+    }
   });
 }
 
@@ -233,73 +265,3 @@ if (cardBtn && cardSong) {
     cardStart.style.display = "none";
   });
 }
-
-// chaos
-
-let container = document.querySelector(".chaos-img");
-const chaosBtn = document.querySelector("#chaos-start-btn");
-const chaosStart = document.querySelector(".chaos-start");
-const chaosEscape = document.querySelector("#chaos-escape");
-const chaosSong = document.querySelector("#chaos-song");
-
-const arrayOfImages = [
-  "images/chaos1.jpg",
-  "images/chaos5.jpg",
-  "images/chaos7.jpg",
-  "images/chaos4.jpg",
-  "images/chaos6.jpg",
-];
-
-let counter = 0;
-let chaosInterval = null;
-let imagesShown = 0;
-let chaosEscapeShown = false;
-
-function playChaosSong() {
-  if (chaosSong.paused) {
-    chaosSong.volume = 0.5;
-    chaosSong
-      .play()
-      .then(() => {
-        chaosSong.currentTime = 26;
-        console.log("🎶 chaosSong.mp3 playing");
-      })
-      .catch((err) => {
-        console.warn("🔇 playback blocked:", err);
-      });
-  }
-}
-
-function imageRotation() {
-  container.classList.add("tv-off");
-
-  setTimeout(() => {
-    counter = (counter + 1) % arrayOfImages.length;
-    imagesShown++;
-
-    container.src = arrayOfImages[counter];
-
-    container.classList.remove("tv-off");
-    container.classList.add("tv-on");
-
-    container.addEventListener(
-      "animationend",
-      () => container.classList.remove("tv-on"),
-      { once: true }
-    );
-
-    // show escape after one full cycle, only once
-    if (imagesShown >= arrayOfImages.length && !chaosEscapeShown) {
-      chaosEscape.classList.add("show");
-      chaosEscapeShown = true;
-    }
-  }, 100);
-}
-
-chaosBtn.addEventListener("click", () => {
-  playChaosSong();
-  if (!chaosInterval) {
-    chaosInterval = setInterval(imageRotation, 1300);
-    chaosStart.style.display = "none";
-  }
-});
