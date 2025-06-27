@@ -6,13 +6,14 @@ const homeContainer = document.querySelector(".home-container");
 const homeLinks = document.querySelector(".home-links");
 const home = document.querySelector(".home");
 const homeEscape = document.querySelector(".home-escape");
+const tuning = document.querySelector(".home-tuning");
 
 const arrayOfImages = [
   "images/chaos1.jpg",
-  "images/chaos5.jpg",
-  "images/chaos7.jpg",
+  "images/chaos2.jpg",
+  "images/chaos3.jpg",
   "images/chaos4.jpg",
-  "images/chaos6.jpg",
+  "images/chaos5.jpg",
 ];
 
 let counter = 0;
@@ -33,6 +34,12 @@ function imageRotation() {
     home.style.height = "100vh";
     home.style.backgroundSize = "100% 100%";
     home.style.backgroundColor = "black";
+    tuning.style.opacity = "1";
+
+    if (window.innerWidth >= 1025 && counter === 2) {
+      home.style.backgroundSize = "80% 100%";
+      home.style.backgroundColor = "#051b10";
+    }
 
     home.addEventListener(
       "animationend",
