@@ -64,6 +64,34 @@ if (enterSound && enterBtn) {
   });
 }
 
+// enter tapes
+
+const tapesBtn = document.querySelector("#tapes-start-btn");
+const tapesSong = document.querySelector("#tapes-song");
+const tapesStart = document.querySelector(".tapes-start");
+
+function playTapesSong() {
+  if (tapesSong.paused) {
+    tapesSong.currentTime = 0;
+    tapesSong.volume = 0.5;
+    tapesSong
+      .play()
+      .then(() => {
+        console.log("🎶 who.mp3 playing");
+      })
+      .catch((err) => {
+        console.warn("🔇 playback blocked:", err);
+      });
+  }
+}
+
+if (tapesBtn && tapesSong) {
+  tapesStart.addEventListener("click", () => {
+    playTapesSong();
+    tapesStart.style.display = "none";
+  });
+}
+
 // entry scroll
 const entryMain = document.querySelector(".entry-main");
 let scrollInterval;
@@ -131,8 +159,6 @@ if (music && playpause) {
 }
 
 // who music
-const who = document.querySelector(".who-scroll");
-let scrollWho = 0;
 
 const startBtn = document.querySelector("#who-start-btn");
 const whoSong = document.querySelector("#who-song");
@@ -157,14 +183,6 @@ if (startBtn && whoSong) {
   whoStart.addEventListener("click", () => {
     playSong();
     whoStart.style.display = "none";
-    who.scrollTop = 0;
-    scrollWho = 0;
-    requestAnimationFrame(autoWhoScroll);
-    setTimeout(() => {
-      if (who.scrollTop < who.scrollHeight - who.clientHeight) {
-        autoWhoScroll();
-      }
-    }, 1000);
   });
 }
 
