@@ -146,6 +146,36 @@
   }
 }
 
+@keyframes instructions {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes instructionsPlay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -153,6 +183,8 @@
   --neon-aqua: #71fcca;
   --soft-glow: rgba(255, 255, 255, 0.15);
   --flipphone-heart: #ff5c8a;
+  --truck-green: rgba(0, 255, 153, 1);
+  --truck-green-soft: rgba(0, 255, 153, 0.4);
 }
 
 * {
@@ -173,6 +205,7 @@
   height: 100%;
   overflow: hidden;
 }
+
 .home {
   background-image: url(images/truck.jpg);
   background-size: 250% 100%;
@@ -180,6 +213,7 @@
   background-repeat: no-repeat;
   height: 85vh;
   width: 100vw;
+  overflow: hidden;
   color: var(--ghost-white);
   font-family: "Inter", sans-serif;
   display: flex;
@@ -206,33 +240,41 @@
   flex-direction: column;
   align-items: center;
   font-family: "Inter", sans-serif;
-  margin-left: 2%;
-  margin-bottom: 20%;
+  height: 50%;
+  margin-left: 7%;
 }
 
 .home-header {
   color: var(--ghost-white);
   text-shadow: 0 0 20px var(--electric-lavender);
-  font-size: clamp(1.7rem, 7vw, 2rem);
+  font-size: clamp(1.9rem, 7vw, 2rem);
   font-family: "Shooting Star", sans-serif;
+  margin-top: 37%;
 }
 
-.home-quote {
-  color: var(--electric-lavender);
-  text-shadow: 0 0 10px var(--hazy-indigo);
-  font-size: 1rem;
+.home-author {
+  color: var(--truck-green);
+  opacity: 1;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  width: 100%;
+  font-family: "Orbitron Light", sans-serif;
+  margin-top: 1%;
 }
 
 .home-btn {
-  color: var(--lover-blue);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(0, 255, 153, 0.8);
+  border-radius: 8px;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: var(--electric-lavender);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   text-decoration: none;
-  text-shadow: 0 0 10px var(--neon-aqua);
-  text-shadow: 0 0 10px #b74aff;
-  animation: flicker 2s infinite;
+  animation: flicker 2s infinite alternate;
+  margin-top: 20%;
 }
 
-.home-btn:hover {
-  cursor: pointer;
+.home-btn:active {
   transform: scale(1.2);
 }
 
@@ -242,7 +284,8 @@
   width: 90%;
   position: fixed;
   top: 1rem;
-  opacity: 0.7;
+  opacity: 0.8;
+  animation: fadeIn 20s;
 }
 
 .home-instagram {
@@ -292,8 +335,8 @@
   opacity: 0;
   transition: opacity 1s ease;
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 4rem;
+  right: 4rem;
   font-size: clamp(1rem, 2.5vw, 2rem);
   font-family: "Game Paused", monospace;
   color: var(--lover-blue);
@@ -322,6 +365,222 @@
   transform: scale(1.1);
 }
 
+/* tapes page */
+
+.tapes-start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#tapes-start-btn {
+  background-image: url(images/tapesEnter.jpg);
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 40%;
+  opacity: 0.7;
+}
+
+.tapes-tap-hint {
+  font-size: 1rem;
+  font-family: "Shooting Star", sans-serif;
+  color: var(--electric-lavender);
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+.tapes-body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c0c3a;
+}
+
+.tapes-container {
+  color: var(--ghost-white);
+  overflow-y: scroll;
+  background: url(images/tvs.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 160vh;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.tapes-header {
+  width: 55%;
+  position: absolute;
+  top: 4%;
+  left: 37%;
+  color: var(--ghost-white);
+}
+
+.tapes-title {
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: 700;
+  font-family: "Game Paused", sans-serif;
+  letter-spacing: 0.05em;
+  color: var(--glow-white);
+  text-shadow: 0 0 20px var(--electric-lavender);
+  margin-bottom: 0.5rem;
+}
+
+.tapes-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-family: "Orbitron Light", sans-serif;
+  color: var(--ghost-white);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  opacity: 0.8;
+}
+
+.tapes-planet {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 37%;
+  top: 1.5%;
+}
+
+.tapes-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tapes-entry-one,
+.tapes-entry-two,
+.tapes-entry-three {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(images/vhsTape.png);
+  background-size: cover;
+  background-position: center;
+  width: 10rem;
+  height: 5rem;
+  color: var(--ghost-white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--electric-lavender);
+  border-radius: 5px;
+  overflow: hidden;
+  animation: pulse 3s infinite;
+  position: absolute;
+
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+}
+
+.tapes-entry-one {
+  top: 30%;
+  left: 20%;
+}
+
+.tapes-entry-two {
+  top: 57%;
+  left: 20%;
+}
+
+.tapes-entry-three {
+  visibility: hidden;
+}
+
+.tapes-lego {
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 63%;
+  left: 55%;
+}
+
+.tapes-archive {
+  width: 67%;
+  height: 22%;
+  margin-top: 3.8rem;
+  padding: 1rem 0 1rem 1rem;
+  position: absolute;
+  top: 76%;
+}
+
+.tapes-archive h2 {
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+  text-align: center;
+  text-shadow: 0 0 5px var(--electric-lavender);
+}
+
+.tapes-shelf {
+  display: flex;
+  overflow: scroll;
+  padding: 1rem;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  text-align: center;
+}
+
+.tapes-thumb {
+  flex: 0 0 auto;
+  width: 10rem;
+  height: 5rem;
+  background: url(images/vhsTape.png) center/cover no-repeat;
+  scroll-snap-align: start;
+  font-family: "Joystix Monospace";
+  color: white;
+  text-shadow: 0 0 10px var(--electric-lavender);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--electric-lavender);
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.tapes-all {
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+  text-align: center;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px var(--electric-lavender);
+  animation: flicker 2s infinite;
+}
+
+.tapes-footer {
+  font-size: 0.8rem;
+  font-family: "Orbitron Light", "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  width: 6rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 17rem;
+  color: var(--electric-lavender);
+}
+
 /* who  */
 
 body.who {
@@ -334,7 +593,7 @@ body.who {
   background-color: black;
   max-height: 100vh;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: ;
   position: relative;
 }
 
@@ -529,217 +788,6 @@ body.who {
   color: var(--electric-lavender);
   text-align: center;
   animation: pulse 1.5s infinite;
-}
-
-/* tapes page */
-
-.tapes-start {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-#tapes-start-btn {
-  background-image: url(images/tapesEnter.jpg);
-  background-size: cover;
-  background-position: center;
-  border: none;
-  background-color: black;
-  background-repeat: no-repeat;
-  width: 60%;
-  height: 40%;
-  opacity: 0.7;
-}
-
-.tapes-tap-hint {
-  font-size: 1rem;
-  font-family: "Shooting Star", sans-serif;
-  color: var(--electric-lavender);
-  text-align: center;
-  animation: pulse 1.5s infinite;
-}
-
-.tapes-body {
-  margin: 0;
-  padding: 0;
-  background-color: #1c0c3a;
-}
-
-.tapes-container {
-  color: var(--ghost-white);
-  overflow-y: scroll;
-  background: url(images/tvs.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 160vh;
-  position: relative;
-  overflow: hidden;
-  scroll-snap-type: y mandatory;
-}
-
-.tapes-header {
-  width: 55%;
-  position: absolute;
-  top: 4%;
-  left: 37%;
-  color: var(--ghost-white);
-}
-
-.tapes-title {
-  font-size: clamp(2rem, 10vw, 5rem);
-  font-weight: 700;
-  font-family: "Game Paused", sans-serif;
-  letter-spacing: 0.05em;
-  color: var(--glow-white);
-  text-shadow: 0 0 20px var(--electric-lavender);
-  margin-bottom: 0.5rem;
-}
-
-.tapes-subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-family: "Orbitron Light", sans-serif;
-  color: var(--ghost-white);
-  letter-spacing: 1px;
-  text-transform: lowercase;
-  opacity: 0.8;
-}
-
-.tapes-planet {
-  width: 3rem;
-  height: 3rem;
-  position: absolute;
-  left: 37%;
-  top: 1.5%;
-}
-
-.tapes-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.tapes-entry-one,
-.tapes-entry-two,
-.tapes-entry-three {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(images/vhsTape.png);
-  background-size: cover;
-  background-position: center;
-  width: 10rem;
-  height: 5rem;
-  color: var(--ghost-white);
-  text-decoration: none;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-  border: 1px solid var(--electric-lavender);
-  border-radius: 5px;
-  overflow: hidden;
-  animation: pulse 3s infinite;
-  position: absolute;
-}
-
-.tapes-entry-one {
-  top: 30%;
-  left: 20%;
-}
-
-.tapes-entry-two {
-  top: 57%;
-  left: 20%;
-}
-
-.tapes-entry-three {
-  visibility: hidden;
-}
-
-.tapes-lego {
-  width: 10rem;
-  height: 10rem;
-  opacity: 0.8;
-  position: absolute;
-  top: 63%;
-  left: 55%;
-}
-
-.tapes-archive {
-  width: 67%;
-  height: 22%;
-  margin-top: 3.8rem;
-  padding: 1rem 0 1rem 1rem;
-  position: absolute;
-  top: 76%;
-}
-
-.tapes-archive h2 {
-  font-family: "Joystix Monospace", monospace;
-  font-size: 1rem;
-  color: var(--ghost-white);
-  text-align: center;
-  text-shadow: 0 0 5px var(--electric-lavender);
-}
-
-.tapes-shelf {
-  display: flex;
-  overflow: scroll;
-  padding: 1rem;
-  gap: 1rem;
-  scroll-snap-type: x mandatory;
-  max-width: 100%;
-  text-align: center;
-}
-
-.tapes-thumb {
-  flex: 0 0 auto;
-  width: 10rem;
-  height: 5rem;
-  background: url(images/vhsTape.png) center/cover no-repeat;
-  scroll-snap-align: start;
-  font-family: "Joystix Monospace";
-  color: white;
-  text-shadow: 0 0 10px var(--electric-lavender);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--electric-lavender);
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-
-.tapes-all {
-  font-family: "Joystix Monospace", monospace;
-  font-size: 1rem;
-  color: var(--ghost-white);
-  text-align: center;
-  margin-top: 1rem;
-  text-shadow: 0 0 5px var(--electric-lavender);
-  animation: pulse 2s infinite;
-}
-
-.tapes-footer {
-  font-size: 0.5rem;
-  display: flex;
-  justify-content: center;
-  opacity: 0.7;
-  width: 6rem;
-  position: absolute;
-  bottom: 1rem;
-  left: 17rem;
 }
 
 /* all tapes */
@@ -959,16 +1007,6 @@ body.who {
   animation: instructionsPlay 5s;
 }
 
-@keyframes instructionsPlay {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
-}
-
 .entry-instructions {
   background-color: var(--ghost-white);
   color: var(--flipphone-heart);
@@ -986,16 +1024,6 @@ body.who {
   border-radius: 7%;
   animation: instructions 5s;
   opacity: 0;
-}
-
-@keyframes instructions {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
 }
 
 /* closed phone  */
