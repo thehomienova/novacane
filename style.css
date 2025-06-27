@@ -221,10 +221,6 @@
   align-items: flex-start;
   flex-direction: column;
   text-shadow: 0 0 10px var(--soft-glow);
-  -webkit-mask-image: linear-gradient(to top, black 95%, transparent 97%)
-    linear-gradient(to bottom, black 70%, transparent 90%);
-  mask-image: linear-gradient(to top, black 95%, transparent 97%)
-    linear-gradient(to bottom, black 70%, transparent 90%);
 }
 
 .home.tv-off {
@@ -295,9 +291,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-indent: -9999px;
   overflow: hidden;
   background-image: url("images/instagram.png");
+  pointer-events: auto;
 }
 
 .home-linkedin {
@@ -307,9 +303,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-indent: -9999px;
   overflow: hidden;
   background-image: url("images/linkedin.png");
+  pointer-events: auto;
 }
 
 .home-spotify {
@@ -321,6 +317,7 @@
   background-position: center;
   overflow: hidden;
   background-image: url("images/spotify.png");
+  pointer-events: auto;
 }
 
 .home-instagram:hover,
@@ -328,15 +325,15 @@
 .home-linkedin:hover {
   cursor: pointer;
   transform: scale(1.2);
+  pointer-events: auto;
 }
 
-#home-escape {
+#home-escape,
+.home-tuning {
   display: flex;
   opacity: 0;
   transition: opacity 1s ease;
   position: fixed;
-  bottom: 4rem;
-  right: 4rem;
   font-size: clamp(1rem, 2.5vw, 2rem);
   font-family: "Game Paused", monospace;
   color: var(--lover-blue);
@@ -348,6 +345,11 @@
   box-shadow: 0 0 10px var(--neon-aqua), 0 0 20px black;
   z-index: 9999;
   animation: flickerEscape 2.5s infinite;
+}
+
+#home-escape {
+  bottom: 2rem;
+  right: 2rem;
 }
 
 #home-escape.show {
@@ -363,6 +365,11 @@
 
 #home-escape.show:hover {
   transform: scale(1.1);
+}
+
+.home-tuning {
+  top: 2rem;
+  left: 2rem;
 }
 
 /* tapes page */
@@ -1547,6 +1554,187 @@ body.who {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+  /* home page  */
+
+  .home-body {
+    padding: 0;
+    margin: 0;
+    background-image: url(images/borderBackground.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .home {
+    background-image: url(images/truck.jpg);
+    background-size: 250% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: var(--ghost-white);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-shadow: 0 0 10px var(--soft-glow);
+    -webkit-mask-image: linear-gradient(to top, black 95%, transparent 97%)
+      linear-gradient(to bottom, black 70%, transparent 90%);
+    mask-image: linear-gradient(to top, black 95%, transparent 97%)
+      linear-gradient(to bottom, black 70%, transparent 90%);
+  }
+
+  .home.tv-off {
+    animation: tvOff 0.3s forwards ease-in;
+  }
+
+  .home.tv-on {
+    animation: tvOn 0.4s forwards ease-out;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    height: 50%;
+    margin-left: 7%;
+  }
+
+  .home-header {
+    color: var(--ghost-white);
+    text-shadow: 0 0 20px var(--electric-lavender);
+    font-size: clamp(1.9rem, 7vw, 2rem);
+    font-family: "Shooting Star", sans-serif;
+    margin-top: 37%;
+  }
+
+  .home-author {
+    color: var(--truck-green);
+    opacity: 1;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    width: 100%;
+    font-family: "Orbitron Light", sans-serif;
+    margin-top: 1%;
+  }
+
+  .home-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(0, 255, 153, 0.8);
+    border-radius: 8px;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    color: var(--electric-lavender);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    animation: flicker 2s infinite alternate;
+    margin-top: 20%;
+  }
+
+  .home-btn:active {
+    transform: scale(1.2);
+  }
+
+  .home-links {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    position: fixed;
+    top: 1rem;
+    opacity: 0.8;
+    animation: fadeIn 20s;
+  }
+
+  .home-instagram {
+    display: inline-block;
+    width: 53px;
+    height: 53px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url("images/instagram.png");
+  }
+
+  .home-linkedin {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url("images/linkedin.png");
+  }
+
+  .home-spotify {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-image: url("images/spotify.png");
+  }
+
+  .home-instagram:hover,
+  .home-spotify:hover,
+  .home-linkedin:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  #home-escape,
+  .home-tuning {
+    display: flex;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: fixed;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-family: "Game Paused", monospace;
+    color: var(--lover-blue);
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--electric-lavender);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px var(--neon-aqua), 0 0 20px black;
+    z-index: 9999;
+    animation: flickerEscape 2.5s infinite;
+  }
+
+  #home-escape {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  #home-escape.show {
+    display: block;
+    opacity: 1;
+    z-index: 9999;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #home-escape.show:hover {
+    transform: scale(1.1);
+  }
+
+  .home-tuning {
+    top: 2rem;
+    left: 2rem;
+  }
+
   /* who  */
 
   .who-intro {
@@ -1687,7 +1875,6 @@ body.who {
     left: 72%;
     animation: ipadRightPulse 3s infinite;
   }
-
   @keyframes ipadLeftPulse {
     0%,
     100% {
@@ -1885,6 +2072,104 @@ body.who {
 }
 
 @media (min-width: 1025px) {
+  /* home page  */
+
+  .home {
+    background-image: url(images/truck.jpg);
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .home-container {
+    margin-left: 7%;
+  }
+
+  .home-header {
+    font-size: clamp(1.9rem, 8vw, 3rem);
+    margin-top: 7%;
+  }
+
+  .home-btn {
+    margin-top: 10%;
+  }
+
+  .home-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  .home-links {
+    top: 3rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    position: fixed;
+  }
+
+  .home-linkedin,
+  .home-spotify {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .home-instagram {
+    width: 4.4rem;
+    height: 4.3rem;
+  }
+
+  .home-instagram:hover,
+  .home-spotify:hover,
+  .home-linkedin:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  #home-escape,
+  .home-tuning {
+    display: flex;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: fixed;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-family: "Game Paused", monospace;
+    color: var(--lover-blue);
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--electric-lavender);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px var(--neon-aqua), 0 0 20px black;
+    z-index: 9999;
+    animation: flickerEscape 2.5s infinite;
+  }
+
+  #home-escape {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  #home-escape.show {
+    display: block;
+    opacity: 1;
+    z-index: 9999;
+    width: 9rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #home-escape.show:hover {
+    transform: scale(1.1);
+  }
+
+  .home-tuning {
+    top: 2rem;
+    left: 2rem;
+  }
+
   /* who  */
 
   .who-intro {
