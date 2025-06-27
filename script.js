@@ -20,6 +20,7 @@ let counter = 0;
 let homeInterval = null;
 let imagesShown = 0;
 let homeEscapeShown = false;
+let homeTuningShown = true;
 
 function imageRotation() {
   home.classList.add("tv-off");
@@ -34,22 +35,44 @@ function imageRotation() {
     home.style.height = "100vh";
     home.style.backgroundSize = "100% 100%";
     home.style.backgroundColor = "black";
-    tuning.style.opacity = "1";
-
-    if (window.innerWidth >= 1025 && counter === 2) {
-      home.style.backgroundSize = "80% 100%";
-      home.style.backgroundColor = "#051b10";
-    }
 
     home.addEventListener(
       "animationend",
       () => home.classList.remove("tv-on"),
       { once: true }
     );
+    switch (counter) {
+      case 1:
+        tuning.style.color = "#00FEEB";
+        break;
+      case 2:
+        tuning.style.color = "#FF2A2A";
+        tuning.style.textShadow = "0 0 8px #FF2A2A";
+        break;
+      case 3:
+        tuning.style.color = "#FF66D0";
+        tuning.style.textShadow = "0 0 10px #FF66D0";
+        break;
+      case 4:
+        tuning.style.color = " #00F0FF";
+        tuning.style.textShadow = "0 0 10px #00F0FF";
+        break;
+      case 0:
+        tuning.style.color = "green";
+        break;
+      default:
+        console.log("default");
+    }
+
+    if (homeTuningShown) {
+      tuning.style.opacity = "1";
+    }
 
     if (imagesShown >= 5 && !homeEscapeShown) {
       homeEscape.classList.add("show");
       homeEscapeShown = true;
+      tuning.style.opacity = "0";
+      homeTuningShown = false;
     }
   }, 100);
 }
