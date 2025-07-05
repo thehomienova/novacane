@@ -38,7 +38,7 @@
   </main>
 
   <h1 class="entry-instructions">press these</h1>
-  <a href="allTapes.html" class="entry-back-btn"></a>
+  <a onclick="back()" class="entry-back-btn"></a>
   <a href="../tapes.html" class="entry-home-btn"></a>
   <a href="tel:+1248-434-5508" class="entry-call-btn"></a>
   <a href="closedPhone.html?from=02-spring-break" class="entry-closed-btn"></a>
@@ -49,17 +49,23 @@
   <a href="01-genesis.html" class="previous-entry"></a>
   <button class="playpause" type="button"></button>
 </div>
-<script>
-  const cameFrom = localStorage.getItem("cameFromTape");
+   <script>
+      const ref = document.referrer;
 
-  if (cameFrom || window.location.pathname.includes("entry.html")) {
-    // Apply scroll lock no matter what
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    document.body.style.height = "100%";
-  }
-</script>
+      if (ref) {
+        localStorage.setItem("cameFromTape", ref);
+      }
+
+      function back() {
+        const prev = localStorage.getItem("cameFromTape");
+        if (prev) {
+          window.location.href = `${prev}`;
+        } else {
+          // fallback if somehow no data
+          window.location.href = "tapes.html";
+        }
+      }
+    </script>
   <script src="../script.js"></script>
 </body>
 </html>

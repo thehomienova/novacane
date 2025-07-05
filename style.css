@@ -553,8 +553,19 @@
   height: 10rem;
   opacity: 0.8;
   position: absolute;
-  top: 63%;
-  left: 55%;
+  top: 70%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+}
+
+.tapes-butterfly {
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 48%;
+  left: 82%;
+  transform: translate(-50%, -50%);
 }
 
 .tapes-archive {
@@ -636,7 +647,6 @@ body.who {
   background-color: black;
   max-height: 100vh;
   overflow-y: auto;
-  scroll-behavior: ;
   position: relative;
 }
 
@@ -852,9 +862,9 @@ body.who {
 
 .all-tapes-box {
   display: inline-block;
-  width: 90%;
-  height: 18%;
-  margin-left: 5%;
+  width: 95%;
+  height: 12.5%;
+  margin-left: 3%;
   padding: 0.5rem;
   cursor: pointer;
 }
@@ -883,15 +893,16 @@ body.who {
 
 .all-tapes-eject {
   color: var(--flipphone-heart);
+  opacity: 0.7;
   text-decoration: none;
   font-family: "Unique", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 7%;
   animation: flicker 3s infinite;
-  height: 12%;
+  height: 13%;
 }
 
 /* entry */
@@ -934,6 +945,21 @@ body.who {
   padding: 5px 5px;
   font-size: 0.9rem;
   color: var(--ghost-white);
+}
+
+.entry-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.entry-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.entry-main::-webkit-scrollbar-thumb {
+  background-color: var(--ghost-white);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 .entry-title {
@@ -1584,7 +1610,7 @@ body.who {
 }
 
 .invest-body {
-  background-image: url(images/construction.jpg);
+  background-image: url(images/notFound.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1604,7 +1630,7 @@ body.who {
   }
 
   .home {
-    background-image: url(images/truck.jpg);
+    background-image: url(images/truck.jwpg);
     background-size: 250% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1912,7 +1938,8 @@ body.who {
     animation: ipadRightPulse 3s infinite;
   }
 
-  .tapes-lego {
+  .tapes-lego,
+  .tapes-butterfly {
     visibility: hidden;
   }
 
@@ -2248,7 +2275,8 @@ body.who {
     animation: ipadRightPulse 3s infinite;
   }
 
-  .tapes-lego {
+  .tapes-lego,
+  .tapes-butterfly {
     visibility: hidden;
   }
 
@@ -2314,6 +2342,10 @@ body.who {
   }
 
   /* who  */
+
+  .who-start:hover {
+    cursor: pointer;
+  }
 
   #who-start-btn {
     background-image: url(images/cd.png);
@@ -2419,8 +2451,7 @@ body.who {
 
   .all-tapes-box {
     display: inline-block;
-    width: 90%;
-    margin-left: 5%;
+
     padding: 0.5rem;
     cursor: pointer;
   }
@@ -2435,8 +2466,8 @@ body.who {
   }
 
   .all-tapes-one {
-    margin-top: 2%;
-    height: 17%;
+    margin-top: 1.5%;
+    height: 13%;
   }
 
   .all-tapes-intro {
@@ -2470,8 +2501,8 @@ body.who {
   }
 
   .all-tapes-eject:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-
+    background-color: var(--ghost-white);
+    opacity: 0.3;
     animation: none;
   }
 
@@ -2482,7 +2513,6 @@ body.who {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #1c0c3a;
     overscroll-behavior: none;
   }
 
@@ -2492,15 +2522,30 @@ body.who {
 
   .entry-main {
     position: absolute;
-    top: 30%;
-    left: 20%;
-    width: 38%;
-    height: 46.6%;
+    top: 31%;
+    left: 20.5%;
+    width: 37%;
+    height: 45%;
     overflow-y: auto;
     padding: 5px 5px;
     font-size: 0.9rem;
     color: var(--ghost-white);
     border-radius: 50px;
+  }
+
+  .entry-main::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .entry-main::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .entry-main::-webkit-scrollbar-thumb {
+    background-color: var(--ghost-white);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   .entry-title {
@@ -2522,29 +2567,47 @@ body.who {
     text-shadow: 0 0 5px #00ffe7, 0 0 10px rgba(0, 0, 0, 0.6);
   }
 
-  .entry-back-btn {
-    position: absolute;
-    top: 51%;
-    left: 63%;
-    width: 13%;
-    height: 6%;
-    border: 1px solid white;
-  }
-
   .entry-home-btn {
     position: absolute;
-    top: 51%;
-    left: 22%;
-    width: 13%;
-    height: 6%;
+    top: 79.5%;
+    left: 71.4%;
+    width: 2.5%;
+    height: 2.7%;
+
+    background-image: url(images/homeDesktop.png);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+  }
+
+  .entry-home-btn:hover {
+    border: 1px solid rgba(0, 240, 224, 0.8);
+
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+  .entry-back-btn {
+    position: absolute;
+    top: 79.5%;
+    left: 66.4%;
+    width: 3.7%;
+    height: 2.7%;
+    background-image: url(images/backArrowDesktop.png);
+    background-size: 100% 140%;
+    background-repeat: no-repeat;
+    background-position: 50% 64%;
+  }
+
+  .entry-back-btn:hover {
+    border: 1px solid rgba(0, 240, 224, 0.8);
+
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
   }
 
   .entry-call-btn {
-    position: absolute;
-    top: 59%;
-    left: 21%;
-    width: 14%;
-    height: 6%;
+    visibility: hidden;
   }
 
   .entry-closed-btn {
@@ -2556,61 +2619,53 @@ body.who {
   }
 
   .scrollUp {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    width: 12%;
-    height: 4%;
-    border-radius: 50px;
+    visibility: hidden;
   }
 
   .scrollDown {
-    opacity: 0;
-    position: absolute;
-    top: 63%;
-    left: 43%;
-    width: 12%;
-    height: 4%;
-    border-radius: 50px;
+    visibility: hidden;
   }
 
   .next-entry {
-    position: absolute;
-    top: 55.5%;
-    left: 54.5%;
-    border-radius: 50px;
-    width: 7.5%;
-    height: 6%;
+    visibility: hidden;
   }
 
   .previous-entry {
-    position: absolute;
-    top: 55.5%;
-    right: 56.5%;
-    border-radius: 50px;
-    width: 7.5%;
-    height: 6%;
+    visibility: hidden;
   }
 
   .playpause {
-    opacity: 0.5;
-    position: absolute;
-    top: 55%;
-    left: 44%;
-    width: 10.5%;
-    height: 7%;
+    top: 49%;
+    left: 66.7%;
+    width: 6.2%;
+    height: 10.5%;
     border-radius: 50px;
-    background-image: url(images/entryPlayPause.png);
-    background-size: cover;
-    background-position: center;
-    border: 0px;
-    opacity: 0.6;
+    background-image: url(images/playPauseDesktop.png);
+    background-size: 40%;
+    background-position: 67% 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
     animation: none;
   }
 
+  .playpause:hover {
+    border: 3px solid rgba(0, 240, 224, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    background-size: 50%;
+    background-position: 70% 50%;
+  }
+
   .entry-instructions {
-    animation: none;
+    font-size: 2.2rem;
+    width: 11%;
+    height: 36%;
+    top: 48%;
+    left: 64.2%;
+    border-radius: 7%;
+    animation: instructions 5s;
+
     opacity: 0;
   }
 

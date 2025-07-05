@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 - blush</title>
+    <link rel="stylesheet" href="../style.css?v=98" />
+  </head>
+  <body class="tape">
+    <div class="entry">
+      <main class="entry-main">
+        <h1></h1>
+        <h2 class="entry-title">blush</h2>
+        <p class="now-playing">now playing - h town by kevin abstract</p>
+        <br />
+        <br />
+        <article class="entry-body">
+          <p></p>
+          <br />
+
+          <p>
+            kevin abstract really just said "here's brockhampton 2" lol. <br />
+            Blush feels like a summer fever, all over the place but warm.<br />
+            his last tape had peaks but this one levitates you. <br />
+            he finally gave us "red light" and "post break up beauty", two songs
+            that lived in my head off leaks for soooo long. but they're real
+            now! <br />
+            aoty for me, idc what pitchfork says.
+          </p>
+          <br />
+          <p>
+            summer school's been chill. <br />
+            mostly i've been tweaking this site so that it looks pretty on both
+            cracked iphones and wide ass desktops. <br />
+            i got one of those DOT cards now. <br />
+            i tap it on your phone and boom, you enter my lil universe. <br />
+            i've started using the card on people so they can see the site
+            themselves instead of just building in the dark.
+          </p>
+          <br />
+          <p>
+            next step: <br />
+            get people to come back <br />
+            maybe a mailing list. maybe something better <br />
+            i wanna send updates. like postcards from my brain. <br />
+            updating them on a new blog drop so they can re-enter.
+          </p>
+          <br />
+          <p>
+            also thinking of replacing the rickroll easter egg on mobile. <br />
+            its funny but i'd rather have a google voice line that greets you,
+            thanks you for visiting, and lets you leave a voicemail. <br />
+            like a hotline to the blog. <br />
+            say what you want. leave an echo.
+          </p>
+          <br />
+          <p>
+            i still need to finish the investing page. <br />
+            been meaning to talk more about my bets like robinhood and reddit,
+            both up heavy since the tariff dip. <br />
+            still learning, still watching the charts like they're
+            constellations.
+          </p>
+          <br />
+          <p>
+            my little sister turned 11 a few days ago. <br />
+            she got birthday money, and i told her: <br />
+            you play roblox all the time right? <br />
+            what if instead of just being a customer and player, you could be an
+            owner? <br />
+            she lit up, excited to invest. <br />
+            you love to see it. <br />
+          </p>
+          <br />
+
+          <p>
+            i've been slipping on my web development cirriculum. <br />
+            this site's been my main sandbox but i know i gotta circle back,
+            <br />
+            learn deeper so i can build cooler.
+          </p>
+          <br />
+          <p>
+            this whole thing, <br />
+            this site, this world im building, <br />
+            it started as an idea, <br />
+            but now its coming to fruition, evolving.
+          </p>
+          <br />
+          <p>
+            and if ur here, reading this... <br />
+            thank you for listening. <br />
+            even if its just you and me and the glow of a screen.
+          </p>
+          <br />
+
+          <p>
+            7.4.25
+            <br />
+            <br />
+          </p>
+        </article>
+
+        <audio id="entry-music" loop>
+          <source src="../audio/H-Town.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </main>
+
+      <h1 class="entry-instructions">press these</h1>
+      <a onclick="back()" class="entry-back-btn"></a>
+      <a href="../tapes.html" class="entry-home-btn"></a>
+      <a href="tel:+1248-434-5508" class="entry-call-btn"></a>
+      <a href="closedPhone.html?from=03-novacane" class="entry-closed-btn"></a>
+
+      <button class="scrollDown"></button>
+      <button class="scrollUp"></button>
+      <a href="" class="next-entry"></a>
+      <a href="03-novacane.html" class="previous-entry"></a>
+      <button class="playpause" type="button"></button>
+    </div>
+    <script>
+      const ref = document.referrer;
+
+      if (ref) {
+        localStorage.setItem("cameFromTape", ref);
+      }
+
+      function back() {
+        const prev = localStorage.getItem("cameFromTape");
+        if (prev) {
+          window.location.href = `${prev}`;
+        } else {
+          // fallback if somehow no data
+          window.location.href = "tapes.html";
+        }
+      }
+    </script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -226,7 +226,7 @@ const financeStart = document.querySelector(".finance-start");
 
 function playFinanceSong() {
   if (financeSong.paused) {
-    financeSong.currentTime = 25;
+    financeSong.currentTime = 0;
     financeSong.volume = 0.5;
     financeSong
       .play()
