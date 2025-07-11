@@ -5,7 +5,6 @@ const enterBtn = document.querySelector(".home-btn");
 const homeContainer = document.querySelector(".home-container");
 const homeLinks = document.querySelector(".home-links");
 const home = document.querySelector(".home");
-const homeEscape = document.querySelector(".home-escape");
 const tuning = document.querySelector(".home-tuning");
 
 const arrayOfImages = [
@@ -19,7 +18,6 @@ const arrayOfImages = [
 let counter = 0;
 let homeInterval = null;
 let imagesShown = 0;
-let homeEscapeShown = false;
 let homeTuningShown = true;
 
 function imageRotation() {
@@ -68,11 +66,12 @@ function imageRotation() {
       tuning.style.opacity = "1";
     }
 
-    if (imagesShown >= 5 && !homeEscapeShown) {
-      homeEscape.classList.add("show");
-      homeEscapeShown = true;
+    if (imagesShown >= 5 && homeTuningShown) {
       tuning.style.opacity = "0";
       homeTuningShown = false;
+      setTimeout(() => {
+        window.location.href = "tapes.html";
+      }, 2500);
     }
   }, 100);
 }
@@ -121,6 +120,26 @@ if (tapesBtn && tapesSong) {
     tapesStart.style.display = "none";
   });
 }
+
+// tapes intro
+const tapesIntro = document.querySelector("#tapesIntro");
+
+if (tapesIntro) {
+  tapesIntro.addEventListener("ended", () => {
+    const tapesVideo = document.getElementById("tapesVideo");
+    document.getElementById("tapesIntro").style.display = "none";
+
+    if (window.innerWidth > 769) {
+      tapesVideo.style.display = "block";
+      tapesVideo.muted = true;
+      tapesVideo.play().catch((err) => {
+        console.warn("autoplay blocked:", err);
+      });
+    }
+  });
+}
+
+// tapes video background
 
 // entry scroll
 const entryMain = document.querySelector(".entry-main");

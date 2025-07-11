@@ -229,6 +229,32 @@
   box-sizing: border-box;
 }
 
+a:hover,
+button:hover {
+  cursor: url("images/ghostCursor.png") 16 16, auto;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-image: url(images/83F14393-A0BF-4587-8377-0C884F06BD68.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 99999;
+  pointer-events: none;
+  transition: none;
+}
+
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* home page  */
 
 .home-body {
@@ -257,6 +283,7 @@
   align-items: flex-start;
   flex-direction: column;
   text-shadow: 0 0 10px var(--soft-glow);
+  overflow: hidden;
 }
 
 .home.tv-off {
@@ -274,6 +301,7 @@
   font-family: "Inter", sans-serif;
   height: 50%;
   margin-left: 7%;
+  overflow: hidden;
 }
 
 .home-header {
@@ -306,7 +334,7 @@
   margin-top: 20%;
 }
 
-.home-btn:active {
+.home-btn:hover {
   transform: scale(1.2);
 }
 
@@ -359,12 +387,10 @@
 .home-instagram:hover,
 .home-spotify:hover,
 .home-linkedin:hover {
-  cursor: pointer;
   transform: scale(1.2);
   pointer-events: auto;
 }
 
-#home-escape,
 .home-tuning {
   display: flex;
   opacity: 0;
@@ -383,26 +409,6 @@
   animation: flickerEscape 2.5s infinite;
 }
 
-#home-escape {
-  bottom: 2rem;
-  right: 2rem;
-}
-
-#home-escape.show {
-  display: block;
-  opacity: 1;
-  z-index: 9999;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#home-escape.show:hover {
-  transform: scale(1.1);
-}
-
 .home-tuning {
   top: 2rem;
   left: 2rem;
@@ -410,40 +416,8 @@
 
 /* tapes page */
 
-.tapes-start {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-#tapes-start-btn {
-  background-image: url(images/tapesEnter.jpg);
-  background-size: cover;
-  background-position: center;
-  border: none;
-  background-color: black;
-  background-repeat: no-repeat;
-  width: 60%;
-  height: 40%;
-  opacity: 0.7;
-}
-
-.tapes-tap-hint {
-  font-size: 1rem;
-  font-family: "Shooting Star", sans-serif;
-  color: var(--electric-lavender);
-  text-align: center;
-  animation: pulse 1.5s infinite;
+#tapesVideo {
+  display: none;
 }
 
 .tapes-body {
@@ -463,6 +437,14 @@
   position: relative;
   overflow: hidden;
   scroll-snap-type: y mandatory;
+}
+
+#tapesIntro {
+  height: 100vh;
+  width: 100vw;
+  z-index: 99999;
+  object-fit: fill;
+  overflow: hidden;
 }
 
 .tapes-header {
@@ -686,10 +668,10 @@ body.who {
 
 .scroll-arrow {
   position: absolute;
-  bottom: 10rem;
-  left: 60%;
+  bottom: 8rem;
+  left: 80%;
   transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: 0.8rem;
   color: var(--electric-lavender);
   animation: glitchyArrow 1.5s infinite;
 }
@@ -866,7 +848,6 @@ body.who {
   height: 12.5%;
   margin-left: 3%;
   padding: 0.5rem;
-  cursor: pointer;
 }
 
 .all-tapes-one {
@@ -889,20 +870,6 @@ body.who {
 
 .all-tapes-dot-two {
   animation: flickerDotTwo 3s infinite;
-}
-
-.all-tapes-eject {
-  color: var(--flipphone-heart);
-  opacity: 0.7;
-  text-decoration: none;
-  font-family: "Unique", sans-serif;
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7%;
-  animation: flicker 3s infinite;
-  height: 13%;
 }
 
 /* entry */
@@ -1772,26 +1739,6 @@ body.who {
     animation: flickerEscape 2.5s infinite;
   }
 
-  #home-escape {
-    bottom: 2rem;
-    right: 2rem;
-  }
-
-  #home-escape.show {
-    display: block;
-    opacity: 1;
-    z-index: 9999;
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #home-escape.show:hover {
-    transform: scale(1.1);
-  }
-
   .home-tuning {
     top: 2rem;
     left: 2rem;
@@ -2124,7 +2071,8 @@ body.who {
 
   .home-btn:hover {
     transform: scale(1.2);
-    cursor: pointer;
+
+    cursor: url("images/ghostCursor.png") 16 16, auto;
   }
 
   .home-links {
@@ -2150,11 +2098,10 @@ body.who {
   .home-instagram:hover,
   .home-spotify:hover,
   .home-linkedin:hover {
-    cursor: pointer;
+    cursor: url("images/ghostCursor.png") 16 16, auto;
     transform: scale(1.2);
   }
 
-  #home-escape,
   .home-tuning {
     display: flex;
     opacity: 0;
@@ -2173,27 +2120,6 @@ body.who {
     animation: flickerEscape 2.5s infinite;
   }
 
-  #home-escape {
-    bottom: 2rem;
-    right: 2rem;
-  }
-
-  #home-escape.show {
-    display: block;
-    opacity: 1;
-    z-index: 9999;
-    width: 9rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--ghost-white);
-  }
-
-  #home-escape.show:hover {
-    transform: scale(1.1);
-  }
-
   .home-tuning {
     top: 2rem;
     left: 2rem;
@@ -2201,38 +2127,39 @@ body.who {
 
   /* tapes page */
 
-  #tapes-start-btn {
-    width: 30%;
-    height: 60%;
-  }
-
-  .tapes-tap-hint {
-    font-size: 2rem;
-  }
-
-  #tapes-start-btn:hover,
-  .tapes-tap-hint:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+  #tapesVideo {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    object-fit: fill;
+    overflow: hidden;
   }
 
   .tapes-container {
-    background-image: url(/images/tvgirl.jpg);
-    background-size: 100% 100%;
+    background-image: none;
     min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
   }
 
   .tapes-header {
-    width: 65%;
+    width: 20%;
+    height: 15%;
+    position: absolute;
     top: 5%;
-    left: 17%;
-    text-align: center;
+    left: 5%;
+  }
+
+  .tapes-subtitle {
+    color: var(--electric-lavender);
+    font-size: 1.2rem;
+    width: 120%;
   }
 
   .tapes-planet {
     width: 5rem;
     height: 5rem;
-    left: 37%;
+    left: 5.3%;
     top: 0%;
   }
 
@@ -2246,8 +2173,8 @@ body.who {
   .tapes-entry-one,
   .tapes-entry-two,
   .tapes-entry-three {
-    width: 13rem;
-    height: 5rem;
+    width: 15rem;
+    height: 7rem;
   }
 
   .tapes-entry-one:hover,
@@ -2257,27 +2184,27 @@ body.who {
   }
 
   .tapes-entry-one {
-    top: 27%;
-    left: 12%;
-    animation: ipadLeftPulse 3s infinite;
+    top: 50%;
+    left: 5%;
+    animation: pulse 3s infinite;
   }
 
   .tapes-entry-two {
-    top: 45%;
-    left: 12%;
-    animation: ipadLeftPulse 3s infinite;
+    top: 70%;
+    left: 5%;
+    animation: pulse 3s infinite;
   }
 
   .tapes-entry-three {
     visibility: visible;
-    top: 28%;
-    left: 72%;
-    animation: ipadRightPulse 3s infinite;
+    top: 30%;
+    left: 5%;
+    animation: pulse 3s infinite;
   }
 
   .tapes-lego,
   .tapes-butterfly {
-    visibility: hidden;
+    display: none;
   }
 
   .tapes-archive {
@@ -2335,17 +2262,12 @@ body.who {
     font-size: 1rem;
     width: 14rem;
     height: 2rem;
-    color: var(--flipphone-heart);
-    top: 76.7%;
-    left: 10%;
-    transform: rotate(-4deg);
+    color: var(--electric-lavender);
+    bottom: 1%;
+    left: 1%;
   }
 
   /* who  */
-
-  .who-start:hover {
-    cursor: pointer;
-  }
 
   #who-start-btn {
     background-image: url(images/cd.png);

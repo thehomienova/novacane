@@ -12,7 +12,6 @@
     <link rel="icon" href="images/facivon.png" type="png" />
   </head>
   <body class="home-body">
-    <a href="tapes.html" id="home-escape" class="home-escape">escape?</a>
     <h1 class="home-tuning">tuning frequency...</h1>
 
     <div class="home-links">
@@ -36,5 +35,11 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("preloader").classList.add("loaded");
+      });
+    </script>
   </body>
+  <div id="preloader"></div>
 </html>

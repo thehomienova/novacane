@@ -12,8 +12,21 @@
   </head>
 
   <body class="tapes-body">
+    <video
+      id="tapesIntro"
+      src="videos/tapesIntroMobile.mp4"
+      alt="green eyes looking at you with code on her face"
+      autoplay
+      muted
+      playsinline
+    ></video>
     <div class="tapes-container">
-      <img src="images/planet.png" alt="Planet" class="tapes-planet" />
+      <img
+        src="images/planet.png"
+        loading="lazy"
+        alt="Planet"
+        class="tapes-planet"
+      />
       <header class="tapes-header">
         <h1 class="tapes-title">novacane</h1>
         <p class="tapes-subtitle">
@@ -23,21 +36,32 @@
 
       <audio id="tapes-song" src="audio/nikes.mp3" preload="auto"></audio>
 
+      <video
+        id="tapesVideo"
+        src="videos/tapesVideoBackground.mp4"
+        alt="tvs on the floor"
+        muted
+        loop
+        playsinline
+      ></video>
       <main class="tapes-main">
-        <div class="tapes-start">
-          <button id="tapes-start-btn"></button>
-          <p class="tapes-tap-hint">tap to enter</p>
-        </div>
-        <a href="who.html" class="tapes-entry-one">who the fuck →</a>
-
-        <a href="finance.html" class="tapes-entry-two">learn finance →</a>
-        <a href="tapes/04-91percentHuman.html" class="tapes-entry-three"
-          >novacane.live // 6.10.25 →</a
+        <a href="tapes/05-blush.html" class="tapes-entry-one"
+          >blush // 7.4.25</a
         >
-        <img src="images/lego.png" alt="lego man" class="tapes-lego" />
+        <a href="who.html" class="tapes-entry-two">who the fuck →</a>
+
+        <a href="finance.html" class="tapes-entry-three">learn finance →</a>
+
+        <img
+          src="images/lego.png"
+          loading="lazy"
+          alt="lego man"
+          class="tapes-lego"
+        />
         <img
           src="images/butterfly.png"
-          alt="butterflu"
+          loading="lazy"
+          alt="butterfly"
           class="tapes-butterfly"
         />
         <section class="tapes-archive">
