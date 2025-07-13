@@ -6,6 +6,8 @@ const homeContainer = document.querySelector(".home-container");
 const homeLinks = document.querySelector(".home-links");
 const home = document.querySelector(".home");
 const tuning = document.querySelector(".home-tuning");
+const homeEscape = document.querySelector("#home-escape");
+let homeEscapeShown = false;
 
 const arrayOfImages = [
   "images/chaos1.jpg",
@@ -66,12 +68,15 @@ function imageRotation() {
       tuning.style.opacity = "1";
     }
 
-    if (imagesShown >= 5 && homeTuningShown) {
+    if (imagesShown >= 5 && !homeEscapeShown) {
+      console.log(homeEscapeShown, homeTuningShown);
+      homeEscape.classList.add("show");
+      homeEscapeShown = true;
       tuning.style.opacity = "0";
       homeTuningShown = false;
       setTimeout(() => {
         window.location.href = "tapes.html";
-      }, 2500);
+      }, 3000);
     }
   }, 100);
 }
@@ -87,26 +92,26 @@ if (enterSound && enterBtn) {
       homeInterval = setInterval(imageRotation, 1300);
       enterSound.play().then(() => {
         enterSound.currentTime = 25;
-        enterSound.volume = 1;
+        enterSound.volume = 0.5;
       });
     }
   });
 }
 
-// enter tapes
+//  tapes song
 
-const tapesBtn = document.querySelector("#tapes-start-btn");
+const tapesVideoBackground = document.querySelector("#tapesVideo");
 const tapesSong = document.querySelector("#tapes-song");
 const tapesStart = document.querySelector(".tapes-start");
 
 function playTapesSong() {
   if (tapesSong.paused) {
-    tapesSong.currentTime = 0;
+    tapesSong.currentTime = 34.2;
     tapesSong.volume = 0.5;
     tapesSong
       .play()
       .then(() => {
-        console.log("🎶 who.mp3 playing");
+        console.log("🎶 tapes.mp3 playing");
       })
       .catch((err) => {
         console.warn("🔇 playback blocked:", err);
@@ -114,20 +119,22 @@ function playTapesSong() {
   }
 }
 
-if (tapesBtn && tapesSong) {
-  tapesStart.addEventListener("click", () => {
-    playTapesSong();
-    tapesStart.style.display = "none";
-  });
-}
-
 // tapes intro
 const tapesIntro = document.querySelector("#tapesIntro");
+const tapesIntroContainer = document.querySelector(".tapes-intro-container");
 
-if (tapesIntro) {
+if (tapesIntro && tapesIntroContainer) {
+  tapesIntro.addEventListener("timeupdate", () => {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 1.4) {
+      playTapesSong();
+    }
+  });
+
   tapesIntro.addEventListener("ended", () => {
+    playTapesSong();
     const tapesVideo = document.getElementById("tapesVideo");
     document.getElementById("tapesIntro").style.display = "none";
+    document.querySelector(".tapes-intro-container").style.display = "none";
 
     if (window.innerWidth > 769) {
       tapesVideo.style.display = "block";
@@ -139,7 +146,20 @@ if (tapesIntro) {
   });
 }
 
-// tapes video background
+if (tapesIntro) {
+  tapesIntro.addEventListener("click", () => {
+    tapesIntro.addEventListener("ended", () => {
+      playTapesSong();
+    });
+  });
+}
+
+if (window.innerWidth > 1024) {
+  if (tapesIntro) {
+    tapesIntro.src = "videos/tapesVideoIntro.mp4";
+    tapesIntro.load();
+  }
+}
 
 // entry scroll
 const entryMain = document.querySelector(".entry-main");
