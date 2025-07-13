@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>journal - novacane</title>
-    <link rel="stylesheet" href="style.css?v=100" />
+    <link rel="stylesheet" href="style.css?v=102" />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap"
       rel="stylesheet"
@@ -22,6 +22,8 @@
         playsinline
       ></video>
     </div>
+
+    <div class="transition-glitch"></div>
 
     <div class="tapes-container">
       <img
@@ -48,14 +50,26 @@
         playsinline
       ></video>
       <main class="tapes-main">
-        <a href="tapes/05-blush.html" class="tapes-entry-one"
+        <a
+          href="tapes/05-blush.html"
+          class="tapes-entry-one"
+          class="tapes-entries"
           >blush // 7.4.25</a
         >
-        <a href="who.html" class="tapes-entry-two">who the fuck →</a>
+        <a href="who.html" class="tapes-entry-two" class="tapes-entries"
+          >who the fuck →</a
+        >
 
-        <a href="finance.html" class="tapes-entry-three">learn finance →</a>
+        <a href="finance.html" class="tapes-entry-three" class="tapes-entries"
+          >learn finance →</a
+        >
 
-        <a href="tapes/allTapes.html" class="tapes-entry-four">archive →</a>
+        <a
+          href="tapes/allTapes.html"
+          class="tapes-entry-four"
+          class="tapes-entries"
+          >archive →</a
+        >
 
         <img
           src="images/lego.png"
@@ -91,7 +105,9 @@
     <script src="script.js"></script>
     <script>
       window.addEventListener("load", () => {
-        document.getElementById("preloader").classList.add("loaded");
+        // fade out preloader
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("loaded");
       });
     </script>
   </body>

@@ -122,11 +122,18 @@ function playTapesSong() {
 // tapes intro
 const tapesIntro = document.querySelector("#tapesIntro");
 const tapesIntroContainer = document.querySelector(".tapes-intro-container");
+const transition = document.querySelector(".transition-glitch");
 
 if (tapesIntro && tapesIntroContainer) {
   tapesIntro.addEventListener("timeupdate", () => {
     if (tapesIntro.duration - tapesIntro.currentTime <= 1.4) {
       playTapesSong();
+    }
+  });
+
+  tapesIntro.addEventListener("timeupdate", () => {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.15) {
+      transition.classList.add("animate");
     }
   });
 

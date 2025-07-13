@@ -210,6 +210,18 @@
   }
 }
 
+@keyframes heroPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+}
+
 :root {
   --ghost-white: #f2f5ff;
   --electric-lavender: #dcb8ff;
@@ -440,6 +452,33 @@ button:hover {
   width: 100vw;
   z-index: 99999;
   object-fit: cover;
+}
+
+.transition-glitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("images/glitchFrame.png");
+  opacity: 0;
+  z-index: 10000;
+}
+
+.transition-glitch.animate {
+  animation: glitchFlash 0.3s ease forwards;
+}
+
+@keyframes glitchFlash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #tapesVideo {
@@ -2154,13 +2193,16 @@ body.who {
     text-align: center;
   }
 
+  .tapes-header h1 {
+    animation: flicker 3s infinite;
+  }
+
   .tapes-subtitle {
     color: var(--electric-lavender);
     font-size: 1.2rem;
     width: 100%;
     text-transform: lowercase;
     letter-spacing: 1px;
-    font-family: "Orbitron Light", sans-serif;
     opacity: 0.8;
   }
 
@@ -2171,6 +2213,73 @@ body.who {
     overflow: hidden;
   }
 
+  @keyframes fadeInGlitchOne {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) rotate(2deg);
+      filter: hue-rotate(80deg) blur(2px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: contrast(150%) blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-10deg);
+      filter: none;
+    }
+  }
+
+  @keyframes fadeInGlitchTwo {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) rotate(-2deg);
+      filter: hue-rotate(80deg) blur(2px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: contrast(150%) blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-20deg);
+      filter: none;
+    }
+  }
+
+  @keyframes fadeInGlitchThree {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) rotate(5deg);
+      filter: hue-rotate(80deg) blur(2px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: contrast(150%) blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(35deg);
+      filter: none;
+    }
+  }
+  @keyframes fadeInGlitchFour {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) rotate(2deg);
+      filter: hue-rotate(80deg) blur(2px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: contrast(150%) blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(15deg);
+      filter: none;
+    }
+  }
+
   .tapes-entry-one,
   .tapes-entry-two,
   .tapes-entry-three,
@@ -2179,38 +2288,69 @@ body.who {
     height: 7rem;
   }
 
+  .tapes-entry-one::before,
+  .tapes-entry-two::before,
+  .tapes-entry-three::before,
+  .tapes-entry-four::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5) 20%,
+      transparent 80%
+    );
+    z-index: -1;
+  }
+
   .tapes-entry-one:hover,
   .tapes-entry-two:hover,
   .tapes-entry-three:hover,
   .tapes-entry-four:hover {
-    color: var(--flipphone-heart);
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 0 25px var(--electric-lavender), 0 0 40px black;
+    filter: brightness(1.2) contrast(1.1) saturate(1.3) hue-rotate(10deg);
+    opacity: 1;
+    color: var(--electric-lavender);
   }
 
   .tapes-entry-one {
-    top: 5%;
+    top: 7%;
     left: 5%;
-    animation: pulse 3s infinite;
-    border-radius: 5%;
+    opacity: 0;
+    animation: fadeInGlitchOne 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
   }
 
   .tapes-entry-two {
-    top: 5%;
+    top: 22%;
     left: 78%;
-    animation: pulse 3s infinite;
+    opacity: 0;
+    animation: fadeInGlitchTwo 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 9s;
   }
 
   .tapes-entry-three {
     visibility: visible;
-    top: 25%;
+    top: 65%;
     left: 78%;
-    animation: pulse 3s infinite;
+    opacity: 0;
+    animation: fadeInGlitchThree 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
   }
 
   .tapes-entry-four {
     visibility: visible;
-    top: 25%;
+    top: 35%;
     left: 5%;
-    animation: pulse 3s infinite;
+    opacity: 0;
+    animation: fadeInGlitchFour 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 11s;
   }
 
   .tapes-lego,
@@ -2226,7 +2366,7 @@ body.who {
     height: 2rem;
     color: var(--electric-lavender);
     bottom: 1%;
-    left: 82%;
+    left: 2%;
   }
 
   /* who  */
