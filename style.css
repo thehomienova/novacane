@@ -462,7 +462,7 @@ button:hover {
   height: 100vh;
   background: url("images/glitchFrame.png");
   opacity: 0;
-  z-index: 10000;
+  z-index: 5;
 }
 
 .transition-glitch.animate {
@@ -568,6 +568,7 @@ button:hover {
   overflow: hidden;
   animation: pulse 3s infinite;
   position: absolute;
+  z-index: 6;
 
   font-family: "Joystix Monospace", monospace;
   font-size: 1rem;
@@ -2218,15 +2219,18 @@ body.who {
       opacity: 0;
       transform: scale(0.9) rotate(2deg);
       filter: hue-rotate(80deg) blur(2px);
+      pointer-events: none;
     }
     50% {
       opacity: 0.5;
       filter: contrast(150%) blur(1px);
+      pointer-events: none;
     }
     100% {
       opacity: 1;
       transform: scale(1) rotate(-10deg);
       filter: none;
+      pointer-events: auto;
     }
   }
 
@@ -2235,15 +2239,18 @@ body.who {
       opacity: 0;
       transform: scale(0.9) rotate(-2deg);
       filter: hue-rotate(80deg) blur(2px);
+      pointer-events: none;
     }
     50% {
       opacity: 0.5;
       filter: contrast(150%) blur(1px);
+      pointer-events: none;
     }
     100% {
       opacity: 1;
       transform: scale(1) rotate(-20deg);
       filter: none;
+      pointer-events: auto;
     }
   }
 
@@ -2252,15 +2259,18 @@ body.who {
       opacity: 0;
       transform: scale(0.9) rotate(5deg);
       filter: hue-rotate(80deg) blur(2px);
+      pointer-events: none;
     }
     50% {
       opacity: 0.5;
       filter: contrast(150%) blur(1px);
+      pointer-events: none;
     }
     100% {
       opacity: 1;
       transform: scale(1) rotate(35deg);
       filter: none;
+      pointer-events: auto;
     }
   }
   @keyframes fadeInGlitchFour {
@@ -2268,15 +2278,18 @@ body.who {
       opacity: 0;
       transform: scale(0.9) rotate(2deg);
       filter: hue-rotate(80deg) blur(2px);
+      pointer-events: none;
     }
     50% {
       opacity: 0.5;
       filter: contrast(150%) blur(1px);
+      pointer-events: none;
     }
     100% {
       opacity: 1;
       transform: scale(1) rotate(15deg);
       filter: none;
+      pointer-events: auto;
     }
   }
 
@@ -2319,6 +2332,7 @@ body.who {
     top: 7%;
     left: 5%;
     opacity: 0;
+    pointer-events: none;
     animation: fadeInGlitchOne 1s ease, flicker 3s infinite;
     animation-fill-mode: forwards;
     animation-delay: 8s;
@@ -2328,6 +2342,7 @@ body.who {
     top: 22%;
     left: 78%;
     opacity: 0;
+    pointer-events: none;
     animation: fadeInGlitchTwo 1s ease, flicker 3s infinite;
     animation-fill-mode: forwards;
     animation-delay: 9s;
@@ -2338,6 +2353,7 @@ body.who {
     top: 65%;
     left: 78%;
     opacity: 0;
+    pointer-events: none;
     animation: fadeInGlitchThree 1s ease, flicker 3s infinite;
     animation-fill-mode: forwards;
     animation-delay: 10s;
@@ -2348,6 +2364,7 @@ body.who {
     top: 35%;
     left: 5%;
     opacity: 0;
+    pointer-events: none;
     animation: fadeInGlitchFour 1s ease, flicker 3s infinite;
     animation-fill-mode: forwards;
     animation-delay: 11s;
@@ -2359,6 +2376,8 @@ body.who {
   .tapes-archive {
     display: none;
   }
+
+
 
   .tapes-footer {
     font-size: 1rem;

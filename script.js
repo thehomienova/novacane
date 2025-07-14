@@ -132,7 +132,7 @@ if (tapesIntro && tapesIntroContainer) {
   });
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 0.15) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.14) {
       transition.classList.add("animate");
     }
   });
