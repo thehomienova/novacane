@@ -298,10 +298,12 @@ button:hover {
 
 .home.tv-off {
   animation: tvOff 0.3s forwards ease-in;
+  
 }
 
 .home.tv-on {
   animation: tvOn 0.4s forwards ease-out;
+
 }
 
 .home-container {
@@ -311,7 +313,6 @@ button:hover {
   font-family: "Inter", sans-serif;
   height: 50%;
   margin-left: 7%;
-  overflow: hidden;
 }
 
 .home-header {
