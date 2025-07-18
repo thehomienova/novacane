@@ -119,7 +119,7 @@ function playTapesSong() {
   }
 }
 
-// tapes intro
+// tapes intro 
 const tapesIntro = document.querySelector("#tapesIntro");
 const tapesIntroContainer = document.querySelector(".tapes-intro-container");
 const transition = document.querySelector(".transition-glitch");

@@ -34,5 +34,13 @@
         class="all-tapes-four all-tapes-box"
       ></a>
     </div>
+    <script>
+      window.addEventListener("load", () => {
+        // fade out preloader
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("loaded");
+      });
+    </script>
   </body>
+  <div id="preloader"></div>
 </html>

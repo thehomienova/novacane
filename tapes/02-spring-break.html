@@ -66,6 +66,14 @@
         }
       }
     </script>
+    <script>
+      window.addEventListener("load", () => {
+        // fade out preloader
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("loaded");
+      });
+    </script>
   <script src="../script.js"></script>
 </body>
+<div id="preloader"></div>
 </html>
