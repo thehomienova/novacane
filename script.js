@@ -75,6 +75,8 @@ function imageRotation() {
       tuning.style.opacity = "0";
       homeTuningShown = false;
       setTimeout(() => {
+
+        sessionStorage.setItem("cameFromIndex", "true");
         window.location.href = "tapes.html";
       }, 3000);
     }
@@ -123,8 +125,58 @@ function playTapesSong() {
 const tapesIntro = document.querySelector("#tapesIntro");
 const tapesIntroContainer = document.querySelector(".tapes-intro-container");
 const transition = document.querySelector(".transition-glitch");
+const tapesVideo = document.querySelector("#tapesVideo");
 
-if (tapesIntro && tapesIntroContainer) {
+let notice;
+
+function showNotice() {
+  if (!notice) {
+    notice = document.createElement("div");
+    notice.innerText = "⚠️ Video failed to load. Try turning off Low Power Mode and refresh the page.";
+    notice.style.position = "absolute";
+    notice.style.top = "50%";
+    notice.style.left = "50%";
+    notice.style.transform = "translate(-50%, -50%)";
+    notice.style.padding = "1rem 2rem";
+    notice.style.fontSize = "1rem";
+    notice.style.zIndex = "999999";
+    notice.style.backgroundColor = "black";
+    notice.style.color = "white";
+    notice.style.border = "1px solid white";
+    notice.style.textAlign = "center";
+    notice.style.maxWidth = "90%";
+    document.body.appendChild(notice);
+  }
+}
+
+function removeNotice() {
+  if (notice && notice.parentNode) {
+    notice.parentNode.removeChild(notice);
+    notice = null;
+  }
+}
+
+if (tapesIntro) {
+  // Try to play the video (if not already playing)
+  let playPromise = tapesIntro.play && tapesIntro.play();
+  // Set a timeout to check if the video started
+  setTimeout(() => {
+    if (tapesIntro.paused && tapesVideo.style.display !== "block") {
+      showNotice();
+    } 
+  }, 1500); // 1.5 seconds after page load
+
+  // Remove notice if video starts playing
+  tapesIntro.addEventListener("play", removeNotice);
+  tapesIntro.addEventListener("playing", removeNotice);
+  tapesIntro.addEventListener("ended", removeNotice);
+ 
+
+}
+
+if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex") === "true") {
+  // Play the intro, but do NOT clear the flag yet
+
   tapesIntro.addEventListener("timeupdate", () => {
     if (tapesIntro.duration - tapesIntro.currentTime <= 1.4) {
       playTapesSong();
@@ -139,10 +191,26 @@ if (tapesIntro && tapesIntroContainer) {
 
   tapesIntro.addEventListener("ended", () => {
     playTapesSong();
-    const tapesVideo = document.getElementById("tapesVideo");
-    document.getElementById("tapesIntro").style.display = "none";
-    document.querySelector(".tapes-intro-container").style.display = "none";
+    tapesIntro.style.display = "none";
+    tapesIntroContainer.style.display = "none";
 
+    if (window.innerWidth > 769 && tapesVideo) {
+      tapesVideo.style.display = "block";
+      tapesVideo.muted = true;
+      tapesVideo.play().catch((err) => {
+        console.warn("autoplay blocked:", err);
+      });
+    }
+    // Now clear the flag, so if they leave and come back, intro won't play
+    sessionStorage.removeItem("cameFromIndex");
+  });
+
+} else if (tapesIntro && tapesIntroContainer) {
+  // SKIP the intro: hide intro, glitch, show main content/video, play song
+  tapesIntro.style.display = "none";
+  tapesIntroContainer.style.display = "none";
+  if (transition) transition.style.display = "none";
+  if (tapesVideo) {
     if (window.innerWidth > 769) {
       tapesVideo.style.display = "block";
       tapesVideo.muted = true;
@@ -150,7 +218,19 @@ if (tapesIntro && tapesIntroContainer) {
         console.warn("autoplay blocked:", err);
       });
     }
-  });
+  }
+  playTapesSong();
+  // Optionally, set animation delays here if needed
+  const tapesOne = document.querySelector(".tapes-entry-one");
+  const tapesTwo = document.querySelector(".tapes-entry-two");
+  const tapesThree = document.querySelector(".tapes-entry-three");
+  const tapesFour = document.querySelector(".tapes-entry-four");
+  if (tapesOne && tapesTwo && tapesThree && tapesFour) {
+    tapesOne.style.animationDelay = "2s";
+    tapesTwo.style.animationDelay = "3s";
+    tapesThree.style.animationDelay = "4s";
+    tapesFour.style.animationDelay = "5s";
+  }
 }
 
 if (tapesIntro) {
