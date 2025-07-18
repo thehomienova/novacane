@@ -25,6 +25,14 @@ let homeTuningShown = true;
 function imageRotation() {
   home.classList.add("tv-off");
 
+  // Use longer delay for case 3 (counter = 3)
+  const delay = counter === 3 ? 1400 : 100;
+
+  // Clear the interval if we're going to have a longer delay
+  if (counter === 3) {
+    clearInterval(homeInterval);
+  }
+
   setTimeout(() => {
     counter = (counter + 1) % arrayOfImages.length;
     imagesShown++;
@@ -48,6 +56,7 @@ function imageRotation() {
       case 2:
         tuning.style.color = "#FF2A2A";
         tuning.style.textShadow = "0 0 8px #FF2A2A";
+  
         break;
       case 3:
         tuning.style.color = "#FF66D0";
@@ -56,16 +65,23 @@ function imageRotation() {
       case 4:
         tuning.style.color = " #00F0FF";
         tuning.style.textShadow = "0 0 10px #00F0FF";
+    
         break;
       case 0:
         tuning.style.color = "green";
         break;
       default:
-        console.log("default");
+        tuning.style.color = "white";
+        tuning.style.textShadow = "0 0 10px white";
     }
 
     if (homeTuningShown) {
       tuning.style.opacity = "1";
+    }
+
+    // Restart the interval after the longer delay
+    if (counter === 4) {
+      homeInterval = setInterval(imageRotation, 1000);
     }
 
     if (imagesShown >= 5 && !homeEscapeShown) {
@@ -78,25 +94,29 @@ function imageRotation() {
 
         sessionStorage.setItem("cameFromIndex", "true");
         window.location.href = "tapes.html";
-      }, 3000);
+      }, 2000);
     }
-  }, 100);
+  }, delay);
 }
 
 if (enterSound && enterBtn) {
   enterBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
     homeContainer.style.display = "none";
     homeLinks.style.display = "none";
+    enterSound.play().then(() => {
+      enterSound.currentTime = 67;
+      enterSound.volume = 0.5;
+    });
+
+    setTimeout(() => {
+    e.preventDefault();
+
 
     if (!homeInterval) {
-      homeInterval = setInterval(imageRotation, 1300);
-      enterSound.play().then(() => {
-        enterSound.currentTime = 25;
-        enterSound.volume = 0.5;
-      });
+      homeInterval = setInterval(imageRotation, 1000);
+      
     }
+  }, 3250);
   });
 }
 
@@ -108,7 +128,7 @@ const tapesStart = document.querySelector(".tapes-start");
 
 function playTapesSong() {
   if (tapesSong.paused) {
-    tapesSong.currentTime = 34.2;
+    tapesSong.currentTime = 0;
     tapesSong.volume = 0.5;
     tapesSong
       .play()
@@ -178,7 +198,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
   // Play the intro, but do NOT clear the flag yet
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 1.4) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.3) {
       playTapesSong();
     }
   });

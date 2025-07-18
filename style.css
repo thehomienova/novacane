@@ -449,7 +449,7 @@ button:hover {
 }
 
 #tapesIntro {
-  height: 85%;
+  height: 85vh;
   width: 100vw;
   z-index: 99999;
   object-fit: cover;
