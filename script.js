@@ -104,7 +104,7 @@ if (enterSound && enterBtn) {
     homeContainer.style.display = "none";
     homeLinks.style.display = "none";
     enterSound.play().then(() => {
-      enterSound.currentTime = 67;
+      enterSound.currentTime = 3.5;
       enterSound.volume = 0.5;
     });
 
