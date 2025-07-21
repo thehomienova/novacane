@@ -25,13 +25,7 @@ let homeTuningShown = true;
 function imageRotation() {
   home.classList.add("tv-off");
 
-  // // Use longer delay for case 3 (counter = 3)
-  // const delay = counter === 3 ? 1400 : 100;
 
-  // // Clear the interval if we're going to have a longer delay
-  // if (counter === 3) {
-  //   clearInterval(homeInterval);
-  // }
 
   setTimeout(() => {
     counter = (counter + 1) % arrayOfImages.length;
@@ -40,9 +34,13 @@ function imageRotation() {
     home.style.backgroundImage = `url(${arrayOfImages[counter]})`;
     home.classList.remove("tv-off");
     home.classList.add("tv-on");
-    home.style.height = "100vh";
     home.style.backgroundSize = "100% 100%";
     home.style.backgroundColor = "black";
+    home.style.position = "fixed";
+    home.style.bottom = "0";
+    home.style.left = "0";
+    home.style.width = "100vw";
+    home.style.height = "100vh";
 
     home.addEventListener(
       "animationend",
@@ -54,17 +52,16 @@ function imageRotation() {
         tuning.style.color = "#00FEEB";
         break;
       case 2:
-        tuning.style.color = "#FF2A2A";
-        tuning.style.textShadow = "0 0 8px #FF2A2A";
-  
+        tuning.style.color = "var(--ghost-white)";
+        tuning.style.textShadow = "0 0 1px var(--ghost-white)"; 
         break;
       case 3:
         tuning.style.color = "#FF66D0";
-        tuning.style.textShadow = "0 0 10px #FF66D0";
+        tuning.style.textShadow = "0 0 2px #FF66D0";
         break;
       case 4:
         tuning.style.color = " #00F0FF";
-        tuning.style.textShadow = "0 0 10px #00F0FF";
+        tuning.style.textShadow = "0 0 3px #00F0FF";
     
         break;
       case 0:
@@ -126,21 +123,27 @@ if (enterSound && enterBtn) {
 const tapesVideoBackground = document.querySelector("#tapesVideo");
 const tapesSong = document.querySelector("#tapes-song");
 const tapesStart = document.querySelector(".tapes-start");
+const tapesSongBtn = document.querySelector(".tapes-song-btn");
 
 function playTapesSong() {
   if (tapesSong.paused) {
-    tapesSong.currentTime = 31;
     tapesSong.volume = 0.5;
-    tapesSong
-      .play()
+    tapesSong.play()
       .then(() => {
-        console.log("🎶 tapes.mp3 playing");
+        tapesSong.currentTime = 31;
+        // Some browsers need a second play() after seeking
+        return tapesSong.play();
+      })
+      .then(() => {
+        console.log("🎶 tapes.mp3 playing from 31s");
       })
       .catch((err) => {
         console.warn("🔇 playback blocked:", err);
       });
   }
 }
+
+
 
 // tapes intro 
 const tapesIntro = document.querySelector("#tapesIntro");
@@ -199,13 +202,14 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
   // Play the intro, but do NOT clear the flag yet
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 0.3) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.8) {
+  
       playTapesSong();
     }
   });
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 0.14) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.2) {
       transition.classList.add("animate");
     }
   });
@@ -224,7 +228,18 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     }
     // Now clear the flag, so if they leave and come back, intro won't play
     sessionStorage.removeItem("cameFromIndex");
+
+    if (window.innerWidth < 769) {
+      tapesSongBtn.style.display = "block";
+    }
   });
+
+  if (tapesSongBtn) {
+    tapesSongBtn.addEventListener("click", () => {
+      playTapesSong();
+      tapesSongBtn.style.display = "none";
+    });
+  }
 
 } else if (tapesIntro && tapesIntroContainer) {
   // SKIP the intro: hide intro, glitch, show main content/video, play song
@@ -240,7 +255,6 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
       });
     }
   }
-  playTapesSong();
   // Optionally, set animation delays here if needed
   const tapesOne = document.querySelector(".tapes-entry-one");
   const tapesTwo = document.querySelector(".tapes-entry-two");

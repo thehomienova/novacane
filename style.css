@@ -279,13 +279,16 @@ button:hover {
 }
 
 .home {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   background-image: url(images/truck.jpg);
   background-size: 250% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 85vh;
-  width: 100vw;
-  overflow: hidden;
   color: var(--ghost-white);
   font-family: "Inter", sans-serif;
   display: flex;
@@ -313,6 +316,7 @@ button:hover {
   font-family: "Inter", sans-serif;
   height: 50%;
   margin-left: 7%;
+  
 }
 
 .home-header {
@@ -449,10 +453,16 @@ button:hover {
 }
 
 #tapesIntro {
-  height: 85vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100vw;
-  z-index: 99999;
+  height: 100vh;
   object-fit: cover;
+  z-index: 99999;
+  margin: 0;
+  padding: 0;
+  background: black;
 }
 
 .transition-glitch {
@@ -461,6 +471,7 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
+  object-fit: cover;
   background: url("images/glitchFrame.png");
   opacity: 0;
   z-index: 5;
@@ -538,6 +549,26 @@ button:hover {
   position: absolute;
   left: 37%;
   top: 1.5%;
+}
+
+.tapes-song-btn {
+  display: none;
+  position: fixed;
+  top: 5rem;
+  left: 1rem;
+  height: 12vh;
+  width: 17vw;
+  background-image: url(images/tapesSongBtn.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: transparent;
+  animation: pulse 1.5s infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--electric-lavender);
 }
 
 .tapes-main {
@@ -1132,9 +1163,9 @@ body.who {
   background-repeat: no-repeat;
   background-color: #1a1033;
   color: var(--ghost-white);
-  height: 100vh;
+  height:90vh;
   position: relative;
-  overflow: clip;
+  overflow: hidden;
 }
 
 .blond {
@@ -2760,7 +2791,7 @@ body.who {
   .cards-body {
     padding: 1rem 0 0 10%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row ;
     row-gap: 5vh;
     column-gap: 30%;
     border: 1px solid white;
@@ -2773,7 +2804,7 @@ body.who {
   .card-icon {
     display: inline-block;
     height: clamp(5rem, 14vw, 7.5rem);
-    width: clamp(7rem, 22vw, 14rem);
+    width: clamp(5rem, 13vw, 14rem);
   }
 
   .cards-links {
