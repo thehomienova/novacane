@@ -54,7 +54,15 @@
         >
       </div>
     </div>
-    <div id="preloader"></div>
+  
     <script src="../script.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        // fade out preloader
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("loaded");
+      });
+    </script>
+    <div id="preloader"></div>
   </body>
 </html>

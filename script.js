@@ -25,13 +25,13 @@ let homeTuningShown = true;
 function imageRotation() {
   home.classList.add("tv-off");
 
-  // Use longer delay for case 3 (counter = 3)
-  const delay = counter === 3 ? 1400 : 100;
+  // // Use longer delay for case 3 (counter = 3)
+  // const delay = counter === 3 ? 1400 : 100;
 
-  // Clear the interval if we're going to have a longer delay
-  if (counter === 3) {
-    clearInterval(homeInterval);
-  }
+  // // Clear the interval if we're going to have a longer delay
+  // if (counter === 3) {
+  //   clearInterval(homeInterval);
+  // }
 
   setTimeout(() => {
     counter = (counter + 1) % arrayOfImages.length;
@@ -80,7 +80,7 @@ function imageRotation() {
     }
 
     // Restart the interval after the longer delay
-    if (counter === 4) {
+    if (counter === 5) {
       homeInterval = setInterval(imageRotation, 1000);
     }
 
@@ -96,27 +96,28 @@ function imageRotation() {
         window.location.href = "tapes.html";
       }, 2000);
     }
-  }, delay);
+  }, 100);
 }
 
 if (enterSound && enterBtn) {
   enterBtn.addEventListener("click", (e) => {
-    homeContainer.style.display = "none";
-    homeLinks.style.display = "none";
     enterSound.play().then(() => {
-      enterSound.currentTime = 3.5;
+      enterSound.currentTime = 20;
       enterSound.volume = 0.5;
     });
+    homeContainer.style.display = "none";
+    homeLinks.style.display = "none";
+    
 
     setTimeout(() => {
     e.preventDefault();
 
-
+    
     if (!homeInterval) {
-      homeInterval = setInterval(imageRotation, 1000);
+      homeInterval = setInterval(imageRotation, 1300);
       
     }
-  }, 3250);
+  }, 1300);
   });
 }
 
@@ -128,7 +129,7 @@ const tapesStart = document.querySelector(".tapes-start");
 
 function playTapesSong() {
   if (tapesSong.paused) {
-    tapesSong.currentTime = 0;
+    tapesSong.currentTime = 31;
     tapesSong.volume = 0.5;
     tapesSong
       .play()
