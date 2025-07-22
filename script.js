@@ -138,7 +138,7 @@ function playTapesSong() {
     tapesSong.volume = 0.5;
     tapesSong.play()
       .then(() => {
-        tapesSong.currentTime = 31;
+        tapesSong.currentTime = 30.5;
         // Some browsers need a second play() after seeking
         return tapesSong.play();
       })
@@ -242,7 +242,12 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     if (window.innerWidth < 769) {
       tapesSongBtn.style.display = "block";
     }
+
+    if (navigator.userAgent.includes("Instagram")) {
+      tapesSongBtn.style.display = "none";
+    }
   });
+  
 
   if (tapesSongBtn) {
     tapesSongBtn.addEventListener("click", () => {
