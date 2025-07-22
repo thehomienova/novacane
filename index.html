@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>novacane</title>
-    <link rel="stylesheet" href="style.css?v=107" />
+    <link rel="stylesheet" href="style.css?v=108" />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap"
       rel="stylesheet"
@@ -62,6 +62,19 @@
       window.addEventListener("load", () => {
         document.getElementById("preloader").classList.add("loaded");
       });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  const homeHeader = document.querySelector(".home-header");
+  const homeAuthor = document.querySelector(".home-author");
+  const homeContainer = document.querySelector(".home-container");
+  if (homeHeader && sessionStorage.getItem("letgo") === "true") {
+    homeHeader.textContent = "welcome back stranger";
+    homeAuthor.textContent = "you let go!";
+    sessionStorage.removeItem("letgo");
+  }
+});
     </script>
 
     <div id="preloader"></div>

@@ -211,14 +211,16 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
 
   tapesIntro.addEventListener("timeupdate", () => {
     if (tapesIntro.duration - tapesIntro.currentTime <= 0.8) {
-  
       playTapesSong();
     }
   });
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 0.2) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.1) {
       transition.classList.add("animate");
+  setTimeout(() => {
+    transition.classList.add("end");
+  }, 100);
     }
   });
 
@@ -263,6 +265,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
       });
     }
   }
+
   // Optionally, set animation delays here if needed
   const tapesOne = document.querySelector(".tapes-entry-one");
   const tapesTwo = document.querySelector(".tapes-entry-two");
@@ -356,6 +359,64 @@ if (music && playpause) {
     toggleMusic();
   });
 }
+
+// entry number buttons
+
+const entryAssBtn = document.querySelector(".entry-ass-btn");
+const entryAss = document.querySelector(".entry-ass");
+const entryAssSound = new Audio("../audio/ass.mp3");
+
+if (entryAssBtn) {
+  entryAssBtn.addEventListener("click", () => {
+    entryAss.classList.add("show");
+    entryAssSound.play();
+    
+  });
+entryAss.addEventListener("animationend", () => {
+  entryAss.classList.remove("show");
+});
+}
+
+const entryFtpBtn = document.querySelector(".entry-ftp-btn");
+const entryFtp = document.querySelector(".entry-ftp");
+const entryFtpSound = new Audio("../audio/ftpSound.wav");
+
+if (entryFtpBtn) {
+  entryFtpBtn.addEventListener("click", () => {
+    entryFtp.classList.add("show");
+    entryFtpSound.play();
+  });
+
+  entryFtp.addEventListener("animationend", () => {
+    entryFtp.classList.remove("show");
+    entryFtpSound.pause();
+  });
+}
+
+const entryLetBtn = document.querySelector(".entry-let-btn");
+const entry = document.querySelector(".entry");
+const letGoSound = new Audio("../audio/letgo.flac");
+
+entryLetBtn.addEventListener("click", () => {
+  entry.style.backgroundImage = "url(../images/letgo.png)";
+  entry.style.backgroundSize = "100% 100%";
+  entry.style.backgroundPosition = "center";
+  entry.style.backgroundRepeat = "no-repeat";
+  entry.style.width = "100%";
+  entry.style.height = "100vh";
+  entry.style.opacity = "1";
+  entry.style.zIndex = "9999999";
+  entry.style.overflow = "hidden";
+  entry.style.animation = "collapseIn 3s forwards";
+  letGoSound.play();
+  entryMain.style.display = "none";
+  playpause.style.display = "none";
+  setTimeout(() => {
+    sessionStorage.setItem("letgo", "true");
+    window.location.href = "../index.html";
+  }, 3000);
+});
+
 
 // who music
 

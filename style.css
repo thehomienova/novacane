@@ -47,11 +47,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Glatic";
-  src: url("fonts/glatic.otf") format("opentype");
-  font-weight: 700;
-}
+
 
 @keyframes pulse {
   0%,
@@ -477,16 +473,21 @@ button:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   background: url("images/glitchFrame.png");
   opacity: 0;
   z-index: 5;
+  display: block;
 }
 
 .transition-glitch.animate {
   animation: glitchFlash 0.3s ease forwards;
+}
+
+.transition-glitch.end {
+  display: none;
 }
 
 @keyframes glitchFlash {
@@ -562,10 +563,10 @@ button:hover {
 .tapes-song-btn {
   display: none;
   position: fixed;
-  top: 34%;
+  top: 36%;
   left: 1rem;
-  height: 11vh;
-  width: 23vw;
+  height: 8vh;
+  width: 20vw;
   background-image: url(images/tapesSongBtn.png);
   background-size: cover;
   background-position: center;
@@ -1008,6 +1009,39 @@ body.who {
   overflow: hidden;
 }
 
+@keyframes collapseIn {
+  0% {
+    transform: scale(1) rotate(0deg) skew(0deg, 0deg);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0;
+  }
+  25% {
+    transform: scale(0.95) rotate(-2deg) skew(-2deg, 1deg);
+    opacity: 0.9;
+    filter: blur(0.5px);
+    border-radius: 10px;
+  }
+  50% {
+    transform: scale(0.7) rotate(3deg) skew(2deg, -2deg);
+    opacity: 0.7;
+    filter: blur(1.5px);
+    border-radius: 30px;
+  }
+  70% {
+    transform: scale(0.3) rotate(-8deg) skew(-8deg, 8deg);
+    opacity: 0.2;
+    filter: blur(4px);
+    border-radius: 50px;
+  }
+  100% {
+    transform: scale(0.1) rotate(-10deg) skew(-10deg, 10deg);
+    opacity: 0;
+    filter: blur(4px);
+    border-radius: 50px;
+  }
+}
+
 .entry-main {
   position: absolute;
   top: 4%;
@@ -1149,12 +1183,106 @@ body.who {
   animation: instructionsPlay 5s;
 }
 
+
+.entry-who-btn {
+  position: absolute;
+  top: 75%;
+  right: 43%;
+  width: 16%;
+  height: 6%;
+}
+
+.entry-instagram-btn {
+  position: absolute;
+  top: 75%;
+  right: 23%;
+  width: 18%;
+  height: 6%;
+}
+
+.entry-ass-btn {
+  position: absolute;
+  top: 68%;
+  left: 21%;
+  width: 18%;
+  height: 6%;
+  opacity: 0;
+}
+
+.entry-ass {
+  display: none;
+}
+
+.entry-ass.show{
+  position: absolute;
+  top: 3.3%;
+  left: 17.3%;
+  width: 63.7%;
+  height: 34%;
+  border-radius: 10px;
+  z-index: 9999;
+  display: block;
+  z-index: 9999;
+  animation: assFlash 1.1s ease forwards;
+}
+
+@keyframes assFlash {
+  0% {
+    display: none;
+  }
+  50% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.entry-ftp-btn {
+  position: absolute;
+  top: 68%;
+  left: 41%;
+  width: 17%;
+  height: 6%;
+  opacity: 0;
+}
+
+.entry-ftp {
+  display: none;
+}
+
+.entry-ftp.show {
+  display: block;
+  position: absolute;
+  top: 3.3%;
+  left: 17.3%;
+  width: 63.7%;
+  height: 34%;
+  border-radius: 10px;
+  z-index: 9999;
+  animation: assFlash 3s ease forwards;
+}
+
+.entry-let-btn {
+  position: absolute;
+  top: 68%;
+  left: 59%;
+  width: 18%;
+  height: 6%;
+  opacity: 0;
+}
+
+
+
+
+
+
 .entry-instructions {
   background-color: var(--ghost-white);
   color: var(--flipphone-heart);
   font-size: 2.2rem;
   width: 65%;
-  height: 18%;
+  height: 42%;
   position: absolute;
   top: 49%;
   left: 17%;
