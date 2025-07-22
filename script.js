@@ -3,8 +3,10 @@
 const enterSound = document.querySelector(".enter-sound");
 const enterBtn = document.querySelector(".home-btn");
 const homeContainer = document.querySelector(".home-container");
+const homeBackground = document.querySelector(".home-body");
 const homeLinks = document.querySelector(".home-links");
 const home = document.querySelector(".home");
+const homeBody = document.querySelector(".home-body-container");
 const tuning = document.querySelector(".home-tuning");
 const homeEscape = document.querySelector("#home-escape");
 let homeEscapeShown = false;
@@ -35,12 +37,16 @@ function imageRotation() {
     home.classList.remove("tv-off");
     home.classList.add("tv-on");
     home.style.backgroundSize = "100% 100%";
-    home.style.backgroundColor = "black";
-    home.style.position = "fixed";
-    home.style.bottom = "0";
-    home.style.left = "0";
     home.style.width = "100vw";
-    home.style.height = "100vh";
+    home.style.height = "115vh";
+    homeBody.style.backgroundImage = "url(images/borderBackground.jpg)";
+    homeBody.style.backgroundSize = "100% 100%";
+    homeBody.style.backgroundPosition = "center";
+    homeBody.style.backgroundRepeat = "no-repeat";
+ 
+    tuning.style.display = "block";
+
+
 
     home.addEventListener(
       "animationend",
@@ -104,6 +110,8 @@ if (enterSound && enterBtn) {
     });
     homeContainer.style.display = "none";
     homeLinks.style.display = "none";
+    home.style.maskImage = "none";
+    home.style.webkitMaskImage = "none";
     
 
     setTimeout(() => {
@@ -219,7 +227,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     tapesIntro.style.display = "none";
     tapesIntroContainer.style.display = "none";
 
-    if (window.innerWidth > 769 && tapesVideo) {
+    if (window.innerWidth > 1024 && tapesVideo) {
       tapesVideo.style.display = "block";
       tapesVideo.muted = true;
       tapesVideo.play().catch((err) => {
