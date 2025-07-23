@@ -239,13 +239,11 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     // Now clear the flag, so if they leave and come back, intro won't play
     sessionStorage.removeItem("cameFromIndex");
 
-    if (window.innerWidth < 769) {
+    if (window.innerWidth < 76 && !navigator.userAgent.includes("Instagram")) {
       tapesSongBtn.style.display = "block";
     }
 
-    if (navigator.userAgent.includes("Instagram")) {
-      tapesSongBtn.style.display = "none";
-    }
+  
   });
   
 
@@ -402,7 +400,9 @@ const entryLetBtn = document.querySelector(".entry-let-btn");
 const entry = document.querySelector(".entry");
 const letGoSound = new Audio("../audio/letgo.flac");
 
+if (entryLetBtn) {
 entryLetBtn.addEventListener("click", () => {
+  plausible("entry-let-go");
   entry.style.backgroundImage = "url(../images/letgo.png)";
   entry.style.backgroundSize = "100% 100%";
   entry.style.backgroundPosition = "center";
@@ -421,6 +421,19 @@ entryLetBtn.addEventListener("click", () => {
     window.location.href = "../index.html";
   }, 3000);
 });
+}
+
+const entryAlcBtn = document.querySelector(".entry-alc-btn");
+const entryAlc = document.querySelector(".entry-alc");
+
+if (entryAlcBtn && entryAlc) {
+  entryAlcBtn.addEventListener("click", () => {
+    entryAlc.classList.add("show");
+    entryAlc.muted = true;
+    entryAlc.play();
+  });
+}
+
 
 
 // who music
