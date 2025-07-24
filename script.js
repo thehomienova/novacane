@@ -210,7 +210,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
   // Play the intro, but do NOT clear the flag yet
 
   tapesIntro.addEventListener("timeupdate", () => {
-    if (tapesIntro.duration - tapesIntro.currentTime <= 0.8) {
+    if (tapesIntro.duration - tapesIntro.currentTime <= 0.4) {
       playTapesSong();
     }
   });
@@ -220,7 +220,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
       transition.classList.add("animate");
   setTimeout(() => {
     transition.classList.add("end");
-  }, 100);
+  }, 2000);
     }
   });
 
@@ -231,6 +231,7 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
 
     if (window.innerWidth > 1024 && tapesVideo) {
       tapesVideo.style.display = "block";
+      console.log("tapesSongBtn.style.display", tapesSongBtn.style.display);
       tapesVideo.muted = true;
       tapesVideo.play().catch((err) => {
         console.warn("autoplay blocked:", err);
@@ -239,7 +240,11 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     // Now clear the flag, so if they leave and come back, intro won't play
     sessionStorage.removeItem("cameFromIndex");
 
-    if (window.innerWidth < 76 && !navigator.userAgent.includes("Instagram")) {
+    if (navigator.userAgent.includes("Instagram")) {
+      tapesSongBtn.style.display = "none";
+    }
+
+    if (navigator.userAgent.includes("Safari") && window.innerWidth < 769) {
       tapesSongBtn.style.display = "block";
     }
 
@@ -294,6 +299,7 @@ if (window.innerWidth > 1024) {
   if (tapesIntro) {
     tapesIntro.src = "videos/tapesVideoIntro.mp4";
     tapesIntro.load();
+
   }
 }
 
@@ -363,16 +369,16 @@ if (music && playpause) {
   });
 }
 
-// entry number buttons
-
+// entry 1 ASS button
 const entryAssBtn = document.querySelector(".entry-ass-btn");
 const entryAss = document.querySelector(".entry-ass");
 const entryAssSound = new Audio("../audio/ass.mp3");
 
 if (entryAssBtn) {
   entryAssBtn.addEventListener("click", () => {
-    entryAss.classList.add("show");
+
     entryAssSound.play();
+    entryAss.classList.add("show");
     
   });
 entryAss.addEventListener("animationend", () => {
@@ -380,6 +386,7 @@ entryAss.addEventListener("animationend", () => {
 });
 }
 
+// entry 2 FTP button
 const entryFtpBtn = document.querySelector(".entry-ftp-btn");
 const entryFtp = document.querySelector(".entry-ftp");
 const entryFtpSound = new Audio("../audio/ftpSound.wav");
@@ -429,7 +436,6 @@ const entryAlc = document.querySelector(".entry-alc");
 if (entryAlcBtn && entryAlc) {
   entryAlcBtn.addEventListener("click", () => {
     entryAlc.classList.add("show");
-    entryAlc.muted = true;
     entryAlc.play();
   });
 }

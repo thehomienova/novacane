@@ -812,10 +812,9 @@ body.who {
 
 .scroll-arrow {
   position: absolute;
-  bottom: 8rem;
+  bottom: 10%;
   left: 80%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   color: var(--electric-lavender);
   animation: glitchyArrow 1.5s infinite;
 }
@@ -1243,7 +1242,7 @@ body.who {
   z-index: 9999;
   display: block;
   z-index: 9999;
-  animation: assFlash 1.1s ease forwards;
+  animation: assFlash 1.5s ease forwards;
 }
 
 @keyframes assFlash {
@@ -1380,7 +1379,7 @@ body.who {
   max-width: 45%;
   max-height: 18.7%;
   overflow-y: scroll;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "Orbitron Light", sans-serif;
   opacity: 0.8;
   padding: 5px;
@@ -1492,13 +1491,12 @@ body.who {
   display: inline-block;
   height: clamp(4rem, 14vw, 7.5rem);
   width: clamp(6rem, 20vw, 12rem);
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   text-indent: -9999px;
   opacity: 0.7;
-  animation: cardPulse 3s infinite;
+  animation: pulse 3s infinite;
   border: 1px solid var(--electric-lavender);
   border-radius: 5px;
 }
@@ -1544,7 +1542,6 @@ body.who {
   animation: flicker 2s infinite;
   text-decoration: none;
 }
-
 @keyframes flicker {
   0%,
   18%,
@@ -1563,7 +1560,7 @@ body.who {
   }
 }
 .cards-links.invest {
-  margin-top: 1.5rem;
+  margin-top: 15%;
 }
 
 .cards-links.return {
@@ -1806,7 +1803,7 @@ body.who {
 .discover-outro a,
 .autograph-outro a {
   text-decoration: none;
-  animation: cardPulse 3s infinite;
+  animation: pulse 3s infinite !important;
 }
 
 .amex-outro a,
