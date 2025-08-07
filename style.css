@@ -1308,11 +1308,12 @@ body.who {
   display: block;
   position: absolute;
   top: 3.3%;
-  left: 10%;
-  width: 80%;
+  left: 17%;
+  width: 64.5%;
   height: 34%;
   border-radius: 10px;
   z-index: 9999;
+  object-fit: cover;
 }
 
 
@@ -2879,21 +2880,21 @@ body.who {
     height: 6%;
   }
 
-  .scrollUp {
+  .scrollUp,
+  .scrollDown,
+  .next-entry,
+  .previous-entry,
+  .entry-closed-btn,
+  .entry-ass-btn,
+  .entry-let-btn,
+  .entry-ftp-btn,
+  .entry-alc-btn, 
+  .entry-who-btn,
+  .entry-instagram-btn {
     visibility: hidden;
   }
 
-  .scrollDown {
-    visibility: hidden;
-  }
 
-  .next-entry {
-    visibility: hidden;
-  }
-
-  .previous-entry {
-    visibility: hidden;
-  }
 
   .playpause {
     top: 49%;

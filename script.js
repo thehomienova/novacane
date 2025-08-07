@@ -430,13 +430,22 @@ entryLetBtn.addEventListener("click", () => {
 });
 }
 
+// entry 7 ALC button
 const entryAlcBtn = document.querySelector(".entry-alc-btn");
 const entryAlc = document.querySelector(".entry-alc");
+const entryAlcSound = new Audio("../audio/memories.mp3");
 
 if (entryAlcBtn && entryAlc) {
   entryAlcBtn.addEventListener("click", () => {
     entryAlc.classList.add("show");
     entryAlc.play();
+    entryAlcSound.play();
+  });
+
+  entryAlc.addEventListener("ended", () => {
+    entryAlc.classList.remove("show");
+    entryAlc.pause();
+    entryAlcSound.pause();
   });
 }
 
