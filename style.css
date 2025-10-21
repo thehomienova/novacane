@@ -1316,6 +1316,69 @@ body.who {
   object-fit: cover;
 }
 
+.entry-divine-feminine-btn {
+  position: absolute;
+  top: 75%;
+  left: 22%;
+  width: 18%;
+  height: 6%;
+  opacity: 0;
+}
+
+.entry-tattoo {
+  display: none;
+}
+
+.entry-tattoo.show{
+  position: absolute;
+  top: 3.3%;
+  left: 17.3%;
+  width: 63.7%;
+  height: 34%;
+  border-radius: 10px;
+  z-index: 9999;
+  display: block;
+  z-index: 9999;
+  animation: assFlash 3s ease forwards;
+}
+
+.divine-feminine-vulnerable {
+  padding-left: 10%;
+}
+
+.divine-feminine-emotional {
+  padding-left: 20%;
+}
+
+.press-hints {
+  font-size: smaller;
+  padding-left: 10%;
+  color: var(--flipphone-heart);
+}
+
+.entry-luv-btn {
+  position: absolute;
+  top: 82%;
+  left: 40%;
+  width: 18%;
+  height: 6%;
+  opacity: 0;
+}
+
+#poem-content {
+  display: none;;
+  font-family: "Glatic", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  color: var(--ghost-white);
+  border-radius: 10px;
+  z-index: 9999999;
+}
+
+.blog-content {
+  display: block;
+}
 
 
 

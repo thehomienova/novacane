@@ -430,6 +430,24 @@ entryLetBtn.addEventListener("click", () => {
 });
 }
 
+
+// divine feminine button
+const divineFeminineBtn = document.querySelector(".entry-divine-feminine-btn");
+const divineFeminine = document.querySelector(".entry-tattoo");
+const divineFeminineHint = document.querySelector("#divine-feminine-hint");
+
+if (divineFeminineBtn) {
+  divineFeminineBtn.addEventListener("click", () => {
+    divineFeminine.classList.add("show");
+  });
+  divineFeminine.addEventListener("animationend", () => {
+    divineFeminine.classList.remove("show");
+  });
+}
+
+if (window.innerWidth > 1028 && divineFeminineHint) {
+  divineFeminineHint.style.color = "red";
+}
 // entry 7 ALC button
 const entryAlcBtn = document.querySelector(".entry-alc-btn");
 const entryAlc = document.querySelector(".entry-alc");
@@ -446,6 +464,25 @@ if (entryAlcBtn && entryAlc) {
     entryAlc.classList.remove("show");
     entryAlc.pause();
     entryAlcSound.pause();
+  });
+}
+
+// entry 8 luv button
+const poemToggleBtn = document.querySelector('.entry-luv-btn');
+const blogContent = document.getElementById('blog-content');
+const poemContent = document.getElementById('poem-content');
+
+if (poemToggleBtn) {
+  poemToggleBtn.addEventListener('click', () => {
+    if (blogContent.style.display !== 'none') {
+      blogContent.style.display = 'none';
+      poemContent.style.display = 'block';
+      entryMain.scrollTop = 0;
+    } else {
+      blogContent.style.display = 'block';
+      poemContent.style.display = 'none';
+      entryMain.scrollTop = 900;
+    }
   });
 }
 
