@@ -1,3 +1,32 @@
+// Preloader - block scrolling and interaction while loading
+(function() {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    // Add preloader-active class to body/html to prevent scrolling
+    document.body.classList.add("preloader-active");
+    document.documentElement.classList.add("preloader-active");
+    
+    // Watch for when preloader gets loaded class
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === "class") {
+          if (preloader.classList.contains("loaded")) {
+            // Remove preloader-active class to allow scrolling
+            document.body.classList.remove("preloader-active");
+            document.documentElement.classList.remove("preloader-active");
+            observer.disconnect();
+          }
+        }
+      });
+    });
+    
+    observer.observe(preloader, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+  }
+})();
+
 // enter home
 
 const enterSound = document.querySelector(".enter-sound");
@@ -158,6 +187,7 @@ const tapesIntro = document.querySelector("#tapesIntro");
 const tapesIntroContainer = document.querySelector(".tapes-intro-container");
 const transition = document.querySelector(".transition-glitch");
 const tapesVideo = document.querySelector("#tapesVideo");
+const tapesBody = document.querySelector(".tapes-body");
 
 let notice;
 
@@ -207,6 +237,15 @@ if (tapesIntro) {
 }
 
 if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex") === "true") {
+  // Prevent scrolling while intro is playing
+  if (tapesBody) {
+    tapesBody.classList.add("intro-playing");
+    document.body.classList.add("intro-playing");
+    document.documentElement.classList.add("intro-playing");
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  }
+
   // Play the intro, but do NOT clear the flag yet
 
   tapesIntro.addEventListener("timeupdate", () => {
@@ -228,6 +267,15 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
     playTapesSong();
     tapesIntro.style.display = "none";
     tapesIntroContainer.style.display = "none";
+    
+    // Re-enable scrolling after intro ends
+    if (tapesBody) {
+      tapesBody.classList.remove("intro-playing");
+      document.body.classList.remove("intro-playing");
+      document.documentElement.classList.remove("intro-playing");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
 
     if (window.innerWidth > 1024 && tapesVideo) {
       tapesVideo.style.display = "block";
@@ -264,6 +312,15 @@ if (tapesIntro && tapesIntroContainer && sessionStorage.getItem("cameFromIndex")
   tapesIntro.style.display = "none";
   tapesIntroContainer.style.display = "none";
   if (transition) transition.style.display = "none";
+  
+  // Ensure scrolling is enabled when intro is skipped
+  if (tapesBody) {
+    tapesBody.classList.remove("intro-playing");
+    document.body.classList.remove("intro-playing");
+    document.documentElement.classList.remove("intro-playing");
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }
   if (tapesVideo) {
     if (window.innerWidth > 769) {
       tapesVideo.style.display = "block";
@@ -493,6 +550,16 @@ if (poemToggleBtn) {
 const startBtn = document.querySelector("#who-start-btn");
 const whoSong = document.querySelector("#who-song");
 const whoStart = document.querySelector(".who-start");
+const whoBody = document.querySelector("body.who");
+
+// Block scrolling when who page loads with intro showing
+if (whoBody && whoStart) {
+  whoBody.classList.add("intro-playing");
+  document.body.classList.add("intro-playing");
+  document.documentElement.classList.add("intro-playing");
+  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+}
 
 function playSong() {
   if (whoSong.paused) {
@@ -513,6 +580,15 @@ if (startBtn && whoSong) {
   whoStart.addEventListener("click", () => {
     playSong();
     whoStart.style.display = "none";
+    
+    // Re-enable scrolling after intro is dismissed
+    if (whoBody) {
+      whoBody.classList.remove("intro-playing");
+      document.body.classList.remove("intro-playing");
+      document.documentElement.classList.remove("intro-playing");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
   });
 }
 
@@ -523,6 +599,16 @@ let scrollFinance = 0;
 const financeBtn = document.querySelector("#finance-start-btn");
 const financeSong = document.querySelector("#finance-song");
 const financeStart = document.querySelector(".finance-start");
+const financeBody = document.querySelector("body.finance-body");
+
+// Block scrolling when finance page loads with intro showing
+if (financeBody && financeStart) {
+  financeBody.classList.add("intro-playing");
+  document.body.classList.add("intro-playing");
+  document.documentElement.classList.add("intro-playing");
+  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+}
 
 function playFinanceSong() {
   if (financeSong.paused) {
@@ -531,7 +617,7 @@ function playFinanceSong() {
     financeSong
       .play()
       .then(() => {
-        console.log("🎶 who.mp3 playing");
+        console.log("🎶 finance.mp3 playing");
       })
       .catch((err) => {
         console.warn("🔇 playback blocked:", err);
@@ -543,6 +629,16 @@ if (financeBtn && financeSong) {
   financeStart.addEventListener("click", () => {
     playFinanceSong();
     financeStart.style.display = "none";
+    
+    // Re-enable scrolling after intro is dismissed
+    if (financeBody) {
+      financeBody.classList.remove("intro-playing");
+      document.body.classList.remove("intro-playing");
+      document.documentElement.classList.remove("intro-playing");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    
     finance.scrollTop = 0;
     scrollFinance = 0;
     requestAnimationFrame(autoFinanceScroll);
@@ -564,6 +660,16 @@ function autoFinanceScroll() {
 const cardsSong = document.querySelector("#cardsSong");
 const cardsStart = document.querySelector(".cards-start");
 const cardsBtn = document.querySelector("#cards-start-btn");
+const cardsBody = document.querySelector("body.cards");
+
+// Block scrolling when cards page loads with intro showing
+if (cardsBody && cardsStart) {
+  cardsBody.classList.add("intro-playing");
+  document.body.classList.add("intro-playing");
+  document.documentElement.classList.add("intro-playing");
+  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+}
 
 function playCardsSong() {
   if (cardsSong.paused) {
@@ -584,6 +690,15 @@ if (cardsBtn && cardsSong) {
   cardsStart.addEventListener("click", () => {
     playCardsSong();
     cardsStart.style.display = "none";
+    
+    // Re-enable scrolling after intro is dismissed
+    if (cardsBody) {
+      cardsBody.classList.remove("intro-playing");
+      document.body.classList.remove("intro-playing");
+      document.documentElement.classList.remove("intro-playing");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
   });
 }
 

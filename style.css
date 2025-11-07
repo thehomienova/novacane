@@ -1380,6 +1380,12 @@ body.who {
   display: block;
 }
 
+#intimacy-link {
+  color: var(--electric-lavender);
+  text-decoration: none;
+  border-bottom: 1px solid var(--electric-lavender);
+}
+
 
 
 

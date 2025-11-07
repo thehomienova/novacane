@@ -1,0 +1,382 @@
+/* Who page styles */
+
+html.intro-playing,
+body.intro-playing {
+  overflow: hidden !important;
+  position: relative;
+}
+
+body.who {
+  background-color: black;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.who.intro-playing {
+  overflow: hidden !important;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+}
+
+.who-start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  z-index: 999999;
+  cursor: pointer;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+#who-start-btn {
+  background-image: url("../images/cd.png");
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 50%;
+  opacity: 0.7;
+}
+
+.who-tap-hint {
+  font-size: 1rem;
+  font-family: "Shooting Star", sans-serif;
+  color: var(--electric-lavender);
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+.who-scroll {
+  background-color: black;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Hide and disable scroll content while intro is playing */
+body.who.intro-playing .who-scroll {
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.who-intro {
+  background-image: url("../images/tvfaces.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 110vh;
+  width: 100%;
+  color: var(--electric-lavender);
+  font-family: "Playfair Display", sans-serif;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 90%);
+}
+
+.who-nova {
+  font-size: clamp(1.2rem, 5vw, 4rem);
+  opacity: 0.7;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  font-family: "Moonscape", sans-serif;
+  letter-spacing: 4px;
+  position: absolute;
+  top: 45%;
+  left: 5%;
+}
+
+.who-jason {
+  font-size: clamp(1.2rem, 5vw, 4rem);
+  opacity: 0.7;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  font-family: "Moonscape", sans-serif;
+  letter-spacing: 4px;
+  position: absolute;
+  top: 52%;
+  left: 5%;
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 10%;
+  left: 80%;
+  font-size: 1.1rem;
+  color: var(--electric-lavender);
+  animation: glitchyArrow 1.5s infinite;
+}
+
+.who-quote-one {
+  min-height: 80vh;
+  color: var(--electric-lavender);
+  font-size: clamp(2rem, 6vw, 6rem);
+  opacity: 0.7;
+  width: 100%;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-quote-one p {
+  font-family: "Moonscape", sans-serif;
+  width: 60%;
+  letter-spacing: 4px;
+  line-height: 120%;
+}
+
+.who-falling {
+  background-image: url("../images/falling.png");
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 100vh;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.who-quote-two {
+  min-height: 80vh;
+  color: var(--electric-lavender);
+  font-size: clamp(2rem, 6vw, 6rem);
+  opacity: 0.7;
+  width: 100%;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-quote-two p {
+  font-family: "Moonscape", sans-serif;
+  letter-spacing: 4px;
+  line-height: 120%;
+  width: 60%;
+}
+
+.who-girl {
+  background-image: url("../images/tveyes.png");
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 100vh;
+}
+
+.who-quote-three {
+  min-height: 60vh;
+  color: var(--electric-lavender);
+  font-family: "Unique", sans-serif;
+  font-size: clamp(3.5rem, 13vw, 8rem);
+  opacity: 0.7;
+  width: 100%;
+  text-shadow: 0 0 5px var(--ghost-white), 0 0 15px var(--electric-lavender);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-quote-three p {
+  font-family: "Moonscape", sans-serif;
+  letter-spacing: 4px;
+  line-height: 120%;
+  width: 60%;
+}
+
+.who-city {
+  background-image: url("../images/city.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  min-height: 110vh;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 90%);
+  mask-image: linear-gradient(to top, black 80%, transparent 90%);
+}
+
+.who-follow {
+  color: var(--ghost-white);
+  font-size: clamp(0.9rem, 3.5vw, 5rem);
+  width: 40%;
+  text-decoration: none;
+  position: absolute;
+  top: 63%;
+  left: 28%;
+  text-shadow: 0 0 10px var(--electric-lavender);
+  font-family: "Unique", sans-serif;
+}
+
+/* Tablet media queries */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .who-intro {
+    min-height: 150vh;
+  }
+
+  .who-nova {
+    font-size: clamp(1.3rem, 5.5vw, 4rem);
+    top: 55%;
+  }
+
+  .who-jason {
+    font-size: clamp(1.2rem, 5.5vw, 4rem);
+    top: 65%;
+  }
+
+  .skip {
+    height: clamp(4rem, 7vh, 9rem);
+  }
+
+  .who-quote-one {
+    min-height: 110vh;
+  }
+
+  .who-falling {
+    min-height: 150vh;
+  }
+
+  .who-quote-two {
+    min-height: 110vh;
+  }
+
+  .who-girl {
+    min-height: 150vh;
+  }
+
+  .who-quote-three {
+    min-height: 110vh;
+  }
+
+  .who-city {
+    background-size: 100% 100%;
+    min-height: 110vh;
+  }
+
+  .who-follow {
+    top: 58%;
+    left: 23%;
+  }
+
+  #who-start-btn {
+    background-image: url("../images/cd.png");
+    height: 60%;
+  }
+
+  .who-tap-hint {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop media queries */
+@media (min-width: 1025px) {
+  #who-start-btn {
+    background-image: url("../images/cd.png");
+    width: 50%;
+    height: 70%;
+  }
+
+  .who-tap-hint {
+    font-size: 2.5rem;
+  }
+
+  .who-intro {
+    min-height: 170vh;
+  }
+
+  .who-nova {
+    font-size: clamp(1.3rem, 5.5vw, 4rem);
+    top: 55%;
+  }
+
+  .who-jason {
+    font-size: clamp(1.2rem, 5.5vw, 4rem);
+    top: 65%;
+  }
+
+  .scroll-arrow {
+    bottom: 2rem;
+    left: 87%;
+    font-size: 1.8rem;
+    animation: glitchyArrow 2s infinite;
+  }
+
+  .who-quote-one {
+    min-height: 130vh;
+  }
+
+  .who-falling {
+    min-height: 170vh;
+    width: 60%;
+    margin-left: 20%;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+  }
+
+  .who-quote-two {
+    min-height: 130vh;
+  }
+
+  .who-girl {
+    min-height: 150vh;
+    width: 60%;
+    margin-left: 18%;
+  }
+
+  .who-quote-three {
+    min-height: 110vh;
+  }
+
+  .who-city {
+    background-size: 100% 100%;
+    min-height: 110vh;
+  }
+
+  .who-follow {
+    font-size: 2rem;
+    width: auto;
+    top: 63%;
+    left: 23%;
+    background-color: rgb(0, 0, 0, 0.4);
+    border: 1px solid var(--flipphone-heart);
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .who-follow:hover {
+    transform: scale(1.1);
+    color: var(--flipphone-heart);
+  }
+}
+

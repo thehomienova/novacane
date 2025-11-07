@@ -4,22 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Who</title>
-    <link rel="stylesheet" href="style.css?v=108" />
+    <link rel="stylesheet" href="css/base.css?v=110" />
+    <link rel="stylesheet" href="css/who.css?v=110" />
     <script defer data-domain="novacane.live" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
   </head>
   <body class="who">
+    <div class="who-start">
+      <button id="who-start-btn"></button>
+      <p class="who-tap-hint">tap the cd to enter</p>
+    </div>
+
+    <audio
+      id="who-song"
+      src="audio/electricChildren.mp3"
+      preload="auto"
+    ></audio>
+
     <div class="who-scroll">
-      <div class="who-start">
-        <button id="who-start-btn"></button>
-        <p class="who-tap-hint">tap the cd to enter</p>
-      </div>
-
-      <audio
-        id="who-song"
-        src="audio/electricChildren.mp3"
-        preload="auto"
-      ></audio>
-
       <div class="who-intro">
         <p class="who-nova">who the fuck is nova?</p>
         <p class="who-jason">and who the fuck is Jason??</p>
@@ -56,7 +57,7 @@
       </div>
     </div>
   
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
     <script>
       window.addEventListener("load", () => {
         // fade out preloader

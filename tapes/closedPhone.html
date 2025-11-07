@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Closed Journal</title>
-    <link rel="stylesheet" href="../style.css?v=108" />
+    <link rel="stylesheet" href="../css/base.css?v=110" />
+    <link rel="stylesheet" href="../css/entry.css?v=110" />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter&display=swap"
       rel="stylesheet"
@@ -16,21 +17,26 @@
     <button onclick="reopenJournal()" class="reopen-btn"></button>
 
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const from = params.get("from");
-
-      // Store where they came from
-      if (from) {
-        localStorage.setItem("cameFromTape", from);
-      } 
-
       function reopenJournal() {
-        const prev = localStorage.getItem("cameFromTape");
-        if (prev) {
-          window.location.href = `${prev}.html`;
+        // Use document.referrer to go back to the page they came from
+        // This will be the entry page they were on when they clicked the closed phone button
+        const referrer = document.referrer;
+        
+        if (referrer && referrer !== window.location.href) {
+          // Go back to the page they came from
+          window.location.href = referrer;
         } else {
-          // fallback if somehow no data
-          window.location.href = "tapes.html";
+          // Fallback: try to get from URL parameter
+          const params = new URLSearchParams(window.location.search);
+          const from = params.get("from");
+          
+          if (from) {
+            // Construct the path to the entry page
+            window.location.href = `${from}.html`;
+          } else {
+            // Final fallback: go to tapes page
+            window.location.href = "../tapes.html";
+          }
         }
       }
     </script>

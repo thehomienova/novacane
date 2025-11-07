@@ -1,0 +1,449 @@
+/* Base styles - shared across all pages */
+
+/* Fonts */
+@font-face {
+  font-family: "Joystix Monospace";
+  src: url("../fonts/joystixFonts/joystixmMonospace.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Speed Rusher";
+  src: url("../fonts/speedRusherFonts/SpeedRusher.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Game Paused";
+  src: url("../fonts/gamePausedFonts/Game\ Paused\ DEMO.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron Light";
+  src: url("../fonts/orbitronLightFonts/Orbitron\ Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Unique";
+  src: url("../fonts/unique/Unique.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shooting Star";
+  src: url("../fonts/shooting-star-personal-use/Shooting\ Star.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MoonScape";
+  src: url("../fonts/Moonscape\ Demo.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CSS Variables */
+:root {
+  --ghost-white: #f2f5ff;
+  --electric-lavender: #dcb8ff;
+  --lover-blue: #7de2f5;
+  --neon-aqua: #71fcca;
+  --soft-glow: rgba(255, 255, 255, 0.15);
+  --flipphone-heart: #ff5c8a;
+  --truck-green: rgba(0, 255, 153, 1);
+  --truck-green-soft: rgba(0, 255, 153, 0.4);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:hover,
+button:hover {
+  cursor: url("../images/ghostCursor.png") 16 16, auto;
+}
+
+/* Global Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ipadLeftPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: rotate(2deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(2deg) scale(1.05);
+  }
+}
+
+@keyframes ipadRightPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: rotate(-2deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-2deg) scale(1.05);
+  }
+}
+
+@keyframes ipadBottomPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: rotate(3deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1.05);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes tvOff {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: brightness(0);
+  }
+}
+
+@keyframes tvOn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+    filter: brightness(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes glitchyArrow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 6px);
+  }
+}
+
+@keyframes flickerDot {
+  0%,
+  50%,
+  90% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flickerDotTwo {
+  10%,
+  60% {
+    opacity: 1;
+  }
+
+  35%,
+  85% {
+    opacity: 0;
+  }
+}
+
+@keyframes instructions {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes instructionsPlay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes heroPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+}
+
+@keyframes glitchFlash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes collapseIn {
+  0% {
+    transform: scale(1) rotate(0deg) skew(0deg, 0deg);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0;
+  }
+  25% {
+    transform: scale(0.95) rotate(-2deg) skew(-2deg, 1deg);
+    opacity: 0.9;
+    filter: blur(0.5px);
+    border-radius: 10px;
+  }
+  50% {
+    transform: scale(0.7) rotate(3deg) skew(2deg, -2deg);
+    opacity: 0.7;
+    filter: blur(1.5px);
+    border-radius: 30px;
+  }
+  70% {
+    transform: scale(0.3) rotate(-8deg) skew(-8deg, 8deg);
+    opacity: 0.2;
+    filter: blur(4px);
+    border-radius: 50px;
+  }
+  100% {
+    transform: scale(0.1) rotate(-10deg) skew(-10deg, 10deg);
+    opacity: 0;
+    filter: blur(4px);
+    border-radius: 50px;
+  }
+}
+
+@keyframes assFlash {
+  0% {
+    display: none;
+  }
+  50% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes fadeInGlitchOne {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(-10deg);
+    filter: hue-rotate(80deg) blur(2px);
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0.5;
+    filter: contrast(150%) blur(1px);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+    pointer-events: auto;
+  }
+}
+
+@keyframes fadeInGlitchTwo {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(20deg);
+    filter: hue-rotate(80deg) blur(2px);
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0.5;
+    filter: contrast(150%) blur(1px);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+    pointer-events: auto;
+  }
+}
+
+@keyframes fadeInGlitchThree {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(35deg);
+    filter: hue-rotate(80deg) blur(2px);
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0.5;
+    filter: contrast(150%) blur(1px);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+    pointer-events: auto;
+  }
+}
+
+@keyframes fadeInGlitchFour {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(-20deg);
+    filter: hue-rotate(80deg) blur(2px);
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0.5;
+    filter: contrast(150%) blur(1px);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+    pointer-events: auto;
+  }
+}
+
+@keyframes flickerEscape {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.3;
+  }
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-image: url("../images/83F14393-A0BF-4587-8377-0C884F06BD68.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 9999999;
+  pointer-events: auto;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Prevent scrolling while preloader is showing */
+body.preloader-active {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+html.preloader-active {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+

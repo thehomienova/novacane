@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 - the intimacy of never speaking again</title>
+    <link rel="preload" href="" as="audio">
+    <link rel="stylesheet" href="../css/base.css?v=110" />
+    <link rel="stylesheet" href="../css/entry.css?v=110" />
+    <script defer data-domain="novacane.live" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
+  </head>
+  <body class="tape">
+    <div class="entry">
+      <img src="../images/ass.jpg" alt="ass" class="entry-ass" loading="lazy">
+      <img src="../images/ftp.jpg" alt="ftp" class="entry-ftp" loading="lazy">
+      
+      <video src="../videos/alc.mov" alt="alc" class="entry-alc" muted playsinline webkit-playsinline preload="none"></video>
+    
+      
+      <main class="entry-main"> 
+        <div id="blog-content">
+        <h2 class="entry-title">the intimacy of never speaking again</h2>
+         <p class="now-playing">now playing - emilys song by daniel caesar </p>
+        <br />
+        <br />
+        <article class="entry-body">
+          <p>
+           new blog schedule: <br>
+           on the 7th (my lucky number) of every month, i will post a new blog entry. <br>
+           i have a newfound love for writing (coming from a bookworm). <br>
+           im still working on a blog post but given that its the 7th of november, i need to post something. <br>
+           i came across this devastatingly honest and subtly brilliant article called the 
+           <a href="https://personalscriptures.substack.com/p/the-intimacy-of-never-talking-again" id="intimacy-link">intimacy of never speaking again</a> by maisa. <br>
+            she touches on the closeness that comes with having someone you used to love profoundly, but no longer have any connection to. <br>
+            she also mentions that she doesnt miss the person, but more so the fact that their imprint on your heart lingers. 
+            if you've ever loved and lost, you'll love this article. <br>
+<br>
+            hope everyone had a fun halloweeen! <br>
+            come back on december 7th for an article inspired by the one you just read. <br>
+          </p>
+    
+          <br>
+
+          <p>
+            11.7.25
+            <br />
+            <br />
+          </p>
+        </article>
+
+        
+
+        <audio id="entry-music" loop>
+          <source src="../audio/emilysSong.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+        
+      </main>
+
+      <h1 class="entry-instructions">press these</h1>
+      <a onclick="back()" class="entry-back-btn"></a>
+      <a href="../tapes.html" class="entry-home-btn"></a>
+      <a href="tel:18667193350" class="entry-call-btn"></a>
+      <a href="closedPhone.html?from=03-novacane" class="entry-closed-btn"></a>
+      
+
+      <button class="scrollDown"></button>
+      <button class="scrollUp"></button>
+      <a href="" class="next-entry"></a>
+      <a href="06-theDivineFeminine24thEdition.html" class="previous-entry"></a>
+      <button class="playpause" type="button"></button>
+
+      <a href="../who.html" class="entry-who-btn"></a>
+      <a href="https://www.instagram.com/thehomienova/" class="entry-instagram-btn"></a>
+      <button class="entry-ass-btn" type="button"></button>
+      <button class="entry-ftp-btn" type="button"></button>
+      <button class="entry-let-btn" type="button"></button>
+      <button class="entry-divine-feminine-btn" type="button"></button>
+
+      <button class="entry-alc-btn" type="button"></button>
+      <button class="entry-luv-btn" type="button"></button>
+    </div>
+    <script>
+      const ref = document.referrer;
+
+      if (ref) {
+        localStorage.setItem("cameFromTape", ref);
+      }
+
+      function back() {
+        const prev = localStorage.getItem("cameFromTape");
+        if (prev) {
+          window.location.href = `${prev}`;
+        } else {
+          // fallback if somehow no data
+          window.location.href = "tapes.html";
+        }
+      }
+    </script>
+    <script>
+      window.addEventListener("load", () => {
+        // fade out preloader
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("loaded");
+      });
+    </script>
+    <script src="../script.js"></script>
+    <div id="preloader"></div>
+  </body>
+</html>

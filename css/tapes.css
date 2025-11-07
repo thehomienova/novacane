@@ -1,0 +1,695 @@
+/* Tapes page styles */
+
+html.intro-playing,
+body.intro-playing {
+  overflow: hidden !important;
+  position: relative;
+}
+
+.tapes-intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: black;
+  z-index: 999999;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+#tapesIntro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: cover;
+  z-index: 999999;
+  margin: 0;
+  padding: 0;
+  background: black;
+  pointer-events: auto;
+}
+
+.transition-glitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: cover;
+  background: url("../images/glitchFrame.png");
+  opacity: 0;
+  z-index: 999998;
+  display: block;
+}
+
+.transition-glitch.animate {
+  animation: glitchFlash 0.4s ease forwards;
+}
+
+.transition-glitch.end {
+  display: none;
+}
+
+#tapesVideo {
+  display: none;
+}
+
+.tapes-body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c0c3a;
+}
+
+.tapes-body.intro-playing {
+  overflow: hidden !important;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+}
+
+.tapes-container {
+  color: var(--ghost-white);
+  overflow-y: scroll;
+  background: url("../images/tvs.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 160vh;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+/* Hide and disable container while intro is playing */
+.tapes-body.intro-playing .tapes-container {
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tapes-header {
+  width: 55%;
+  position: absolute;
+  top: 4%;
+  left: 37%;
+  color: var(--ghost-white);
+}
+
+.tapes-title {
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: 700;
+  font-family: "Game Paused", sans-serif;
+  letter-spacing: 0.05em;
+  color: var(--ghost-white);
+  text-shadow: 0 0 20px var(--electric-lavender);
+  margin-bottom: 0.5rem;
+}
+
+.tapes-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-family: "Orbitron Light", sans-serif;
+  color: var(--ghost-white);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  opacity: 0.8;
+}
+
+.tapes-planet {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 37%;
+  top: 1.5%;
+}
+
+.tapes-song-btn {
+  display: none;
+  position: fixed;
+  top: 36%;
+  left: 1rem;
+  height: 8vh;
+  width: 20vw;
+  background-image: url("../images/tapesSongBtn.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: transparent;
+  animation: pulse 1.5s infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--electric-lavender);
+  color: white;
+  font-family: "Joystix Monospace", monospace;
+  text-shadow: 0 0 5px var(--electric-lavender);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tapes-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tapes-entry-one,
+.tapes-entry-two,
+.tapes-entry-three,
+.tapes-entry-four {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/vhsTape.png");
+  background-size: cover;
+  background-position: center;
+  width: 10rem;
+  height: 5rem;
+  color: var(--ghost-white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--electric-lavender);
+  border-radius: 5px;
+  overflow: hidden;
+  animation: pulse 3s infinite;
+  position: absolute;
+  z-index: 6;
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+}
+
+.tapes-entry-one {
+  top: 30%;
+  left: 20%;
+}
+
+.tapes-entry-two {
+  top: 57%;
+  left: 20%;
+}
+
+.tapes-entry-three,
+.tapes-entry-four {
+  visibility: hidden;
+}
+
+.tapes-lego {
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 70%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+}
+
+.tapes-butterfly {
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 48%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+
+.tapes-archive {
+  width: 67%;
+  height: 22%;
+  margin-top: 3.8rem;
+  padding: 1rem 0 1rem 1rem;
+  position: absolute;
+  top: 76%;
+}
+
+.tapes-archive h2 {
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+  text-align: center;
+  text-shadow: 0 0 5px var(--electric-lavender);
+}
+
+.tapes-shelf {
+  display: flex;
+  overflow: scroll;
+  padding: 1rem;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  text-align: center;
+}
+
+.tapes-thumb {
+  flex: 0 0 auto;
+  width: 10rem;
+  height: 5rem;
+  background: url("../images/vhsTape.png") center/cover no-repeat;
+  scroll-snap-align: start;
+  font-family: "Joystix Monospace";
+  color: white;
+  text-shadow: 0 0 10px var(--electric-lavender);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--electric-lavender);
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.tapes-all {
+  font-family: "Joystix Monospace", monospace;
+  font-size: 1rem;
+  color: var(--ghost-white);
+  text-align: center;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px var(--electric-lavender);
+  animation: flicker 2s infinite;
+}
+
+.tapes-footer {
+  font-size: 0.8rem;
+  font-family: "Orbitron Light", "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  width: 6rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 17rem;
+  color: var(--electric-lavender);
+}
+
+/* Tablet media queries */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tapes-body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  .tapes-container {
+    color: var(--ghost-white);
+    overflow: hidden;
+    background-image: url("../images/tvgirl.jpg");
+    min-height: 90vh;
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 10%);
+    mask-image: linear-gradient(to top, transparent 1%, black 10%);
+  }
+
+  .tapes-header {
+    width: 65%;
+    top: 10%;
+    left: 17%;
+    text-align: center;
+  }
+
+  .tapes-title {
+    font-size: clamp(2rem, 10vw, 5rem);
+    font-weight: 700;
+    font-family: "Game Paused", sans-serif;
+    letter-spacing: 0.05em;
+    color: var(--ghost-white);
+    text-shadow: 0 0 20px var(--electric-lavender);
+    margin-bottom: 0.5rem;
+  }
+
+  .tapes-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-family: "Orbitron Light", sans-serif;
+    color: var(--ghost-white);
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    opacity: 0.8;
+  }
+
+  .tapes-planet {
+    width: 5rem;
+    height: 5rem;
+    left: 26%;
+    top: 6%;
+  }
+
+  .tapes-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .tapes-entry-one,
+  .tapes-entry-two,
+  .tapes-entry-three {
+    width: 8rem;
+    height: 4rem;
+  }
+
+  .tapes-entry-one {
+    top: 29%;
+    left: 10%;
+    animation: ipadLeftPulse 3s infinite;
+  }
+
+  .tapes-entry-two {
+    top: 46%;
+    left: 10%;
+    animation: ipadLeftPulse 3s infinite;
+  }
+
+  .tapes-entry-three {
+    visibility: visible;
+    top: 30%;
+    left: 72%;
+    animation: ipadRightPulse 3s infinite;
+  }
+
+  .tapes-lego,
+  .tapes-butterfly {
+    visibility: hidden;
+  }
+
+  .tapes-archive {
+    width: 19%;
+    height: 22%;
+    top: 50%;
+    left: 69.5%;
+    transform: rotate(3deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .tapes-archive h2 {
+    font-size: 1rem;
+    color: black;
+    margin-top: -3%;
+  }
+
+  .tapes-shelf {
+    gap: 0.4rem;
+    margin-top: 20%;
+    transform: rotate(2deg);
+    overflow-y: hidden;
+  }
+
+  .tapes-thumb {
+    width: 7rem;
+    height: 3.5rem;
+    font-size: 0.7rem;
+  }
+
+  .tapes-thumb:hover {
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  .tapes-all {
+    font-size: 0.5rem;
+    background-color: black;
+    padding: 3%;
+    margin-bottom: 20%;
+    border-radius: 5px;
+    animation: ipadBottomPulse 3s infinite;
+  }
+
+  .tapes-footer {
+    font-size: 1rem;
+    width: 10rem;
+    height: 2rem;
+    color: var(--flipphone-heart);
+    top: 76%;
+    left: 8%;
+    transform: rotate(350deg);
+  }
+}
+
+/* Desktop media queries */
+@media (min-width: 1025px) {
+  #tapesIntro {
+    height: 100vh;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  #tapesVideo {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    object-fit: fill;
+    overflow: hidden;
+  }
+
+  .tapes-container {
+    background-image: none;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .tapes-header {
+    width: 55%;
+    height: 15%;
+    position: absolute;
+    top: 5%;
+    left: 22.5%;
+    text-align: center;
+  }
+
+  .tapes-header h1 {
+    animation: flicker 3s infinite;
+  }
+
+  .tapes-subtitle {
+    color: var(--electric-lavender);
+    font-size: 1.2rem;
+    width: 100%;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  .tapes-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .tapes-entry-one,
+  .tapes-entry-two,
+  .tapes-entry-three,
+  .tapes-entry-four {
+    width: 15rem;
+    height: 7rem;
+  }
+
+  .tapes-entry-one::before,
+  .tapes-entry-two::before,
+  .tapes-entry-three::before,
+  .tapes-entry-four::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5) 20%,
+      transparent 80%
+    );
+    z-index: -1;
+  }
+
+  .tapes-entry-one:hover,
+  .tapes-entry-two:hover,
+  .tapes-entry-three:hover,
+  .tapes-entry-four:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 0 25px var(--electric-lavender), 0 0 40px black;
+    filter: brightness(1.2) contrast(1.1) saturate(1.3) hue-rotate(10deg);
+    opacity: 1;
+    color: var(--electric-lavender);
+  }
+
+  .tapes-entry-one {
+    top: 7%;
+    left: 5%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeInGlitchOne 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
+  }
+
+  .tapes-entry-two {
+    top: 22%;
+    left: 78%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeInGlitchTwo 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 9s;
+  }
+
+  .tapes-entry-three {
+    visibility: visible;
+    top: 65%;
+    left: 78%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeInGlitchThree 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
+  }
+
+  .tapes-entry-four {
+    visibility: visible;
+    top: 35%;
+    left: 5%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeInGlitchFour 1s ease, flicker 3s infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 11s;
+  }
+
+  .tapes-lego,
+  .tapes-butterfly,
+  .tapes-planet,
+  .tapes-archive {
+    display: none;
+  }
+
+  .tapes-footer {
+    font-size: 1rem;
+    width: 14rem;
+    height: 2rem;
+    color: var(--electric-lavender);
+    bottom: 1%;
+    left: 2%;
+  }
+}
+
+/* All Tapes page styles */
+.all-tapes-body {
+  background-color: black;
+  overflow: clip;
+}
+
+.all-tapes-container {
+  background-image: url("../images/allTapesBackground.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-tapes-box {
+  display: inline-block;
+  width: 95%;
+  height: 12.5%;
+  margin-left: 3%;
+  padding: 0.5rem;
+}
+
+.all-tapes-one {
+  margin-top: 7%;
+}
+
+.all-tapes-intro {
+  color: var(--electric-lavender);
+  text-shadow: 0px 3px 0px var(--ghost-white);
+  font-family: "Joystix Monospace", sans-serif;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.all-tapes-dot {
+  animation: flickerDot 3s infinite;
+}
+
+.all-tapes-dot-two {
+  animation: flickerDotTwo 3s infinite;
+}
+
+/* Desktop media queries for all-tapes */
+@media (min-width: 1025px) {
+  .all-tapes-container {
+    background-image: url("../images/allTapesBackground.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .all-tapes-box {
+    display: inline-block;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .all-tapes-one:hover,
+  .all-tapes-two:hover,
+  .all-tapes-three:hover,
+  .all-tapes-four:hover {
+    background-color: var(--ghost-white);
+    opacity: 0.3;
+    border-radius: 15px;
+  }
+
+  .all-tapes-one {
+    margin-top: 1.5%;
+    height: 13%;
+  }
+
+  .all-tapes-intro {
+    color: var(--electric-lavender);
+    text-shadow: 0px 3px 0px var(--ghost-white);
+    font-family: "Joystix Monospace", sans-serif;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+  }
+
+  .all-tapes-dot {
+    animation: flickerDot 3s infinite;
+  }
+
+  .all-tapes-dot-two {
+    animation: flickerDotTwo 3s infinite;
+  }
+
+  .all-tapes-eject {
+    color: var(--flipphone-heart);
+    text-decoration: none;
+    font-family: "Unique", sans-serif;
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13%;
+    animation: flicker 3s infinite;
+  }
+
+  .all-tapes-eject:hover {
+    background-color: var(--ghost-white);
+    opacity: 0.3;
+    animation: none;
+  }
+}
+
