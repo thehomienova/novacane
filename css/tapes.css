@@ -79,6 +79,7 @@ body.intro-playing {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 160vh;
+  min-height: 160dvh;
   position: relative;
   overflow: hidden;
   scroll-snap-type: y mandatory;
@@ -132,6 +133,7 @@ body.intro-playing {
   top: 36%;
   left: 1rem;
   height: 8vh;
+  height: 8dvh;
   width: 20vw;
   background-image: url("../images/tapesSongBtn.png");
   background-size: cover;
@@ -289,6 +291,73 @@ body.intro-playing {
   color: var(--electric-lavender);
 }
 
+/* Small phones: 320-374px (iPhone SE 1st gen, small Android) */
+@media (max-width: 374px) {
+  .tapes-container {
+    min-height: 180vh;
+    min-height: 180dvh;
+  }
+
+  .tapes-header {
+    top: 3%;
+    left: 32%;
+  }
+
+  .tapes-planet {
+    left: 32%;
+    top: 1%;
+  }
+
+  .tapes-entry-one,
+  .tapes-entry-two {
+    width: 8.5rem;
+    height: 4.5rem;
+    font-size: 0.85rem;
+  }
+
+  .tapes-entry-one {
+    top: 24%;
+    left: 15%;
+  }
+
+  .tapes-entry-two {
+    top: 45%;
+    left: 15%;
+  }
+}
+
+/* Narrow-medium phones: 375-389px (iPhone mini, many mid-range Android) */
+@media (min-width: 375px) and (max-width: 389px) {
+  .tapes-entry-one {
+    top: 27%;
+  }
+
+  .tapes-entry-two {
+    top: 52%;
+  }
+}
+
+/* Large phones: 430-767px (iPhone Plus/Pro Max, Galaxy Ultra) */
+@media (min-width: 430px) and (max-width: 767px) {
+  .tapes-header {
+    left: 40%;
+  }
+
+  .tapes-planet {
+    left: 40%;
+  }
+
+  .tapes-entry-one {
+    top: 28%;
+    left: 22%;
+  }
+
+  .tapes-entry-two {
+    top: 53%;
+    left: 22%;
+  }
+}
+
 /* Tablet media queries */
 @media (min-width: 769px) and (max-width: 1024px) {
   .tapes-body {
@@ -302,6 +371,7 @@ body.intro-playing {
     overflow: hidden;
     background-image: url("../images/tvgirl.jpg");
     min-height: 90vh;
+    min-height: 90dvh;
     -webkit-mask-image: linear-gradient(to top, transparent 1%, black 10%);
     mask-image: linear-gradient(to top, transparent 1%, black 10%);
   }
@@ -416,6 +486,7 @@ body.intro-playing {
 @media (min-width: 1025px) {
   #tapesIntro {
     height: 100vh;
+    height: 100dvh;
     margin: 0;
     object-fit: cover;
   }
@@ -423,6 +494,7 @@ body.intro-playing {
   #tapesVideo {
     display: block;
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     object-fit: fill;
     overflow: hidden;
@@ -431,6 +503,7 @@ body.intro-playing {
   .tapes-container {
     background-image: none;
     min-height: 100vh;
+    min-height: 100dvh;
     width: 100%;
     overflow: hidden;
   }
@@ -569,6 +642,7 @@ body.intro-playing {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 85vh;
+  height: 85dvh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -611,6 +685,7 @@ body.intro-playing {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     display: flex;
     flex-direction: column;
