@@ -1,0 +1,189 @@
+/* Invest page — terminal overlaid on CRT screen */
+
+html:has(.invest-body) {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0d0d0d;
+}
+
+.invest-body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/investBackground.jpg");
+  background-color: #0d0d0d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/*
+  Terminal sits inside the CRT green screen.
+  Default (≤430px mobile portrait): image scales to fill height,
+  monitor bezel is horizontally cropped so screen fills full width.
+  Green screen: top ~21%, bottom ~64% of viewport height.
+*/
+.terminal {
+  position: fixed;
+  top: 28.8%;
+  left: 17.5%;
+  width: 65%;
+  height: 29%;
+  background: rgba(2, 12, 4, 0.93);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 431px–1024px: bezel becomes visible so inset horizontally */
+@media (min-width: 431px) and (max-width: 1024px) {
+  .terminal {
+    top: 22%;
+    left: 19%;
+    width: 57%;
+    height: 36%;
+  }
+}
+
+/* CRT scanline overlay */
+.terminal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.terminal-body {
+  position: relative;
+  z-index: 2;
+  padding: 0.6rem 0.8rem;
+  overflow-y: auto;
+  flex: 1;
+  font-family: "Joystix Monospace", monospace;
+  font-size: 0.6rem;
+  color: var(--truck-green);
+  line-height: 1.8;
+}
+
+.terminal-body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: var(--truck-green-soft);
+  border-radius: 2px;
+}
+
+/* Text styles */
+.t-boot {
+  color: var(--truck-green);
+  text-shadow: 0 0 6px var(--truck-green);
+  letter-spacing: 0.5px;
+}
+
+.t-dim {
+  color: var(--truck-green-soft);
+}
+
+.t-divider {
+  letter-spacing: -1px;
+}
+
+.t-section {
+  color: var(--electric-lavender);
+  text-shadow: 0 0 6px var(--electric-lavender);
+  letter-spacing: 2px;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.t-position {
+  margin-bottom: 0.4rem;
+}
+
+.t-ticker {
+  color: var(--truck-green);
+  text-shadow: 0 0 4px var(--truck-green-soft);
+}
+
+.t-ticker .up {
+  color: var(--truck-green);
+}
+
+.t-ticker .down {
+  color: var(--flipphone-heart);
+}
+
+.t-comment {
+  color: var(--truck-green-soft);
+  padding-left: 1rem;
+}
+
+.t-prompt {
+  color: var(--truck-green);
+  text-shadow: 0 0 6px var(--truck-green);
+}
+
+.t-cursor {
+  animation: flicker 1.2s infinite;
+}
+
+/* Back link */
+.t-back {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  font-family: "Joystix Monospace", monospace;
+  font-size: 0.6rem;
+  color: var(--truck-green-soft);
+  text-decoration: none;
+  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.t-back:hover {
+  color: var(--truck-green);
+}
+
+/*
+  Desktop (≥1025px): image scales to fill width → monitor shifts up.
+  Green screen: top ~4%, bottom ~72%, left ~17%, width ~66%.
+*/
+@media (min-width: 1025px) {
+  .terminal {
+    top: 5%;
+    left: 19%;
+    width: 59%;
+    height: 51%;
+  }
+
+  .terminal-body {
+    font-size: 0.85rem;
+    padding: 1rem 1.4rem;
+    line-height: 2;
+  }
+
+  .t-section {
+    margin: 0.8rem 0 0.4rem;
+  }
+
+  .t-position {
+    margin-bottom: 0.7rem;
+  }
+
+  .t-back {
+    font-size: 0.75rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+}

@@ -77,11 +77,6 @@ body.intro-playing {
   margin-top: 0.5rem;
 }
 
-.invest-body {
-  background-image: url("../images/construction.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 /* Desktop media queries */
 @media (min-width: 1025px) {
