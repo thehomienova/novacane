@@ -4,14 +4,14 @@ html:has(.invest-body) {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #0d0d0d;
+  background-color: #1e0d07;
 }
 
 .invest-body {
   margin: 0;
   padding: 0;
   background-image: url("../images/investBackground.jpg");
-  background-color: #0d0d0d;
+  background-color: #1e0d07;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,31 +21,33 @@ html:has(.invest-body) {
 }
 
 /*
-  Terminal sits inside the CRT green screen.
-  Default (≤430px mobile portrait): image scales to fill height,
-  monitor bezel is horizontally cropped so screen fills full width.
-  Green screen: top ~21%, bottom ~64% of viewport height.
+  Green screen pixel bounds (scanned from investBackground.jpg, 736×736):
+    left: 29.76%  right: 70.24%  top: 28.40%  bottom: 78.26%
+
+  For a square image with background-size: cover, background-position: center:
+    S  = max(100dvw, 100dvh)          rendered image size
+    ox = (100dvw - S) / 2             x offset (negative in portrait = overflows sides)
+    oy = (100dvh - S) / 2             y offset (negative in landscape = overflows top/bottom)
+
+  Green screen is horizontally centered (29.76% mirrors to 70.24%):
+    terminal left   = max(0px, 50dvw − 0.1924·S)   ← 1% inset from screen left
+    terminal right  = max(0px, 50dvw − 0.1924·S)   ← symmetric
+    terminal top    = max(0px, 50dvh − 0.2060·S)   ← 1% inset from screen top
+    terminal bottom = max(0px, 50dvh − 0.2726·S)   ← 1% inset from screen bottom
+
+  No breakpoints needed — formula is exact at every viewport size.
+  On portrait phones, max(0px,...) clamps overflowing edges to the viewport boundary.
 */
 .terminal {
   position: fixed;
-  top: 28.8%;
-  left: 17.5%;
-  width: 65%;
-  height: 29%;
+  left:   max(0px, calc(50dvw - 0.1924 * max(100dvw, 100dvh)));
+  right:  max(0px, calc(50dvw - 0.1924 * max(100dvw, 100dvh)));
+  top:    max(0px, calc(50dvh - 0.2060 * max(100dvw, 100dvh)));
+  bottom: max(0px, calc(50dvh - 0.07 * max(100dvw, 100dvh)));
   background: rgba(2, 12, 4, 0.93);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-/* 431px–1024px: bezel becomes visible so inset horizontally */
-@media (min-width: 431px) and (max-width: 1024px) {
-  .terminal {
-    top: 22%;
-    left: 19%;
-    width: 57%;
-    height: 36%;
-  }
 }
 
 /* CRT scanline overlay */
@@ -67,11 +69,11 @@ html:has(.invest-body) {
 .terminal-body {
   position: relative;
   z-index: 2;
-  padding: 0.6rem 0.8rem;
+  padding: 0.6rem 0.9rem;
   overflow-y: auto;
   flex: 1;
   font-family: "Joystix Monospace", monospace;
-  font-size: 0.6rem;
+  font-size: clamp(0.55rem, 1dvw, 0.85rem);
   color: var(--truck-green);
   line-height: 1.8;
 }
@@ -104,11 +106,11 @@ html:has(.invest-body) {
   color: var(--electric-lavender);
   text-shadow: 0 0 6px var(--electric-lavender);
   letter-spacing: 2px;
-  margin: 0.4rem 0 0.2rem;
+  margin: 0.5rem 0 0.25rem;
 }
 
 .t-position {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .t-ticker {
@@ -116,13 +118,8 @@ html:has(.invest-body) {
   text-shadow: 0 0 4px var(--truck-green-soft);
 }
 
-.t-ticker .up {
-  color: var(--truck-green);
-}
-
-.t-ticker .down {
-  color: var(--flipphone-heart);
-}
+.t-ticker .up   { color: var(--truck-green); }
+.t-ticker .down { color: var(--flipphone-heart); }
 
 .t-comment {
   color: var(--truck-green-soft);
@@ -144,7 +141,7 @@ html:has(.invest-body) {
   bottom: 1.2rem;
   left: 1.2rem;
   font-family: "Joystix Monospace", monospace;
-  font-size: 0.6rem;
+  font-size: clamp(0.55rem, 1dvw, 0.75rem);
   color: var(--truck-green-soft);
   text-decoration: none;
   z-index: 10;
@@ -153,37 +150,4 @@ html:has(.invest-body) {
 
 .t-back:hover {
   color: var(--truck-green);
-}
-
-/*
-  Desktop (≥1025px): image scales to fill width → monitor shifts up.
-  Green screen: top ~4%, bottom ~72%, left ~17%, width ~66%.
-*/
-@media (min-width: 1025px) {
-  .terminal {
-    top: 5%;
-    left: 19%;
-    width: 59%;
-    height: 51%;
-  }
-
-  .terminal-body {
-    font-size: 0.85rem;
-    padding: 1rem 1.4rem;
-    line-height: 2;
-  }
-
-  .t-section {
-    margin: 0.8rem 0 0.4rem;
-  }
-
-  .t-position {
-    margin-bottom: 0.7rem;
-  }
-
-  .t-back {
-    font-size: 0.75rem;
-    bottom: 1.5rem;
-    left: 1.5rem;
-  }
 }
