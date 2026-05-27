@@ -8,11 +8,12 @@ body.intro-playing {
 
 .cards {
   background-image: url("../images/financeBackground.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  max-width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   background-color: #000;
 }
 
@@ -63,11 +64,13 @@ body.intro-playing {
 }
 
 .cards-body {
-  padding: 1rem 0 0 10%;
+  height: 100dvh;
+  padding: 1.5rem 1rem;
   display: flex;
-  flex-flow: row wrap;
-  row-gap: 6vh;
-  column-gap: 30%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
 }
 
 /* Hide and disable cards body while intro is playing */
@@ -79,21 +82,24 @@ body.intro-playing {
 }
 
 .cards-body p {
-  width: 100%;
-  height: 3vh;
   font-size: clamp(1rem, 3vw, 2.5rem);
-  position: relative;
-  right: 5%;
   font-family: "Joystix Monospace", monospace;
   color: var(--electric-lavender);
   text-shadow: 0 0 10px var(--ghost-white);
   opacity: 0.8;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1.2rem;
 }
 
 .card-icon {
   display: inline-block;
-  height: clamp(4rem, 14vw, 7.5rem);
-  width: clamp(6rem, 20vw, 12rem);
+  height: clamp(3.8rem, 13dvh, 7.5rem);
+  width: clamp(4.8rem, 35dvw, 9.5rem);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -165,20 +171,17 @@ body.intro-playing {
   text-decoration: none;
 }
 
-.cards-links.invest {
-  margin-top: 15%;
-}
-
+.cards-links.invest,
 .cards-links.return {
-  margin-top: -1rem;
+  margin-top: 0;
 }
 
 .financial-disclaimer {
   color: white;
-  font-size: 70%;
-  margin-top: 3.5rem;
+  font-size: 50%;
   width: 90%;
-  opacity: 0.7;
+  opacity: 0.4;
+  text-align: center;
 }
 
 /* Individual card page styles */
@@ -451,50 +454,22 @@ body.intro-playing {
     margin-right: 5%;
   }
 
-  .cards-body {
-    padding: 1rem 0 0 10%;
-    display: flex;
-    flex-flow: row;
-    row-gap: 5vh;
-    column-gap: 30%;
-    border: 1px solid white;
-  }
-
-  .cards-body p {
-    left: 7%;
+  .card-grid {
+    grid-template-columns: repeat(4, max-content);
+    gap: 1.5rem;
   }
 
   .card-icon {
-    display: inline-block;
-    height: clamp(5rem, 14vw, 7.5rem);
-    width: clamp(5rem, 13vw, 14rem);
+    height: clamp(4rem, 10dvh, 8rem);
+    width: clamp(6rem, 12vw, 12rem);
   }
 
   .cards-links {
-    font-family: "Joystix Monospace", monospace;
-    color: var(--ghost-white);
-    text-shadow: 0 0 10px var(--ghost-white);
     font-size: 130%;
-    opacity: 0.8;
-    animation: cardsFlicker 2s infinite;
-    text-decoration: none;
-  }
-
-  .cards-links.invest {
-    margin-top: 0rem;
-  }
-
-  .cards-links.return {
-    margin-top: 0rem;
   }
 
   .financial-disclaimer {
-    color: white;
-    font-size: 100%;
-    margin-top: 7.7rem;
-    margin-left: 1rem;
-    width: 90%;
-    opacity: 0.7;
+    font-size: 60%;
   }
 
   .card-tap-hint {

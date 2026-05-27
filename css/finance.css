@@ -1,5 +1,9 @@
 /* Finance page styles */
 
+html {
+  background-color: rgb(60, 10, 70);
+}
+
 html.intro-playing,
 body.intro-playing {
   overflow: hidden !important;
